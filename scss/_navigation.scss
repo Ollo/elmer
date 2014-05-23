@@ -1,0 +1,205 @@
+// # _navigation
+//
+// This file houses navigation patterns, including things such as pagination & filtering
+//
+// Styleguide 18.0
+
+// # .bordered
+//
+// Basic style for a bordered header
+//
+// Markup:
+// <header class="bordered">
+//     <h1>Heading</h1>
+// </header>
+//
+// Styleguide 18.1
+
+.bordered {
+	border-bottom: 1px solid lighten($light_gray, 10%);
+	margin-bottom: rem(40);
+}
+
+//@extend this on any headers that have a tab nav for proper layout
+%header_tabs {
+
+	nav {
+		// Commented out until we get sidebar navigation in place. These should be set to display none while the menu is collapsed.
+		//display: none;
+		@extend .tabs;
+	}
+
+	@include media($large) {
+
+		h2, h1 {
+			@include span-columns(5.5);
+		}
+
+		nav {
+			@include span-columns(6.5);
+			@include omega;
+			text-align: right;
+			padding-bottom: 0.5rem;
+			padding-top: 0.5rem;
+
+			li {
+				padding: 0 0 0 2rem;
+			}
+		}
+
+	}
+
+}
+
+// # .page_header
+//
+// Base Header Styles
+//
+// Markup:
+// <header class="page_header">
+//     <h2>Organization Management</h2>
+// </header> 
+//
+// Styleguide 18.2
+
+.page_header {
+	@extend %clearfix;
+	border-bottom: 1px solid lighten($light_gray, 10%);
+	margin-top: 1rem;
+	margin-bottom: rem(20);
+
+	h2 {
+		@include sans_light;
+		margin-top: 0;
+		margin-bottom: 1rem;
+	}
+
+	h1 {
+		@include sans_light;
+		margin-top: 0;
+		margin-bottom: 0.5rem;
+	}
+
+	// # .page_header.tabbed
+	//
+	// For use on pages with tab nav in header. If possible, use with @extend to keep markup clean
+	//
+	// Markup:
+	// <header class="page_header tabbed">
+	//     <h2>Organization Management</h2>
+    //     <nav class="tabs">
+    //         <ul>
+    //             <li class="pane current"><a data-href="#metrics">Metrics</a></li>
+    //             <li class="pane"><a data-href="#questions">Questions</a></li>
+    //             <li class="pane"><a data-href="#users">Users</a></li>
+    //         </ul>
+    //     </nav>
+	// </header> 
+	//
+	// Styleguide 18.3
+
+	&.tabbed {
+		@extend %header_tabs;
+	}
+
+}
+
+// # %pagination
+//
+// Prev/Next style set up
+//
+// Markup:
+// <nav class="pagination" role="navigation">
+//     <a class="prev">Previous</a>
+//     <a class="next">Next</a>
+// </nav>
+// 
+// Styleguide 18.4
+
+%pagination {
+	@include outer-container;
+
+	a {
+		display: inline-block;
+
+		&:hover {
+			cursor: pointer;
+		}
+	}
+
+	.prev {
+		float: left;
+	}
+	.next {
+		float: right;
+	}
+}
+
+.pagination {
+	@extend %pagination; // _extends
+}
+
+// # .sub_header
+//
+// Bordered navigation under .page_header. Add anything that floats left in desktop in the ".left" div, and vise versa with ".right".
+//
+// Markup:
+// <div class="sub_header">
+//    <div class="left">
+//
+//     </div>
+//     <div class="right ui-search">
+//         <input type="search"/>
+//         <button><i class="fa fa-search"></i></button>
+//     </div>
+// </div>
+// 
+// Styleguide 18.5
+
+.sub_header {
+	@extend .bordered;
+	@extend %clearfix;
+	padding-bottom: rem(20);
+
+	.btn-add {
+        margin-right: rem(5);
+        + a {
+            padding-top: rem(5);
+            display: inline-block;
+            + span {
+                @extend %muted_text;
+                @extend %small_text;
+                display: block;
+            }
+        }
+    }
+
+    .left {
+    	@extend .bordered;
+    	margin-bottom: rem(20);
+    	padding-bottom: rem(20);
+    }
+
+	@include media($medium) {
+
+		.btn-add {
+			margin: rem(10) rem(5) rem(10) 0;
+			+ a {
+				padding-top: rem(15);
+			}
+		}
+
+		.left {
+			float: left;
+			margin: 0;
+			padding: 0;
+			border: none;
+		}
+
+		.right {
+			float: right;
+		}
+
+	}
+
+}

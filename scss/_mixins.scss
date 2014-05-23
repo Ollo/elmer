@@ -1,0 +1,29 @@
+// # _mixins
+//
+//
+// Styleguide 5.0
+
+
+// # rem function
+// 
+// Calculate rem based on a pixel value. Example: font-size: rem(40) = 40px / 4rem
+// 
+// Styleguide 5.1
+
+@function rem($value, $fontbase: 10) {
+	@return($value / $fontbase) * 1.0rem;
+}
+
+// # input-placeholder
+// 
+// Use this to style input placeholder text
+// 
+// Styleguide 5.2
+
+@mixin input-placeholder {
+    &.placeholder { @content; }
+    &:-moz-placeholder { @content; }
+    &::-moz-placeholder { @content; }
+    &:-ms-input-placeholder { @content; }
+    &::-webkit-input-placeholder { @content; } 
+}

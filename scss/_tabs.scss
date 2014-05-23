@@ -1,0 +1,103 @@
+// # _tabs
+//
+// Basic styles for tabs
+//
+// Styleguide 12.0
+//
+
+// # .tabs
+//
+// Main tab wrapper to encase all tab groups. Style and functionality are dependent upon the basic markup structure as shown below.
+//
+// Markup: <div class="tabs">
+//     <ul>
+//         <li><a href="#tab1">Tab 1</a></li>
+//         <li><a href="#tab2">Tab 2</a></li>
+//         <li><a href="#tab3">Tab 3</a></li>
+//     </ul>
+//     <div id="tab1">
+//         First tab content here
+//     </div>
+//     <div id="tab2">
+//         Second tab content here
+//     </div>
+//     <div id="tab3">
+//         Third tab content here
+//     </div>
+// </div>
+//
+// Styleguide 12.1
+
+.tabs {
+	@extend %small_text;
+
+	> ul {
+
+		li {
+			display: inline-block;
+
+			a {
+				display: block;
+			}
+
+			&:hover {
+				 cursor: pointer;
+			}
+
+			&.current {
+				font-weight: bold;
+			}
+		}
+	}
+}
+
+nav.tabs {
+	ul {
+		padding: 0;
+	}
+
+	li {
+		@include sans_med;
+		@extend %muted_text;
+		padding: 0 2rem 0 0;
+
+		a {
+			@extend %muted_text;
+			font-weight: 300;
+		}
+
+		&.current {
+
+			a {
+				color: $charcoal;
+				font-weight: 500;
+			}
+		}
+		
+		&:last-child {
+			padding-right: 0;
+		}
+	}
+
+	&.small {
+
+		li {
+			padding: 0 0.5rem 0 0;
+		}
+
+	}
+
+}
+
+//full page tabs
+.tab_pane {
+	display: none;
+
+	&.active {
+		display: block;
+	}
+}
+
+.pane {
+	display: none;
+}

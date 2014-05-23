@@ -1,0 +1,24 @@
+{
+  "name": "elmer",
+  "version": "0.0.1",
+  "authors": [
+    "client-dev@tangogroup.com"
+  ],
+  "description": "The ui components library behind Gloo's Epoxy web app",
+  "keywords": [
+    "Sass",
+    "Bourbon",
+    "Neat",
+    "Font",
+    "Awesome"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

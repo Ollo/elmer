@@ -1,0 +1,310 @@
+// # _tables
+//
+// Basic table styles. It should be noted that currently we are not using the html table markup, see the .table class below for more details on how to construct a table.
+//
+// Styleguide 16.0
+
+// #  <table>
+//
+// Markup:
+// <table>
+//     <thead>
+//         <tr>
+//             <th>Metric Name</th>
+//             <th>Score Range</th>
+//             <th></th>
+//             <th></th>
+//         </tr>
+//     </thead>
+//     <tbody>
+//         <tr>
+//             <td>Communication</td>
+//             <td>1 to 5</td>
+//             <td><a href="">Edit</a></td>
+//             <td><a href=""><i class="fa fa-trash-o"></i</a></td>
+//         </tr>
+//         <tr>
+//             <td><input type="text" value="Confidence"/></td>
+//             <td>1 to 5</td>
+//             <td><a href="" class="primary">Save Metric</a></td>
+//             <td><a href=""><i class="fa fa-trash-o"></i></a></td>
+//         </tr>
+//    </tbody>
+// </table>
+//
+// Styleguide 16.1
+
+
+table {
+	@include museo-sans;
+	margin: ($base-line-height / 2) 0;
+	width: 100%;
+	border: 1px solid #c6c6cb;
+	vertical-align: middle;
+}
+
+th, td {
+	padding: 0 rem(15);
+ 	height: rem(50);
+ 	@include media($small) {
+		padding: 0 rem(35);
+	}
+}
+
+th {
+  color: $white;
+  @extend %small_text;
+  font-weight: 500;
+  text-align: left;
+  background: tint($pale_blue, 40%);
+}
+
+td {
+  border-bottom: 1px solid $light_gray;
+   @include media($small) {
+   		height: rem(100);
+  }
+}
+
+// # .table
+//
+// Add this class to simulate a table. Use classes to determine row widths, as seen below. The '.main' class designates what will still be displayed in the mobile view. For now, the browser must be refreshed between mobile & desktop sizes for the table to convert to an accordion properly.
+//
+// Markup:
+// <ul class="table">
+//     <li class="table_header">
+//         <div class="four_col">Metric Name</div>
+//         <div class="four_col hidden_mobile">Score Range</div>
+//         <div class="two_col hidden_mobile"></div>
+//         <div class="two_col hidden_mobile"></div>
+//     </li>
+//     <li class="row">
+//         <a class="expand">+ View More</a>
+//         <div class="four_col main">Really long two line title squish me!</div>
+//         <div class="four_col range"><label>Score Range: </label><span class="first">1</span> to <span class="second">5</span></div>
+//         <div class="two_col center"><a href="">Edit</a></div>
+//         <div class="two_col right"><a href=""><i class="fa fa-trash-o"></i></a></div>
+//    </li>
+//     <li class="row">
+//         <a class="expand">+ View More</a>
+//         <div class="four_col main">Confidence</div>
+//         <div class="four_col range"><label>Score Range: </label><span class="first">1</span> to <span class="second">5</span></div>
+//         <div class="two_col center"><a href="">Save Metric</a></div>
+//         <div class="two_col right"><a href=""><i class="fa fa-trash-o"></i></a></div>
+//    </li>
+// </ul>
+//
+// Styleguide 16.2
+
+%table {
+
+	.main {
+		padding: 0.75rem 0;
+	}
+}
+
+.table {
+	@extend %clearfix;
+	@include museo-sans;
+	border: 1px solid #c6c6cb;
+	background: $white;
+	font-size: rem(14);
+	margin-bottom: rem(20);
+	color: $gray;
+	word-break: break-word;
+
+	li {
+		list-style: none;
+		@include omega;
+		@extend %clearfix;
+	}
+
+	.table_header {
+		background: tint($pale_blue, 40%);
+		color: $white;
+		font-weight: 500;
+		@extend %small_text;
+		padding: rem(15);
+		-webkit-font-smoothing: antialiased;
+	}
+
+	.row {
+		padding: rem(15) rem(15) 0;
+		border-bottom: 1px solid #c6c6cb;
+
+		&.active {
+			background-color: #fafafa;
+			padding-bottom: rem(15);
+		}
+
+		&:last-child {
+			border-bottom: 0;
+		}
+	}
+
+	.expand {
+		text-decoration: none;
+		position: absolute;
+		right: rem(15);
+		cursor: pointer;
+		z-index: 10;
+	}
+
+	.main {
+		padding-right: rem(100);
+		padding-bottom: rem(15);
+	}
+
+	.range {
+		display: inline-block;
+		@extend %muted_text;
+		text-align: left;
+	}
+
+	label {
+		color: $charcoal;
+		padding-right: rem(5);
+		font-weight: bold;
+	}
+
+	.fa-trash-o {
+		color: $gray;
+		cursor: pointer;
+	}
+
+	> div {
+		a {
+			text-decoration: underline;
+		}
+	}
+
+	input {
+		margin: 0;
+		float: left;
+		width: 80%;
+	}
+
+	select {
+		color: $gray;
+	}
+
+	.primary, .disabled, .secondary {
+		text-decoration: none;
+		min-width: rem(147);
+		display: inline-block;
+		text-align: center;
+
+		&:hover {
+			color: $white;
+		}
+	}
+
+	p {
+		margin: 0;
+		max-width: rem(335);
+	}
+
+	.handle {
+		display: none;
+	}
+
+	.ui-select {
+		margin-bottom: rem(9);
+	}
+
+	.dropdown {
+		margin-bottom: 0;
+	}
+
+	.avatar {
+		margin-top: rem(5);
+	}
+
+	@include media($mobileOnly) {
+
+		div {
+			float: left;
+			width: 100%;
+			padding: 0 0 rem(5);
+		}
+
+		.hidden_mobile {
+			display: none!important;
+		}
+
+	}
+
+	@include media($medium) {
+
+		.table_header {
+			padding: rem(15) rem(35);
+
+			div:last-child {
+				text-align: right;
+			}
+		}
+
+		.row {
+			padding: rem(30) rem(35);
+			border-bottom: 1px solid #c6c6cb;
+		}
+
+		label {
+			display: none;
+		}
+
+		.range {
+
+			.first {
+				padding-right: rem(30);
+			}
+
+			.second {
+				padding-left: rem(30);
+			}
+		}
+
+		.expand {
+			display: none;
+		}
+
+		.main {
+			border-bottom: none;
+			padding: 0;
+		}
+
+		.panel {
+			display: inline-block!important;
+		}
+
+		input[type="text"], input[type="email"] {
+			max-width: rem(340);
+		}
+
+		.primary, .disabled, .secondary {
+			margin-bottom: 0;
+		}
+
+		.right {
+			text-align: right;
+
+			.half {
+				float: right;
+			}
+		}
+
+		.center {
+			text-align: center;
+		}
+
+		.handle {
+			display: inline-block;
+			padding-right: rem(40);
+			color: $gray;
+		}
+
+		.ui-select {
+			margin-bottom: 0;
+		}
+	}
+}

@@ -1,0 +1,277 @@
+// # _icons
+//
+// Custom icons from FontAwesome. Markup must include class "fa" and specific icon class. Font Awesome uses the Unicode Private Use Area (PUA) to ensure screen readers do not read off random characters that represent icons. Icons added as needed from /libs/fontawesome_icons.scss
+//
+// Styleguide 3.0
+
+
+// # .fa-angle-double-right
+//
+// Markup:
+// <i class="fa fa-angle-double-right"></i> .fa-angle-double-right
+//
+// Styleguide 3.1
+
+.#{$fa-css-prefix}-angle-double-right:before { content: $fa-var-angle-double-right; }
+
+// # .fa-angle-down
+//
+// Markup:
+// <i class="fa fa-angle-down"></i> .fa-angle-down
+//
+// Styleguide 3.2
+
+.#{$fa-css-prefix}-angle-down:before { content: $fa-var-angle-down; }
+
+// # .fa-bars
+//
+// Markup:
+// <i class="fa fa-bars"></i> .fa-bars
+//
+// Styleguide 3.3
+
+.#{$fa-css-prefix}-bars:before { content: $fa-var-bars; }
+
+// # .fa-bar-chart-o
+//
+// Markup:
+// <i class="fa fa-bar-chart-o"></i> .fa-bar-chart-o
+//
+// Styleguide 3.4
+
+.#{$fa-css-prefix}-bar-chart-o:before { content: $fa-var-bar-chart-o; }
+
+// # .fa-bookmark
+//
+// Markup:
+// <i class="fa fa-bookmark"></i> .fa-bookmark
+//
+// Styleguide 3.5
+
+.#{$fa-css-prefix}-bookmark:before { content: $fa-var-bookmark; }
+
+// # .fa-camera
+//
+// Markup:
+// <i class="fa fa-camera"></i> .fa-camera
+//
+// Styleguide 3.6
+
+.#{$fa-css-prefix}-camera:before { content: $fa-var-camera; }
+
+// # .fa-check
+//
+// Markup:
+// <i class="fa fa-check"></i> .fa-check
+//
+// Styleguide 3.7
+
+.#{$fa-css-prefix}-check:before { content: $fa-var-check; }
+
+// # .fa-check-circle
+//
+// Markup:
+// <i class="fa fa-check-circle"></i> .fa-check-circle
+//
+// Styleguide 3.8
+
+.#{$fa-css-prefix}-check-circle:before { content: $fa-var-check-circle; }
+
+// # .fa-check-circle-o
+//
+// Markup:
+// <i class="fa fa-check-circle-o"></i> .fa-check
+//
+// Styleguide 3.9
+
+.#{$fa-css-prefix}-check-circle-o:before { content: $fa-var-check-circle-o; }
+
+// # .fa-circle-o
+//
+// Markup:
+// <i class="fa fa-circle-o"></i> .fa-circle-o
+//
+// Styleguide 3.10
+
+.#{$fa-css-prefix}-circle-o:before { content: $fa-var-circle-o; }
+
+// # .fa-cog
+//
+// Markup:
+// <i class="fa fa-cog"></i> .fa-cog
+//
+// Styleguide 3.11
+
+.#{$fa-css-prefix}-cog:before { content: $fa-var-cog; }
+
+// # .fa-comments
+//
+// Markup:
+// <i class="fa fa-comments"></i> .fa-comments
+//
+// Styleguide 3.12
+
+.#{$fa-css-prefix}-comments:before { content: $fa-var-comments; }
+
+// # .fa-comments-o
+//
+// Markup:
+// <i class="fa fa-comments-o"></i> .fa-comments-o
+//
+// Styleguide 3.13
+
+.#{$fa-css-prefix}-comments-o:before { content: $fa-var-comments-o; }
+
+// # .fa-envelope
+//
+// Markup:
+// <i class="fa fa-envelope"></i> .fa-envelope
+//
+// Styleguide 3.14
+
+.#{$fa-css-prefix}-envelope:before { content: $fa-var-envelope; }
+
+// # .fa-gear
+//
+// Markup:
+// <i class="fa fa-gear"></i> .fa-gear
+//
+// Styleguide 3.15
+
+.#{$fa-css-prefix}-gear:before,
+.#{$fa-css-prefix}-cog:before { content: $fa-var-cog; }
+
+// # .fa-google-plus
+//
+// Markup:
+// <i class="fa fa-google-plus"></i> .fa-google-plus
+//
+// Styleguide 3.16
+
+.#{$fa-css-prefix}-google-plus:before { content: $fa-var-google-plus; }
+
+// # .fa-info-circle
+//
+// Markup:
+// <i class="fa fa-info-circle"></i> .fa-info-circle
+//
+// Styleguide 3.17
+
+.#{$fa-css-prefix}-info-circle:before { content: $fa-var-info-circle; }
+
+// # .fa-plus-circle
+//
+// Markup:
+// <i class="fa fa-plus-circle"></i> .fa-plus-circle
+//
+// Styleguide 3.18
+
+.#{$fa-css-prefix}-plus-circle:before { content: $fa-var-plus-circle; }
+
+// # .fa-search
+//
+// Markup:
+// <i class="fa fa-search"></i> .fa-search
+//
+// Styleguide 3.19
+
+.#{$fa-css-prefix}-search:before { content: $fa-var-search; }
+
+// # .fa-tags
+//
+// Markup:
+// <i class="fa fa-tags"></i> .fa-tags
+//
+// Styleguide 3.20
+
+.#{$fa-css-prefix}-tags:before { content: $fa-var-tags; }
+
+// # .fa-th-large
+//
+// Markup:
+// <i class="fa fa-th-large"></i> .fa-th-large
+//
+// Styleguide 3.21
+
+.#{$fa-css-prefix}-th-large:before { content: $fa-var-th-large; }
+
+// # .fa-times
+//
+// Markup:
+// <i class="fa fa-times"></i> .fa-times
+//
+// Styleguide 3.22
+
+.#{$fa-css-prefix}-times:before { content: $fa-var-times; }
+
+// # .fa-trash-o
+//
+// Markup:
+// <i class="fa fa-trash-o"></i> .fa-trash-o
+//
+// Styleguide 3.23
+
+.#{$fa-css-prefix}-trash-o:before { content: $fa-var-trash-o; }
+
+// # .fa-user
+//
+// Markup:
+// <i class="fa fa-user"></i> .fa-user
+//
+// Styleguide 3.24
+
+.#{$fa-css-prefix}-user:before { content: $fa-var-user; }
+
+// # .fa-users
+//
+// Markup:
+// <i class="fa fa-users"></i> .fa-users
+//
+// Styleguide 3.25
+
+.#{$fa-css-prefix}-users:before { content: $fa-var-users; }
+
+// # .fa-plus-square
+//
+// Markup:
+// <i class="fa fa-plus-square"></i> .fa-plus-square
+//
+// Styleguide 3.26
+
+.#{$fa-css-prefix}-plus-square:before { content: $fa-var-plus-square; }
+
+// # .fa-arrows
+//
+// Markup:
+// <i class="fa fa-arrows"></i> .fa-var-arrows
+//
+// Styleguide 3.27
+
+.#{$fa-css-prefix}-arrows:before { content: $fa-var-arrows; }
+
+// # .fa-plus
+//
+//  Markup:
+//  <i class="fa fa-plus"></i> .fa-plus
+//
+// Styleguide 3.28
+
+.#{$fa-css-prefix}-plus:before { content: $fa-var-plus; }
+
+// # .fa-plus
+//
+//  Markup:
+//  <i class="fa fa-sort-asc"></i> .fa-sort-asc
+//
+// Styleguide 3.29
+
+.#{$fa-css-prefix}-sort-asc:before { content: $fa-var-sort-asc; }
+
+// # .fa-circle-o
+//
+//  Markup:
+//  <i class="fa fa-circle-o"></i> .fa-circle-o
+//
+// Styleguide 3.30
+
+.#{$fa-css-prefix}-circle-o:before { content: $fa-var-circle-o; }

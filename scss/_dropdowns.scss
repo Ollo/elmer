@@ -1,0 +1,253 @@
+// # _dropdowns
+//
+// Styles for various dropdowns
+//
+// Styleguide 20.0
+
+// # .user_dd
+//
+// Main header logged-in dropdown
+//
+// Markup:
+// <div style="width:290px">
+//     <a class="user_dd_trigger" href="">
+//         My Account
+//         <i class="fa fa-angle-down select-indicator"></i>
+//     </a>
+//     <div class="user_dd">
+//         <a href="/"><i class="fa fa-angle-double-right"></i> My Gloo</a>
+//         <hr>
+//         <div id="myOrgList">
+//             <a href="">Engage International</a>
+//             <a href="">Family Life</a>
+//             <a href="">Redrocks Church</a>
+//         </div>
+//         <hr>
+//         <a href="#"><i class="fa fa-cog"></i> Settings</a>
+//         <a href="#">Sign Out</a>
+//     </div>
+// </div>
+//
+// Styleguide 20.1
+
+.user_dd_trigger {
+	display: block;
+	font-weight: 300;
+	font-size: 1.3rem;
+	border: 0;
+	border-radius: 0;
+	margin: 0 0 3rem;
+	@extend %muted_text;
+
+	i {
+		@extend %muted_text;
+		float: right;
+		padding-top: 0.2em;
+		margin-left: 0.25em;
+
+		&:focus {
+			border: 1px solid red;
+		}
+	}
+
+}
+
+.user_dd {
+	display: none;
+	position: absolute;
+	z-index: 20;
+	background: #007caa;
+	border-bottom: 6px solid #40b2cd;
+	padding: 1.3rem;
+	font-size: rem(14);
+	width: 100%;
+
+	hr {
+		margin: 1rem 0;
+	}
+
+	a {
+		color: $white;
+		display: block;
+	}
+
+	&.open {
+		display: block;
+	}
+
+}
+
+%button_dropdown {
+	margin-bottom: rem(10);
+	display: inline-block;
+
+	a {
+		cursor: pointer;
+	}
+
+	> span {
+		@extend .well;
+		@extend .bottom_border;
+		@extend %button;
+		display: inline-block;
+		margin-bottom: 0;
+		width: 100%;
+		font-weight: 300;
+		font-size: rem(14);
+		text-transform: uppercase;
+		color: $gray;
+		z-index: 1;
+		cursor: pointer;
+	}
+
+	> i {
+		position: absolute;
+		font-size: rem(20);
+		top: rem(5);
+		z-index: 1;
+	}
+
+	.drop_menu {
+		display: none;
+		width: 90%;
+		margin: 0 auto;
+		background: $sand;
+		border: 1px solid $light_gray;
+		border-top: none;
+		position: absolute;
+		left: 0;
+		right: 0;
+		z-index: 2;
+		box-shadow: 0 0 5px rgba(0,0,0,.1), inset 0 0 5px rgba(255,255,255, 1 );
+
+		a {
+			display: block;
+			padding: rem(8);
+			color: $gray;
+			font-size: rem(13);
+			font-weight: 500;
+			text-transform: uppercase;
+			text-decoration: none;
+			@include transition(background 0.25s ease-in);
+
+			&:hover {
+				background: $pale_blue;
+				color: $white;
+			}
+
+			i {
+				margin-right: rem(5);
+			}
+		}
+	}
+
+}
+
+.dropdown {
+	@extend %button_dropdown;
+
+	// # .dropdown.sorting
+	// 
+	// Standard button style dropdown for filtering and sorting. @extends %button_dropdown
+	//
+	// Markup:
+	// <div class="dropdown sorting">
+	//     <span class="selected_option">Sort & Filter</span>
+	//     <i class="fa fa-sort-asc"></i>
+	//     <div class="drop_menu">
+	//         <a href="" class="option">Role</a>
+	//         <a href="" class="option">Date Added</a>
+	//     </div>
+	// </div> 
+	//
+	// Styleguide 20.2
+	&.sorting {
+		min-width: rem(180);
+
+		> span {
+			padding: rem(8) rem(50) rem(6) rem(10);
+		}	
+
+		> i {
+			right: rem(15);
+			color: $light_green;
+		}
+	}
+
+	// # .dropdown.action
+	// 
+	// Standard button style dropdown for table actions. @extends %button_dropdown
+	//
+	// Markup:
+	// <div class="dropdown action">
+	//     <span class="selected_option">Action</span>
+	//     <i class="fa fa-sort-asc"></i>
+	//     <div class="drop_menu">
+	//         <a href="" class="option">Change Role</a>
+	//         <a href="" class="option">View Activity</a>
+	//		   <a href="" class="option">Send Message</a>
+	//     </div>
+	// </div> 
+	//
+	// Styleguide 20.3
+	&.action {
+		min-width: rem(145);
+		text-align: center;
+		a {
+			text-decoration: none;
+			background: $white;
+		}
+
+		> span {
+			background: $sand;
+			padding: rem(8) rem(30) rem(6) rem(10);
+			text-align: center;
+		}
+
+		> i {
+			right: rem(13);
+			color: $light_green;
+		}
+	}
+
+	// # .dropdown.title
+	// 
+	// Title style dropdown. @extends %button_dropdown
+	//
+	// Markup:
+	// <div class="dropdown title">
+	//     <h2 class="selected_option"><i class="fa fa-th-large"></i>Dashboard Title Here</h2>
+	//     <i class="fa fa-sort-asc"></i>
+	//     <div class="drop_menu">
+	//         <a href="" class="option">Another Dashboard Title</a>
+	//         <a href="" class="option">A Cooler Dashboard Title</a>
+	//     </div>
+	// </div> 
+	//
+	// Styleguide 20.4
+	&.title {
+
+		> h2 {
+			font-weight: 300;
+			padding-right: rem(25);
+			cursor: pointer;
+			i {
+				margin-right: rem(10);
+				color: $light_gray;
+			}
+		}
+
+		> i {
+			right: rem(5);
+			font-size: rem(13);
+			bottom: rem(11);
+			top: auto;
+		}
+
+		.drop_menu {
+			border-top: 1px solid $light_gray;
+			margin-left: rem(30);
+		}
+	}
+
+}

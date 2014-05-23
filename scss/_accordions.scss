@@ -1,0 +1,52 @@
+// # _accordions
+//
+// Basic styles for accordions 
+//
+// Styleguide 11.0
+
+// # .accordion
+//
+// Main accordion wrapper to encase all accordion groups. Style and functionality are dependent upon the basic markup structure as shown below.
+//
+// Markup: <div class="accordion">
+//     <div>
+//         <header>Accordion Group</header>
+//         <div>Accordion copy here</div>
+//     </div>
+//     <div>
+//         <header>Accordion Group</header>
+//         <div>Accordion copy here</div>
+//     </div>
+//     <div>
+//         <header>Accordion Group</header>
+//         <div>Accordion copy here</div>
+//     </div>
+// </div>
+//
+// Styleguide 11.1
+
+.accordion {
+  margin: rem(50) 0;
+
+  header {
+    cursor: pointer;
+    font-size: rem(16);
+    color: $teal;
+  } 
+
+  //accordion group
+  > div {
+    margin-bottom: 1rem;
+    border: 1px solid $teal;
+    background: $white;
+    border-radius: 6px;
+    padding: rem(10);
+
+    //accordion copy
+    > div {
+      margin-top: rem(10);
+    }
+
+  } 
+
+}

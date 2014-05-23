@@ -1,0 +1,274 @@
+// # _buttons
+//
+// base button placholder and meaningful names
+//
+// Styleguide 7.0
+
+%button {
+	color: $white;
+	border: 0;
+	border-radius: 6px;
+	padding: 0.6em 2em;
+	@include sans_light;
+	text-shadow: none;
+	-webkit-font-smoothing: antialiased;
+
+	&:focus {
+		outline: none;
+	}
+
+	&:hover, &:focus {
+		@include transition (all .5s ease-in-out);
+	}
+}
+
+%btn-full-mobile {
+	width: 100%;
+	@include media($small) {
+		width: auto;
+	}
+}
+
+button, input[type="submit"] {
+	@extend %button;
+}
+
+// # .primary
+//
+// The primary button style for the site
+//
+// Markup:
+// <button class="primary $modifierClass">I'm the Primary</button>
+//
+// :hover - darkens the background color
+//
+// Styleguide 7.1
+
+.primary {
+	@extend %button;
+	background: $teal;
+
+	&:hover, &:focus {
+		background: darken($teal, 14%);
+		color: $white;
+	}
+}
+
+// # .secondary
+//
+// The secondary button style for the site
+//
+// Markup:
+// <button class="secondary $modifierClass">I'm the Secondary</button>
+//
+// :hover - darkens the background color
+//
+// Styleguide 7.2
+
+.secondary {
+	@extend %button;
+	background: $light_green;
+
+	&:hover, &:focus {
+		background: darken($light_green, 14%);
+	}
+
+}
+
+// # .tertiary
+//
+// The tertiary button style for the site
+//
+// Markup:
+// <button class="tertiary $modifierClass">I'm the Tertiary</button>
+//
+// :hover - lightens the background color
+//
+// Styleguide 7.3
+
+.tertiary {
+	@extend %button;
+	background: $navy;
+	color: $teal;
+
+	&:hover, &:focus {
+		background: tint($navy, 15%);
+	}
+
+}
+
+// # .inverse
+//
+// The inverse button style for the site
+//
+// Markup: <button class="inverse $modifierClass">I'm the inverse</button>
+//
+// :hover - darkens the background color
+//
+// Styleguide 7.4
+
+.inverse {
+	@extend %button;
+	color: $teal;
+	background: $white;
+	border: 1px solid $teal;
+
+	&:hover, &:focus {
+		background: $teal;
+		color: $white;
+	}
+}
+
+// # .btn-icon
+//
+// Button with left icon. For new buttons it is necessary to add the icon to the markup and sass.
+//
+// Markup: <button class="btn-icon gplus">Login using Google Account</button>
+//
+// Styleguide 7.5
+
+.btn-icon {
+	@extend %button;
+	@include sans_light;
+	font-size: 1.4rem;
+	@include pad(0.6em 2em 0.6em rem(58));
+
+	&:before {
+		border-right: 1px solid $white;
+		position: absolute;
+		height: 100%;
+		left: 0;
+		top: 0;
+		line-height: 2;
+		font-size: 140%;
+		width: 4rem;
+	}
+
+	&:focus {
+		box-shadow: 1px 1px 5px $light_gray;
+	}
+
+	//add icon variations here
+	&.gplus {
+
+		&:before {
+			@extend .fa;
+			@extend .fa-google-plus;
+			line-height: 2!important;
+		}
+
+	}
+
+	//all buttons default to larger font/width on 768+
+	@include media($small) {
+		font-size: 1.6rem;
+		@include pad(0.6em 2em 0.6em rem(70));
+
+		&:before {
+			width: rem(50);
+		}
+
+	}
+}
+
+// # .btn.disabled
+//
+// The disabled button style for the site. Also used for styling input[type="submit"]:disabled.
+//
+// Markup:
+// <button class="disabled">I'm disabled</button>
+//
+//
+// Styleguide 7.6
+
+ .disabled, input[type="submit"]:disabled {
+	@extend %button;
+	background: $gloo_gray;
+	cursor: not-allowed!important;
+
+	&:hover, &:focus {
+		background: $gloo_gray;
+	}
+ }
+
+// # .btn.muted
+//
+// The muted button style for the site.
+//
+// Markup:
+// <button class="muted">I'm muted</button>
+//
+//
+// Styleguide 7.7
+
+ .muted {
+	@extend %button;
+	background: $light_gray;
+
+	&:hover, &:focus {
+		background: darken($light_gray, 10%);
+	}
+ }
+
+ %cirlce-btn {
+ 	@extend %button;
+ 	@include pad(1rem 1.5rem);
+ 	box-shadow: -1px 1px 0 0 rgba($light_gray, 0.25);
+ 	background: $white;
+ 	font-size: 3rem;
+ 	border-radius: 3rem;
+ 	line-height: 0;
+
+ 	&:focus {
+		box-shadow: -1px 0 3px $light_gray;
+	}
+
+ }
+
+// # .btn-add
+//
+// A special plus button
+//
+// Markup:
+// <button class="btn-add"><i></i></button>
+//
+//
+// Styleguide 7.8
+
+.btn-add {
+ 	@extend %cirlce-btn;
+ 	color: $green;
+ 	float: left;
+
+ 	i {
+ 		@extend .fa;
+ 		@extend .fa-plus;
+ 		float: left;
+ 	}
+}
+
+// # .primary.settings
+//
+// The button style is used in the settings & management screens
+//
+// Markup:
+// <button class="primary settings $modifierClass">Champion Settings</button>
+//
+// :hover - darkens the background color
+//
+// Styleguide 7.9
+
+.settings {
+	@extend %button;
+	@extend %btn-full-mobile;
+	box-shadow: 0.03em 0.03em 0.05em rgba(0, 0, 0, 0.25);
+	background: $sand;
+	color: $gloo-gray;
+	text-transform: uppercase;
+
+	&:hover, &:focus {
+		background: darken($sand, 7%);
+		color: $gloo-gray;
+		box-shadow: 0.03em 0.03em 0.05em rgba(0, 0, 0, 0.5);
+	}
+}
