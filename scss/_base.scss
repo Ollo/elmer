@@ -22,8 +22,8 @@ html {
 body {
 	font-size: $base_font_size;
 	line-height: $base_line_height;
-	font-family: $helvetica;
-	color: $black;
+	//font-family: $helvetica;
+	color: $charcoal;
 	overflow-x: hidden;
 	left: 0;
 	@include transition (left .75s ease-in-out);
@@ -117,7 +117,7 @@ hr {
 }
 
 //hidden on mobile to stay out of our biz
-.atlwdg-trigger {
+.atlwdg_trigger {
 	display: none!important;
 	@include media($large) {
 		display: block!important;

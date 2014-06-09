@@ -44,6 +44,11 @@ $sans-serif: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", He
 	font-weight: 700;
 }
 
+body {
+	// Body font is now museo-sans, which means at some point we will need to go back in and cleanup museo-sans overrides that are no longer needed.
+	@include sans_med;
+}
+
 
 // # Headings
 //
@@ -120,17 +125,19 @@ h6 {
 
 .icon_header {
 	@extend %clearfix;
+	clear: both;
 	border-bottom: 1px solid $light_gray;
 	margin-bottom: 2rem;
 
 	h4 {
 		float: left;
-
-		i {
-			color: $teal;
-			margin-right: 0.5rem;
-		}
 	}
+
+	i {
+		color: $teal;
+		margin-right: 0.5rem;
+	}
+
 }
 
 // # p.small

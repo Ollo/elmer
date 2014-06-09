@@ -243,11 +243,21 @@
 	}
 }
 
+// # .row
+//
+// Wrap above column layout classes in a .row
+//
+// Styleguide 8.6
+.row {
+	@include omega;
+	@extend %clearfix;
+}
+
 // # %clearfix
 //
 // The holy grail of css, use it to clear floats and for general happiness. Use with @extend.
 //
-// Styleguide 5.1
+// Styleguide 8.7
 
 %clearfix {
 	&:after {
@@ -257,14 +267,14 @@
 	}
 }
 
-// # .ui-tooltip
+// # .ui_tooltip
 //
 // Temporary messages to display when a feature is not yet functional.
 //
 // Markup:
 // <h2 title="Feature is not yet functional">Hover for tooltip</h2>
 //
-// Styleguide 5.2
+// Styleguide 8.8
 
 .ui_tooltip {
     padding: 1rem;

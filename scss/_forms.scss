@@ -24,43 +24,43 @@ $form-box-shadow-focus: $form-box-shadow, 0 0 5px rgba(darken($form-border-color
 input,
 label,
 select {
-  display: inline-block;
+	display: inline-block;
 }
 
 label {
-  font-weight: bold;
-  margin-bottom: $base_line_height / 4;
+	@include sans_light;
+	margin-bottom: $base_line_height / 4;
 
-  &.required:after {
-    content: "*";
-  }
+	&.required:before {
+		content: "*";
+	}
 
-  abbr {
-    display: none;
-  }
+	abbr {
+		display: none;
+	}
 }
 
 input[type="search"] {
-  @include appearance(none);
+	@include appearance(none);
 }
 
 input[type="checkbox"], input[type="radio"] {
-  display: inline;
-  margin-right: $base_line_height / 4;
+	display: inline;
+	margin-right: $base_line_height / 4;
 }
 
 select {
-  width: auto;
+	width: auto;
 }
 
 button,
 input[type="submit"] {
-  @extend %button;
-  @include appearance(none);
-  cursor: pointer;
-  user-select: none;
-  vertical-align: middle;
-  white-space: nowrap;
+	@extend %button;
+	@include appearance(none);
+	cursor: pointer;
+	user-select: none;
+	vertical-align: middle;
+	white-space: nowrap;
 }
 
 
@@ -134,14 +134,20 @@ input {
 	+ label {
 		@include user-select(none);
 		cursor: pointer;
+		span {
+			display: block;
+			text-indent: 0;
+			@extend %muted_text;
+			font-weight: normal;
+		}
 	}
 }
 
-// # .ui-checkbox
+// # .ui_checkbox
 //
 // Generic teal checkbox
 //
-// Markup: <input type="checkbox" id="sampleCheckbox" class="ui-checkbox"/>
+// Markup: <input type="checkbox" id="sampleCheckbox" class="ui_checkbox"/>
 // <label for="sampleCheckbox">Label Here</label>
 //
 // Styleguide 9.4
@@ -152,7 +158,7 @@ input {
 	+ label {
 		color: $teal;
 		font-size: 1.2rem;
-		font-weight: 400;
+		font-weight: 500;
 
 		&:before {
 			content: '';
@@ -185,11 +191,11 @@ input {
 
 }
 
-// # .ui-checkbox-green
+// # .ui_checkbox_green
 //
 // Green checkbox
 //
-// Markup: <input type="checkbox" id="sampleCheckboxGreen" class="ui-checkbox-green"/>
+// Markup: <input type="checkbox" id="sampleCheckboxGreen" class="ui_checkbox_green"/>
 // <label for="sampleCheckboxGreen"><i class="fa fa-circle-o"></i>Label Here</label>
 //
 // Styleguide 9.5
@@ -198,8 +204,13 @@ input {
 	@extend %ui_checkbox_generic;
 
 	+ label {
-		@include sans_med;
+		//@include sans_med;
 		color: darken($gloo_gray, 10);
+		font-weight: 500;
+		// indent for vertically stacked radios so text wraps properly
+		margin-left:1.58em;
+		text-indent: -0.9em;
+		padding-bottom: rem(15);
 
 		i {
 			color: lighten($light_gray, 10%);
@@ -212,7 +223,6 @@ input {
 		+ label {
 			i {
 				border-radius: 10px;
-				box-shadow: 0 0 5px $green;
 				//box shadow hack
 				&:before {
 					display: block;
@@ -288,12 +298,12 @@ input {
 	}
 
 }
-// # .ui-select
+// # .ui_select
 //
 // Default select box for standard forms
 //
 // Markup:
-// <div class="ui-select $modifierClass">
+// <div class="ui_select $modifierClass">
 //     <select>
 //         <option>option 1</option>
 //         <option>option 2</option>
@@ -351,17 +361,17 @@ input {
 	}
 }
 
-// # .ui-select-arrow
+// # .ui_select_arrow
 //
 // Select box with right arrow example seen in widget settings
 //
 // Markup:
-// <div class="ui-select-arrow $modifierClass">
+// <div class="ui_select_arrow $modifierClass">
 //     <select>
 //         <option>option 1</option>
 //         <option>option 2</option>
 //     </select>
-//     <i class="fa fa-angle-down select-indicator"></i>
+//     <i class="fa fa-angle-down select_indicator"></i>
 // </div>
 //
 // .error - changes border to red
@@ -417,15 +427,15 @@ input {
 	}
 }
 
-// # .ui-radio
+// # .ui_radio
 //
 // Rectangular radio button
 //
-// Markup: <div class="ui-radio">
+// Markup: <div class="ui_radio">
 //    <input type="radio" name="gender" id="male" value="male">
-//    <label class="btn-radio" for="male">Male</label>
+//    <label class="btn_radio" for="male">Male</label>
 //    <input type="radio" id="female" name="gender" value="female">
-//    <label class="btn-radio" for="female">Female</label>
+//    <label class="btn_radio" for="female">Female</label>
 //</div>
 //
 // Styleguide 9.8
@@ -483,16 +493,16 @@ input {
 	}
 }
 
-// # .ui-radio-green
+// # .ui_radio_green
 //
 // Multiple green radio buttons.
 //
 // Markup:
-// <input type="radio" name="radio" id="sampleRadio1" class="ui-radio-green"/>
+// <input type="radio" name="radio" id="sampleRadio1" class="ui_radio_green"/>
 // <label for="sampleRadio1"><i class="fa fa-circle-o"></i>Label Here</label>
-// <input type="radio" name="radio" id="sampleRadio2" class="ui-radio-green"/>
+// <input type="radio" name="radio" id="sampleRadio2" class="ui_radio_green"/>
 // <label for="sampleRadio2"><i class="fa fa-circle-o"></i>Really Super Crazy Long Label Here</label>
-// <input type="radio" name="radio" id="sampleRadio3" class="ui-radio-green"/>
+// <input type="radio" name="radio" id="sampleRadio3" class="ui_radio_green"/>
 // <label for="sampleRadio3"><i class="fa fa-circle-o"></i>Super Crazy Long Label Here</label>
 //
 // Styleguide 9.9
@@ -556,13 +566,6 @@ input {
 }
 
 //html5 validation + angular styles
-.ng-invalid:invalid {
-	background: url("../images/ui/error_state.png") $white no-repeat 8px center;
-	border-color: $light_red;
-	color: $light_red;
-	box-shadow: $form-box-shadow;
-}
-
 input:focus:required:invalid {
 	background: url("../images/ui/error_state.png") $white no-repeat 8px center;
 	border-color: $light_red;
@@ -571,12 +574,12 @@ input:focus:required:invalid {
 	padding-left: rem(25);
 }
 
-// # .ui-search
+// # .ui_search
 //
 // Common searchfield
 //
 // Markup:
-// <div class="ui-search">
+// <div class="ui_search">
 //     <input type="search"/>
 //     <button><i class="fa fa-search"></i></button>
 // </div>

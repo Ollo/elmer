@@ -1,12 +1,12 @@
 // # _progress_bars
 //
-// Styles for progress bars 
+// Styles for progress bars
 //
 // Styleguide 14.0
 
 // # .progress_bar
 //
-// Markup: 
+// Markup:
 // <div class="progress_bar">
 //    <span style="width:50%"><span>
 // </div>
@@ -16,7 +16,7 @@
 .progress_bar {
 	height: 2rem;
 	background: $white;
-	box-shadow: inset 1px 1px 1px 1px rgba(10, 10, 0, .25);
+	@include box-shadow(rgba(10, 10, 0, .25) 1px 1px 1px 1px inset);
 	border-radius: 6px;
 	overflow: hidden;
 
@@ -30,7 +30,7 @@
 
 	// # .progress_bar.red
 	//
-	// Markup: 
+	// Markup:
 	// <div class="progress_bar red">
 	//    <span style="width:10%"><span>
 	// </div>
@@ -44,7 +44,7 @@
 
 	// # .progress_bar.green
 	//
-	// Markup: 
+	// Markup:
 	// <div class="progress_bar green">
 	//    <span style="width:100%"><span>
 	// </div>

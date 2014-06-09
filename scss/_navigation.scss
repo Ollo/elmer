@@ -16,38 +16,38 @@
 // Styleguide 18.1
 
 .bordered {
-	border-bottom: 1px solid lighten($light_gray, 10%);
-	margin-bottom: rem(40);
+    border-bottom: 1px solid lighten($light_gray, 10%);
+    margin-bottom: rem(40);
+    @extend %clearfix;
 }
 
 //@extend this on any headers that have a tab nav for proper layout
 %header_tabs {
 
-	nav {
-		// Commented out until we get sidebar navigation in place. These should be set to display none while the menu is collapsed.
-		//display: none;
-		@extend .tabs;
-	}
+    nav {
+        display: none;
+        @extend .tabs;
+    }
 
-	@include media($large) {
+    @include media($large) {
 
-		h2, h1 {
-			@include span-columns(5.5);
-		}
+        h2, h1 {
+            @include span-columns(5.5);
+        }
 
-		nav {
-			@include span-columns(6.5);
-			@include omega;
-			text-align: right;
-			padding-bottom: 0.5rem;
-			padding-top: 0.5rem;
+        nav {
+            @include span-columns(6.5);
+            @include omega;
+            text-align: right;
+            padding-bottom: 0.5rem;
+            padding-top: 0.5rem;
 
-			li {
-				padding: 0 0 0 2rem;
-			}
-		}
+            li {
+                padding: 0 0 0 2rem;
+            }
+        }
 
-	}
+    }
 
 }
 
@@ -63,30 +63,30 @@
 // Styleguide 18.2
 
 .page_header {
-	@extend %clearfix;
-	border-bottom: 1px solid lighten($light_gray, 10%);
-	margin-top: 1rem;
-	margin-bottom: rem(20);
+    @extend %clearfix;
+    border-bottom: 1px solid lighten($light_gray, 10%);
+    margin-top: 1rem;
+    margin-bottom: rem(20);
 
-	h2 {
-		@include sans_light;
-		margin-top: 0;
-		margin-bottom: 1rem;
-	}
+    h2 {
+        @include sans_light;
+        margin-top: 0;
+        margin-bottom: 1rem;
+    }
 
-	h1 {
-		@include sans_light;
-		margin-top: 0;
-		margin-bottom: 0.5rem;
-	}
+    h1 {
+        @include sans_light;
+        margin-top: 0;
+        margin-bottom: 0.5rem;
+    }
 
-	// # .page_header.tabbed
-	//
-	// For use on pages with tab nav in header. If possible, use with @extend to keep markup clean
-	//
-	// Markup:
-	// <header class="page_header tabbed">
-	//     <h2>Organization Management</h2>
+    // # .page_header.tabbed
+    //
+    // For use on pages with tab nav in header. If possible, use with @extend to keep markup clean
+    //
+    // Markup:
+    // <header class="page_header tabbed">
+    //     <h2>Organization Management</h2>
     //     <nav class="tabs">
     //         <ul>
     //             <li class="pane current"><a data-href="#metrics">Metrics</a></li>
@@ -94,13 +94,13 @@
     //             <li class="pane"><a data-href="#users">Users</a></li>
     //         </ul>
     //     </nav>
-	// </header>
-	//
-	// Styleguide 18.3
+    // </header>
+    //
+    // Styleguide 18.3
 
-	&.tabbed {
-		@extend %header_tabs;
-	}
+    &.tabbed {
+        @extend %header_tabs;
+    }
 
 }
 
@@ -117,26 +117,26 @@
 // Styleguide 18.4
 
 %pagination {
-	@include outer-container;
+    @include outer-container;
 
-	a {
-		display: inline-block;
+    a {
+        display: inline-block;
 
-		&:hover {
-			cursor: pointer;
-		}
-	}
+        &:hover {
+            cursor: pointer;
+        }
+    }
 
-	.prev {
-		float: left;
-	}
-	.next {
-		float: right;
-	}
+    .prev {
+        float: left;
+    }
+    .next {
+        float: right;
+    }
 }
 
 .pagination {
-	@extend %pagination; // _extends
+    @extend %pagination; // _extends
 }
 
 // # .sub_header
@@ -146,9 +146,13 @@
 // Markup:
 // <div class="sub_header">
 //    <div class="left">
-//
+//         <button class="btn_add">
+//              <i class="fa fa-plus"></i>
+//         </button>
+//         <a>Invite people to your organization</a>
+//         <span>12/30 seats filled</span>
 //     </div>
-//     <div class="right ui-search">
+//     <div class="right ui_search">
 //         <input type="search"/>
 //         <button><i class="fa fa-search"></i></button>
 //     </div>
@@ -157,49 +161,37 @@
 // Styleguide 18.5
 
 .sub_header {
-	@extend .bordered;
-	@extend %clearfix;
-	padding-bottom: rem(20);
-
-	.btn_add {
-        margin-right: rem(5);
-        + a {
-            padding-top: rem(5);
-            display: inline-block;
-            + span {
-                @extend %muted_text;
-                @extend %small_text;
-                display: block;
-            }
-        }
-    }
+    @extend .bordered;
+    @extend %clearfix;
+    padding-bottom: rem(20);
 
     .left {
-    	@extend .bordered;
-    	margin-bottom: rem(20);
-    	padding-bottom: rem(20);
+        @extend .bordered;
+        margin-bottom: rem(20);
+        padding-bottom: rem(20);
     }
 
-	@include media($medium) {
+    .left, .right {
+        @extend %clearfix;
+    }
 
-		.btn_add {
-			margin: rem(10) rem(5) rem(10) 0;
-			+ a {
-				padding-top: rem(15);
-			}
-		}
+    @include media($medium) {
 
-		.left {
-			float: left;
-			margin: 0;
-			padding: 0;
-			border: none;
-		}
+        .left, .right {
+            max-width: 50%;
+        }
 
-		.right {
-			float: right;
-		}
+        .left {
+            float: left;
+            margin: 0;
+            padding: 0;
+            border: none;
+        }
 
-	}
+        .right {
+            float: right;
+        }
+
+    }
 
 }

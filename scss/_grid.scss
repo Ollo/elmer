@@ -6,6 +6,9 @@
 //
 // Styleguide 1.0
 
+// override
+@import "../scss/packages/neat/app/assets/stylesheets/neat-helpers";
+
 // grid settings
 $grid-columns: 12;
 $max-width: em(1140, 14);

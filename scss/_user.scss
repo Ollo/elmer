@@ -61,7 +61,7 @@ img.circled {
 	}
 
 	// # img.circled.bordered
-	// 
+	//
 	// The bordered class can be applied to any size
 	//
 	// Markup:
@@ -75,7 +75,7 @@ img.circled {
 }
 
 // # .notification
-// 
+//
 // Used next to the cricled image
 //
 // Markup:
@@ -113,11 +113,11 @@ img.circled {
 		top: 0.6rem;
 		@include triangle(0.7rem, $red, right);
 	}
-	
+
 }
 
 // # .avatar
-// 
+//
 // Most common layout for basic user photo with a caption. Image @extends ".bordered" & ".circled" as styled above. Use class ".xsmall" or ".small" to pick avatar size. There is also an '.alerts' variation when a user has nofiticaion, but please be aware that the markup will change in this situation.
 //
 // Markup:
@@ -155,6 +155,8 @@ img.circled {
 		top: 0;
 		bottom: 0;
 		margin: auto;
+		// I believe all avatar images should link somewhere eventually, but if not we will need to remove this and put it in the more element layout files
+		cursor: pointer;
 	}
 
 	figcaption {

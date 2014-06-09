@@ -12,7 +12,7 @@
 // <div style="width:290px">
 //     <a class="user_dd_trigger" href="">
 //         My Account
-//         <i class="fa fa-angle-down select-indicator"></i>
+//         <i class="fa fa-angle-down select_indicator"></i>
 //     </a>
 //     <div class="user_dd">
 //         <a href="/"><i class="fa fa-angle-double-right"></i> My Gloo</a>
@@ -161,6 +161,10 @@
 	// </div>
 	//
 	// Styleguide 20.2
+	.selected_option {
+		color: $gloo_gray;
+	}
+
 	&.sorting {
 		min-width: rem(180);
 
@@ -192,7 +196,6 @@
 	// Styleguide 20.3
 	&.action {
 		min-width: rem(145);
-		text-align: center;
 		a {
 			text-decoration: none;
 			background: $white;
@@ -251,6 +254,7 @@
 	}
 
 }
+
 
 //force menu to hide on desktop
 .dropdown_menu {
