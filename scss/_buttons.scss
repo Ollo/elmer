@@ -283,12 +283,9 @@ button, input[type="submit"] {
 		margin-left: rem(15);
 		display: inline-block;
 		padding-top: 1rem;
-		+ span {
-			margin-left: rem(15);
+		span {
 			@extend %muted_text;
-	        @extend %small_text;
 	        display: block;
-	        float: left;
 		}
 	}
 }
