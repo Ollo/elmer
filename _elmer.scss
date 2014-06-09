@@ -5,9 +5,6 @@
 
 // dependencies
 
-// normalize
-@import "../scss/packages/_normalize.scss/normalize";
-
 // bourbon ~ css3 mixins <http://bourbon.io>
 @import "../scss/packages/bourbon/dist/bourbon";
 
@@ -17,6 +14,9 @@
 // font awesome <http://fontawesome.io>
 $fa-font-path: "../scss/packages/components-font-awesome/fonts"; // set it to use bowers version
 @import "../scss/packages/components-font-awesome/scss/font-awesome";
+
+// normalize
+@import "../scss/packages/_normalize.scss/normalize";
 
 
 // custom gloo components
