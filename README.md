@@ -1,4 +1,4 @@
-!['elmer']('elmer.jpg')
+!['elmer'](elmer.jpg)
 #Elmer
 
 Elmer is the ui components library used to power the Epoxy project and now it is available to all of Gloo as a bower package and separate repository for collaboration and use in any web project.
