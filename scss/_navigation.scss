@@ -32,11 +32,11 @@
     @include media($large) {
 
         h2, h1 {
-            @include span-columns(5.5);
+            @include span-columns(5);
         }
 
         nav {
-            @include span-columns(6.5);
+            @include span-columns(7);
             @include omega;
             text-align: right;
             padding-bottom: 0.5rem;
