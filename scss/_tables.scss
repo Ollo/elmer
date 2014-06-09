@@ -37,7 +37,7 @@
 
 table {
 	@include museo-sans;
-	margin: ($base-line-height / 2) 0;
+	margin: ($base_line_height / 2) 0;
 	width: 100%;
 	border: 1px solid #c6c6cb;
 	vertical-align: middle;
@@ -208,7 +208,7 @@ td {
 		display: none;
 	}
 
-	.ui-select {
+	.ui_select {
 		margin-bottom: rem(9);
 	}
 
@@ -303,7 +303,7 @@ td {
 			color: $gray;
 		}
 
-		.ui-select {
+		.ui_select {
 			margin-bottom: 0;
 		}
 	}

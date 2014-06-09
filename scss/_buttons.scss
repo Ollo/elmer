@@ -22,7 +22,7 @@
 	}
 }
 
-%btn-full-mobile {
+%btn_full_mobile {
 	width: 100%;
 	@include media($small) {
 		width: auto;
@@ -127,7 +127,7 @@ button, input[type="submit"] {
 //
 // Styleguide 7.5
 
-.btn-icon {
+.btn_icon {
 	@extend %button;
 	@include sans_light;
 	font-size: 1.4rem;
@@ -210,7 +210,7 @@ button, input[type="submit"] {
 	}
  }
 
- %cirlce-btn {
+ %cirlce_btn {
  	@extend %button;
  	@include pad(1rem 1.5rem);
  	box-shadow: -1px 1px 0 0 rgba($light_gray, 0.25);
@@ -235,7 +235,7 @@ button, input[type="submit"] {
 //
 // Styleguide 7.8
 
-.btn-add {
+.btn_add {
  	@extend %cirlce-btn;
  	color: $green;
  	float: left;

@@ -58,7 +58,7 @@
 // Markup:
 // <header class="page_header">
 //     <h2>Organization Management</h2>
-// </header> 
+// </header>
 //
 // Styleguide 18.2
 
@@ -94,7 +94,7 @@
     //             <li class="pane"><a data-href="#users">Users</a></li>
     //         </ul>
     //     </nav>
-	// </header> 
+	// </header>
 	//
 	// Styleguide 18.3
 
@@ -113,7 +113,7 @@
 //     <a class="prev">Previous</a>
 //     <a class="next">Next</a>
 // </nav>
-// 
+//
 // Styleguide 18.4
 
 %pagination {
@@ -153,7 +153,7 @@
 //         <button><i class="fa fa-search"></i></button>
 //     </div>
 // </div>
-// 
+//
 // Styleguide 18.5
 
 .sub_header {
@@ -161,7 +161,7 @@
 	@extend %clearfix;
 	padding-bottom: rem(20);
 
-	.btn-add {
+	.btn_add {
         margin-right: rem(5);
         + a {
             padding-top: rem(5);
@@ -182,7 +182,7 @@
 
 	@include media($medium) {
 
-		.btn-add {
+		.btn_add {
 			margin: rem(10) rem(5) rem(10) 0;
 			+ a {
 				padding-top: rem(15);

@@ -29,7 +29,7 @@ select {
 
 label {
   font-weight: bold;
-  margin-bottom: $base-line-height / 4;
+  margin-bottom: $base_line_height / 4;
 
   &.required:after {
     content: "*";
@@ -46,7 +46,7 @@ input[type="search"] {
 
 input[type="checkbox"], input[type="radio"] {
   display: inline;
-  margin-right: $base-line-height / 4;
+  margin-right: $base_line_height / 4;
 }
 
 select {
@@ -128,7 +128,7 @@ input {
 
 //checkbox styles
 
-%ui-checkbox-generic {
+%ui_checkbox_generic {
 	position: absolute; left: -999em;
 
 	+ label {
@@ -146,8 +146,8 @@ input {
 //
 // Styleguide 9.4
 
-.ui-checkbox {
-	@extend %ui-checkbox-generic;
+.ui_checkbox {
+	@extend %ui_checkbox_generic;
 
 	+ label {
 		color: $teal;
@@ -194,8 +194,8 @@ input {
 //
 // Styleguide 9.5
 
-.ui-checkbox-green {
-	@extend %ui-checkbox-generic;
+.ui_checkbox_green {
+	@extend %ui_checkbox_generic;
 
 	+ label {
 		@include sans_med;
@@ -237,7 +237,7 @@ input {
 
 //select styles
 
-%ui-select-generic {
+%ui_select_generic {
 	overflow: hidden;
 	padding: 0;
 	margin: 0;
@@ -269,7 +269,7 @@ input {
  			bottom:0;
 		}
 
-		&:-moz-focusring { 
+		&:-moz-focusring {
 			color: transparent;
 			text-shadow: 0 0 0 $black;
 		}
@@ -286,7 +286,7 @@ input {
 	&.error {
 		border: 1px solid $red;
 	}
-	
+
 }
 // # .ui-select
 //
@@ -304,8 +304,8 @@ input {
 //
 // Styleguide 9.6
 
-.ui-select {
-	@extend %ui-select-generic;
+.ui_select {
+	@extend %ui_select_generic;
 	@include box-sizing(border-box);
 	@include transition(border-color);
 	border: 1px solid $form-border-color;
@@ -368,8 +368,8 @@ input {
 //
 // Styleguide 9.7
 
-.ui-select-arrow {
-	@extend %ui-select-generic;
+.ui_select_arrow {
+	@extend %ui_select_generic;
 	height: 2.7rem;
 
 	&:hover {
@@ -392,7 +392,7 @@ input {
 		@extend %small_text;
 		height: 2.5rem;
 
-		&:-moz-focusring { 
+		&:-moz-focusring {
 			text-shadow: 0 0 0 $black;
 		}
 
@@ -404,7 +404,7 @@ input {
 
 //radio styles
 
-%ui-radio-generic {
+%ui_radio_generic {
 	position: absolute; left: -999em;
 
 	+ label {
@@ -430,13 +430,13 @@ input {
 //
 // Styleguide 9.8
 
-.ui-radio {
+.ui_radio {
 	@extend %clearfix;
 	margin-bottom: rem(20);
 	height: rem(36);
 	background: #fff;
 
-	.btn-radio {
+	.btn_radio {
 	    cursor: pointer;
 	    float: left;
 	    width: 50% !important;
@@ -466,18 +466,18 @@ input {
 	    left: -1000000px;
 	}
 
-	input[type="radio"]:checked + .btn-radio {
+	input[type="radio"]:checked + .btn_radio {
 		@extend .primary;
 		padding: 0.5rem 0;
 	}
 
 	//focus styles
-	input[type="radio"]:focus + .btn-radio {
+	input[type="radio"]:focus + .btn_radio {
 		border-color: $form-border-color-focus;
 		box-shadow: $form-box-shadow-focus;
 	}
 
-	input[type="radio"]:hover + .btn-radio {
+	input[type="radio"]:hover + .btn_radio {
 		border-color: $form-border-color-focus;
 		box-shadow: $form-box-shadow-focus;
 	}
@@ -498,8 +498,8 @@ input {
 // Styleguide 9.9
 
 
-.ui-radio-green {
-	@extend %ui-radio-generic;
+.ui_radio_green {
+	@extend %ui_radio_generic;
 
 	+ label {
 		@include sans_med;
@@ -508,7 +508,7 @@ input {
 		font-size: rem(19);
 		display: block;
 		// indent for vertically stacked radios so text wraps properly
-		margin-left:1.58em; 
+		margin-left:1.58em;
 		text-indent: -0.9em;
 		padding-bottom: rem(15);
 
@@ -547,7 +547,7 @@ input {
 	}
 }
 
-//muted input 
+//muted input
 .muted {
 	@include input-placeholder {
 		color: lighten($light_gray, 10%)!important;
@@ -583,20 +583,20 @@ input:focus:required:invalid {
 //
 // Styleguide 9.10
 
-.ui-search {
-	
+.ui_search {
+
 	input[type="search"] {
 		border-radius: rem(25);
 		background: transparent;
-		border: 0.12rem solid rgba($gloo-gray, 0.4);
+		border: 0.12rem solid rgba($gloo_gray, 0.4);
 		height: rem(30);
 		padding: rem(8) rem(25) rem(8);
-		color: $gloo-gray;
+		color: $gloo_gray;
 		letter-spacing: rem(0.18);
 		margin: 0;
-		
+
 		@include placeholder {
-		    color: rgba($gloo-gray, 0.5);
+		    color: rgba($gloo_gray, 0.5);
 		    padding-left: 0.45em;
 		    letter-spacing: rem(0.18);
 		}

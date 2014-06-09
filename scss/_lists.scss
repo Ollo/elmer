@@ -24,10 +24,10 @@ ul, ol {
   //
   // Styleguide 15.1
 
-  &%default-ul {
+  &%default_ul {
     list-style-type: disc;
-    margin-bottom: $base-line-height / 2;
-    padding-left: $base-line-height;
+    margin-bottom: $base_line_height / 2;
+    padding-left: $base_line_height;
   }
 
   // # <ol>
@@ -45,20 +45,20 @@ ul, ol {
   //
   // Styleguide 15.2
 
-  &%default-ol {
+  &%default_ol {
     list-style-type: decimal;
-    margin-bottom: $base-line-height / 2;
-    padding-left: $base-line-height;
+    margin-bottom: $base_line_height / 2;
+    padding-left: $base_line_height;
   }
 }
 
 dl {
-  line-height: $base-line-height;
-  margin-bottom: $base-line-height / 2;
+  line-height: $base_line_height;
+  margin-bottom: $base_line_height / 2;
 
   dt {
     font-weight: bold;
-    margin-top: $base-line-height / 2;
+    margin-top: $base_line_height / 2;
   }
 
   dd {
@@ -69,10 +69,10 @@ dl {
 //for demo purposes
 .selector_demo {
     ul {
-      @extend %default-ul;
+      @extend %default_ul;
     }
 
     ol {
-      @extend %default-ol;
+      @extend %default_ol;
     }
   }

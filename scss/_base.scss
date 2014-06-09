@@ -69,21 +69,21 @@ a {
 		@include transition(color 0.5s ease-in);
 		cursor: pointer;
 	}
-	
+
 	&:active, &:focus {
 		outline: none;
 	}
 }
 
 p {
-  margin: 0 0 ($base-line-height * .5);
+  margin: 0 0 ($base_line_height * .5);
 }
 
 // #HR
 //
 // Stying for HR tags
 //
-// Markup: 
+// Markup:
 // <hr>
 //
 // Styleguide 4.3
