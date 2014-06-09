@@ -6,17 +6,17 @@
 // dependencies
 
 // normalize
-@import "scss/packages/_normalize.scss/normalize";
+@import "../scss/packages/_normalize.scss/normalize";
 
 // bourbon ~ css3 mixins <http://bourbon.io>
-@import "scss/packages/bourbon/dist/bourbon";
+@import "../scss/packages/bourbon/dist/bourbon";
 
 // neat ~ fluid semantic grid <http://neat.bourbon.io>
-@import "scss/packages/neat/app/assets/stylesheets/neat";
+@import "../scss/packages/neat/app/assets/stylesheets/neat";
 
 // font awesome <http://fontawesome.io>
-$fa-font-path: "scss/packages/components-font-awesome/fonts"; // set it to use bowers version
-@import "scss/packages/components-font-awesome/scss/font-awesome";
+$fa-font-path: "../scss/packages/components-font-awesome/fonts"; // set it to use bowers version
+@import "../scss/packages/components-font-awesome/scss/font-awesome";
 
 
 // custom gloo components
