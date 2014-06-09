@@ -1,3 +1,4 @@
 .DS_Store
 .git
-bower_components
+.sass-cache
+scss/packages/

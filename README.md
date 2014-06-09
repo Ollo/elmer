@@ -10,20 +10,15 @@ Elmer is the ui components library used to power the Epoxy project and now it is
 ---
 ### Dependencies
 
-The elmer ui library depends on some additional libraries that will need to be added to your primary stylesheet **before** you import it.
+The elmer ui library depends on some additional libraries for convenience and ease of use.
 
-	// normalize
-	@import "PATH_YOU_DEFINE/_normalize.scss/normalize";
+- normalize <http://necolas.github.io/normalize.css/>
 
-	// bourbon ~ css3 mixins <http://bourbon.io>
-	@import "PATH_YOU_DEFINE/bourbon/dist/bourbon";
+- bourbon ~ css3 mixins <http://bourbon.io>
 
-	// neat ~ fluid semantic grid <http://neat.bourbon.io>
-	@import "PATH_YOU_DEFINE/neat/app/assets/stylesheets/neat";
+- neat ~ fluid semantic grid <http://neat.bourbon.io>
 
-	// font awesome <http://fontawesome.io>
-	$fa-font-path: "../PATH_YOU_DEFINE/components-font-awesome/fonts"; // set it to use bowers version
-	@import "PATH_YOU_DEFINE/components-font-awesome/scss/font-awesome";
+- font awesome <http://fontawesome.io>
 
 
 ### Installation
@@ -32,16 +27,15 @@ Bower :
 
 First install bower via <http://bower.io>
 
-
 ** then in your project run :**
 
 	bower install git@github.com:TangoGroup/elmer.git --save
 
-** Then add the following line to your primary scss file after the above dependencies **
+** Then import elmer with following line into your primary scss file **
 
 	@import "packages/elmer/elmer";
 
-*Optionally you can create a `.bowerrc` file at the root of your project to set a custom install location*
+* Optionally if you already use bower you can create a `.bowerrc` file at the root of your project to map a custom install location *
 
 	{
   		"directory": "public/assets/scss/packages"
@@ -59,5 +53,3 @@ Elmer is a living framework that is still in active development if you would lik
 
 [@cashworth](mailto:cashworth@tangogroup.com)
 
-
-** For info on contributing [read here](CONTRIBUTING.md) **
