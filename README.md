@@ -12,21 +12,18 @@ Elmer is the ui components library used to power the Epoxy project and now it is
 
 The elmer ui library depends on some additional libraries that will need to be added to your primary stylesheet **before** you import it.
 
-	// bourbon ~ css3 mixins
-	@import "PATH_YOU_DEFINE/bourbon/dist/bourbon";
-
-	// neat ~ fluid semantic grid
-	@import "PATH_YOU_DEFINE/neat/app/assets/stylesheets/neat";
-	
-	// override
-	@import "PATH_YOU_DEFINE/neat/app/assets/stylesheets/neat-helpers";
-
-	// font awesome
-	$fa-font-path: "../PATH_YOU_DEFINE/components-font-awesome/fonts"; // set it to use bowers version
-	@import "PATH_YOU_DEFINE/components-font-awesome/scss/font-awesome";
-
 	// normalize
 	@import "PATH_YOU_DEFINE/_normalize.scss/normalize";
+
+	// bourbon ~ css3 mixins <http://bourbon.io>
+	@import "PATH_YOU_DEFINE/bourbon/dist/bourbon";
+
+	// neat ~ fluid semantic grid <http://neat.bourbon.io>
+	@import "PATH_YOU_DEFINE/neat/app/assets/stylesheets/neat";
+
+	// font awesome <http://fontawesome.io>
+	$fa-font-path: "../PATH_YOU_DEFINE/components-font-awesome/fonts"; // set it to use bowers version
+	@import "PATH_YOU_DEFINE/components-font-awesome/scss/font-awesome";
 
 
 ### Installation
@@ -40,7 +37,7 @@ First install bower via <http://bower.io>
 
 	bower install git@github.com:TangoGroup/elmer.git --save
 
-** Then add the following line to your primary scss file **
+** Then add the following line to your primary scss file after the above dependencies **
 
 	@import "packages/elmer/elmer";
 
@@ -57,8 +54,6 @@ Elmer is a living framework that is still in active development if you would lik
 [@hrallo](mailto:hrallo@tangogroup.com)
 
 [@rsuh](mailto:rsuh@tangogroup.com)
-
-[@plopicollo](mailto:plopicollo@tangogroup.com)
 
 [@jray](mailto:jray@tangogroup.com)
 
