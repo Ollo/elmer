@@ -236,7 +236,7 @@ button, input[type="submit"] {
 // Styleguide 7.8
 
 .btn_add {
- 	@extend %cirlce-btn;
+ 	@extend %cirlce_btn;
  	color: $green;
  	float: left;
 
@@ -260,7 +260,7 @@ button, input[type="submit"] {
 
 .settings {
 	@extend %button;
-	@extend %btn-full-mobile;
+	@extend %btn_full_mobile;
 	box-shadow: 0.03em 0.03em 0.05em rgba(0, 0, 0, 0.25);
 	background: $sand;
 	color: $gloo-gray;
