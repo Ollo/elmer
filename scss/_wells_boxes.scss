@@ -74,7 +74,7 @@
 
 	&.inset {
 
-		@include box-shadow($white 0 0 0 4px inset, rgba(10, 10, 0, .3) 2px 2px 3px 3px inset);
+		box-shadow: $white 0 0 0 4px inset, rgba(10, 10, 0, .3) 2px 2px 3px 3px inset;
 	}
 
 	// # .well.green
