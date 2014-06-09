@@ -6,7 +6,7 @@
 // Styleguide 17.0
 
 
-// # .modal-small 
+// # .modal-small
 //
 // For use with smaller dialogs like confirming a delete action
 //
@@ -67,6 +67,10 @@
     overflow: hidden;
 }
 
+.modal-intro {
+    padding: 2rem 0;
+}
+
 // Modal background overlay
 .modal-backdrop {
     position: fixed;
@@ -76,12 +80,12 @@
     left: 0;
     z-index: 20;
     background-color: #333;
-    
-    &.fade { 
-        opacity: 0; 
+
+    &.fade {
+        opacity: 0;
     }
-    
-    &.in { 
+
+    &.in {
         opacity: 0.5;
         @include transition(0.3s ease-in-out);
        //z-index: 1060!important;
@@ -96,12 +100,12 @@
     // When fading in the modal, animate it to slide down
     &.fade .modal-dialog {
         @include transform(translateY(0));
-        @include transition(0.5s ease-in-out);
+        @include transition(all 0.5s ease-in-out);
     }
-    &.in .modal-dialog { 
-        @include transform(translateY(35%));
+    &.in .modal-dialog {
+        @include transform(translateY(100px));
     }
-    
+
     .modal-dialog {
         margin: 15% 2rem 0;
 
@@ -166,7 +170,7 @@
     }
 }
 
-// # .modal-large 
+// # .modal-large
 //
 // For use in more complex authoring situations ( editing a question for QOTD)
 //
@@ -198,7 +202,7 @@
         @include transform(translateY(-25%));
         @include transition(0.5s ease-in-out);
     }
-    &.in .modal-dialog { 
+    &.in .modal-dialog {
         @include transform(translateY(0));
     }
 
@@ -227,7 +231,7 @@
                     font-size: rem(40);
                     color: $white;
                     float: right;
-                    
+
 
                     @include media($medium) {
                         margin-top: 1.5rem;
@@ -235,10 +239,25 @@
                 }
             }
             .modal-body {
-                @include outer-container;
+                max-width: 95%;
                 border: 1px solid $light_gray;
-                margin-top: 5rem;
+                margin: 2rem auto 0;
                 padding: 0;
+                @extend %clearfix;
+                @include media($medium) {
+                    margin: 5rem auto 0;
+                }
+                 @include media($xlarge) {
+                    @include outer-container;
+                 }
+            }
+            .modal-wrap {
+                //for use in large modals. It should wrap everything inside .modal-body except the .modal-footer
+                //8% translates to roughly 90px on desktop, and scales accordingly
+                padding: rem(20) 8%;
+                @include media($medium) {
+                    padding: rem(40) 8%;
+                }
             }
             .modal-footer {
                 @include span-columns(12);
@@ -250,9 +269,15 @@
                     margin-left: rem(20);
                 }
                 @include media($medium) {
-                    padding: 4.3rem 10rem;    
+                    padding: 4.3rem 10rem;
                 }
             }
+        }
+    }
+
+    @include media($medium) {
+        .icon_header {
+            margin-bottom: rem(30);
         }
     }
 }

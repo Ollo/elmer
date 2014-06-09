@@ -185,3 +185,29 @@ h6 {
 	@extend %small_text;
 	font-weight: normal;
 }
+
+// # .muted_header
+//
+// Basic styles for muted headers. The background color is desginated using a '.variation' class, as seen below.
+//
+// Markup:
+// <div class="muted_header primary_variation">Here is a primary muted header</div>
+// <div class="muted_header secondary_variation">Here is a secondary muted header</div>
+//
+// Styleguide 6.8
+.muted_header {
+	@include sans_bold;
+	font-size: rem(14);
+	padding: rem(15);
+	-webkit-font-smoothing: antialiased;
+
+	&.primary_variation {
+		background: tint($pale_blue, 40%);
+		color: $white;
+	}
+
+	&.secondary_variation {
+		background: $sand;
+	}
+
+}

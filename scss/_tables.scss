@@ -112,20 +112,18 @@ td {
 	margin-bottom: rem(20);
 	color: $gray;
 	word-break: break-word;
+	clear: both;
 
 	li {
 		list-style: none;
-		@include omega;
-		@extend %clearfix;
 	}
 
 	.table_header {
-		background: tint($pale_blue, 40%);
-		color: $white;
-		font-weight: 500;
 		@extend %small_text;
-		padding: rem(15);
-		-webkit-font-smoothing: antialiased;
+		@extend .muted_header;
+		@extend .muted_header.primary_variation;
+		@extend %clearfix;
+
 	}
 
 	.row {
@@ -161,7 +159,7 @@ td {
 		text-align: left;
 	}
 
-	label {
+	.mobile_label {
 		color: $charcoal;
 		padding-right: rem(5);
 		font-weight: bold;
@@ -217,7 +215,18 @@ td {
 	}
 
 	.avatar {
-		margin-top: rem(5);
+		margin: rem(15) 0;
+	}
+
+	.pending {
+		@extend %muted_text;
+		a {
+			@extend %muted_text;
+		}
+	}
+
+	.table_details {
+		display: none;
 	}
 
 	@include media($mobileOnly) {
@@ -236,12 +245,17 @@ td {
 
 	@include media($medium) {
 
+		.table_details {
+			display: block;
+		}
+
 		.table_header {
 			padding: rem(15) rem(35);
 
 			div:last-child {
 				text-align: right;
 			}
+
 		}
 
 		.row {
@@ -249,7 +263,9 @@ td {
 			border-bottom: 1px solid #c6c6cb;
 		}
 
-		label {
+		// used to be <label>, but we need to move to a class for better specification
+		// tables have not yet been refactored to use this class, must do!
+		.mobile_label {
 			display: none;
 		}
 
@@ -266,6 +282,10 @@ td {
 
 		.expand {
 			display: none;
+		}
+
+		.table_details {
+			display: block !important;
 		}
 
 		.main {
@@ -306,5 +326,11 @@ td {
 		.ui_select {
 			margin-bottom: 0;
 		}
+
+		.avatar {
+			margin: 0;
+		}
+
+
 	}
 }

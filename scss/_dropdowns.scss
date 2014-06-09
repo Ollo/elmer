@@ -147,7 +147,7 @@
 	@extend %button_dropdown;
 
 	// # .dropdown.sorting
-	// 
+	//
 	// Standard button style dropdown for filtering and sorting. @extends %button_dropdown
 	//
 	// Markup:
@@ -158,7 +158,7 @@
 	//         <a href="" class="option">Role</a>
 	//         <a href="" class="option">Date Added</a>
 	//     </div>
-	// </div> 
+	// </div>
 	//
 	// Styleguide 20.2
 	&.sorting {
@@ -166,7 +166,7 @@
 
 		> span {
 			padding: rem(8) rem(50) rem(6) rem(10);
-		}	
+		}
 
 		> i {
 			right: rem(15);
@@ -175,7 +175,7 @@
 	}
 
 	// # .dropdown.action
-	// 
+	//
 	// Standard button style dropdown for table actions. @extends %button_dropdown
 	//
 	// Markup:
@@ -187,7 +187,7 @@
 	//         <a href="" class="option">View Activity</a>
 	//		   <a href="" class="option">Send Message</a>
 	//     </div>
-	// </div> 
+	// </div>
 	//
 	// Styleguide 20.3
 	&.action {
@@ -211,7 +211,7 @@
 	}
 
 	// # .dropdown.title
-	// 
+	//
 	// Title style dropdown. @extends %button_dropdown
 	//
 	// Markup:
@@ -222,7 +222,7 @@
 	//         <a href="" class="option">Another Dashboard Title</a>
 	//         <a href="" class="option">A Cooler Dashboard Title</a>
 	//     </div>
-	// </div> 
+	// </div>
 	//
 	// Styleguide 20.4
 	&.title {
@@ -250,4 +250,13 @@
 		}
 	}
 
+}
+
+//force menu to hide on desktop
+.dropdown_menu {
+	@include media($medium) {
+		&.mobile_only {
+			display: none!important;
+		}
+	}
 }
