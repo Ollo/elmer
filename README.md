@@ -21,7 +21,7 @@ The elmer ui library depends on some additional libraries for convenience and ea
 
 - font awesome <http://fontawesome.io>
 
-** In order to use the elmer library you first must add the follow to your primary sass file **
+**In order to use the elmer library you first must add the follow to your primary sass file**
 
     @import "<YOUR_BOWER_LOCATION>/bourbon/dist/bourbon";
 
@@ -41,15 +41,15 @@ Bower :
 
 First install bower via <http://bower.io>
 
-** then in your project run :**
+**then in your project run :**
 
 	bower install git@github.com:TangoGroup/elmer.git --save
 
-** Then import elmer with following line into your primary scss file after the above dependencies **
+**Then import elmer with following line into your primary scss file after the above dependencies**
 
 	@import "<YOUR_BOWER_LOCATION>/elmer/elmer";
 
-* Optionally if you already use bower you can create a `.bowerrc` file at the root of your project to map a custom install location *
+*Optionally if you already use bower you can create a `.bowerrc` file at the root of your project to map a custom install location*
 
 	{
   		"directory": "public/assets/scss/packages"
