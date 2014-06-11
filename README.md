@@ -27,6 +27,8 @@ The elmer ui library depends on some additional libraries for convenience and ea
 
     @import "<YOUR_BOWER_LOCATION>/neat/app/assets/stylesheets/neat";
 
+    @import "<YOUR_BOWER_LOCATION>/neat/app/assets/stylesheets/neat-helpers";
+
     $fa-font-path: "<YOUR_BOWER_LOCATION>/components-font-awesome/fonts"; // set it to use bowers version
 
     @import "<YOUR_BOWER_LOCATION>/components-font-awesome/scss/font-awesome";
