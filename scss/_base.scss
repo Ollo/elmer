@@ -116,11 +116,3 @@ hr {
 	z-index: 2;
 }
 
-//hidden on mobile to stay out of our biz
-.atlwdg_trigger {
-	display: none!important;
-	@include media($large) {
-		display: block!important;
-	}
-	z-index: 100;
-}
