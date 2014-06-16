@@ -289,3 +289,25 @@ button, input[type="submit"] {
 		}
 	}
 }
+
+// # .tag
+//
+// Tag style
+//
+// Markup: <a class="tag">Lifestyle</a>
+//
+//
+// Styleguide 7.10
+
+.tag {
+	background: $sand;
+	padding: .75rem;
+	font-weight: 900;
+	color: $gloo_gray;
+	border-radius: 9px;
+	display: inline-block;
+	&:hover {
+		background: darken($sand, 10%);
+		color: darken($gloo_gray, 10%);
+	}
+}
