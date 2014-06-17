@@ -327,8 +327,12 @@ $card_background: $white;
     @include media($mobileOnly) {
     	width: 49%;
 	    margin-right: 2%;
+	    float: left;
 	    &:nth-child(2n + 2) {
 	    	margin-right: 0;
+	    }
+	    &:nth-child-(3n + 3) {
+	    	margin-right: 2%;
 	    }
     }
 
