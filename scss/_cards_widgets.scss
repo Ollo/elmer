@@ -331,7 +331,7 @@ $card_background: $white;
 	    &:nth-child(2n + 2) {
 	    	margin-right: 0;
 	    }
-	    &:nth-child-(3n + 3) {
+	    &:nth-child(3n + 3) {
 	    	margin-right: 2%;
 	    }
     }
