@@ -1,0 +1,122 @@
+// # _ratings
+//
+// Basic styles for ratings and reviews
+//
+// Styleguide 23.0
+
+// # .star, .star.filled, .star.half
+//
+// Basic stars. These stars are static and meant to only display ratings. Star group does not have any styling associated with it, it is merely meant to be a placeholder to group the stars together.
+// 
+// Markup:
+// <div class="star_group">
+//     <div class="star filled"><i></i></div>
+//     <div class="star filled"><i></i></div>
+//     <div class="star half"><i></i></div>
+//     <div class="star"><i></i></div>
+//     <div class="star"><i></i></div>
+// </div>
+//
+// Styleguide 23.1
+
+.star {
+	font-size: rem(30);
+	color: lighten($light_gray, 10%);
+	@extend .fa;
+	@extend .fa-star-o;
+	margin-right: 1rem;
+	cursor: pointer;
+	&:before {
+		position: relative;
+		z-index: 1;
+	}
+	i {
+		@extend .fa;
+		@extend .fa-star;
+		color: transparent;
+		position: absolute;
+		left: 0;
+		z-index: 0;
+	}
+	&.filled {
+		i {
+			color: $yellow;
+		}
+	}
+	&.half {	
+		i {
+			color: $yellow;
+			@extend .fa-star-half;
+		}
+	}
+}
+
+// # .star_group.rate
+//
+// These stars are meant to allow for selecting a rating.
+// 
+// Markup:
+// <div class="star_group rate">
+//     <div class="star"><i></i></div>
+//     <div class="star"><i></i></div>
+//     <div class="star"><i></i></div>
+//     <div class="star"><i></i></div>
+//     <div class="star"><i></i></div>
+// </div>
+//
+// Styleguide 23.2
+
+.star_group.rate {
+
+	.star {
+		transform: scale(1);
+		@include transition(all .2s ease-in-out);
+		//fixes webkit bug
+		@include backface-visibility(hidden);
+		i {
+
+		}
+	}
+
+	&:hover {
+		.star {
+			text-shadow: 0 0 10px rgba($black, .35);
+			color: rgba($light_gray, .2);
+			i {
+				color: $white;
+			}
+		}
+		.star {
+			&:hover, &.selected, &:focus {
+				color: $white;
+				transform: scale(1.25);
+				i {
+					color: $yellow;
+				}
+				text-shadow: 0 0 5px darken($yellow, 25%);
+				@extend .star.filled;
+			}
+		}
+	}
+}
+
+// # .star_group.small
+//
+// Tiny stars, 20px. Reglar size stars default to 30px.
+// 
+// Markup:
+// <div class="star_group small">
+//     <div class="star"><i></i></div>
+//     <div class="star"><i></i></div>
+//     <div class="star"><i></i></div>
+//     <div class="star"><i></i></div>
+//     <div class="star"><i></i></div>
+// </div>
+//
+// Styleguide 23.3
+
+.star_group.small {
+	.star {
+		font-size: rem(20);
+	}
+}
