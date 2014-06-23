@@ -59,6 +59,24 @@ $card_background: $white;
 			}
 		}
 	}
+
+	.inner {
+    	padding: 0 1rem 2rem;
+	}
+
+	.actions {
+		position: absolute;
+		bottom: .75rem;
+		margin: 0 1rem;
+		left: 0;
+		right: 0;
+		.delete {
+			top: .5rem;
+		}
+		.primary, input[type="submit"] {
+			float: right;
+		}
+	}
 }
 
 // # .dash_widget
@@ -317,7 +335,7 @@ $card_background: $white;
 	border-radius: $card_radius;
 	background: $card_background;
 	overflow: hidden;
-	margin-bottom: 1rem;
+	margin-bottom: 1.75rem;
 	@extend .four_col;
 
     &:nth-child(3n + 3) {
