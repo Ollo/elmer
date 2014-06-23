@@ -24,7 +24,7 @@
 	float: left;
 	.star {
 		+ label {
-			cursor: not-allowed;
+			cursor: default
 		}
 	}
 }

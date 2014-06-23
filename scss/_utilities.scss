@@ -1,0 +1,33 @@
+// # _utility_classes
+//
+// The purpose of the utility classes is to set up simple classes that can be applied in many places
+//
+// Styleguide 24.0
+
+// #.align_left
+//
+// Float an element left, everywhere but portrai mobile
+//
+// Markup:
+// <div class="align_left"><img src="http://lorempixel.com/100/100/nature/" /></div>
+//
+// Styleguide 24.1
+
+.align_left {
+	float: left;
+	margin: 0 1rem .5rem 0;
+}
+
+// #.align_right
+//
+// Float an element right, everywhere but portrai mobile
+//
+// Markup:
+// <div class="align_right"><img src="http://lorempixel.com/100/100/nature/" /></div>
+//
+// Styleguide 24.2
+
+.align_right {
+	float: right;
+	margin: 0 0 .5rem 1rem;
+}
