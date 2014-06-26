@@ -1,9 +1,3 @@
-// # _typography
-//
-// Typography baselines and @font face setups
-//
-// Styleguide 6.0
-
 $sans-serif: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 
 @mixin museo-slab {
@@ -50,7 +44,7 @@ body {
 }
 
 
-// # Headings
+// Headings
 //
 // Markup:
 // <h1>h1 Heading</h1>
@@ -60,7 +54,7 @@ body {
 // <h5>h5 Heading</h5>
 // <h6>h6 Heading</h6>
 //
-// Styleguide 6.1
+// Styleguide 5.1
 
 h1, h2, h3, h4 {
    @include museo-sans;
@@ -111,7 +105,7 @@ h6 {
 	margin: 0;
 }
 
-// # .icon_header
+// .icon_header
 //
 // Basic style for a h4 + icon
 //
@@ -120,8 +114,7 @@ h6 {
 //     <h4><i class="fa fa-user"></i>Contact</h4>
 // </header>
 //
-// </header>
-// Styleguide 6.4
+// Styleguide 5.2
 
 .icon_header {
 	@extend %clearfix;
@@ -141,14 +134,14 @@ h6 {
 
 }
 
-// # p.small
+// p.small
 //
 // Basic style for a text footnote or text with an asterisk.
 //
 // Markup:
 // <p class="small_text">Here is some tiny text in a paragraph tag.</p>
 //
-// Styleguide 6.5
+// Styleguide 5.3
 
 %small_text {
 	font-size: rem(12);
@@ -159,14 +152,14 @@ h6 {
 	@extend %small_text;
 }
 
-// # %muted_text
+// %muted_text
 //
 // Basic placeholder that makes the color $light_gray. Class '.muted_text' @extends this placeholder. Use as @extend when possible to keep markup clean.
 //
 // Markup:
 // <p class="muted_text">Here is some muted text.</p>
 //
-// Styleguide 6.6
+// Styleguide 5.4
 
 %muted_text {
 	color: $light_gray;
@@ -176,14 +169,14 @@ h6 {
 	@extend %muted_text;
 }
 
-// # .footnote
+// .footnote
 //
 // Basic style for a text footnote or text with an asterisk.
 //
 // Markup:
 // <p class="footnote">* Here is a footnote.</p>
 //
-// Styleguide 6.7
+// Styleguide 5.5
 
 .footnote {
 	@extend %muted_text;
@@ -194,7 +187,7 @@ h6 {
 	font-weight: normal;
 }
 
-// # .muted_header
+// .muted_header
 //
 // Basic styles for muted headers. The background color is desginated using a '.variation' class, as seen below.
 //
@@ -202,7 +195,7 @@ h6 {
 // <div class="muted_header primary_variation">Here is a primary muted header</div>
 // <div class="muted_header secondary_variation">Here is a secondary muted header</div>
 //
-// Styleguide 6.8
+// Styleguide 5.6
 .muted_header {
 	@include sans_bold;
 	font-size: rem(14);

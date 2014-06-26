@@ -1,10 +1,5 @@
-// # _dropdowns
-//
-// Styles for various dropdowns
-//
-// Styleguide 20.0
 
-// # .user_dd
+// .user_dd
 //
 // Main header logged-in dropdown
 //
@@ -146,14 +141,14 @@
 .dropdown {
 	@extend %button_dropdown;
 
-	// # .dropdown.sorting
+	// .dropdown.sorting
 	//
 	// Standard button style dropdown for filtering and sorting. @extends %button_dropdown
 	//
 	// Markup:
 	// <div class="dropdown sorting">
 	//     <span class="selected_option">Sort & Filter</span>
-	//     <i class="fa fa-sort-asc"></i>
+	//     <i class="fa fa-sort-desc"></i>
 	//     <div class="drop_menu">
 	//         <a href="" class="option">Role</a>
 	//         <a href="" class="option">Date Added</a>
@@ -178,14 +173,14 @@
 		}
 	}
 
-	// # .dropdown.action
+	// .dropdown.action
 	//
 	// Standard button style dropdown for table actions. @extends %button_dropdown
 	//
 	// Markup:
 	// <div class="dropdown action">
 	//     <span class="selected_option">Action</span>
-	//     <i class="fa fa-sort-asc"></i>
+	//     <i class="fa fa-sort-desc"></i>
 	//     <div class="drop_menu">
 	//         <a href="" class="option">Change Role</a>
 	//         <a href="" class="option">View Activity</a>
@@ -213,7 +208,7 @@
 		}
 	}
 
-	// # .dropdown.title
+	// .dropdown.title
 	//
 	// Title style dropdown. @extends %button_dropdown
 	//

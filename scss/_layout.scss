@@ -1,23 +1,18 @@
-// # _layout
-//
-//
-// Styleguide 8.0
-
-// # .wrapper
+// .wrapper
 //
 // Extend this when you need a container element
 //
-// Styleguide 8.1
+// Styleguide 7.1
 
 .wrapper {
 	@include outer-container;
 }
 
-// # Primary layout
+// Primary layout
 //
 // Layout depends on these main elements: #globalWrap, .content_wrap, main, .global_container, .table_wrap, & #leftSidebar
 //
-// Styleguide 8.2
+// Styleguide 7.2
 
 #globalWrap {
 	padding-top: rem(20);
@@ -107,11 +102,11 @@
 	}
 }
 
-// # .hidden_mobile
+// .hidden_mobile
 //
 // Extend this on elements that show on tablet and above
 //
-// Styleguide 8.3
+// Styleguide 7.3
 
 .hidden_mobile {
 	display: none;
@@ -120,11 +115,11 @@
 	}
 }
 
-// # .mobile_only
+// .mobile_only
 //
 // Extend this on elements that show only on mobile
 //
-// Styleguide 8.4
+// Styleguide 7.4
 
 .mobile_only {
 	display: block;
@@ -141,11 +136,24 @@
 	}
 }
 
-// # .one_col, .two_col, .three_col, .four_col, .five_col, .six_col, .seven_col, .eight_col, .nine_col, .eleven_col, .twelve_col
+// Grid classes
 //
 // These basic classes set up widths. They do not trigger any styles on mobile and are thus defaulting to full width. Tablet converts to an 8 col grid and desktop converts to 12 col, as set up in _grid. Extend these whenever possible to keep markup clean.
 //
-// Styleguide 8.5
+// Markup:
+// .one_col
+// .two_col
+// .three_col
+// .four_col
+// .five_col
+// .six_col
+// .seven_col
+// .eight_col
+// .nine_col
+// .eleven_col
+// .twelve_col
+//
+// Styleguide 7.5
 .one_col {
 	@include media($medium) {
 		@include span-columns(0.66);
@@ -243,21 +251,26 @@
 	}
 }
 
-// # .row
+// .row
 //
 // Wrap above column layout classes in a .row
 //
-// Styleguide 8.6
+// Styleguide 7.6
 .row {
 	@include omega;
 	@extend %clearfix;
 }
 
-// # %clearfix
+// %clearfix
 //
 // The holy grail of css, use it to clear floats and for general happiness. Use with @extend.
 //
-// Styleguide 8.7
+// Markup:
+// div {
+//	@extend %clearfix;
+//}
+//
+// Styleguide 7.7
 
 %clearfix {
 	&:after {
@@ -267,14 +280,14 @@
 	}
 }
 
-// # .ui_tooltip
+// .ui_tooltip
 //
 // Temporary messages to display when a feature is not yet functional.
 //
 // Markup:
 // <h2 title="Feature is not yet functional">Hover for tooltip</h2>
 //
-// Styleguide 8.8
+// Styleguide 7.8
 
 .ui_tooltip {
     padding: 1rem;

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+
+  <title>KSS: Living Styleguide</title>
+  <meta name="description" content="">
+  <meta name="generator" content="kss-node" />
+
+  <meta name="viewport" content="width=device-width">
+
+  <link rel="stylesheet" href="public/main.css">
+  <link rel="stylesheet" href="public/kss.css">
+
+</head>
+<body>
+  <div id="kss-wrapper">
+    <div id="kss-nav">
+      <header id="kss-header">
+        <hgroup><h1>Styleguide</h1></hgroup>
+      </header>
+      <aside>
+        <nav>
+          <ul>
+            <li><a href="index.html">0.0: Overview</a></li>
+            
+              <li><a href="section-1.html">1.0: Grid Settings</a></li>
+            
+              <li><a href="section-2.html">2.0: Colors</a></li>
+            
+              <li><a href="section-3.html">3.0: Base</a></li>
+            
+              <li><a href="section-4.html">4.0: Mixins</a></li>
+            
+              <li><a href="section-5.html">5.0: Typography</a></li>
+            
+              <li><a href="section-6.html">6.0: Buttons</a></li>
+            
+              <li><a href="section-7.html">7.0: Layout</a></li>
+            
+              <li><a href="section-8.html">8.0: Forms</a></li>
+            
+              <li><a href="section-9.html">9.0: Animations</a></li>
+            
+              <li><a href="section-10.html">10.0: Accordions</a></li>
+            
+              <li><a href="section-11.html">11.0: Tabs</a></li>
+            
+              <li><a href="section-12.html">12.0: Wells / Boxes</a></li>
+            
+              <li><a href="section-13.html">13.0: Progress Bars</a></li>
+            
+              <li><a href="section-14.html">14.0: Sortable</a></li>
+            
+              <li><a href="section-15.html">15.0: Lists</a></li>
+            
+              <li><a href="section-16.html">16.0: Tables</a></li>
+            
+              <li><a href="section-17.html">17.0: Modals</a></li>
+            
+              <li><a href="section-18.html">18.0: Navigation</a></li>
+            
+              <li><a href="section-19.html">19.0: Graphs</a></li>
+            
+              <li><a href="section-20.html">20.0: Dropdowns</a></li>
+            
+              <li><a href="section-21.html">21.0: User</a></li>
+            
+              <li><a href="section-22.html">22.0: Cards / Widgets</a></li>
+            
+              <li><a href="section-23.html">23.0: Ratings</a></li>
+            
+          </ul>
+        </nav>
+      </aside>
+    </div>
+    <div role="main" id="kss-main">
+      <article id="kss-content">
+        
+
+          
+          
+            
+              <h1 class="kss-title"><span class="kss-ref">23.0</span> - Ratings</h1>
+            
+              
+                  
+                    <p>ui components used for ratings</p>
+
+                  
+              
+             
+          
+            
+             <section class="kss-depth-2">
+              <h2 class="kss-title"><span class="kss-ref">23.1</span> - # .star, .star.filled, .star.half</h2>
+            
+              
+                  <div class="kss-box"><p>Basic stars. These stars are static and meant to only display ratings. Star group does not have any styling associated with it, it is merely meant to be a placeholder to group the stars together.</p>
+</div>
+                  <div class="kss-mod-list">
+                    <div class="kss-mod-desc-group">
+                      <!-- <div class="kss-mod-desc"><p>Default styling</p></div>
+                      <div class="kss-mod-name"></div> -->
+                    </div>
+                    <div class="kss-mod-example">
+                      <div><div class="star_group">
+    <div class="star filled"><i></i></div>
+    <div class="star filled"><i></i></div>
+    <div class="star half"><i></i></div>
+    <div class="star"><i></i></div>
+    <div class="star"><i></i></div>
+</div></div>
+                    </div>
+                  
+                  </div>
+                  <div class="kss-markup">
+                    <pre class="prettyprint lang-html">&lt;div class=&quot;star_group&quot;&gt;
+    &lt;div class=&quot;star filled&quot;&gt;&lt;i&gt;&lt;/i&gt;&lt;/div&gt;
+    &lt;div class=&quot;star filled&quot;&gt;&lt;i&gt;&lt;/i&gt;&lt;/div&gt;
+    &lt;div class=&quot;star half&quot;&gt;&lt;i&gt;&lt;/i&gt;&lt;/div&gt;
+    &lt;div class=&quot;star&quot;&gt;&lt;i&gt;&lt;/i&gt;&lt;/div&gt;
+    &lt;div class=&quot;star&quot;&gt;&lt;i&gt;&lt;/i&gt;&lt;/div&gt;
+&lt;/div&gt;</pre>
+                  </div>
+              
+            
+              </section>
+            
+          
+            
+             <section class="kss-depth-2">
+              <h2 class="kss-title"><span class="kss-ref">23.2</span> - .star_group.rate</h2>
+            
+              
+                  <div class="kss-box"><p>These stars are meant to allow for selecting a rating.</p>
+</div>
+                  <div class="kss-mod-list">
+                    <div class="kss-mod-desc-group">
+                      <!-- <div class="kss-mod-desc"><p>Default styling</p></div>
+                      <div class="kss-mod-name"></div> -->
+                    </div>
+                    <div class="kss-mod-example">
+                      <div><div class="star_group rate">
+    <div class="star"><i></i></div>
+    <div class="star"><i></i></div>
+    <div class="star"><i></i></div>
+    <div class="star"><i></i></div>
+    <div class="star"><i></i></div>
+</div></div>
+                    </div>
+                  
+                  </div>
+                  <div class="kss-markup">
+                    <pre class="prettyprint lang-html">&lt;div class=&quot;star_group rate&quot;&gt;
+    &lt;div class=&quot;star&quot;&gt;&lt;i&gt;&lt;/i&gt;&lt;/div&gt;
+    &lt;div class=&quot;star&quot;&gt;&lt;i&gt;&lt;/i&gt;&lt;/div&gt;
+    &lt;div class=&quot;star&quot;&gt;&lt;i&gt;&lt;/i&gt;&lt;/div&gt;
+    &lt;div class=&quot;star&quot;&gt;&lt;i&gt;&lt;/i&gt;&lt;/div&gt;
+    &lt;div class=&quot;star&quot;&gt;&lt;i&gt;&lt;/i&gt;&lt;/div&gt;
+&lt;/div&gt;</pre>
+                  </div>
+              
+            
+              </section>
+            
+          
+            
+             <section class="kss-depth-2">
+              <h2 class="kss-title"><span class="kss-ref">23.3</span> - .star_group.small</h2>
+            
+              
+                  <div class="kss-box"><p>Tiny stars, 20px. Reglar size stars default to 30px.</p>
+</div>
+                  <div class="kss-mod-list">
+                    <div class="kss-mod-desc-group">
+                      <!-- <div class="kss-mod-desc"><p>Default styling</p></div>
+                      <div class="kss-mod-name"></div> -->
+                    </div>
+                    <div class="kss-mod-example">
+                      <div><div class="star_group small">
+    <div class="star"><i></i></div>
+    <div class="star"><i></i></div>
+    <div class="star"><i></i></div>
+    <div class="star"><i></i></div>
+    <div class="star"><i></i></div>
+</div></div>
+                    </div>
+                  
+                  </div>
+                  <div class="kss-markup">
+                    <pre class="prettyprint lang-html">&lt;div class=&quot;star_group small&quot;&gt;
+    &lt;div class=&quot;star&quot;&gt;&lt;i&gt;&lt;/i&gt;&lt;/div&gt;
+    &lt;div class=&quot;star&quot;&gt;&lt;i&gt;&lt;/i&gt;&lt;/div&gt;
+    &lt;div class=&quot;star&quot;&gt;&lt;i&gt;&lt;/i&gt;&lt;/div&gt;
+    &lt;div class=&quot;star&quot;&gt;&lt;i&gt;&lt;/i&gt;&lt;/div&gt;
+    &lt;div class=&quot;star&quot;&gt;&lt;i&gt;&lt;/i&gt;&lt;/div&gt;
+&lt;/div&gt;</pre>
+                  </div>
+              
+            
+              </section>
+            
+          
+        
+      </article>
+    </div>
+    <!-- SCRIPTS -->
+    <script src="public/kss.js"></script>
+    <script src="public/prettify.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function(){
+
+        // Ensure code blocks are highlighted properly...
+        $('pre>code').addClass('prettyprint');
+        prettyPrint();
+
+      });
+    </script>
+  </div>
+</body>
+</html>

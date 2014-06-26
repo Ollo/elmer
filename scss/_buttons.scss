@@ -1,11 +1,5 @@
-// # _buttons
-//
-// base button placholder and meaningful names
-//
-// Styleguide 7.0
-
 %button {
-	border: 0;
+	border: none;
 	border-radius: 6px;
 	padding: 0.6em 2em;
 	@include sans_light;
@@ -28,20 +22,21 @@
 	}
 }
 
-button, input[type="submit"] {
+input[type="submit"] {
 	@extend %button;
 }
 
-// # .primary
+// .primary
 //
 // The primary button style for the site
 //
 // Markup:
-// <button class="primary $modifierClass">I'm the Primary</button>
+// <button class="primary {$modifiers}">I'm the Primary</button>
 //
 // :hover - darkens the background color
+// :focus - darkens the background color
 //
-// Styleguide 7.1
+// Styleguide 6.1
 
 .primary {
 	@extend %button;
@@ -54,16 +49,16 @@ button, input[type="submit"] {
 	}
 }
 
-// # .secondary
+// .secondary
 //
 // The secondary button style for the site
 //
 // Markup:
-// <button class="secondary $modifierClass">I'm the Secondary</button>
+// <button class="secondary {$modifiers}">I'm the Secondary</button>
 //
 // :hover - darkens the background color
 //
-// Styleguide 7.2
+// Styleguide 6.2
 
 .secondary {
 	@extend %button;
@@ -76,16 +71,16 @@ button, input[type="submit"] {
 
 }
 
-// # .tertiary
+// .tertiary
 //
 // The tertiary button style for the site
 //
 // Markup:
-// <button class="tertiary $modifierClass">I'm the Tertiary</button>
+// <button class="tertiary {$modifiers}">I'm the Tertiary</button>
 //
 // :hover - lightens the background color
 //
-// Styleguide 7.3
+// Styleguide 6.3
 
 .tertiary {
 	@extend %button;
@@ -98,16 +93,16 @@ button, input[type="submit"] {
 
 }
 
-// # .quaternary
+// .quaternary
 //
 // The quaternary button style for the site
 //
 // Markup:
-// <button class="quaternary $modifierClass">I'm the Quaternary</button>
+// <button class="quaternary {$modifiers}">I'm the Quaternary</button>
 //
 // :hover - darkens the background color
 //
-// Styleguide 7.4
+// Styleguide 6.4
 .quaternary {
 	@extend %button;
 	background: $sand;
@@ -123,15 +118,15 @@ button, input[type="submit"] {
 
 }
 
-// # .inverse
+// .inverse
 //
 // The inverse button style for the site
 //
-// Markup: <button class="inverse $modifierClass">I'm the inverse</button>
+// Markup: <button class="inverse {$modifiers}">I'm the inverse</button>
 //
 // :hover - darkens the background color
 //
-// Styleguide 7.5
+// Styleguide 6.5
 
 .inverse {
 	@extend %button;
@@ -145,13 +140,13 @@ button, input[type="submit"] {
 	}
 }
 
-// # .btn_icon
+// .btn_icon
 //
 // Button with left icon. For new buttons it is necessary to add the icon to the markup and sass.
 //
 // Markup: <button class="btn_icon gplus">Login using Google Account</button>
 //
-// Styleguide 7.6
+// Styleguide 6.6
 
 .btn_icon {
 	@extend %button;
@@ -198,7 +193,7 @@ button, input[type="submit"] {
 	}
 }
 
-// # .btn.disabled
+// .btn.disabled
 //
 // The disabled button style for the site. Also used for styling input[type="submit"]:disabled.
 //
@@ -206,7 +201,7 @@ button, input[type="submit"] {
 // <button class="disabled">I'm disabled</button>
 //
 //
-// Styleguide 7.7
+// Styleguide 6.7
 
  .disabled, input[type="submit"]:disabled {
 	@extend %button;
@@ -219,7 +214,7 @@ button, input[type="submit"] {
 	}
  }
 
-// # .btn.muted
+// .btn.muted
 //
 // The muted button style for the site.
 //
@@ -227,7 +222,7 @@ button, input[type="submit"] {
 // <button class="muted">I'm muted</button>
 //
 //
-// Styleguide 7.8
+// Styleguide 6.8
 
  .muted {
 	@extend %button;
@@ -258,14 +253,14 @@ button, input[type="submit"] {
 
  }
 
-// # .btn_add
+// .btn_add
 //
 // A special plus button
 //
 // Markup: <button class="btn_add"><i class="fa fa-plus"></i></button>
 //
 //
-// Styleguide 7.9
+// Styleguide 6.9
 
 .btn_add {
  	@extend %circle_btn;
@@ -290,14 +285,15 @@ button, input[type="submit"] {
 	}
 }
 
-// # .tag
+// .tag
 //
 // Tag style
 //
-// Markup: <a class="tag">Lifestyle</a>
+// Markup: <a class="tag {$modifiers}">Lifestyle</a>
 //
+// :hover - darkens the background
 //
-// Styleguide 7.10
+// Styleguide 6.10
 
 .tag {
 	background: $sand;

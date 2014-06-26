@@ -1,14 +1,8 @@
-// # _cards_widgets
-//
-// Basic styles for common widgets & cards
-//
-// Styleguide 22.0
-
 $card_shadow: 0 1px 1px rgba(0,0,0,.32);
 $card_radius: 9px;
 $card_background: $white;
 
-// #%flip_card_back & %flip_card_front
+// %flip_card_back & %flip_card_front
 //
 // These two placeholders should be used for styling a card that has flipping functionality. Use cases are, so far, in the dashboard widget & member card as shown in following examples. It can and should be further extended for any other card styles that have flipping functionality.
 //
@@ -35,7 +29,7 @@ $card_background: $white;
 %flip_card_back {
 	@extend %flip_card;
 	display: none;
-	
+
 	h3 {
 		background: lighten($light_gray, 17%);
 		color: $black;
@@ -79,12 +73,13 @@ $card_background: $white;
 	}
 }
 
-// # .dash_widget
+// .dash_widget
 //
-// Dash widget basic markup 
+// Dash widget basic markup
 //
 // Markup:
-// <li class="dash_widget">
+//<div class="wrapper">
+// <div class="dash_widget">
 //     <div class="front">
 //         <h3>Spaces<a class="flipIt" href="#"><i class="fa fa-cog"></i></a></h3>
 //     </div>
@@ -106,14 +101,15 @@ $card_background: $white;
 //             </div>
 //         </form>
 //     </div>
-// </li>
+// </div>
+// </div>
 //
 // Styleguide 22.2
 
 .dash_widget {
 	height: rem(290);
 	width: rem(290);
-	position: absolute;
+	// position: absolute; // this needs to be tested when dashboard is refactored
 	font-size: rem(13);
 
     &.medium {
@@ -137,7 +133,7 @@ $card_background: $white;
 		float: left;
 		padding: rem(25) rem(15) rem(10);
 		position: relative;
-		
+
 		h3 {
 			padding-right: rem(20);
 		}
@@ -181,11 +177,12 @@ $card_background: $white;
 
 }
 
-// # .member_card
+// .member_card
 //
 // Member card for org managmeent.
 //
 // Markup:
+// <div class="wrapper">
 // <div class="member_card">
 // 	<div class="front">
 // 		<a href="" class="flipIt"><i class="fa fa-gear"></i></a>
@@ -211,7 +208,8 @@ $card_background: $white;
 // 			<a class="delete"><i class="fa fa-trash-o"></i> Remove</a>
 // 			<input type="submit" value="Save" class="primary" />
 // 		</div>
-// 	</div>		
+// 	</div>
+// </div>
 // </div>
 //
 // Styleguide 22.3
@@ -310,11 +308,12 @@ $card_background: $white;
 
 }
 
-// # .content_card
+// .content_card
 //
 // Content card for champion profiles. As with the .member_card, adjust the layout according to specific placement when using this card.
 //
 // Markup:
+// <div class="wrapper">
 // <div class="content_card">
 //     <img src="http://lorempixel.com/420/250/" />
 //     <div class="card_wrap">
@@ -326,6 +325,7 @@ $card_background: $white;
 //         <p>Vivamus hvvendrerit tellus eget nisl varius fermentu. Donccons equat, mi quis grav ida tincidunt, massa ligula vivamus hvvendrerit tellus eget nisl varius Vivamus hvvendrerit tellus eget nisl varius fermentu  ferm entu...</p>
 //         <a class="tag">Lifestyle</a>
 //     </div>
+// </div>
 // </div>
 //
 // Styleguide 22.4

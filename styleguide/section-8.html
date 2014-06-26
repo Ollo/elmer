@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+
+  <title>KSS: Living Styleguide</title>
+  <meta name="description" content="">
+  <meta name="generator" content="kss-node" />
+
+  <meta name="viewport" content="width=device-width">
+
+  <link rel="stylesheet" href="public/main.css">
+  <link rel="stylesheet" href="public/kss.css">
+
+</head>
+<body>
+  <div id="kss-wrapper">
+    <div id="kss-nav">
+      <header id="kss-header">
+        <hgroup><h1>Styleguide</h1></hgroup>
+      </header>
+      <aside>
+        <nav>
+          <ul>
+            <li><a href="index.html">0.0: Overview</a></li>
+            
+              <li><a href="section-1.html">1.0: Grid Settings</a></li>
+            
+              <li><a href="section-2.html">2.0: Colors</a></li>
+            
+              <li><a href="section-3.html">3.0: Base</a></li>
+            
+              <li><a href="section-4.html">4.0: Mixins</a></li>
+            
+              <li><a href="section-5.html">5.0: Typography</a></li>
+            
+              <li><a href="section-6.html">6.0: Buttons</a></li>
+            
+              <li><a href="section-7.html">7.0: Layout</a></li>
+            
+              <li><a href="section-8.html">8.0: Forms</a></li>
+            
+              <li><a href="section-9.html">9.0: Animations</a></li>
+            
+              <li><a href="section-10.html">10.0: Accordions</a></li>
+            
+              <li><a href="section-11.html">11.0: Tabs</a></li>
+            
+              <li><a href="section-12.html">12.0: Wells / Boxes</a></li>
+            
+              <li><a href="section-13.html">13.0: Progress Bars</a></li>
+            
+              <li><a href="section-14.html">14.0: Sortable</a></li>
+            
+              <li><a href="section-15.html">15.0: Lists</a></li>
+            
+              <li><a href="section-16.html">16.0: Tables</a></li>
+            
+              <li><a href="section-17.html">17.0: Modals</a></li>
+            
+              <li><a href="section-18.html">18.0: Navigation</a></li>
+            
+              <li><a href="section-19.html">19.0: Graphs</a></li>
+            
+              <li><a href="section-20.html">20.0: Dropdowns</a></li>
+            
+              <li><a href="section-21.html">21.0: User</a></li>
+            
+              <li><a href="section-22.html">22.0: Cards / Widgets</a></li>
+            
+              <li><a href="section-23.html">23.0: Ratings</a></li>
+            
+          </ul>
+        </nav>
+      </aside>
+    </div>
+    <div role="main" id="kss-main">
+      <article id="kss-content">
+        
+
+          
+          
+            
+              <h1 class="kss-title"><span class="kss-ref">8.0</span> - Forms</h1>
+            
+              
+                  
+                    <p>defines the default form styles</p>
+
+                  
+              
+             
+          
+            
+             <section class="kss-depth-2">
+              <h2 class="kss-title"><span class="kss-ref">8.1</span> - label</h2>
+            
+              
+                  <div class="kss-box"><p>Basic label. Use class on labels for required fields</p>
+</div>
+                  <div class="kss-mod-list">
+                    <div class="kss-mod-desc-group">
+                      <!-- <div class="kss-mod-desc"><p>Default styling</p></div>
+                      <div class="kss-mod-name"></div> -->
+                    </div>
+                    <div class="kss-mod-example">
+                      <div><label class="{$modifiers}">Sample label</label></div>
+                    </div>
+                  
+                    <div class="kss-mod-desc-group">
+                      <div class="kss-mod-desc"><p>adds *</p>
+</div>
+                      <div class="kss-mod-name"><p>.required</p></div>
+                    </div>
+                    <div class="kss-mod-example">
+                      <div><label class="required">Sample label</label></div>
+                    </div>
+                  
+                  </div>
+                  <div class="kss-markup">
+                    <pre class="prettyprint lang-html">&lt;label class=&quot;{$modifiers}&quot;&gt;Sample label&lt;/label&gt;</pre>
+                  </div>
+              
+            
+              </section>
+            
+          
+            
+             <section class="kss-depth-2">
+              <h2 class="kss-title"><span class="kss-ref">8.3</span> - Basic Textarea</h2>
+            
+              
+                  <div class="kss-box"></div>
+                  <div class="kss-mod-list">
+                    <div class="kss-mod-desc-group">
+                      <!-- <div class="kss-mod-desc"><p>Default styling</p></div>
+                      <div class="kss-mod-name"></div> -->
+                    </div>
+                    <div class="kss-mod-example">
+                      <div><textarea class="{$modifiers}">Sample text area</textarea></div>
+                    </div>
+                  
+                    <div class="kss-mod-desc-group">
+                      <div class="kss-mod-desc"><p>darkens the border color</p>
+</div>
+                      <div class="kss-mod-name"><p>:hover</p></div>
+                    </div>
+                    <div class="kss-mod-example">
+                      <div><textarea class="pseudo-class-hover">Sample text area</textarea></div>
+                    </div>
+                  
+                    <div class="kss-mod-desc-group">
+                      <div class="kss-mod-desc"><p>changes shadow/border to teal</p>
+</div>
+                      <div class="kss-mod-name"><p>:focus</p></div>
+                    </div>
+                    <div class="kss-mod-example">
+                      <div><textarea class="pseudo-class-focus">Sample text area</textarea></div>
+                    </div>
+                  
+                    <div class="kss-mod-desc-group">
+                      <div class="kss-mod-desc"><p>changes border to red added via js listner on blur</p>
+</div>
+                      <div class="kss-mod-name"><p>.interacted:invalid</p></div>
+                    </div>
+                    <div class="kss-mod-example">
+                      <div><textarea class="interacted pseudo-class-invalid">Sample text area</textarea></div>
+                    </div>
+                  
+                  </div>
+                  <div class="kss-markup">
+                    <pre class="prettyprint lang-html">&lt;textarea class=&quot;{$modifiers}&quot;&gt;Sample text area&lt;/textarea&gt;</pre>
+                  </div>
+              
+            
+              </section>
+            
+          
+            
+             <section class="kss-depth-2">
+              <h2 class="kss-title"><span class="kss-ref">8.4</span> - .ui_checkbox</h2>
+            
+              
+                  <div class="kss-box"><p>Generic teal checkbox</p>
+</div>
+                  <div class="kss-mod-list">
+                    <div class="kss-mod-desc-group">
+                      <!-- <div class="kss-mod-desc"><p>Default styling</p></div>
+                      <div class="kss-mod-name"></div> -->
+                    </div>
+                    <div class="kss-mod-example">
+                      <div><input type="checkbox" id="sampleCheckbox" class="ui_checkbox"/>
+<label for="sampleCheckbox">Label Here</label></div>
+                    </div>
+                  
+                  </div>
+                  <div class="kss-markup">
+                    <pre class="prettyprint lang-html">&lt;input type=&quot;checkbox&quot; id=&quot;sampleCheckbox&quot; class=&quot;ui_checkbox&quot;/&gt;
+&lt;label for=&quot;sampleCheckbox&quot;&gt;Label Here&lt;/label&gt;</pre>
+                  </div>
+              
+            
+              </section>
+            
+          
+            
+             <section class="kss-depth-2">
+              <h2 class="kss-title"><span class="kss-ref">8.5</span> - .ui_checkbox_green</h2>
+            
+              
+                  <div class="kss-box"><p>Green checkbox</p>
+</div>
+                  <div class="kss-mod-list">
+                    <div class="kss-mod-desc-group">
+                      <!-- <div class="kss-mod-desc"><p>Default styling</p></div>
+                      <div class="kss-mod-name"></div> -->
+                    </div>
+                    <div class="kss-mod-example">
+                      <div><input type="checkbox" id="sampleCheckboxGreen" class="ui_checkbox_green"/>
+<label for="sampleCheckboxGreen"><i class="fa fa-circle-o"></i>Label Here</label></div>
+                    </div>
+                  
+                  </div>
+                  <div class="kss-markup">
+                    <pre class="prettyprint lang-html">&lt;input type=&quot;checkbox&quot; id=&quot;sampleCheckboxGreen&quot; class=&quot;ui_checkbox_green&quot;/&gt;
+&lt;label for=&quot;sampleCheckboxGreen&quot;&gt;&lt;i class=&quot;fa fa-circle-o&quot;&gt;&lt;/i&gt;Label Here&lt;/label&gt;</pre>
+                  </div>
+              
+            
+              </section>
+            
+          
+            
+             <section class="kss-depth-2">
+              <h2 class="kss-title"><span class="kss-ref">8.6</span> - .ui_select</h2>
+            
+              
+                  <div class="kss-box"><p>Default select box for standard forms</p>
+</div>
+                  <div class="kss-mod-list">
+                    <div class="kss-mod-desc-group">
+                      <!-- <div class="kss-mod-desc"><p>Default styling</p></div>
+                      <div class="kss-mod-name"></div> -->
+                    </div>
+                    <div class="kss-mod-example">
+                      <div><div class="ui_select {$modifiers}">
+    <select>
+        <option>option 1</option>
+        <option>option 2</option>
+    </select>
+</div></div>
+                    </div>
+                  
+                    <div class="kss-mod-desc-group">
+                      <div class="kss-mod-desc"><p>changes border to red</p>
+</div>
+                      <div class="kss-mod-name"><p> .error</p></div>
+                    </div>
+                    <div class="kss-mod-example">
+                      <div><div class="ui_select ">
+    <select>
+        <option>option 1</option>
+        <option>option 2</option>
+    </select>
+</div></div>
+                    </div>
+                  
+                  </div>
+                  <div class="kss-markup">
+                    <pre class="prettyprint lang-html">&lt;div class=&quot;ui_select {$modifiers}&quot;&gt;
+    &lt;select&gt;
+        &lt;option&gt;option 1&lt;/option&gt;
+        &lt;option&gt;option 2&lt;/option&gt;
+    &lt;/select&gt;
+&lt;/div&gt;</pre>
+                  </div>
+              
+            
+              </section>
+            
+          
+            
+             <section class="kss-depth-2">
+              <h2 class="kss-title"><span class="kss-ref">8.7</span> - .ui_select_arrow</h2>
+            
+              
+                  <div class="kss-box"><p>Select box with right arrow example seen in widget settings</p>
+</div>
+                  <div class="kss-mod-list">
+                    <div class="kss-mod-desc-group">
+                      <!-- <div class="kss-mod-desc"><p>Default styling</p></div>
+                      <div class="kss-mod-name"></div> -->
+                    </div>
+                    <div class="kss-mod-example">
+                      <div><div class="ui_select_arrow {$modifiers}">
+    <select>
+        <option>option 1</option>
+        <option>option 2</option>
+    </select>
+    <i class="fa fa-angle-down select_indicator"></i>
+</div></div>
+                    </div>
+                  
+                    <div class="kss-mod-desc-group">
+                      <div class="kss-mod-desc"><p>changes border to red</p>
+</div>
+                      <div class="kss-mod-name"><p>.error</p></div>
+                    </div>
+                    <div class="kss-mod-example">
+                      <div><div class="ui_select_arrow error">
+    <select>
+        <option>option 1</option>
+        <option>option 2</option>
+    </select>
+    <i class="fa fa-angle-down select_indicator"></i>
+</div></div>
+                    </div>
+                  
+                  </div>
+                  <div class="kss-markup">
+                    <pre class="prettyprint lang-html">&lt;div class=&quot;ui_select_arrow {$modifiers}&quot;&gt;
+    &lt;select&gt;
+        &lt;option&gt;option 1&lt;/option&gt;
+        &lt;option&gt;option 2&lt;/option&gt;
+    &lt;/select&gt;
+    &lt;i class=&quot;fa fa-angle-down select_indicator&quot;&gt;&lt;/i&gt;
+&lt;/div&gt;</pre>
+                  </div>
+              
+            
+              </section>
+            
+          
+            
+             <section class="kss-depth-2">
+              <h2 class="kss-title"><span class="kss-ref">8.8</span> - .ui_radio</h2>
+            
+              
+                  <div class="kss-box"><p>Rectangular radio button</p>
+</div>
+                  <div class="kss-mod-list">
+                    <div class="kss-mod-desc-group">
+                      <!-- <div class="kss-mod-desc"><p>Default styling</p></div>
+                      <div class="kss-mod-name"></div> -->
+                    </div>
+                    <div class="kss-mod-example">
+                      <div><div class="ui_radio">
+   <input type="radio" name="gender" id="male" value="male">
+   <label class="btn_radio" for="male">Male</label>
+   <input type="radio" id="female" name="gender" value="female">
+   <label class="btn_radio" for="female">Female</label>
+</div></div>
+                    </div>
+                  
+                  </div>
+                  <div class="kss-markup">
+                    <pre class="prettyprint lang-html">&lt;div class=&quot;ui_radio&quot;&gt;
+   &lt;input type=&quot;radio&quot; name=&quot;gender&quot; id=&quot;male&quot; value=&quot;male&quot;&gt;
+   &lt;label class=&quot;btn_radio&quot; for=&quot;male&quot;&gt;Male&lt;/label&gt;
+   &lt;input type=&quot;radio&quot; id=&quot;female&quot; name=&quot;gender&quot; value=&quot;female&quot;&gt;
+   &lt;label class=&quot;btn_radio&quot; for=&quot;female&quot;&gt;Female&lt;/label&gt;
+&lt;/div&gt;</pre>
+                  </div>
+              
+            
+              </section>
+            
+          
+            
+             <section class="kss-depth-2">
+              <h2 class="kss-title"><span class="kss-ref">8.9</span> - .ui_radio_green</h2>
+            
+              
+                  <div class="kss-box"><p>Multiple green radio buttons.</p>
+</div>
+                  <div class="kss-mod-list">
+                    <div class="kss-mod-desc-group">
+                      <!-- <div class="kss-mod-desc"><p>Default styling</p></div>
+                      <div class="kss-mod-name"></div> -->
+                    </div>
+                    <div class="kss-mod-example">
+                      <div><input type="radio" name="radio" id="sampleRadio1" class="ui_radio_green"/>
+<label for="sampleRadio1"><i class="fa fa-circle-o"></i>Label Here</label>
+<input type="radio" name="radio" id="sampleRadio2" class="ui_radio_green"/>
+<label for="sampleRadio2"><i class="fa fa-circle-o"></i>Really Super Crazy Long Label Here</label>
+<input type="radio" name="radio" id="sampleRadio3" class="ui_radio_green"/>
+<label for="sampleRadio3"><i class="fa fa-circle-o"></i>Super Crazy Long Label Here</label></div>
+                    </div>
+                  
+                  </div>
+                  <div class="kss-markup">
+                    <pre class="prettyprint lang-html">&lt;input type=&quot;radio&quot; name=&quot;radio&quot; id=&quot;sampleRadio1&quot; class=&quot;ui_radio_green&quot;/&gt;
+&lt;label for=&quot;sampleRadio1&quot;&gt;&lt;i class=&quot;fa fa-circle-o&quot;&gt;&lt;/i&gt;Label Here&lt;/label&gt;
+&lt;input type=&quot;radio&quot; name=&quot;radio&quot; id=&quot;sampleRadio2&quot; class=&quot;ui_radio_green&quot;/&gt;
+&lt;label for=&quot;sampleRadio2&quot;&gt;&lt;i class=&quot;fa fa-circle-o&quot;&gt;&lt;/i&gt;Really Super Crazy Long Label Here&lt;/label&gt;
+&lt;input type=&quot;radio&quot; name=&quot;radio&quot; id=&quot;sampleRadio3&quot; class=&quot;ui_radio_green&quot;/&gt;
+&lt;label for=&quot;sampleRadio3&quot;&gt;&lt;i class=&quot;fa fa-circle-o&quot;&gt;&lt;/i&gt;Super Crazy Long Label Here&lt;/label&gt;</pre>
+                  </div>
+              
+            
+              </section>
+            
+          
+            
+             <section class="kss-depth-2">
+              <h2 class="kss-title"><span class="kss-ref">8.10</span> - .ui_search</h2>
+            
+              
+                  <div class="kss-box"><p>Common searchfield</p>
+</div>
+                  <div class="kss-mod-list">
+                    <div class="kss-mod-desc-group">
+                      <!-- <div class="kss-mod-desc"><p>Default styling</p></div>
+                      <div class="kss-mod-name"></div> -->
+                    </div>
+                    <div class="kss-mod-example">
+                      <div><div class="ui_search">
+    <input type="search"/>
+    <button><i class="fa fa-search"></i></button>
+</div></div>
+                    </div>
+                  
+                  </div>
+                  <div class="kss-markup">
+                    <pre class="prettyprint lang-html">&lt;div class=&quot;ui_search&quot;&gt;
+    &lt;input type=&quot;search&quot;/&gt;
+    &lt;button&gt;&lt;i class=&quot;fa fa-search&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+&lt;/div&gt;</pre>
+                  </div>
+              
+            
+              </section>
+            
+          
+        
+      </article>
+    </div>
+    <!-- SCRIPTS -->
+    <script src="public/kss.js"></script>
+    <script src="public/prettify.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function(){
+
+        // Ensure code blocks are highlighted properly...
+        $('pre>code').addClass('prettyprint');
+        prettyPrint();
+
+      });
+    </script>
+  </div>
+</body>
+</html>

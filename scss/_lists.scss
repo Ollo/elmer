@@ -1,15 +1,9 @@
-// # _lists
-//
-// Basic list styling. Lists default to no list style, 0 margin, & 0 padding unless otherwise extended by %default_ul or %default_ol
-//
-// Styleguide 15.0
-
 ul, ol {
   margin: 0;
   padding: 0;
   list-style-type: none;
 
-  // # <ul>
+  // <ul>
   //
   // Default ul
   //
@@ -30,7 +24,7 @@ ul, ol {
     padding-left: $base_line_height;
   }
 
-  // # <ol>
+  // <ol>
   //
   // Default ol
   //

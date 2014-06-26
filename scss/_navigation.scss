@@ -1,10 +1,4 @@
-// # _navigation
-//
-// This file houses navigation patterns, including things such as pagination & filtering
-//
-// Styleguide 18.0
-
-// # .bordered
+// .bordered
 //
 // Basic style for a bordered header
 //
@@ -51,7 +45,7 @@
 
 }
 
-// # .page_header
+// .page_header
 //
 // Base Header Styles
 //
@@ -80,7 +74,7 @@
         margin-bottom: 0.5rem;
     }
 
-    // # .page_header.tabbed
+    // .page_header.tabbed
     //
     // For use on pages with tab nav in header. If possible, use with @extend to keep markup clean
     //
@@ -104,7 +98,7 @@
 
 }
 
-// # %pagination
+// %pagination
 //
 // Prev/Next style set up
 //
@@ -139,7 +133,7 @@
     @extend %pagination; // _extends
 }
 
-// # .sub_header
+// .sub_header
 //
 // Bordered navigation under .page_header. Add anything that floats left in desktop in the ".left" div, and vise versa with ".right".
 //

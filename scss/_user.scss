@@ -1,10 +1,4 @@
-// # _users
-//
-// Basic styles for the common user elements, ex avatar and nofitication.
-//
-// Styleguide 21.0
-
-// # img.circled
+// img.circled
 //
 // Add this class to acheive the circled image with border.
 //
@@ -16,7 +10,7 @@
 img.circled {
 	border-radius: 200px;
 
-	// # img.circled.xsmall
+	// img.circled.xsmall
 	//
 	// Markup:
 	// <img class="circled xsmall" src="http://lorempixel.com/100/100/nature/" />
@@ -27,7 +21,7 @@ img.circled {
 		height: rem(30);
 	}
 
-	// # img.circled.small
+	// img.circled.small
 	//
 	// Markup:
 	// <img class="circled small" src="http://lorempixel.com/100/100/nature/" />
@@ -38,7 +32,7 @@ img.circled {
 		height: rem(40);
 	}
 
-	// # img.circled.medium
+	// img.circled.medium
 	//
 	// Markup:
 	// <img class="circled medium" src="http://lorempixel.com/100/100/nature/" />
@@ -49,7 +43,7 @@ img.circled {
 		height: rem(70);
 	}
 
-	// # img.circled.large
+	// img.circled.large
 	//
 	// Markup:
 	// <img class="circled large" src="http://lorempixel.com/100/100/nature/" />
@@ -60,7 +54,7 @@ img.circled {
 		height: rem(90);
 	}
 
-	// # img.circled.bordered
+	// img.circled.bordered
 	//
 	// The bordered class can be applied to any size
 	//
@@ -74,7 +68,7 @@ img.circled {
 
 }
 
-// # .notification
+// .notification
 //
 // Used next to the cricled image
 //
@@ -116,7 +110,7 @@ img.circled {
 
 }
 
-// # .avatar
+// .avatar
 //
 // Most common layout for basic user photo with a caption. Image @extends ".bordered" & ".circled" as styled above. Use class ".xsmall" or ".small" to pick avatar size. There is also an '.alerts' variation when a user has nofiticaion, but please be aware that the markup will change in this situation.
 //

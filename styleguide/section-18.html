@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+
+  <title>KSS: Living Styleguide</title>
+  <meta name="description" content="">
+  <meta name="generator" content="kss-node" />
+
+  <meta name="viewport" content="width=device-width">
+
+  <link rel="stylesheet" href="public/main.css">
+  <link rel="stylesheet" href="public/kss.css">
+
+</head>
+<body>
+  <div id="kss-wrapper">
+    <div id="kss-nav">
+      <header id="kss-header">
+        <hgroup><h1>Styleguide</h1></hgroup>
+      </header>
+      <aside>
+        <nav>
+          <ul>
+            <li><a href="index.html">0.0: Overview</a></li>
+            
+              <li><a href="section-1.html">1.0: Grid Settings</a></li>
+            
+              <li><a href="section-2.html">2.0: Colors</a></li>
+            
+              <li><a href="section-3.html">3.0: Base</a></li>
+            
+              <li><a href="section-4.html">4.0: Mixins</a></li>
+            
+              <li><a href="section-5.html">5.0: Typography</a></li>
+            
+              <li><a href="section-6.html">6.0: Buttons</a></li>
+            
+              <li><a href="section-7.html">7.0: Layout</a></li>
+            
+              <li><a href="section-8.html">8.0: Forms</a></li>
+            
+              <li><a href="section-9.html">9.0: Animations</a></li>
+            
+              <li><a href="section-10.html">10.0: Accordions</a></li>
+            
+              <li><a href="section-11.html">11.0: Tabs</a></li>
+            
+              <li><a href="section-12.html">12.0: Wells / Boxes</a></li>
+            
+              <li><a href="section-13.html">13.0: Progress Bars</a></li>
+            
+              <li><a href="section-14.html">14.0: Sortable</a></li>
+            
+              <li><a href="section-15.html">15.0: Lists</a></li>
+            
+              <li><a href="section-16.html">16.0: Tables</a></li>
+            
+              <li><a href="section-17.html">17.0: Modals</a></li>
+            
+              <li><a href="section-18.html">18.0: Navigation</a></li>
+            
+              <li><a href="section-19.html">19.0: Graphs</a></li>
+            
+              <li><a href="section-20.html">20.0: Dropdowns</a></li>
+            
+              <li><a href="section-21.html">21.0: User</a></li>
+            
+              <li><a href="section-22.html">22.0: Cards / Widgets</a></li>
+            
+              <li><a href="section-23.html">23.0: Ratings</a></li>
+            
+          </ul>
+        </nav>
+      </aside>
+    </div>
+    <div role="main" id="kss-main">
+      <article id="kss-content">
+        
+
+          
+          
+            
+              <h1 class="kss-title"><span class="kss-ref">18.0</span> - Navigation</h1>
+            
+              
+                  
+                    <p>Adds navigation patterns to be used and extended</p>
+
+                  
+              
+             
+          
+            
+             <section class="kss-depth-2">
+              <h2 class="kss-title"><span class="kss-ref">18.1</span> - .bordered</h2>
+            
+              
+                  <div class="kss-box"><p>Basic style for a bordered header</p>
+</div>
+                  <div class="kss-mod-list">
+                    <div class="kss-mod-desc-group">
+                      <!-- <div class="kss-mod-desc"><p>Default styling</p></div>
+                      <div class="kss-mod-name"></div> -->
+                    </div>
+                    <div class="kss-mod-example">
+                      <div><header class="bordered">
+    <h1>Heading</h1>
+</header></div>
+                    </div>
+                  
+                  </div>
+                  <div class="kss-markup">
+                    <pre class="prettyprint lang-html">&lt;header class=&quot;bordered&quot;&gt;
+    &lt;h1&gt;Heading&lt;/h1&gt;
+&lt;/header&gt;</pre>
+                  </div>
+              
+            
+              </section>
+            
+          
+            
+             <section class="kss-depth-2">
+              <h2 class="kss-title"><span class="kss-ref">18.2</span> - .page_header</h2>
+            
+              
+                  <div class="kss-box"><p>Base Header Styles</p>
+</div>
+                  <div class="kss-mod-list">
+                    <div class="kss-mod-desc-group">
+                      <!-- <div class="kss-mod-desc"><p>Default styling</p></div>
+                      <div class="kss-mod-name"></div> -->
+                    </div>
+                    <div class="kss-mod-example">
+                      <div><header class="page_header">
+    <h2>Organization Management</h2>
+</header></div>
+                    </div>
+                  
+                  </div>
+                  <div class="kss-markup">
+                    <pre class="prettyprint lang-html">&lt;header class=&quot;page_header&quot;&gt;
+    &lt;h2&gt;Organization Management&lt;/h2&gt;
+&lt;/header&gt;</pre>
+                  </div>
+              
+            
+              </section>
+            
+          
+            
+             <section class="kss-depth-2">
+              <h2 class="kss-title"><span class="kss-ref">18.3</span> - .page_header.tabbed</h2>
+            
+              
+                  <div class="kss-box"><p>For use on pages with tab nav in header. If possible, use with @extend to keep markup clean</p>
+</div>
+                  <div class="kss-mod-list">
+                    <div class="kss-mod-desc-group">
+                      <!-- <div class="kss-mod-desc"><p>Default styling</p></div>
+                      <div class="kss-mod-name"></div> -->
+                    </div>
+                    <div class="kss-mod-example">
+                      <div><header class="page_header tabbed">
+    <h2>Organization Management</h2>
+    <nav class="tabs">
+        <ul>
+            <li class="pane current"><a data-href="#metrics">Metrics</a></li>
+            <li class="pane"><a data-href="#questions">Questions</a></li>
+            <li class="pane"><a data-href="#users">Users</a></li>
+        </ul>
+    </nav>
+</header></div>
+                    </div>
+                  
+                  </div>
+                  <div class="kss-markup">
+                    <pre class="prettyprint lang-html">&lt;header class=&quot;page_header tabbed&quot;&gt;
+    &lt;h2&gt;Organization Management&lt;/h2&gt;
+    &lt;nav class=&quot;tabs&quot;&gt;
+        &lt;ul&gt;
+            &lt;li class=&quot;pane current&quot;&gt;&lt;a data-href=&quot;#metrics&quot;&gt;Metrics&lt;/a&gt;&lt;/li&gt;
+            &lt;li class=&quot;pane&quot;&gt;&lt;a data-href=&quot;#questions&quot;&gt;Questions&lt;/a&gt;&lt;/li&gt;
+            &lt;li class=&quot;pane&quot;&gt;&lt;a data-href=&quot;#users&quot;&gt;Users&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/nav&gt;
+&lt;/header&gt;</pre>
+                  </div>
+              
+            
+              </section>
+            
+          
+            
+             <section class="kss-depth-2">
+              <h2 class="kss-title"><span class="kss-ref">18.4</span> - %pagination</h2>
+            
+              
+                  <div class="kss-box"><p>Prev/Next style set up</p>
+</div>
+                  <div class="kss-mod-list">
+                    <div class="kss-mod-desc-group">
+                      <!-- <div class="kss-mod-desc"><p>Default styling</p></div>
+                      <div class="kss-mod-name"></div> -->
+                    </div>
+                    <div class="kss-mod-example">
+                      <div><nav class="pagination" role="navigation">
+    <a class="prev">Previous</a>
+    <a class="next">Next</a>
+</nav></div>
+                    </div>
+                  
+                  </div>
+                  <div class="kss-markup">
+                    <pre class="prettyprint lang-html">&lt;nav class=&quot;pagination&quot; role=&quot;navigation&quot;&gt;
+    &lt;a class=&quot;prev&quot;&gt;Previous&lt;/a&gt;
+    &lt;a class=&quot;next&quot;&gt;Next&lt;/a&gt;
+&lt;/nav&gt;</pre>
+                  </div>
+              
+            
+              </section>
+            
+          
+            
+             <section class="kss-depth-2">
+              <h2 class="kss-title"><span class="kss-ref">18.5</span> - .sub_header</h2>
+            
+              
+                  <div class="kss-box"><p>Bordered navigation under .page_header. Add anything that floats left in desktop in the &quot;.left&quot; div, and vise versa with &quot;.right&quot;.</p>
+</div>
+                  <div class="kss-mod-list">
+                    <div class="kss-mod-desc-group">
+                      <!-- <div class="kss-mod-desc"><p>Default styling</p></div>
+                      <div class="kss-mod-name"></div> -->
+                    </div>
+                    <div class="kss-mod-example">
+                      <div><div class="sub_header">
+   <div class="left">
+        <button class="btn_add">
+             <i class="fa fa-plus"></i>
+        </button>
+        <a>Invite people to your organization</a>
+        <span>12/30 seats filled</span>
+    </div>
+    <div class="right ui_search">
+        <input type="search"/>
+        <button><i class="fa fa-search"></i></button>
+    </div>
+</div></div>
+                    </div>
+                  
+                  </div>
+                  <div class="kss-markup">
+                    <pre class="prettyprint lang-html">&lt;div class=&quot;sub_header&quot;&gt;
+   &lt;div class=&quot;left&quot;&gt;
+        &lt;button class=&quot;btn_add&quot;&gt;
+             &lt;i class=&quot;fa fa-plus&quot;&gt;&lt;/i&gt;
+        &lt;/button&gt;
+        &lt;a&gt;Invite people to your organization&lt;/a&gt;
+        &lt;span&gt;12/30 seats filled&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;right ui_search&quot;&gt;
+        &lt;input type=&quot;search&quot;/&gt;
+        &lt;button&gt;&lt;i class=&quot;fa fa-search&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
+                  </div>
+              
+            
+              </section>
+            
+          
+        
+      </article>
+    </div>
+    <!-- SCRIPTS -->
+    <script src="public/kss.js"></script>
+    <script src="public/prettify.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function(){
+
+        // Ensure code blocks are highlighted properly...
+        $('pre>code').addClass('prettyprint');
+        prettyPrint();
+
+      });
+    </script>
+  </div>
+</body>
+</html>

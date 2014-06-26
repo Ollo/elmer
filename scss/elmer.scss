@@ -1,0 +1,180 @@
+// name : Elmer
+// description: The ui components library used to power Gloo's Epoxy web app
+// version: 0.0.1
+// author: client-dev@tangogroup.com
+
+///////////////
+// dependencies
+///////////////
+@import "packages/bourbon/dist/bourbon";
+@import "packages/neat/app/assets/stylesheets/neat";
+@import "packages/neat/app/assets/stylesheets/neat-helpers";
+$fa-font-path: "/packages/components-font-awesome/fonts";
+@import "packages/components-font-awesome/scss/font-awesome";
+@import "packages/_normalize.scss/normalize";
+
+////////////////////
+// Custom components
+////////////////////
+
+// Grid Settings
+//
+// sets up neat grid
+//
+// Styleguide 1
+@import "grid_settings";
+
+// Colors
+//
+// sets up our color palette
+//
+// Styleguide 2
+@import "colors";
+
+// Base
+//
+// sets up some sensible baselines
+//
+// Styleguide 3
+@import "base";
+
+// Mixins
+//
+// helper functions
+//
+// Styleguide 4
+@import "mixins";
+
+// Typography
+//
+// set up the default typography styles for content and headings
+//
+// Styleguide 5
+@import "typography";
+
+// Buttons
+//
+// Defines the default button styles
+//
+// Styleguide 6
+@import "buttons";
+
+// Layout
+//
+// sets up some basic layout patterns
+//
+// Styleguide 7
+@import "layout";
+
+// Forms
+//
+// defines the default form styles
+//
+// Styleguide 8
+@import "forms";
+
+// Animations
+//
+// custom key-frame animations
+//
+// Styleguide 9
+@import "animations";
+
+// Accordions
+//
+// styles for accordions
+//
+// Styleguide 10
+@import "accordions";
+
+// Tabs
+//
+// Styles for tabbed navigation
+//
+// Styleguide 11
+@import "tabs";
+
+// Wells / Boxes
+//
+// custom layout containers
+//
+// Styleguide 12
+@import "wells_boxes";
+
+// Progress Bars
+//
+// progress bar styles for interactive elements
+//
+// Styleguide 13
+@import "progress_bars";
+
+// Sortable
+//
+// styles for sortable elements
+//
+// Styleguide 14
+@import "sortable";
+
+// Lists
+//
+// Adds default set of styles for lists
+//
+// Styleguide 15
+@import "lists";
+
+// Tables
+//
+// Adds tables styles and utility classes for mimicking them
+//
+// Styleguide 16
+@import "tables";
+
+// Modals
+//
+// Adds modal styles
+//
+// Styleguide 17
+@import "modals";
+
+// Navigation
+//
+// Adds navigation patterns to be used and extended
+//
+// Styleguide 18
+@import "navigation";
+
+// Graphs
+//
+// Styles baselines for graph svgs { from d3 }
+//
+// Styleguide 19
+@import "graphs";
+
+// Dropdowns
+//
+// Common dropdown element styles
+//
+// Styleguide 20
+@import "dropdowns";
+
+// User
+//
+// Styles used within the user profile through the site
+//
+// Styleguide 21
+@import "user";
+
+// Cards / Widgets
+//
+// Common layout component used in widgets and various views
+//
+// Styleguide 22
+@import "cards_widgets";
+
+// Ratings
+//
+// ui components used for ratings
+//
+// Styleguide 23
+@import "ratings";
+

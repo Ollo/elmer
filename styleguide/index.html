@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+
+  <title>KSS: Living Styleguide</title>
+  <meta name="description" content="">
+  <meta name="generator" content="kss-node" />
+
+  <meta name="viewport" content="width=device-width">
+
+  <link rel="stylesheet" href="public/main.css">
+  <link rel="stylesheet" href="public/kss.css">
+
+</head>
+<body>
+  <div id="kss-wrapper">
+    <div id="kss-nav">
+      <header id="kss-header">
+        <hgroup><h1>Styleguide</h1></hgroup>
+      </header>
+      <aside>
+        <nav>
+          <ul>
+            <li><a href="index.html">0.0: Overview</a></li>
+            
+              <li><a href="section-1.html">1.0: Grid Settings</a></li>
+            
+              <li><a href="section-2.html">2.0: Colors</a></li>
+            
+              <li><a href="section-3.html">3.0: Base</a></li>
+            
+              <li><a href="section-4.html">4.0: Mixins</a></li>
+            
+              <li><a href="section-5.html">5.0: Typography</a></li>
+            
+              <li><a href="section-6.html">6.0: Buttons</a></li>
+            
+              <li><a href="section-7.html">7.0: Layout</a></li>
+            
+              <li><a href="section-8.html">8.0: Forms</a></li>
+            
+              <li><a href="section-9.html">9.0: Animations</a></li>
+            
+              <li><a href="section-10.html">10.0: Accordions</a></li>
+            
+              <li><a href="section-11.html">11.0: Tabs</a></li>
+            
+              <li><a href="section-12.html">12.0: Wells / Boxes</a></li>
+            
+              <li><a href="section-13.html">13.0: Progress Bars</a></li>
+            
+              <li><a href="section-14.html">14.0: Sortable</a></li>
+            
+              <li><a href="section-15.html">15.0: Lists</a></li>
+            
+              <li><a href="section-16.html">16.0: Tables</a></li>
+            
+              <li><a href="section-17.html">17.0: Modals</a></li>
+            
+              <li><a href="section-18.html">18.0: Navigation</a></li>
+            
+              <li><a href="section-19.html">19.0: Graphs</a></li>
+            
+              <li><a href="section-20.html">20.0: Dropdowns</a></li>
+            
+              <li><a href="section-21.html">21.0: User</a></li>
+            
+              <li><a href="section-22.html">22.0: Cards / Widgets</a></li>
+            
+              <li><a href="section-23.html">23.0: Ratings</a></li>
+            
+          </ul>
+        </nav>
+      </aside>
+    </div>
+    <div role="main" id="kss-main">
+      <article id="kss-content">
+        
+          <h1>Elmer</h1>
+<p>Elmer is the ui components library used to power the Epoxy project and now it is available to all of Gloo as a bower package and separate repository for collaboration and use in any web project.
+
+</p>
+<hr>
+<h2>Dependencies</h2>
+<p>The elmer ui library depends on some additional libraries for convenience and ease of use.
+
+</p>
+<ul>
+<li><p>normalize <a href="http://necolas.github.io/normalize.css/">http://necolas.github.io/normalize.css/</a></p>
+</li>
+<li><p>bourbon ~ css3 mixins <a href="http://bourbon.io">http://bourbon.io</a></p>
+</li>
+<li><p>neat ~ fluid semantic grid <a href="http://neat.bourbon.io">http://neat.bourbon.io</a></p>
+</li>
+<li><p>font awesome <a href="http://fontawesome.io">http://fontawesome.io</a></p>
+</li>
+</ul>
+<hr>
+<h2>Installation</h2>
+<p>Bower :
+
+</p>
+<p>First install bower via <a href="http://bower.io">http://bower.io</a>
+
+</p>
+<p><strong>then in your project run :</strong>
+
+</p>
+<pre><code>bower install git@github.com:TangoGroup/elmer.git --save</code></pre>
+<p><strong>Then import elmer with following line into your primary scss file after the above dependencies</strong>
+
+</p>
+<pre><code>@import &quot;&lt;YOUR_BOWER_LOCATION&gt;/elmer/scss/elmer&quot;;</code></pre>
+<hr>
+<h2>Development</h2>
+<p>After cloning this repo run :
+
+</p>
+<pre><code>npm install</code></pre>
+<p>Then to view the styleguide run :
+
+</p>
+<pre><code>grunt</code></pre>
+<p>navigate in a browser to : <code>http://0.0.0.0:9000/</code>
+
+</p>
+<p>Elmer is a living framework that is still in active development if you would like to provide feedback or have specific questions please feel free to contact the web team.
+
+</p>
+<p><a href="mailto:hrallo@tangogroup.com">@hrallo</a>
+
+</p>
+<p><a href="mailto:rsuh@tangogroup.com">@rsuh</a>
+
+</p>
+<p><a href="mailto:jray@tangogroup.com">@jray</a>
+
+</p>
+<p><a href="mailto:cashworth@tangogroup.com">@cashworth</a>
+
+</p>
+
+        
+      </article>
+    </div>
+    <!-- SCRIPTS -->
+    <script src="public/kss.js"></script>
+    <script src="public/prettify.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function(){
+
+        // Ensure code blocks are highlighted properly...
+        $('pre>code').addClass('prettyprint');
+        prettyPrint();
+
+      });
+    </script>
+  </div>
+</body>
+</html>

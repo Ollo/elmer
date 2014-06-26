@@ -1,32 +1,25 @@
-// # _colors
-//
-// The purpose of defining color variables is to maintain style consistency throughout the sites design.
-//
-// Styleguide 2.0
-//
-
 //# Defined Colors
 //
-// Ideally all colors throughout other partials should only use these defined colors.
+// The purpose of defining color variables is to maintain style consistency throughout the sites design. Ideally all colors throughout other partials should only use these defined colors.
 //
 // Markup:
-//<div style="background:#9c4242;" class="styleguide_color">$dark_red: #9c4242</div>
-//<div style="background:#f90005;" class="styleguide_color">$red: #f90005</div>
-//<div style="background:#d86767;" class="styleguide_color">$light_red: #d86767</div>
-//<div style="background:#fff2a8;" class="styleguide_color">$yellow: #fff2a8</div>
-//<div style="background:#66bd61;" class="styleguide_color">$green: #66bd61</div>
-//<div style="background:#84c668;" class="styleguide_color">$light_green: #84c668</div>
-//<div style="background:#8eb3bb;" class="styleguide_color">$pale_blue: #8eb3bb</div>
-//<div style="background:#40b2cd;" class="styleguide_color">$teal: #40b2cd</div>
-//<div style="background:#007caa;" class="styleguide_color">$blue: #007caa</div>
-//<div style="background:#203152;" class="styleguide_color">$navy: #203152</div>
-//<div style="background:#1e1f20;" class="styleguide_color">$black: #1e1f20</div>
-//<div style="background:#333333;" class="styleguide_color">$charcoal: #333333</div>
-//<div style="background:#888888;" class="styleguide_color">$gloo_gray: #888888</div>
-//<div style="background:#666666;" class="styleguide_color">$gray: #666666</div>
-//<div style="background:#bbbbbb;" class="styleguide_color">$light_gray: #bbbbbb</div>
-//<div style="background:#f7f5f2; color: #999999;" class="styleguide_color">$sand: #f7f5f2</div>
-//<div style="background:#ffffff; color: #999999;" class="styleguide_color">$white: #ffffff</div>
+//<div style="background:#9c4242; padding: 1rem;">$dark_red: #9c4242</div>
+//<div style="background:#f90005; padding: 1rem;">$red: #f90005</div>
+//<div style="background:#d86767; padding: 1rem;">$light_red: #d86767</div>
+//<div style="background:#fff2a8; padding: 1rem;">$yellow: #fff2a8</div>
+//<div style="background:#66bd61; padding: 1rem;">$green: #66bd61</div>
+//<div style="background:#84c668; padding: 1rem;">$light_green: #84c668</div>
+//<div style="background:#8eb3bb; padding: 1rem;">$pale_blue: #8eb3bb</div>
+//<div style="background:#40b2cd; padding: 1rem;">$teal: #40b2cd</div>
+//<div style="background:#007caa; padding: 1rem;">$blue: #007caa</div>
+//<div style="background:#203152; padding: 1rem;">$navy: #203152</div>
+//<div style="background:#1e1f20; padding: 1rem;">$black: #1e1f20</div>
+//<div style="background:#333333; padding: 1rem;">$charcoal: #333333</div>
+//<div style="background:#888888; padding: 1rem;">$gloo_gray: #888888</div>
+//<div style="background:#666666; padding: 1rem;">$gray: #666666</div>
+//<div style="background:#bbbbbb; padding: 1rem;">$light_gray: #bbbbbb</div>
+//<div style="background:#f7f5f2; color: #999999; padding: 1rem;">$sand: #f7f5f2</div>
+//<div style="background:#ffffff; color: #999999; padding: 1rem;">$white: #ffffff</div>
 //
 // Styleguide 2.1
 //
@@ -55,10 +48,9 @@ $yellow: #f6e957;
 // This color is used to manage the highlight color.
 //
 // Markup:
-// <div style="background:#fff2a8; color: #999999;" class="styleguide_color">$selection</div>
-// $selection: #fff2a8;
-//  ::selection {
-//  background: $selection;
+// <div style="background:#fff2a8; color: #999999; padding: 1rem;">$selection</div>
+// ::selection, ::-moz-selection {
+//      background: $selection;
 // }
 //
 // Styleguide 2.2

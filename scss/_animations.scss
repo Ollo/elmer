@@ -1,8 +1,3 @@
-// # _animations
-//
-// all custom animations and ones pulled from additional libraries
-//
-// Styleguide 10.0
 
 @include keyframes(flipYnofade) {
   from {
@@ -15,11 +10,11 @@
   }
 }
 
-// # .flipYnofade
+// .flipYnofade
 //
 // Horizontally flips an element
 //
-// Styleguide 10.1
+// Styleguide 9.1
 
 .flipYnofade {
   @include animation-name(flipYnofade);
@@ -30,11 +25,11 @@
   @include backface-visibility(hidden);
 }
 
-// # .flipInY
+// .flipInY
 //
 // Horizontally flips an element
 //
-// Styleguide 10.1
+// Styleguide 9.2
 
 @-webkit-keyframes flipInY {
   0% {
@@ -122,11 +117,11 @@
   backface-visibility: hidden;
 }
 
-// # .flipOutY
+// .flipOutY
 //
 // Horizontally flips an element
 //
-// Styleguide 10.2
+// Styleguide 9.3
 
 @-webkit-keyframes flipOutY {
   0% {

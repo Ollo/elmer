@@ -1,13 +1,8 @@
-// # _ratings
-//
-// Basic styles for ratings and reviews
-//
-// Styleguide 23.0
 
 // # .star, .star.filled, .star.half
 //
-// Basic stars. These stars are static and meant to only display ratings.
-// 
+// Basic stars. These stars are static and meant to only display ratings. Star group does not have any styling associated with it, it is merely meant to be a placeholder to group the stars together.
+//
 // Markup:
 // <div class="star_group">
 //     <input type="radio" class="star"><label><i></i></label>
@@ -60,7 +55,6 @@
 			top:0;
 			z-index: 0;
 		}
-
 	}
 
 	&.filled, &:checked {
@@ -79,13 +73,12 @@
 			}
 		}
 	}
-
 }
 
-// # .star_group.rate
+// .star_group.rate
 //
 // These stars are meant to allow for selecting a rating.
-// 
+//
 // Markup:
 // <div class="star_group rate">
 //     <input type="radio" id="5stars" class="star"><label for="5stars"><i></i></label>
@@ -150,13 +143,12 @@
 		}
 
 	}
-
 }
 
-// # .star_group.small
+// .star_group.small
 //
 // Tiny stars, 20px. Reglar size stars default to 30px.
-// 
+//
 // Markup:
 // <div class="star_group small">
 //     <input type="radio" class="star"><label><i></i></label>
@@ -173,4 +165,3 @@
 		font-size: rem(20);
 	}
 }
-

@@ -1,17 +1,12 @@
-// # _progress_bars
-//
-// Styles for progress bars
-//
-// Styleguide 14.0
 
-// # .progress_bar
+// .progress_bar
 //
 // Markup:
 // <div class="progress_bar">
 //    <span style="width:50%"><span>
 // </div>
 //
-// Styleguide 14.1
+// Styleguide 13.1
 
 .progress_bar {
 	height: 2rem;
@@ -28,28 +23,28 @@
 		border-radius: 6px;
 	}
 
-	// # .progress_bar.red
+	// .progress_bar.red
 	//
 	// Markup:
 	// <div class="progress_bar red">
 	//    <span style="width:10%"><span>
 	// </div>
 	//
-	// Styleguide 14.2
+	// Styleguide 13.1.1
 	&.red {
 		span {
 			background: $red;
 		}
 	}
 
-	// # .progress_bar.green
+	// .progress_bar.green
 	//
 	// Markup:
 	// <div class="progress_bar green">
 	//    <span style="width:100%"><span>
 	// </div>
 	//
-	// Styleguide 14.3
+	// Styleguide 13.1.2
 	&.green {
 		span {
 			background: $light_green;

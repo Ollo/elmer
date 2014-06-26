@@ -1,10 +1,4 @@
-// # _tables
-//
-// Basic table styles. It should be noted that currently we are not using the html table markup, see the .table class below for more details on how to construct a table.
-//
-// Styleguide 16.0
-
-// #  <table>
+// <table>
 //
 // Markup:
 // <table>
@@ -66,7 +60,7 @@ td {
   }
 }
 
-// # .table
+// .table
 //
 // Add this class to simulate a table. Use classes to determine row widths, as seen below. The '.main' class designates what will still be displayed in the mobile view. For now, the browser must be refreshed between mobile & desktop sizes for the table to convert to an accordion properly.
 //

@@ -1,8 +1,13 @@
-// # _base
+// Rems
 //
-// _base is used to manage baselines for base elements such as <body>, as well as setup the base font sizes and rem calculations.
+// this configures the baselines for our rem calculations
 //
-// Styleguide 4.0
+// Markup:
+// $fontbase: 1.0rem; // 10px
+// $base_font_size : 1.4rem; // 14px
+// $base_line_height: 2.3rem; // 23px
+//
+// Styleguide 3.1
 
 $fontbase: 1.0rem; // 10px
 $base_font_size : 1.4rem;
@@ -51,14 +56,15 @@ img {
 	background: $selection;
 }
 
-// # Default Anchor Tag
+// Default Anchor Tag
 //
-// Markup: <a class="$modifierClass">Default Link</a>
+// Standard link colors with states
+//
+// Markup: <a class="{$modifiers}">Default Link</a>
 //
 // :hover - eases color darker by 5%
 //
-//
-// Styleguide 4.1
+// Styleguide 3.2
 
 a {
 	color: $teal;
@@ -79,14 +85,14 @@ p {
   margin: 0 0 ($base_line_height * .5);
 }
 
-// #HR
+// HR
 //
 // Stying for HR tags
 //
 // Markup:
 // <hr>
 //
-// Styleguide 4.3
+// Styleguide 3.3
 
 hr {
 	width: 65%;

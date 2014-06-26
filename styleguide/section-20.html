@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+
+  <title>KSS: Living Styleguide</title>
+  <meta name="description" content="">
+  <meta name="generator" content="kss-node" />
+
+  <meta name="viewport" content="width=device-width">
+
+  <link rel="stylesheet" href="public/main.css">
+  <link rel="stylesheet" href="public/kss.css">
+
+</head>
+<body>
+  <div id="kss-wrapper">
+    <div id="kss-nav">
+      <header id="kss-header">
+        <hgroup><h1>Styleguide</h1></hgroup>
+      </header>
+      <aside>
+        <nav>
+          <ul>
+            <li><a href="index.html">0.0: Overview</a></li>
+            
+              <li><a href="section-1.html">1.0: Grid Settings</a></li>
+            
+              <li><a href="section-2.html">2.0: Colors</a></li>
+            
+              <li><a href="section-3.html">3.0: Base</a></li>
+            
+              <li><a href="section-4.html">4.0: Mixins</a></li>
+            
+              <li><a href="section-5.html">5.0: Typography</a></li>
+            
+              <li><a href="section-6.html">6.0: Buttons</a></li>
+            
+              <li><a href="section-7.html">7.0: Layout</a></li>
+            
+              <li><a href="section-8.html">8.0: Forms</a></li>
+            
+              <li><a href="section-9.html">9.0: Animations</a></li>
+            
+              <li><a href="section-10.html">10.0: Accordions</a></li>
+            
+              <li><a href="section-11.html">11.0: Tabs</a></li>
+            
+              <li><a href="section-12.html">12.0: Wells / Boxes</a></li>
+            
+              <li><a href="section-13.html">13.0: Progress Bars</a></li>
+            
+              <li><a href="section-14.html">14.0: Sortable</a></li>
+            
+              <li><a href="section-15.html">15.0: Lists</a></li>
+            
+              <li><a href="section-16.html">16.0: Tables</a></li>
+            
+              <li><a href="section-17.html">17.0: Modals</a></li>
+            
+              <li><a href="section-18.html">18.0: Navigation</a></li>
+            
+              <li><a href="section-19.html">19.0: Graphs</a></li>
+            
+              <li><a href="section-20.html">20.0: Dropdowns</a></li>
+            
+              <li><a href="section-21.html">21.0: User</a></li>
+            
+              <li><a href="section-22.html">22.0: Cards / Widgets</a></li>
+            
+              <li><a href="section-23.html">23.0: Ratings</a></li>
+            
+          </ul>
+        </nav>
+      </aside>
+    </div>
+    <div role="main" id="kss-main">
+      <article id="kss-content">
+        
+
+          
+          
+            
+              <h1 class="kss-title"><span class="kss-ref">20.0</span> - Dropdowns</h1>
+            
+              
+                  
+                    <p>Common dropdown element styles</p>
+
+                  
+              
+             
+          
+            
+             <section class="kss-depth-2">
+              <h2 class="kss-title"><span class="kss-ref">20.1</span> - .user_dd</h2>
+            
+              
+                  <div class="kss-box"><p>Main header logged-in dropdown</p>
+</div>
+                  <div class="kss-mod-list">
+                    <div class="kss-mod-desc-group">
+                      <!-- <div class="kss-mod-desc"><p>Default styling</p></div>
+                      <div class="kss-mod-name"></div> -->
+                    </div>
+                    <div class="kss-mod-example">
+                      <div><div style="width:290px">
+    <a class="user_dd_trigger" href="">
+        My Account
+        <i class="fa fa-angle-down select_indicator"></i>
+    </a>
+    <div class="user_dd">
+        <a href="/"><i class="fa fa-angle-double-right"></i> My Gloo</a>
+        <hr>
+        <div id="myOrgList">
+            <a href="">Engage International</a>
+            <a href="">Family Life</a>
+            <a href="">Redrocks Church</a>
+        </div>
+        <hr>
+        <a href="#"><i class="fa fa-cog"></i> Settings</a>
+        <a href="#">Sign Out</a>
+    </div>
+</div></div>
+                    </div>
+                  
+                  </div>
+                  <div class="kss-markup">
+                    <pre class="prettyprint lang-html">&lt;div style=&quot;width:290px&quot;&gt;
+    &lt;a class=&quot;user_dd_trigger&quot; href=&quot;&quot;&gt;
+        My Account
+        &lt;i class=&quot;fa fa-angle-down select_indicator&quot;&gt;&lt;/i&gt;
+    &lt;/a&gt;
+    &lt;div class=&quot;user_dd&quot;&gt;
+        &lt;a href=&quot;/&quot;&gt;&lt;i class=&quot;fa fa-angle-double-right&quot;&gt;&lt;/i&gt; My Gloo&lt;/a&gt;
+        &lt;hr&gt;
+        &lt;div id=&quot;myOrgList&quot;&gt;
+            &lt;a href=&quot;&quot;&gt;Engage International&lt;/a&gt;
+            &lt;a href=&quot;&quot;&gt;Family Life&lt;/a&gt;
+            &lt;a href=&quot;&quot;&gt;Redrocks Church&lt;/a&gt;
+        &lt;/div&gt;
+        &lt;hr&gt;
+        &lt;a href=&quot;#&quot;&gt;&lt;i class=&quot;fa fa-cog&quot;&gt;&lt;/i&gt; Settings&lt;/a&gt;
+        &lt;a href=&quot;#&quot;&gt;Sign Out&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
+                  </div>
+              
+            
+              </section>
+            
+          
+            
+             <section class="kss-depth-2">
+              <h2 class="kss-title"><span class="kss-ref">20.2</span> - .dropdown.sorting</h2>
+            
+              
+                  <div class="kss-box"><p>Standard button style dropdown for filtering and sorting. @extends %button_dropdown</p>
+</div>
+                  <div class="kss-mod-list">
+                    <div class="kss-mod-desc-group">
+                      <!-- <div class="kss-mod-desc"><p>Default styling</p></div>
+                      <div class="kss-mod-name"></div> -->
+                    </div>
+                    <div class="kss-mod-example">
+                      <div><div class="dropdown sorting">
+    <span class="selected_option">Sort & Filter</span>
+    <i class="fa fa-sort-desc"></i>
+    <div class="drop_menu">
+        <a href="" class="option">Role</a>
+        <a href="" class="option">Date Added</a>
+    </div>
+</div></div>
+                    </div>
+                  
+                  </div>
+                  <div class="kss-markup">
+                    <pre class="prettyprint lang-html">&lt;div class=&quot;dropdown sorting&quot;&gt;
+    &lt;span class=&quot;selected_option&quot;&gt;Sort &amp; Filter&lt;/span&gt;
+    &lt;i class=&quot;fa fa-sort-desc&quot;&gt;&lt;/i&gt;
+    &lt;div class=&quot;drop_menu&quot;&gt;
+        &lt;a href=&quot;&quot; class=&quot;option&quot;&gt;Role&lt;/a&gt;
+        &lt;a href=&quot;&quot; class=&quot;option&quot;&gt;Date Added&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
+                  </div>
+              
+            
+              </section>
+            
+          
+            
+             <section class="kss-depth-2">
+              <h2 class="kss-title"><span class="kss-ref">20.3</span> - .dropdown.action</h2>
+            
+              
+                  <div class="kss-box"><p>Standard button style dropdown for table actions. @extends %button_dropdown</p>
+</div>
+                  <div class="kss-mod-list">
+                    <div class="kss-mod-desc-group">
+                      <!-- <div class="kss-mod-desc"><p>Default styling</p></div>
+                      <div class="kss-mod-name"></div> -->
+                    </div>
+                    <div class="kss-mod-example">
+                      <div><div class="dropdown action">
+    <span class="selected_option">Action</span>
+    <i class="fa fa-sort-desc"></i>
+    <div class="drop_menu">
+        <a href="" class="option">Change Role</a>
+        <a href="" class="option">View Activity</a>
+		   <a href="" class="option">Send Message</a>
+    </div>
+</div></div>
+                    </div>
+                  
+                  </div>
+                  <div class="kss-markup">
+                    <pre class="prettyprint lang-html">&lt;div class=&quot;dropdown action&quot;&gt;
+    &lt;span class=&quot;selected_option&quot;&gt;Action&lt;/span&gt;
+    &lt;i class=&quot;fa fa-sort-desc&quot;&gt;&lt;/i&gt;
+    &lt;div class=&quot;drop_menu&quot;&gt;
+        &lt;a href=&quot;&quot; class=&quot;option&quot;&gt;Change Role&lt;/a&gt;
+        &lt;a href=&quot;&quot; class=&quot;option&quot;&gt;View Activity&lt;/a&gt;
+		   &lt;a href=&quot;&quot; class=&quot;option&quot;&gt;Send Message&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
+                  </div>
+              
+            
+              </section>
+            
+          
+            
+             <section class="kss-depth-2">
+              <h2 class="kss-title"><span class="kss-ref">20.4</span> - .dropdown.title</h2>
+            
+              
+                  <div class="kss-box"><p>Title style dropdown. @extends %button_dropdown</p>
+</div>
+                  <div class="kss-mod-list">
+                    <div class="kss-mod-desc-group">
+                      <!-- <div class="kss-mod-desc"><p>Default styling</p></div>
+                      <div class="kss-mod-name"></div> -->
+                    </div>
+                    <div class="kss-mod-example">
+                      <div><div class="dropdown title">
+    <h2 class="selected_option"><i class="fa fa-th-large"></i>Dashboard Title Here</h2>
+    <i class="fa fa-sort-asc"></i>
+    <div class="drop_menu">
+        <a href="" class="option">Another Dashboard Title</a>
+        <a href="" class="option">A Cooler Dashboard Title</a>
+    </div>
+</div></div>
+                    </div>
+                  
+                  </div>
+                  <div class="kss-markup">
+                    <pre class="prettyprint lang-html">&lt;div class=&quot;dropdown title&quot;&gt;
+    &lt;h2 class=&quot;selected_option&quot;&gt;&lt;i class=&quot;fa fa-th-large&quot;&gt;&lt;/i&gt;Dashboard Title Here&lt;/h2&gt;
+    &lt;i class=&quot;fa fa-sort-asc&quot;&gt;&lt;/i&gt;
+    &lt;div class=&quot;drop_menu&quot;&gt;
+        &lt;a href=&quot;&quot; class=&quot;option&quot;&gt;Another Dashboard Title&lt;/a&gt;
+        &lt;a href=&quot;&quot; class=&quot;option&quot;&gt;A Cooler Dashboard Title&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
+                  </div>
+              
+            
+              </section>
+            
+          
+        
+      </article>
+    </div>
+    <!-- SCRIPTS -->
+    <script src="public/kss.js"></script>
+    <script src="public/prettify.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function(){
+
+        // Ensure code blocks are highlighted properly...
+        $('pre>code').addClass('prettyprint');
+        prettyPrint();
+
+      });
+    </script>
+  </div>
+</body>
+</html>
