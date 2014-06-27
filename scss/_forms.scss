@@ -568,6 +568,16 @@ input:focus:required:invalid {
 	padding-left: rem(25);
 }
 
+/*
+new form validation styles applied via angular directive (creation currently in progress)
+input.has_visited:required:invalid {
+	background: url("../images/ui/error_state.png") $white no-repeat 8px center;
+	border-color: $light_red;
+	color: $light_red;
+	box-shadow: $form-box-shadow;
+	padding-left: rem(25);
+}*/
+
 // .ui_search
 //
 // Common searchfield

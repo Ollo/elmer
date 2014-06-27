@@ -19,7 +19,7 @@
 
 	.content_wrap {
 		background: $sand;
-		padding: rem(40) rem(15) 0;
+		padding: rem(20) rem(15) 0;
 		border-top: 1px solid #dedddc;
 		clear: left;
 		margin-bottom: rem(40);
@@ -69,7 +69,9 @@
 			}
 
 			.widget_dash {
-				padding-right: 0;
+				padding: rem(30) 0 rem(30) 2%;
+				@include span-columns(8);
+				
 			}
 		}
 	}
@@ -99,6 +101,7 @@
 			@include span-columns(12);
 			@include reset-display;
 		}
+
 	}
 }
 
@@ -110,8 +113,14 @@
 
 .hidden_mobile {
 	display: none;
+	
 	@include media($medium) {
 		display: block;
+
+		&.inline {
+			display: inline-block;
+		}
+
 	}
 }
 
@@ -136,24 +145,41 @@
 	}
 }
 
+// .desktop_only
+//
+// Extend this on elements that show only on desktop
+//
+// Styleguide 7.5
+
+.desktop_only {
+	display: none;
+
+	@include media($large) {
+		display: block;
+		&.inline {
+			display: inline-block;
+		}
+	}
+}
+
+// .tablet_up
+//
+// Extend this on elements hide from large tablet up
+//
+// Styleguide 7.6
+
+.tablet_up_hide {
+
+	@include media($large) {
+		display: none;
+	}
+}
+
 // Grid classes
 //
 // These basic classes set up widths. They do not trigger any styles on mobile and are thus defaulting to full width. Tablet converts to an 8 col grid and desktop converts to 12 col, as set up in _grid. Extend these whenever possible to keep markup clean.
 //
-// Markup:
-// .one_col
-// .two_col
-// .three_col
-// .four_col
-// .five_col
-// .six_col
-// .seven_col
-// .eight_col
-// .nine_col
-// .eleven_col
-// .twelve_col
-//
-// Styleguide 7.5
+// Styleguide 7.7
 .one_col {
 	@include media($medium) {
 		@include span-columns(0.66);
@@ -256,6 +282,7 @@
 // Wrap above column layout classes in a .row
 //
 // Styleguide 7.6
+
 .row {
 	@include omega;
 	@extend %clearfix;

@@ -219,10 +219,6 @@ td {
 		}
 	}
 
-	.table_details {
-		display: none;
-	}
-
 	@include media($mobileOnly) {
 
 		div {
@@ -238,10 +234,6 @@ td {
 	}
 
 	@include media($medium) {
-
-		.table_details {
-			display: block;
-		}
 
 		.table_header {
 			padding: rem(15) rem(35);
@@ -276,10 +268,6 @@ td {
 
 		.expand {
 			display: none;
-		}
-
-		.table_details {
-			display: block !important;
 		}
 
 		.main {
@@ -326,5 +314,12 @@ td {
 		}
 
 
+	}
+}
+
+.table_details {
+	display: none;
+	@include media($medium) {
+		display: block!important;
 	}
 }

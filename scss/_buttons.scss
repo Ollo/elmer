@@ -307,3 +307,29 @@ input[type="submit"] {
 		color: darken($gloo_gray, 10%);
 	}
 }
+
+
+// # .btn_action
+//
+//
+// Markup: <button class="btn_action"><i class="fa fa-sign-out"></i></button>
+//
+//
+// Styleguide 6.11
+.btn_action {
+    @extends %button;
+    padding: 0.5rem 1rem;
+    background: $white;
+    color: $teal;
+    box-shadow: 1px 1px 0 0 rgba($gloo_gray, 0.3);
+    margin-right: 1rem;
+
+    &:last-child {
+        margin-right: 0;
+    }
+
+    &:hover {
+        background: $teal;
+        color: $white;
+    }
+}

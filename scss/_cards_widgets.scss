@@ -9,10 +9,8 @@ $card_background: $white;
 // Styleguide 22.1
 
 %flip_card {
-	border-radius: $card_radius;
-    box-shadow: $card_shadow;
     background: $card_background;
-    overflow: hidden;
+    // overflow: hidden;
     height: 100%;
 	width: 100%;
     @include sans_light;
@@ -108,49 +106,41 @@ $card_background: $white;
 
 .dash_widget {
 	height: rem(290);
-	width: rem(290);
-	// position: absolute; // this needs to be tested when dashboard is refactored
+	width: 48%;
+	margin: 0 1% 2rem;
+	float: left;
 	font-size: rem(13);
-
-    &.medium {
-    	height: rem(603);
-    	width: rem(290);
-    }
 
     &.large {
     	height: rem(290);
-    	width: rem(600);
+    	width: 98%;
     }
 
     h4 {
-    	text-align: center;
-    	margin-top: 10%;
-    }
+		padding: 1rem 2.5rem 1rem 1rem;
+		margin: 0;
+		background: lighten($light_gray, 15%);
+		color: $charcoal;
+	}
+
+	.flipIt {
+		color: $gray;
+		position: absolute;
+		right: 1rem;
+		top: 1rem;
+	}
+
+	.front, .back {
+		border: 1px solid lighten($light_gray, 10%);
+		float: left;
+	}
 
 	.front {
-		@extend %flip_card;
-		border-top: 12px solid $navy;
-		float: left;
-		padding: rem(25) rem(15) rem(10);
-		position: relative;
-
-		h3 {
-			padding-right: rem(20);
-		}
-
-		.flipIt {
-			color: $gray;
-			position: absolute;
-			right: 0;
-			top: 0;
-		}
-
+		@extend %flip_card;	
 	}
 
 	.back {
 		@extend %flip_card_back;
-		float: left;
-		position: relative;
 		padding-bottom: rem(45);
 
 		form {
@@ -161,16 +151,22 @@ $card_background: $white;
 	    	text-align:center;
 	    }
 
+	    .inner {
+	    	padding-top: 1rem;
+	    }
+
 	}
 
 	//mobile only block styles
-	@include media($mobileOnly) {
+	@include media($medium) {
 
-		.dash_widget {
-			position: static!important;
-			margin: 0 auto rem(15);
-			width: 100%!important;
-			height: auto!important;
+		h4 {
+			padding: 2rem 3.5rem 2rem 2rem;
+		}
+
+		.flipIt {
+			right: 1.75rem;
+			top: 1.75rem;
 		}
 
 	}
@@ -243,6 +239,12 @@ $card_background: $white;
 
     p {
         @extend .muted_text;
+    }
+
+    .front, .back {
+    	overflow: hidden;
+    	box-shadow: $card_shadow;
+        border-radius: $card_radius;
     }
 
     .front {

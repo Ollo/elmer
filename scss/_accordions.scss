@@ -20,25 +20,48 @@
 // Styleguide 10.1
 
 .accordion {
-  margin: rem(50) 0;
+  padding-bottom: rem(10);
 
-  header {
-    cursor: pointer;
-    font-size: rem(16);
+  > h5 {
     color: $teal;
+    padding-right: 2rem;
+    padding-bottom: rem(5);
+    margin-bottom: rem(10);
+    cursor: pointer;
+    border-bottom: 1px solid rgba($gloo_gray, .3);
+    i {
+      position: absolute;
+      right: rem(2);
+      bottom: rem(15);
+      @extend .fa;
+      @extend .fa-sort-desc;
+    }
   }
 
-  //accordion group
-  > div {
-    margin-bottom: 1rem;
-    border: 1px solid $teal;
-    background: $white;
-    border-radius: 6px;
-    padding: rem(10);
+  ul {
+    max-height: 0;
+    overflow: hidden;
+    @include transition(all .5s ease-in-out);
+  }
 
-    //accordion copy
-    > div {
-      margin-top: rem(10);
+  .ui_checkbox_green {
+    + label {
+      margin-left: 2em;
+      padding-bottom: 0;
+      display: block;
+    }
+  }
+
+  &.active {
+    ul {
+      max-height: 1000rem;
+    }
+      
+    h5 {
+      i {
+        @extend .fa-sort-asc;
+        bottom: rem(10);
+      }
     }
 
   }
