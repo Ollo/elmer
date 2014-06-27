@@ -155,22 +155,23 @@ input {
 		font-weight: 500;
 
 		&:before {
-			content: '';
-			display: inline-block;
 			position: relative;
-			top: 0.2em;
-			left: -2px;
-			width: 23px;
-			height: 15px;
+			left: -rem(2);
 			margin-right: 0.5em;
-			background: url("images/checkbox.png") transparent no-repeat;
+			padding: .08rem .56rem;
+			background-color: $white;
+			border: 1px solid $teal;
+			border-radius: 4px;
+			color: transparent;
+			@extend .fa;
+			@extend .fa-check;
 		}
 	}
 
 	&:checked {
 		+ label {
 			&:before {
-				background-position: 0 -16px;
+				color: $teal;			
 			}
 		}
 	}
