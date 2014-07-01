@@ -95,6 +95,18 @@
 		background: tint($pale_blue, 50%);
 	}
 
+	// .well.white
+	//
+	// Markup:
+	// <div class="well blue">Blue background with a gray border.</div>
+	//
+	// Styleguide 12.8
+	&.white {
+		background: $white;
+		@extend .well.shadow;
+		padding: rem(20);
+	}
+
 }
 
 // .box

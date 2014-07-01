@@ -162,6 +162,8 @@
 
 .star_group.small {
 	.star {
-		font-size: rem(20);
+		+ label {
+			font-size: rem(20);
+		}
 	}
 }
