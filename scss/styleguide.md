@@ -30,6 +30,10 @@ First install bower via <http://bower.io>
 
     @import "<YOUR_BOWER_LOCATION>/elmer/scss/elmer";
 
+** due to the font awesome dependency the below variable must be declared locally **
+
+    $fa-font-path: "<YOUR_BOWER_LOCATION>/elmer/scss/packages/components-font-awesome/fonts";
+
 ---
 
 ## Development

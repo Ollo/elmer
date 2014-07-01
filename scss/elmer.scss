@@ -9,7 +9,7 @@
 @import "packages/bourbon/dist/bourbon";
 @import "packages/neat/app/assets/stylesheets/neat";
 @import "packages/neat/app/assets/stylesheets/neat-helpers";
-$fa-font-path: "/packages/components-font-awesome/fonts";
+//$fa-font-path: "/packages/components-font-awesome/fonts"; // removed for local config
 @import "packages/components-font-awesome/scss/font-awesome";
 @import "packages/_normalize.scss/normalize";
 
