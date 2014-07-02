@@ -14,7 +14,7 @@
 
 // .align_right
 //
-// Float an element right, everywhere but portrai mobile
+// Float an element right, everywhere but portrait mobile
 //
 // Markup:
 // <div class="wrapper"><div class="align_right"><img src="http://lorempixel.com/100/100/nature/" /></div></div>
@@ -24,4 +24,49 @@
 .align_right {
 	float: right;
 	margin: 0 0 .5rem 1rem;
+}
+
+// .bounce_loader
+//
+// Loading animation
+//
+// Markup:
+// <div class="bounce_loader"><div class="rect1"></div><div class="rect2"></div><div class="rect3"></div><div class="rect4"></div><div class="rect5"></div></div>
+//
+// Styleguide 24.3
+
+.bounce_loader {
+	height: rem(60);
+	width: rem(70);
+	margin: auto;
+	@include transition(all .3s ease-in-out);
+
+	> div {
+		height: 100%;
+		width: rem(7);
+		margin: 0 rem(3) 0 0;
+		background-color: rgba($gloo_gray, .4);
+		display: inline-block;
+		@include animation-name(stretchDelay);
+		@include animation-duration(1.5s);
+		@include animation-timing-function(ease-in-out);
+		@include animation-iteration-count(infinite);
+
+		&.rect2 {
+			@include animation-delay(-1.4s);
+		}
+
+		&.rect3 {
+			@include animation-delay(-1.3s);
+		}
+
+		&.rect4 {
+			@include animation-delay(-1.2s);
+		}
+
+		&.rect5 {
+			@include animation-delay(-1.1s);
+		}
+
+	}
 }

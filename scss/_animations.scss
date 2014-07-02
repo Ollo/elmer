@@ -200,3 +200,13 @@
   -o-backface-visibility: hidden;
   backface-visibility: hidden;
 }
+
+// animation for the loader
+@include keyframes(stretchDelay) {
+  0%, 40%, 100% {
+    @include transform(scaleY(0.3));
+  }
+  20% {
+    @include transform(scaleY(1));
+  }
+}
