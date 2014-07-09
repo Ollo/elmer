@@ -288,8 +288,7 @@ input[type="submit"] {
 //
 // A special plus button
 //
-// Markup: <button class="btn_add"><i class="fa fa-plus"></i></button>
-//
+// Markup: <div class="wrapper"><button class="btn_add"><i class="fa fa-plus"></i></button></div>
 //
 // Styleguide 6.9
 
@@ -349,7 +348,8 @@ input[type="submit"] {
     @extend %button;
     @include border-clear;
     padding: 0.5rem 1rem;
-    border-radius: 1.8rem;
+    border-radius: $button-radius;
+    //border-radius: 1.8rem;
     background: $white;
     color: $teal;
     box-shadow: 1px 1px 0 0 rgba($gloo_gray, 0.3);
