@@ -1,7 +1,7 @@
 %button {
-	border: none;
-	border-radius: 6px;
-	padding: 0.6em 2em;
+	//border: 1px solid transparent;
+	//border-radius: 6px;
+	//padding: 0.6em 2em;
 	@include sans_light;
 	text-shadow: none;
 	-webkit-font-smoothing: antialiased;
@@ -22,6 +22,14 @@
 	}
 }
 
+
+@mixin border-clear {
+	border: 1px solid transparent;
+}
+
+$button-radius: 6px;
+$standard-btn-pad: 0.6em 2em;
+
 input[type="submit"] {
 	@extend %button;
 }
@@ -40,6 +48,9 @@ input[type="submit"] {
 
 .primary {
 	@extend %button;
+	@include border-clear;
+	padding: $standard-btn-pad;
+	border-radius: $button-radius;
 	background: $teal;
 	color: $white;
 
@@ -62,6 +73,9 @@ input[type="submit"] {
 
 .secondary {
 	@extend %button;
+	@include border-clear;
+	padding: $standard-btn-pad;
+	border-radius: $button-radius;
 	background: $light_green;
 	color: $white;
 
@@ -84,6 +98,9 @@ input[type="submit"] {
 
 .tertiary {
 	@extend %button;
+	@include border-clear;
+	padding: $standard-btn-pad;
+	border-radius: $button-radius;
 	background: $navy;
 	color: $white;
 
@@ -105,6 +122,9 @@ input[type="submit"] {
 // Styleguide 6.4
 .quaternary {
 	@extend %button;
+	@include border-clear;
+	padding: $standard-btn-pad;
+	border-radius: $button-radius;
 	background: $sand;
 	box-shadow: 0 1px 1px rgba(0,0,0,.2);
 	text-transform: uppercase;
@@ -130,6 +150,8 @@ input[type="submit"] {
 
 .inverse {
 	@extend %button;
+	padding: $standard-btn-pad;
+	border-radius: $button-radius;
 	color: $teal;
 	background: $white;
 	border: 1px solid $teal;
@@ -150,7 +172,9 @@ input[type="submit"] {
 
 .btn_icon {
 	@extend %button;
+	@include border-clear;
 	@include sans_light;
+	border-radius: $button-radius;
 	font-size: 1.4rem;
 	@include pad(0.6em 2em 0.6em rem(58));
 	color: $white;
@@ -205,6 +229,9 @@ input[type="submit"] {
 
  .disabled, input[type="submit"]:disabled {
 	@extend %button;
+	@include border-clear;
+	padding: $standard-btn-pad;
+	border-radius: $button-radius;
 	background: $gloo_gray;
 	cursor: not-allowed!important;
 	color: $white;
@@ -226,6 +253,9 @@ input[type="submit"] {
 
  .muted {
 	@extend %button;
+	@include border-clear;
+	padding: $standard-btn-pad;
+	border-radius: $button-radius;
 	color: $white;
 	background: $light_gray;
 
@@ -236,6 +266,7 @@ input[type="submit"] {
 
  %circle_btn {
  	@extend %button;
+ 	@include border-clear;
  	@include pad(1rem 1.5rem);
  	box-shadow: -1px 1px 0 0 rgba($light_gray, 0.25);
  	background: $white;
@@ -315,8 +346,10 @@ input[type="submit"] {
 //
 // Styleguide 6.11
 .btn_action {
-    @extends %button;
+    @extend %button;
+    @include border-clear;
     padding: 0.5rem 1rem;
+    border-radius: 1.8rem;
     background: $white;
     color: $teal;
     box-shadow: 1px 1px 0 0 rgba($gloo_gray, 0.3);
