@@ -171,7 +171,7 @@ input {
 	&:checked {
 		+ label {
 			&:before {
-				color: $teal;			
+				color: $teal;
 			}
 		}
 	}
@@ -616,6 +616,7 @@ input.has_visited:required:invalid {
 		right: rem(10);
 		bottom: rem(1);
 		padding: rem(5);
+		border: 0;
 		color: lighten($gloo_gray, 25%);
 		display: inline-block;
 		background: none;
