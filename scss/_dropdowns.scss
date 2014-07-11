@@ -103,7 +103,6 @@
 	}
 
 	.drop_menu {
-		display: none;
 		width: 90%;
 		margin: 0 auto;
 		background: $sand;
@@ -136,6 +135,19 @@
 		}
 	}
 
+}
+
+.drop_menu {
+	opacity: 0;
+	max-height: 0;
+    overflow: hidden;
+    @include transition(all .2s ease-in-out);
+	
+	&.active {
+		max-height: 500rem;
+		opacity: 1;
+	}
+	
 }
 
 .dropdown {

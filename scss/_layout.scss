@@ -8,108 +8,11 @@
 	@include outer-container;
 }
 
-// Primary layout
-//
-// Layout depends on these main elements: #globalWrap, .content_wrap, main, .global_container, .table_wrap, & #leftSidebar
-//
-// Styleguide 7.2
-
-#globalWrap {
-	padding-top: rem(20);
-
-	.content_wrap {
-		background: $sand;
-		padding: rem(20) rem(15) 0;
-		border-top: 1px solid #dedddc;
-		clear: left;
-		margin-bottom: rem(40);
-
-		> main {
-			@extend %clearfix;
-		}
-	}
-
-	//tablet+ styles
-	@include media($medium) {
-
-		background: $sand;
-
-		//continue border tomfoolery in background
-		&:before {
-			content: " ";
-			position: absolute;
-			height: 1px;
-			background: #dedddc;
-			width: 100%;
-			top: rem(104);
-			z-index: 1;
-		}
-
-		//continue white header tomfoolery in background
-		&:after {
-			content: " ";
-			background: #fff;
-			width: 100%;
-			position: absolute;
-			top: 0;
-			left: 0;
-			height: rem(105);
-		}
-
-	}
-
-	@include media($large) {
-		padding-top: 0;
-
-		.content_wrap {
-			padding: 0;
-
-			> main {
-				padding: rem(30);
-			}
-
-			.widget_dash {
-				padding: rem(30) 0 rem(30) 2%;
-				@include span-columns(8);
-				
-			}
-		}
-	}
-}
-
-.global_container {
-	@extend .wrapper;
-	z-index: 20;
-	background: $sand;
-	clear: left;
-
-	//tablet portrait+
-	@include media($large) {
-
-		.table_wrap {
-			@include span-columns(15);
-			@include row(table);
-		}
-
-		#leftSidebar {
-			@include span-columns(3);
-			@include pad(0);
-			width: rem(200);
-		}
-
-		.content_wrap {
-			@include span-columns(12);
-			@include reset-display;
-		}
-
-	}
-}
-
 // .hidden_mobile
 //
 // Extend this on elements that show on tablet and above
 //
-// Styleguide 7.3
+// Styleguide 7.2
 
 .hidden_mobile {
 	display: none;
@@ -128,7 +31,7 @@
 //
 // Extend this on elements that show only on mobile
 //
-// Styleguide 7.4
+// Styleguide 7.3
 
 .mobile_only {
 	display: block;
@@ -149,7 +52,7 @@
 //
 // Extend this on elements that show only on desktop
 //
-// Styleguide 7.5
+// Styleguide 7.4
 
 .desktop_only {
 	display: none;
@@ -166,10 +69,9 @@
 //
 // Extend this on elements hide from large tablet up
 //
-// Styleguide 7.6
+// Styleguide 7.5
 
 .tablet_up_hide {
-
 	@include media($large) {
 		display: none;
 	}
@@ -179,7 +81,7 @@
 //
 // These basic classes set up widths. They do not trigger any styles on mobile and are thus defaulting to full width. Tablet converts to an 8 col grid and desktop converts to 12 col, as set up in _grid. Extend these whenever possible to keep markup clean.
 //
-// Styleguide 7.7
+// Styleguide 7.6
 .one_col {
 	@include media($medium) {
 		@include span-columns(0.66);
@@ -281,7 +183,7 @@
 //
 // Wrap above column layout classes in a .row
 //
-// Styleguide 7.6
+// Styleguide 7.7
 
 .row {
 	@include omega;
