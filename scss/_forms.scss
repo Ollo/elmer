@@ -266,7 +266,7 @@ input {
 		cursor: pointer;
 		border: 1px solid $form-border-color;
  	    float: left;
-		padding: .5rem 0 .5rem 1.5rem;
+		padding: .8rem 0 .5rem 1.5rem;
 		height: 100%;
 		width: 100%;
 		font-weight: 100;
@@ -481,7 +481,7 @@ input {
 		@include sans_med;
 		font-weight: normal;
 		color: $gray;
-		font-size: rem(19);
+		font-size: rem(16);
 		display: block;
 		// indent for vertically stacked radios so text wraps properly
 		margin-left:1.58em;
@@ -606,7 +606,7 @@ input.has_visited:required:invalid {
 // Transparent and rounded style for inputs on backgrounds
 //
 // Markup:
-// <div style="padding: 1rem; background-color: #40b2cd;">
+// <div style="padding: 1rem; background-color: #40b2cd;f">
 // 	<div class="ui_inverse">
 // 		<input type="text" placeholder="Enter code..." />
 // 		<button><i class="fa fa-plus-circle"></i></button>
