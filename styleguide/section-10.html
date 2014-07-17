@@ -103,7 +103,7 @@
               <h2 class="kss-title"><span class="kss-ref">10.1</span> - .accordion</h2>
             
               
-                  <div class="kss-box"><p>Main accordion wrapper to encase all accordion groups. Style and functionality are dependent upon the basic markup structure as shown below.</p>
+                  <div class="kss-box"><p>Functionality dependant on toggling &apos;.active&apos; as shown on the open acordion below.</p>
 </div>
                   <div class="kss-mod-list">
                     <div class="kss-mod-desc-group">
@@ -111,37 +111,43 @@
                       <div class="kss-mod-name"></div> -->
                     </div>
                     <div class="kss-mod-example">
-                      <div><div class="accordion">
-    <div>
-        <header>Accordion Group</header>
-        <div>Accordion copy here</div>
-    </div>
-    <div>
-        <header>Accordion Group</header>
-        <div>Accordion copy here</div>
-    </div>
-    <div>
-        <header>Accordion Group</header>
-        <div>Accordion copy here</div>
-    </div>
+                      <div>
+<div class="accordion active">
+    <h5>Accordion Header Open<i></i></h5>
+    <ul class="drop_menu active">
+        <li>Accordion item</li>
+        <li>Accordion item</li>
+        <li>Accordion item</li>
+    </ul>
+</div>
+<div class="accordion">
+    <h5>Accordion Header<i></i></h5>
+    <ul class="drop_menu">
+        <li>Accordion item</li>
+        <li>Accordion item</li>
+        <li>Accordion item</li>
+    </ul>
 </div></div>
                     </div>
                   
                   </div>
                   <div class="kss-markup">
-                    <pre class="prettyprint lang-html">&lt;div class=&quot;accordion&quot;&gt;
-    &lt;div&gt;
-        &lt;header&gt;Accordion Group&lt;/header&gt;
-        &lt;div&gt;Accordion copy here&lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div&gt;
-        &lt;header&gt;Accordion Group&lt;/header&gt;
-        &lt;div&gt;Accordion copy here&lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div&gt;
-        &lt;header&gt;Accordion Group&lt;/header&gt;
-        &lt;div&gt;Accordion copy here&lt;/div&gt;
-    &lt;/div&gt;
+                    <pre class="prettyprint lang-html">
+&lt;div class=&quot;accordion active&quot;&gt;
+    &lt;h5&gt;Accordion Header Open&lt;i&gt;&lt;/i&gt;&lt;/h5&gt;
+    &lt;ul class=&quot;drop_menu active&quot;&gt;
+        &lt;li&gt;Accordion item&lt;/li&gt;
+        &lt;li&gt;Accordion item&lt;/li&gt;
+        &lt;li&gt;Accordion item&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;accordion&quot;&gt;
+    &lt;h5&gt;Accordion Header&lt;i&gt;&lt;/i&gt;&lt;/h5&gt;
+    &lt;ul class=&quot;drop_menu&quot;&gt;
+        &lt;li&gt;Accordion item&lt;/li&gt;
+        &lt;li&gt;Accordion item&lt;/li&gt;
+        &lt;li&gt;Accordion item&lt;/li&gt;
+    &lt;/ul&gt;
 &lt;/div&gt;</pre>
                   </div>
               

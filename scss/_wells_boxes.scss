@@ -1,112 +1,85 @@
+$well_border_light: 1px solid rgba(0, 0, 0, .2);
+$well_border_dark: 1px solid $light_gray;
+$well_shadow: 1px 1px 0 0 rgba($gloo_gray, 0.3);
+$well_border_radius: rem(6);
 
-%well {
-	padding: rem(15);
-	margin: 0 0 1rem;
-	border-radius: rem(6);
-
-	@include media($medium) {
-		padding: rem(35);
-	}
-}
-
-// .well
+// @mixin well($radius, $padding, $margin, $full_border, $background);
 //
-// Base well class. Mix and match various well classes for desired affect.
-//
-// Markup:
-// <div class="well" style="border: 1px dashed red;">This is a well. (Red border is for display only and not to be used)</div>
+// This mixin is used on wells as well as various other elements.
+// $radius is 6px by default
+// $padding uses a common well padding of 15px on mobile sizes/ 25px on medium-large sizes. Use 'true' or 'false' if you want this padding.
+// $margin puts a simple 1rem bottom margin on the well. Use either 'true' or 'false' if you want this spacing.
+// $full_border adds a 1px solid $light_gray border. Use true if you want this border, if false an opaque bottom border is added.
+// $background is $white by default
 //
 // Styleguide 12.1
 
-.well {
+@mixin well($radius: $well_border_radius, $padding: true, $margin: false, $border: false, $background: $white, $shadow: true) {
+  
+	border-radius: $radius;
+	background: $background;
 
-	@extend %well;
-
-	// .well.shadow
-	//
-	// Markup:
-	// <div class="well shadow">White background with a shadow.</div>
-	//
-	// Styleguide 12.2
-	&.shadow {
-		box-shadow: rgba(0, 0, 0, 0.15) 0 1px 1px 1px;
+	@if $padding {
+		@extend %well_padding;
 	}
 
-
-	// .well.bottom_border
-	//
-	// Markup:
-	// <div class="well bottom_border">White background with a bottom border (opacity .2). Border doesn't show here but works propelry on the site.</div>
-	//
-	// Styleguide 12.3
-
-	&.bottom_border {
-		border-bottom: 1px solid rgba(0, 0, 0, .2);
-		background-color: $white;
-		padding-top: rem(10);
+	@if $margin {
+		@extend %well_margin;
 	}
 
-	// .well.gray_outline
-	//
-	// Markup:
-	// <div class="well gray_outline">White background with full border and no internal padding, used to outline QOTD tables.</div>
-	//
-	// Styleguide 12.4
-
-	&.gray_outline {
-		border: 1px solid rgb(198, 198, 203);
-		border-radius: 0;
-		padding: 0;
-		margin: 0 0 rem(10);
+	@if $border {
+		border: $well_border_dark;
 	}
 
-	// .well.inset (not in use)
-	//
-	// Markup:
-	// <div class="well inset">White background with an inset shadow.</div>
-	//
-	// Styleguide 12.5
-
-	&.inset {
-
-		box-shadow: $white 0 0 0 4px inset, rgba(10, 10, 0, .3) 2px 2px 3px 3px inset;
+	@if $shadow {
+		box-shadow: $well_shadow;
 	}
 
-	// .well.green
-	//
-	// Markup:
-	// <div class="well green">White background with a green border.</div>
-	//
-	// Styleguide 12.6
-	&.green {
+}
+
+%well_margin {
+	margin: 0 0 1rem;
+}
+
+%well_padding {
+	padding: rem(15);
+	margin: 0 0 1rem;
+
+	@include media($medium) {
 		padding: rem(25);
-		border: rem(2) solid $green;
 	}
+}
 
-	// .well.blue
-	//
-	// Markup:
-	// <div class="well blue">Blue background with a gray border.</div>
-	//
-	// Styleguide 12.7
-	&.blue {
-		padding: rem(25);
-		border: rem(1) solid $light_gray;
-		background: tint($pale_blue, 50%);
-	}
+// %well_white, %well_white_no_padding
+//
+// Extend these wells as needed, as seen below.
+//
+// Markup:
+// <div class="well_white">Common well with a white background. This class can be used in the html</div>
+//
+// Styleguide 12.2
 
-	// .well.white
-	//
-	// Markup:
-	// <div class="well blue">Blue background with a gray border.</div>
-	//
-	// Styleguide 12.8
-	&.white {
-		background: $white;
-		@extend .well.shadow;
-		padding: rem(20);
-	}
+%well_white_padding {
+	@include well();
+}
 
+%well_white_no_padding {
+	@include well($padding: false);
+}
+
+.well_white {
+	@extend %well_white_padding;
+}
+
+// .well_blue
+//
+// Markup:
+// <div class="well_blue">Blue background</div>
+//
+// Styleguide 12.3
+
+.well_blue {
+	@include well($padding: true, $border: true, $background: tint($pale_blue, 50%), $shadow: false);
 }
 
 // .box
@@ -115,17 +88,13 @@
 //
 // Markup:
 // <div class="box">
-//	    <div class="muted_header primary_variation">I am a blue header</div>
-//      <div class="muted_header secondary_variation"><input type="text" placeholder="Search..."/></div>
-//      <div class="row">
-//          I am a row
-//      </div>
-//      <div class="row">
-//          I am also a row
-//      </div>
+// 	<div class="muted_header primary_variation">I am a blue header</div>
+// 	<div class="muted_header secondary_variation"><input type="text" placeholder="Search..."/></div>
+// 	<div class="row">I am a row</div>
+// 	<div class="row">I am also a row</div>
 // </div>
 //
-// Styleguide 12.8
+// Styleguide 12.4
 .box {
 	border: rem(1) solid $light_gray;
 	font-size: rem(14);

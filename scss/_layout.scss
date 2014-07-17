@@ -79,7 +79,7 @@
 
 // Grid classes
 //
-// These basic classes set up widths. They do not trigger any styles on mobile and are thus defaulting to full width. Tablet converts to an 8 col grid and desktop converts to 12 col, as set up in _grid. Extend these whenever possible to keep markup clean.
+// These basic classes set up widths. They do not trigger any styles on mobile and are thus defaulting to full width. Tablet converts to an 8 col grid and desktop converts to 12 col, as set up in _grid. Extend these whenever possible to keep markup clean: .one_col - .twelve_col
 //
 // Styleguide 7.6
 .one_col {
@@ -208,22 +208,3 @@
 		clear: both;
 	}
 }
-
-// .ui_tooltip
-//
-// Temporary messages to display when a feature is not yet functional.
-//
-// Markup:
-// <h2 title="Feature is not yet functional">Hover for tooltip</h2>
-//
-// Styleguide 7.8
-
-.ui_tooltip {
-    padding: 1rem;
-    background: $white;
-    border: 1px solid $teal;
-    box-shadow: 0 0 2px rgba(0,0,0,.25);
-    display: inline-block!important;
-    z-index: 100;
-    @include sans_bold;
-  }

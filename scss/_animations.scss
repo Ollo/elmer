@@ -201,7 +201,11 @@
   backface-visibility: hidden;
 }
 
-// animation for the loader
+// stetchDelay
+//
+// Scales an object's y axis. See .bounce_loader (located in utilites) for usage example.
+//
+// Styleguide 9.3
 @include keyframes(stretchDelay) {
   0%, 40%, 100% {
     @include transform(scaleY(0.3));

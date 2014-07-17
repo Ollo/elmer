@@ -58,3 +58,42 @@ Elmer is a living framework that is still in active development if you would lik
 
 [@cashworth](mailto:cashworth@tangogroup.com)
 
+---
+
+## Standards
+
+When building elmer, we strive to keep our css DRY.
+
+** Nesting **
+
+Though nesting is necessary in many cases, keeping it to a minimum will keep us from having to repeat code. If something can be stripped out into it’s own class for universal purposes, do so. By nesting a minimum amount, our media queries will also be cleaner.
+
+** Extending **
+
+ Using sass's @extend functionality is a great way to achieve DRY code. Write code once, and let sass take care of the compiling. Only in cases where you plan to use the class in the html should you choose to extend a class over a placeholder. In many cases, a placeholder will suffice.
+
+"Keep stylesheets small, and many good things will come to you in life." - Ancient proverb
+
+Please see http://thesassway.com/intermediate/understanding-placeholder-selectors for more information on this.
+
+** Class Names **
+
+Create class names by 'behavior' and not 'look'. For example, instead of calling a button .blue_button, you would call it .primary_button. The color could change at any point, but the fact that it is the main button of the site will not.
+
+Use underscores for all class names, example:
+
+.widget_front
+
+** IDs **
+
+Our philosophy is that an ID should only be used to:
+
+1 Designating a page
+
+2 Declaring the scope of an element for styling purposes
+
+3 Hooking into javascript
+
+There will be no ID's in elmer. Each style created is reusable.
+
+---

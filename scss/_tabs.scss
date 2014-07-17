@@ -1,51 +1,24 @@
 // .tabs
 //
-// Main tab wrapper to encase all tab groups. Style and functionality are dependent upon the basic markup structure as shown below.
+// Tab navigation styles
 //
 // Markup:
-// <div class="tabs">
-//     <ul>
-//         <li><a href="#tab1">Tab 1</a></li>
-//         <li><a href="#tab2">Tab 2</a></li>
-//         <li><a href="#tab3">Tab 3</a></li>
-//     </ul>
-//     <div id="tab1">
-//         First tab content here
-//     </div>
-//     <div id="tab2">
-//         Second tab content here
-//     </div>
-//     <div id="tab3">
-//         Third tab content here
-//     </div>
-// </div>
+// <nav class="tabs">
+// 	<ul>
+// 		<li class="current"><a>Settings</a></li>
+// 		<li><a>Branding</a></li>
+// 		<li><a>Champion View</a></li>
+// 		<li><a>Members</a></li>
+// 		<li><a>Roles</a></li>
+// 		<li><a>Activity</a></li>
+// 	</ul>
+// </nav>
 //
 // Styleguide 11.1
 
-.tabs {
+%tabs {
 	@extend %small_text;
 
-	> ul {
-
-		li {
-			display: inline-block;
-
-			a {
-				display: block;
-			}
-
-			&:hover {
-				 cursor: pointer;
-			}
-
-			&.current {
-				font-weight: bold;
-			}
-		}
-	}
-}
-
-nav.tabs {
 	ul {
 		padding: 0;
 	}
@@ -53,11 +26,13 @@ nav.tabs {
 	li {
 		@include sans_med;
 		@extend %muted_text;
+		display: inline-block;
 		padding: 0 2rem 0 0;
 
 		a {
 			@extend %muted_text;
 			font-weight: 300;
+			display: block;
 		}
 
 		&.current {
@@ -83,7 +58,11 @@ nav.tabs {
 
 }
 
-//full page tabs
+.tabs {
+	@extend %tabs;
+}
+
+//full page tabs, these are being used on the payment page (keep for now, will need to reavaluate after this page is converted into angular)
 .tab_pane {
 	display: none;
 

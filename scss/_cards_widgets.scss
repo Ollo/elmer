@@ -1,4 +1,4 @@
-$card_shadow: 0 1px 1px rgba(0,0,0,.32);
+// $card_shadow: 0 1px 1px rgba(0,0,0,.32);
 $card_radius: 9px;
 $card_background: $white;
 
@@ -10,13 +10,11 @@ $card_background: $white;
 
 %flip_card {
     background: $card_background;
-    // overflow: hidden;
     height: 100%;
 	width: 100%;
     @include sans_light;
 
     h3 {
-		@include sans_med;
 		font-size: rem(14);
 		margin: 0 0 rem(20);
 		position: relative;
@@ -79,7 +77,7 @@ $card_background: $white;
 //<div class="wrapper">
 // <div class="dash_widget">
 //     <div class="front">
-//         <h3>Spaces<a class="flipIt" href="#"><i class="fa fa-cog"></i></a></h3>
+//         <h4>Spaces<a class="flipIt" href="#"><i class="fa fa-cog"></i></a></h4>
 //     </div>
 //     <div class="back">
 //         <h3><i class="fa fa-cog"></i>Spaces<a href="#" class="close flipIt"><i class="fa fa-times"></i></a></h3>
@@ -243,13 +241,11 @@ $card_background: $white;
 
     .front, .back {
     	overflow: hidden;
-    	box-shadow: $card_shadow;
-        border-radius: $card_radius;
     }
 
     .front {
         @extend %flip_card;
-        @extend .well.shadow;
+        @extend %well_white_no_padding;
         padding: rem(25) rem(10) rem(20);
         text-align: center;
 
@@ -333,9 +329,7 @@ $card_background: $white;
 // Styleguide 22.4
 
 .content_card {
-	box-shadow: $card_shadow;
-	border-radius: $card_radius;
-	background: $card_background;
+	@extend %well_white_no_padding;
 	overflow: hidden;
 	margin-bottom: 1.75rem;
 	@extend .four_col;

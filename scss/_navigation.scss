@@ -20,7 +20,7 @@
 
     nav {
         display: none;
-        @extend .tabs;
+        @extend %tabs;
     }
 
     @include media($large) {

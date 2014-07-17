@@ -22,3 +22,11 @@ g {
         shape-rendering: crispEdges;
     }
 }
+
+.tick {
+    display: none;
+
+    @include media(480px) {
+        display: block;
+    }
+}

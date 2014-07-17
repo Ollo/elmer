@@ -151,6 +151,60 @@
 <p><a href="mailto:cashworth@tangogroup.com">@cashworth</a>
 
 </p>
+<hr>
+<h2>Standards</h2>
+<p>When building elmer, we strive to keep our css DRY.
+
+</p>
+<p><strong> Nesting </strong>
+
+</p>
+<p>Though nesting is necessary in many cases, keeping it to a minimum will keep us from having to repeat code. If something can be stripped out into it’s own class for universal purposes, do so. By nesting a minimum amount, our media queries will also be cleaner.
+
+</p>
+<p><strong> Extending </strong>
+
+</p>
+<p> Using sass&apos;s @extend functionality is a great way to achieve DRY code. Write code once, and let sass take care of the compiling. Only in cases where you plan to use the class in the html should you choose to extend a class over a placeholder. In many cases, a placeholder will suffice.
+
+</p>
+<p>&quot;Keep stylesheets small, and many good things will come to you in life.&quot; - Ancient proverb
+
+</p>
+<p>Please see <a href="http://thesassway.com/intermediate/understanding-placeholder-selectors">http://thesassway.com/intermediate/understanding-placeholder-selectors</a> for more information on this.
+
+</p>
+<p><strong> Class Names </strong>
+
+</p>
+<p>Create class names by &apos;behavior&apos; and not &apos;look&apos;. For example, instead of calling a button .blue_button, you would call it .primary_button. The color could change at any point, but the fact that it is the main button of the site will not.
+
+</p>
+<p>Use underscores for all class names, example:
+
+</p>
+<p>.widget_front
+
+</p>
+<p><strong> IDs </strong>
+
+</p>
+<p>Our philosophy is that an ID should only be used to:
+
+</p>
+<p>1 Designating a page
+
+</p>
+<p>2 Declaring the scope of an element for styling purposes
+
+</p>
+<p>3 Hooking into javascript
+
+</p>
+<p>There will be no ID&apos;s in elmer. Each style created is reusable.
+
+</p>
+<hr>
 
         
       </article>

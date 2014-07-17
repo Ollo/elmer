@@ -156,7 +156,7 @@ input {
 
 		&:before {
 			position: relative;
-			left: -rem(2);
+			left: rem(-2);
 			margin-right: 0.5em;
 			padding: .08rem .56rem;
 			background-color: $white;
@@ -243,25 +243,47 @@ input {
 //select styles
 
 %ui_select_generic {
-	overflow: hidden;
 	padding: 0;
 	margin: 0;
 	border-radius: 5px;
 	@extend %muted_text;
-	border: 1px solid $light_gray;
 	cursor: pointer;
 	position: relative;
+	height: rem(35);
 
+	i {
+		line-height: 1rem;
+		font-size: 2rem;
+		display: block;
+	}
 
 	select {
-		background-color: transparent;
+		border-radius: 5px;
+		box-shadow: $form-box-shadow;
+		background-color: $white;
 		background-image: none;
-		-webkit-appearance: none;
-		-moz-appearance: none;
-		border: none;
+		@include appearance(none);
 		cursor: pointer;
-		text-indent: 0.01px;
- 	    text-overflow: '';
+		border: 1px solid $form-border-color;
+ 	    float: left;
+		padding: .5rem 0 .5rem 1.5rem;
+		height: 100%;
+		width: 100%;
+		font-weight: 100;
+		z-index: 10;
+
+		+ div {
+			position: absolute;
+			top: 1px;
+			right: 1px;
+			bottom: 1px;
+			padding: .25rem 1rem;
+			//background color hides the firefox arrow
+			background-color: $white;
+			border-radius: 0 6px 6px 0;
+			z-index: 10;
+			pointer-events: none;
+		}
 
  		&:focus {
 			outline: none;
@@ -272,8 +294,12 @@ input {
  			right:0;
  			top:0;
  			bottom:0;
+ 			+ div {
+	 			border-color: $teal;
+	 		}
 		}
 
+		// removes firefox dotted line
 		&:-moz-focusring {
 			color: transparent;
 			text-shadow: 0 0 0 $black;
@@ -281,18 +307,8 @@ input {
 
 	}
 
-	&:focus {
- 		box-shadow: $form-box-shadow-focus;
- 		border: 1px solid $teal;
- 		outline: none;
-  	}
-
-
-	&.error {
-		border: 1px solid $red;
-	}
-
 }
+
 // .ui_select
 //
 // Default select box for standard forms
@@ -303,9 +319,11 @@ input {
 //         <option>option 1</option>
 //         <option>option 2</option>
 //     </select>
+//     <div>
+//         <i class="fa fa-caret-up"></i>
+//         <i class="fa fa-caret-down"></i>
+//     </div>
 // </div>
-//
-//  .error - changes border to red
 //
 // Styleguide 8.6
 
@@ -313,47 +331,23 @@ input {
 	@extend %ui_select_generic;
 	@include box-sizing(border-box);
 	@include transition(border-color);
-	border: 1px solid $form-border-color;
-	box-shadow: $form-box-shadow;
-	border-radius: 6px;
-	padding: 0.1em rem(1) 1em rem(1);
-	margin-bottom: rem(20);
 	@extend %muted_text;
+	border-radius: 6px;
+	margin-bottom: rem(20);
 	font-weight: 300;
-	background: url("/images/select.png") 100% 5% $white no-repeat;
-	height: rem(35);
+	background-color: $white;
 
-	select, span {
-		@include museo-sans;
-		float: left;
-		padding: 0.4em rem(10) rem(6) rem(13);
-		height: auto;
-		width: 100%;
-		overflow: hidden;
-		color: lighten($gloo_gray, 10);
-		font-weight: 100;
-
-		&:-moz-focusring {
-			text-shadow: 0 0 0 $gloo_gray;
+	select {
+		+ div {
+			border-left: 1px solid $form-border-color;
 		}
-
-		option {
-			padding: rem(5);
-			line-height: rem(15);
-			border: 0 none;
-			outline: 0 none;
-
-			&:focus {
-				border: 0 none;
-				outline: 1px none;
-			}
-		}
-
 	}
 
-	&.error {
-		background-position: 100% -40px;
+	.fa-caret-up {
+		margin: .35rem 0 .1rem;
+		display: block;
 	}
+
 }
 
 // .ui_select_arrow
@@ -366,49 +360,29 @@ input {
 //         <option>option 1</option>
 //         <option>option 2</option>
 //     </select>
-//     <i class="fa fa-angle-down select_indicator"></i>
+//     <div>
+//         <i class="fa fa-angle-down"></i>
+//     </div>
 // </div>
-//
-// .error - changes border to red
 //
 // Styleguide 8.7
 
 .ui_select_arrow {
 	@extend %ui_select_generic;
-	height: 2.7rem;
-
-	&:hover {
-		border-color: $form-border-color-hover;
-	}
 
 	i {
 		color: $black;
-		position: absolute;
-		right: rem(10);
-		top: rem(3);
-		font-size: rem(20);
 	}
 
 	select {
-		padding: rem(6) rem(10) rem(6) rem(15);
-		z-index: 100;
-		width: 115%;
-		max-width: 100%;
-		@extend %small_text;
-		height: 2.5rem;
-
-		&:-moz-focusring {
-			text-shadow: 0 0 0 $black;
-		}
-
-		&:focus {
-			overflow: visible;
+		+ div {
+			padding-top: 1.2rem;
 		}
 	}
+
 }
 
 //radio styles
-
 %ui_radio_generic {
 	position: absolute; left: -999em;
 
@@ -445,8 +419,7 @@ input {
 	    cursor: pointer;
 	    float: left;
 	    width: 50% !important;
-	    padding: 0.5rem 0;
-	    height: 100%;
+	    padding: $standard-btn-pad;
 	    text-align: center;
 	    margin-bottom: 0;
 	    color: $teal;
@@ -473,7 +446,6 @@ input {
 
 	input[type="radio"]:checked + .btn_radio {
 		@extend .primary;
-		padding: 0.5rem 0;
 	}
 
 	//focus styles
@@ -502,7 +474,6 @@ input {
 //
 // Styleguide 8.9
 
-
 .ui_radio_green {
 	@extend %ui_radio_generic;
 
@@ -521,25 +492,10 @@ input {
 			@extend %muted_text;
 			margin-right: rem(10);
 			font-size: rem(19);
+			left: .5rem;
 		}
 
 	}
-
-	// this needs to be revisted, the indent to wrap text breaks the shadow
-	// &:focus {
-	// 	+ label {
-	// 		i {
-	// 			border-radius: 10px;
-	// 			box-shadow: 0 0 5px $green;
-	// 			//box shadow hack
-	// 			&:before {
-	// 				display: block;
-	// 				margin-top:-1px;
-	// 				margin-bottom: -3px;
-	// 			}
-	// 		}
-	// 	}
-	// }
 
 	&:checked {
 		+ label {
@@ -579,32 +535,15 @@ input.has_visited:required:invalid {
 	padding-left: rem(25);
 }*/
 
-// .ui_search
-//
-// Common searchfield
-//
-// Markup:
-// <div class="ui_search">
-//     <input type="search"/>
-//     <button><i class="fa fa-search"></i></button>
-// </div>
-//
-// Styleguide 8.10
-
-.ui_search {
-
-	input[type="search"] {
+%single_line_form {
+	input[type=search], input[type=text] {
 		border-radius: rem(25);
 		background: transparent;
-		border: 0.12rem solid rgba($gloo_gray, 0.4);
-		height: rem(30);
-		padding: rem(8) rem(25) rem(8);
-		color: $gloo_gray;
 		letter-spacing: rem(0.18);
 		margin: 0;
+		padding: rem(8) rem(30) rem(8) rem(15);
 
 		@include placeholder {
-		    color: rgba($gloo_gray, 0.5);
 		    padding-left: 0.45em;
 		    letter-spacing: rem(0.18);
 		}
@@ -614,16 +553,87 @@ input.has_visited:required:invalid {
 	button, input[type="submit"] {
 		position: absolute;
 		right: rem(10);
-		bottom: rem(1);
+		top: rem(3);
 		padding: rem(5);
 		border: 0;
-		color: lighten($gloo_gray, 25%);
 		display: inline-block;
 		background: none;
 	}
 
 	@include media($small) {
 		display: inline-block;
+	}
+
+}
+
+// .ui_search
+//
+// Common searchfield
+//
+// Markup:
+// <div class="ui_search">
+//     <input type="search" placeholder="Enter text..."/>
+//     <button><i class="fa fa-search"></i></button>
+// </div>
+//
+// Styleguide 8.10
+
+.ui_search {
+	@extend %single_line_form;
+
+	input[type="search"], input[type="text"] {
+		border: 0.12rem solid rgba($gloo_gray, 0.4);
+		color: $gloo_gray;
+
+		@include placeholder {
+		    color: rgba($gloo_gray, 0.5);
+		}
+
+		&:focus {
+			border-color: $teal;
+		}
+
+	}
+
+	button, input[type=submit] {
+		color: lighten($gloo_gray, 25%);
+	}
+
+}
+
+// .ui_inverse
+//
+// Transparent and rounded style for inputs on backgrounds
+//
+// Markup:
+// <div style="padding: 1rem; background-color: #40b2cd;">
+// 	<div class="ui_inverse">
+// 		<input type="text" placeholder="Enter code..." />
+// 		<button><i class="fa fa-plus-circle"></i></button>
+// 	</div>
+// </div>
+//
+// Styleguide 8.10
+
+.ui_inverse {
+	@extend %single_line_form;
+
+	input[type="search"], input[type="text"] {
+		border: 0.12rem solid rgba($white, 0.4);
+		color: $white;
+
+		@include placeholder {
+		    color: rgba($white, 0.5);
+		}
+
+		&:focus {
+			border-color: $white;
+		}
+
+	}
+
+	button, input[type=submit] {
+		color: $white;
 	}
 
 }
