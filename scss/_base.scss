@@ -27,20 +27,7 @@ html {
 body {
 	font-size: $base_font_size;
 	line-height: $base_line_height;
-	//font-family: $helvetica;
 	color: $charcoal;
-	overflow-x: hidden;
-	left: 0;
-	@include transition (left .75s ease-in-out);
-
-	&.menu_open {
-		left: 250px;
-		overflow: hidden;
-		@include media($large) {
-			left: 0;
-			overflow: auto;
-		}
-	}
 }
 
 img {
