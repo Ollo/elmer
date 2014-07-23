@@ -67,12 +67,12 @@
 	max-height: 0;
     overflow: hidden;
     @include transition(all .2s ease-in-out);
-	
-	&.active {
+
+	&.active, &.open {
 		max-height: 500rem;
 		opacity: 1;
 	}
-	
+
 }
 
 .dropdown {
