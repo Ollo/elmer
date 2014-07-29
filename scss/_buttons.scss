@@ -25,7 +25,7 @@
 }
 
 $button-radius: 6px;
-$standard-btn-pad: 0.6em 2em;
+$standard-btn-pad: 0.5em 2em;
 
 input[type="submit"] {
 	@extend %button;
@@ -334,6 +334,34 @@ input[type="submit"] {
 	&:hover {
 		background: darken($sand, 10%);
 		color: darken($gloo_gray, 10%);
+	}
+}
+
+// .tag_secondary
+//
+// Secondary tag style
+//
+// Markup: <a class="tag_secondary {$modifiers}">Faith</a>
+//
+// :hover - darkens the background
+//
+// Styleguide 6.11
+
+.tag_secondary {
+	background: $sand;
+	padding: 0.65rem 1rem .5rem;
+	color: $gray;
+	border-bottom: 1px solid darken($sand, 12%);
+	border-radius: 9px;
+	display: block;
+	margin-bottom: 1rem;
+	@include transition(all .2s ease-in-out);
+	@extend %small_text;
+	font-weight: 500;
+	&:hover {
+		background: darken($sand, 10%);
+		color: darken($gray, 10%);
+		border-bottom: 1px solid darken($sand, 30%);
 	}
 }
 

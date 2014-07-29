@@ -15,7 +15,8 @@ $well_border_radius: rem(6);
 // Styleguide 12.1
 
 @mixin well($radius: $well_border_radius, $padding: true, $margin: false, $border: false, $background: $white, $shadow: true) {
-  
+  	
+  	@extend %clearfix;
 	border-radius: $radius;
 	background: $background;
 

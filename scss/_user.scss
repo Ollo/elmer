@@ -39,8 +39,8 @@ img.circled {
 	//
 	// Styleguide 21.3
 	&.medium {
-		width: rem(70);
-		height: rem(70);
+		width: rem(60);
+		height: rem(60);
 	}
 
 	// img.circled.large
@@ -177,6 +177,16 @@ img.circled {
 	&.xsmall {
 		img {
 			@extend .xsmall;
+		}
+	}
+
+	&.medium {
+		padding-left: 9rem;
+		figcaption {
+			padding: 1.5rem 0;
+		}
+		img {
+			@extend .medium;
 		}
 	}
 
