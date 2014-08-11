@@ -23,19 +23,18 @@
 // Styleguide 10.1
 
 .accordion {
-  padding-bottom: rem(10);
+  margin-bottom: rem(10);
+  border-bottom: 1px solid rgba($gloo_gray, .3);
 
   > h5 {
     color: $teal;
     padding-right: 2rem;
-    padding-bottom: rem(5);
-    margin-bottom: rem(10);
+    margin: 0 0 rem(5);
     cursor: pointer;
-    border-bottom: 1px solid rgba($gloo_gray, .3);
     i {
       position: absolute;
       right: rem(2);
-      bottom: rem(15);
+      top: rem(3);
       @extend .fa;
       @extend .fa-sort-desc;
     }
@@ -56,11 +55,15 @@
   }
 
   &.active {
-      
+
+    .drop_menu {
+      padding: 1rem 0;
+    }
+
     h5 {
       i {
         @extend .fa-sort-asc;
-        bottom: rem(10);
+        top: rem(7);
       }
     }
 

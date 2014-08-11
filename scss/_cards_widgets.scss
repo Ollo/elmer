@@ -109,9 +109,13 @@ $card_background: $white;
 	float: left;
 	font-size: rem(13);
 
-    &.large {
+    &.double_wide {
     	height: rem(290);
     	width: 98%;
+    }
+
+    &.double_tall {
+    	height: rem(600);
     }
 
     h4 {
