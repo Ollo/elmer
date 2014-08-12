@@ -104,18 +104,21 @@ $card_background: $white;
 
 .dash_widget {
 	height: rem(290);
-	width: 48%;
-	margin: 0 1% 2rem;
-	float: left;
 	font-size: rem(13);
-
-    &.double_wide {
-    	height: rem(290);
-    	width: 98%;
-    }
+	margin: 0 0 2rem;
 
     &.double_tall {
     	height: rem(600);
+    }
+
+    @include media($small) {
+    	width: 48%;
+		margin: 0 1% 2rem;
+		float: left;
+
+		&.double_wide {
+	    	width: 98%;
+	    }
     }
 
     h4 {
