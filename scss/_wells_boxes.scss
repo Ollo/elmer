@@ -15,7 +15,7 @@ $well_border_radius: rem(6);
 // Styleguide 12.1
 
 @mixin well($radius: $well_border_radius, $padding: true, $margin: false, $border: false, $background: $white, $shadow: true) {
-  	
+
   	@extend %clearfix;
 	border-radius: $radius;
 	background: $background;
@@ -123,4 +123,48 @@ $well_border_radius: rem(6);
 		}
 	}
 
+}
+// .box_table
+//
+// a variant of the .box component with options for a header and footer
+//
+// Markup:
+// <div class="box_table">
+// 	<header class="row">
+// 		<h2>Title</h2>
+// 	</header>
+//	<div class="row">
+//		<span>Champion Name</span>
+//	</div>
+// 	<footer class="row">
+// 		<button class="primary">Cancel</button>
+// 	</footer>
+// </div>
+//
+// Styleguide 12.5
+
+.box_table {
+	@extend .box;
+
+	.row {
+		margin: 0;
+		padding: rem(30);
+	}
+
+	header {
+		background: lighten($light_gray, 15%);
+	}
+
+	footer {
+		background: lighten($light_gray, 25%);
+
+		button {
+			float: right;
+			background: $light_gray;
+
+			&:hover {
+				background: darken($light_gray, 10%);
+			}
+		}
+	}
 }
