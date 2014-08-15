@@ -57,6 +57,13 @@ input[type="submit"] {
 	white-space: nowrap;
 }
 
+// Forces iPhone from zooming on inputs, which was causing the user to have to manually unzoom everytime they focused on an input. Specifically happening in modals.
+@media screen and (-webkit-min-device-pixel-ratio:0) { 
+ select:focus, textarea:focus, input:focus {
+ font-size: 16px;
+  }
+ }
+
 
 // Basic Text Input
 //

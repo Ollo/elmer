@@ -48,9 +48,11 @@
         outline: none;
     }
 
-    .modal-footer {
-        .button_wrap {
-            float: right;
+    @include media($medium) {
+        .modal-footer {
+            .button_wrap {
+                float: right;
+            }
         }
     }
 }
@@ -91,15 +93,15 @@
 
     // When fading in the modal, animate it to slide down
     &.fade .modal-dialog {
-        @include transform(translateY(0));
+        @include transform(translateY(-500px));
         @include transition(all 0.5s ease-in-out);
     }
     &.in .modal-dialog {
-        @include transform(translateY(100px));
+        @include transform(translateY(0));
     }
 
     .modal-dialog {
-        margin: 15% 2rem 0;
+        margin: 2rem 2rem 0;
 
         .modal-content {
             background-color: $white;
@@ -141,17 +143,41 @@
                 padding: rem(25);
                 background: $sand;
                 @extend %clearfix;
-                button {
+                button, .btn {
                     margin-right: 1.5rem;
                 }
             }
         }
     }
+
+    @include media($mobileOnly) {
+        .modal-dialog {
+            .modal-content {
+                .modal-footer {
+                    button, .btn {
+                        width: 47%;
+                        margin-right: 2.5%;
+                        padding-left: 0;
+                        padding-right: 0;
+                    }
+                }
+            }
+        }
+    }
+
     @include media($medium) {
         .modal-dialog {
             @include span-columns(6);
             margin: 0 auto!important;
             float: none;
+        }
+        &.in .modal-dialog {
+            @include transform(translateY(100px));
+        }
+        .modal-footer {
+            button, .btn {
+                margin-right: 1.5rem;
+            }
         }
     }
     @include media($large) {
