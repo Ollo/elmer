@@ -48,7 +48,7 @@
         outline: none;
     }
 
-    @include media($medium) {
+    @include media($small) {
         .modal-footer {
             .button_wrap {
                 float: right;
@@ -96,71 +96,71 @@
         @include transform(translateY(-500px));
         @include transition(all 0.5s ease-in-out);
     }
+    
     &.in .modal-dialog {
         @include transform(translateY(0));
     }
 
     .modal-dialog {
         margin: 2rem 2rem 0;
+    }
 
-        .modal-content {
-            background-color: $white;
-            border-radius: 6px;
-            padding: 2.5rem 0 0;
-            overflow: hidden;
+    .modal-content {
+        background-color: $white;
+        border-radius: 6px;
+        padding: 2.5rem 0 0;
+        overflow: hidden;
+    }
 
-            .modal-header {
-                @extend %clearfix;
-                border-bottom: 1px solid $light_gray;
-                padding: 0 0 1rem;
-                margin: 0 2.5rem 0;
+    .modal-header {
+        @extend %clearfix;
+        border-bottom: 1px solid $light_gray;
+        padding: 0 0 1rem;
+        margin: 0 2.5rem 0;
 
-                h2 {
-                    @include sans_bold;
-                    float: left;
-                    color: $teal;
-                    margin: 0;
-                    -webkit-font-smoothing: antialiased;
-                }
+        h2 {
+            @include sans_bold;
+            float: left;
+            color: $teal;
+            margin: 0;
+            -webkit-font-smoothing: antialiased;
+        }
 
-                .modal-close {
-                    float: right;
-                    @extend %muted_text;
-                    font-size: rem(20);
-                }
-            }
-
-            .modal-body {
-                color: $gray;
-                padding: rem(25) 2.5rem rem(50);
-                @include sans_med;
-
-                strong {
-                    color: $black;
-                }
-            }
-            .modal-footer {
-                padding: rem(25);
-                background: $sand;
-                @extend %clearfix;
-                button, .btn {
-                    margin-right: 1.5rem;
-                }
-            }
+        .modal-close {
+            float: right;
+            @extend %muted_text;
+            font-size: rem(20);
         }
     }
 
-    @include media($mobileOnly) {
-        .modal-dialog {
-            .modal-content {
-                .modal-footer {
-                    button, .btn {
-                        width: 47%;
-                        margin-right: 2.5%;
-                        padding-left: 0;
-                        padding-right: 0;
-                    }
-                }
+    .modal-body {
+        color: $gray;
+        padding: rem(25) 2.5rem rem(50);
+        @include sans_med;
+
+        strong {
+            color: $black;
+        }
+    }
+
+    .modal-footer {
+        padding: rem(25);
+        background: $sand;
+        @extend %clearfix;
+        button, .btn {
+            width: 47%;
+            margin-right: 2%;
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+
+    @include media($small) {
+        .modal-footer {
+            button, .btn {
+                margin-right: 1.5rem;
+                width: auto;
+                padding: $standard-btn-pad;
             }
         }
     }
@@ -174,12 +174,8 @@
         &.in .modal-dialog {
             @include transform(translateY(100px));
         }
-        .modal-footer {
-            button, .btn {
-                margin-right: 1.5rem;
-            }
-        }
     }
+    
     @include media($large) {
         .modal-dialog {
             @include span-columns(5);
