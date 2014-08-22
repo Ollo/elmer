@@ -189,3 +189,18 @@
     }
 
 }
+
+// .action_header
+//
+// Markup: 
+// <header class="action_header">
+//     Actions: 
+//     <button class="btn_action_muted"><i class="fa fa-trash-o"></i></button>
+// </header>
+//
+// Styleguide 18.6
+
+.action_header {
+    clear: left;
+    color: $light_gray;
+}

@@ -123,6 +123,7 @@ td {
 	.row {
 		padding: rem(15) rem(15) 0;
 		border-bottom: 1px solid #c6c6cb;
+		min-height: 5rem;
 
 		&.active {
 			background-color: #fafafa;

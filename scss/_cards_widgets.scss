@@ -106,18 +106,19 @@ $card_background: $white;
 	height: rem(290);
 	font-size: rem(13);
 	margin: 0 0 2rem;
+	cursor: move;
 
     &.double_tall {
-    	height: rem(600);
+    	height: rem(605);
     }
 
     @include media($small) {
-    	width: 48%;
-		margin: 0 1% 2rem;
 		float: left;
+		margin-bottom: 9%;
 
+		// component does not currently allow for column spanning of widgets, revisit again
 		&.double_wide {
-	    	width: 98%;
+	    	width: 100%;
 	    }
     }
 
