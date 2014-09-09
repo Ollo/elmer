@@ -64,7 +64,6 @@ input[type="submit"] {
   }
  }
 
-
 // Basic Text Input
 //
 // Markup:
@@ -644,4 +643,40 @@ input.has_visited:required:invalid {
 		color: $white;
 	}
 
+}
+
+// .ui_file_upload
+//
+// File Input
+//
+// Markup:
+// <div class="ui_file_upload">
+// <input type="file" />
+// <a class="primary">Choose File(s)</a>
+// </div>
+//
+// Styleguide 8.10
+
+.ui_file_upload {
+	margin: rem(30) 0 rem(50);
+	display: inline-block;
+	.primary {
+		font-size: rem(20);
+		position: absolute;
+		top: 0;
+		right: 0;
+		margin: auto;
+		left: 0;
+		width: 22rem;
+	}
+	input[type=file] {
+		opacity: 0;
+		z-index: 1;
+		font-size: 2rem;
+		height: 4rem;
+		width: 50%;
+		&:focus {
+			outline: none;
+		}
+	}
 }

@@ -214,3 +214,22 @@
     @include transform(scaleY(1));
   }
 }
+
+// pulse
+//
+// A quick pulse of an object, use as seen below:
+// @include animation-name(pulse);
+// @include animation-duration(.5s);
+// @include animation-timing-function(ease-in-out);
+// @include animation-iteration-count(1);
+//
+// Styleguide 9.4
+
+@include keyframes(pulse) {
+  0%, 100% {
+    @include transform(scale3d(1,1,1));
+  }
+  50% {
+    @include transform(scale3d(1.25,1.25,1.25));
+  }
+}

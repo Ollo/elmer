@@ -3,52 +3,141 @@
 //
 // Markup:
 // <div class="progress_bar">
-//    <span style="width:50%"><span>
+//    <span class="bar" style="width:50%"></span>
+//    <span>50% Complete</span>
 // </div>
+// <span>file_name_01.png</span>
 //
 // Styleguide 13.1
 
 .progress_bar {
-	height: 2rem;
+	height: 1rem;
 	background: $white;
-	box-shadow: rgba(10, 10, 0, .25) 1px 1px 1px 1px inset;
-	border-radius: 6px;
-	overflow: hidden;
+	border: 1px solid $teal;
+	width: rem(120);
+	display: inline-block;
+	margin: 1rem 3rem 2rem 0;
 
-	span {
+	.bar {
 		display: block;
 		width: 0%;
 		height: 100%;
 		background: $teal;
-		border-radius: 6px;
+		@include transition(width .2s linear, color .2s linear);
+		+ span {
+			position: absolute;
+			top: .5rem;
+			left: 0;
+			width: 100%;
+			color: $gloo_gray;
+			font-size: rem(8);
+		}
 	}
 
-	// .progress_bar.red
+	&:before {
+		content: '';
+		position: absolute;
+		right: -1.75rem;
+		top: -.35rem;
+	}
+
+	// .progress_bar.error
 	//
 	// Markup:
-	// <div class="progress_bar red">
-	//    <span style="width:10%"><span>
+	// <div class="progress_bar error">
+	//    <span class="bar" style="width:10%"></span>
+	//    <span>10% Complete</span>
 	// </div>
 	//
-	// Styleguide 13.1.1
-	&.red {
-		span {
+	// Styleguide 13.2
+	&.error {
+
+		border-color: $red;
+
+		.bar {
 			background: $red;
+			+ span {
+				display: none;
+			}
 		}
+
+		&:before {
+			color: $red;
+			@extend .fa;
+			@extend .fa-times;
+		}
+
 	}
 
-	// .progress_bar.green
+	// .progress_bar.complete
 	//
 	// Markup:
-	// <div class="progress_bar green">
-	//    <span style="width:100%"><span>
+	// <div class="progress_bar complete">
+	//    <span class="bar" style="width:100%"></span>
+	//    <span>1000% Complete</span>
 	// </div>
 	//
-	// Styleguide 13.1.2
-	&.green {
-		span {
+	// Styleguide 13.3
+	&.complete {
+
+		border-color: $green;
+
+		.bar {
 			background: $light_green;
+			+ span {
+				display: none;
+			}
 		}
+
+		&:before {
+			color: $green;
+			@extend .fa;
+			@extend .fa-check;
+		}
+
+	}
+
+}
+
+// .progress_bar_container
+//
+// For use in cases when text is needed after the progress bar
+//
+// Markup:
+// <div class="progress_bar_container">
+//     <div class="progress_bar">
+//        <span class="bar" style="width:50%"></span>
+//        <span>50% Complete</span>
+//     </div>
+//     <span>file_name_01.png</span>
+// </div>
+//
+// Styleguide 13.4
+
+.progress_bar_container {
+	@include clearfix;
+		
+	.progress_bar {
+		float: left;
+
+		+ span {
+			float: left;
+			color: $gloo_gray;
+			margin-bottom: 1rem;
+		}
+
+	}
+
+	@include media($mobileOnly) {
+		
+		.progress_bar {
+			max-width: 50%;
+		}
+		
+		span {
+			max-width: 50%;
+		}
+
 	}
 
 }
