@@ -1,0 +1,63 @@
+// .hero
+//
+// Large banner style image
+//
+// Markup:
+// <figure class="hero">
+//     <img src="http://lorempixel.com/910/227/abstract">
+//     <figcaption>
+//         <img class="avatar circled bordered" src="http://lorempixel.com/100/100/nature/" />
+//         <button class="btn_action"><i class="fa fa-cog"></i></button>
+//     </figcaption>
+// </figure>
+// <figure class="hero">
+//     <img src="http://lorempixel.com/910/227/abstract">
+//     <figcaption>
+//         <button class="primary" ng-click="connectToChampion()" ng-show="!connectedChampion">Connect</button>
+//         <button class="inverse" ng-click="connectToChampion()" ng-show="connectedChampion">Connected</button>
+//     </figcaption>
+// </figure>
+//
+// Styleguide 25.1
+
+.hero {
+    @extend %clearfix;
+    border: 1px solid rgba($gloo_gray, 0.5);
+    margin-bottom: 1.5rem;
+
+    img {
+        display: block;
+    }
+
+    figcaption {
+        @extend %clearfix;
+        bottom: 0;
+        width: 100%;
+        background: rgba($white, 0.9);
+        padding: 1.2rem 2.5rem;
+
+        button {
+            float: right;
+        }
+
+        .avatar {
+            border: 2px solid $white;
+            position: absolute;
+            top: -80%;
+            padding: 0;
+        }
+        
+        .btn_action {
+            float: none;
+            margin-left: rem(110);
+        }
+
+        @include media($medium) {
+            position: absolute;
+        }
+    }
+
+    @include media($medium) {
+        margin-bottom: 3rem;
+    }
+}

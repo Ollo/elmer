@@ -90,11 +90,11 @@
           
           
             
-              <h1 class="kss-title"><span class="kss-ref">17.0</span> - Modals</h1>
+              <h1 class="kss-title"><span class="kss-ref">25.0</span> - Hero</h1>
             
               
                   
-                    <p>Adds modal styles</p>
+                    <p>Hero Images</p>
 
                   
               
@@ -102,10 +102,10 @@
           
             
              <section class="kss-depth-2">
-              <h2 class="kss-title"><span class="kss-ref">17.1</span> - .modal-small</h2>
+              <h2 class="kss-title"><span class="kss-ref">25.1</span> - .hero</h2>
             
               
-                  <div class="kss-box"><p>For use with smaller dialogs like confirming a delete action</p>
+                  <div class="kss-box"><p>Large banner style image</p>
 </div>
                   <div class="kss-mod-list">
                     <div class="kss-mod-desc-group">
@@ -113,89 +113,38 @@
                       <div class="kss-mod-name"></div> -->
                     </div>
                     <div class="kss-mod-example">
-                      <div><div class="modal-small">
-<div class='modal-content'>
-  <div class='modal-header'>
-    Modal Header...
-  </div>
-  <div class='modal-body'>
-    Modal body content
-  </div>
-  <div class='modal-footer'>
-    <button class='button button-primary'>Cancel</button>
-    <button class='button button-secondary'>Ok</button>
- </div>
-</div>
-</div></div>
+                      <div><figure class="hero">
+    <img src="http://lorempixel.com/910/227/abstract">
+    <figcaption>
+        <img class="avatar circled bordered" src="http://lorempixel.com/100/100/nature/" />
+        <button class="btn_action"><i class="fa fa-cog"></i></button>
+    </figcaption>
+</figure>
+<figure class="hero">
+    <img src="http://lorempixel.com/910/227/abstract">
+    <figcaption>
+        <button class="primary" ng-click="connectToChampion()" ng-show="!connectedChampion">Connect</button>
+        <button class="inverse" ng-click="connectToChampion()" ng-show="connectedChampion">Connected</button>
+    </figcaption>
+</figure></div>
                     </div>
                   
                   </div>
                   <div class="kss-markup">
-                    <pre class="prettyprint lang-html">&lt;div class=&quot;modal-small&quot;&gt;
-&lt;div class=&#x27;modal-content&#x27;&gt;
-  &lt;div class=&#x27;modal-header&#x27;&gt;
-    Modal Header...
-  &lt;/div&gt;
-  &lt;div class=&#x27;modal-body&#x27;&gt;
-    Modal body content
-  &lt;/div&gt;
-  &lt;div class=&#x27;modal-footer&#x27;&gt;
-    &lt;button class=&#x27;button button-primary&#x27;&gt;Cancel&lt;/button&gt;
-    &lt;button class=&#x27;button button-secondary&#x27;&gt;Ok&lt;/button&gt;
- &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;</pre>
-                  </div>
-              
-            
-              </section>
-            
-          
-            
-             <section class="kss-depth-2">
-              <h2 class="kss-title"><span class="kss-ref">17.2</span> - .modal-large</h2>
-            
-              
-                  <div class="kss-box"><p>For use in more complex authoring situations ( editing a question for QOTD)</p>
-</div>
-                  <div class="kss-mod-list">
-                    <div class="kss-mod-desc-group">
-                      <!-- <div class="kss-mod-desc"><p>Default styling</p></div>
-                      <div class="kss-mod-name"></div> -->
-                    </div>
-                    <div class="kss-mod-example">
-                      <div><div class="modal-large">
-<div class='modal-content'>
-  <div class='modal-header'>
-    Modal Header...
-  </div>
-  <div class='modal-body'>
-    Modal body content
-  </div>
-  <div class='modal-footer'>
-    <button class='button button-primary'>Cancel</button>
-    <button class='button button-secondary'>Ok</button>
- </div>
-</div>
-</div></div>
-                    </div>
-                  
-                  </div>
-                  <div class="kss-markup">
-                    <pre class="prettyprint lang-html">&lt;div class=&quot;modal-large&quot;&gt;
-&lt;div class=&#x27;modal-content&#x27;&gt;
-  &lt;div class=&#x27;modal-header&#x27;&gt;
-    Modal Header...
-  &lt;/div&gt;
-  &lt;div class=&#x27;modal-body&#x27;&gt;
-    Modal body content
-  &lt;/div&gt;
-  &lt;div class=&#x27;modal-footer&#x27;&gt;
-    &lt;button class=&#x27;button button-primary&#x27;&gt;Cancel&lt;/button&gt;
-    &lt;button class=&#x27;button button-secondary&#x27;&gt;Ok&lt;/button&gt;
- &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;</pre>
+                    <pre class="prettyprint lang-html">&lt;figure class=&quot;hero&quot;&gt;
+    &lt;img src=&quot;http://lorempixel.com/910/227/abstract&quot;&gt;
+    &lt;figcaption&gt;
+        &lt;img class=&quot;avatar circled bordered&quot; src=&quot;http://lorempixel.com/100/100/nature/&quot; /&gt;
+        &lt;button class=&quot;btn_action&quot;&gt;&lt;i class=&quot;fa fa-cog&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+    &lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;figure class=&quot;hero&quot;&gt;
+    &lt;img src=&quot;http://lorempixel.com/910/227/abstract&quot;&gt;
+    &lt;figcaption&gt;
+        &lt;button class=&quot;primary&quot; ng-click=&quot;connectToChampion()&quot; ng-show=&quot;!connectedChampion&quot;&gt;Connect&lt;/button&gt;
+        &lt;button class=&quot;inverse&quot; ng-click=&quot;connectToChampion()&quot; ng-show=&quot;connectedChampion&quot;&gt;Connected&lt;/button&gt;
+    &lt;/figcaption&gt;
+&lt;/figure&gt;</pre>
                   </div>
               
             

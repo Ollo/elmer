@@ -332,6 +332,42 @@ $card_background: $white;
 //         <a class="tag">Lifestyle</a>
 //     </div>
 // </div>
+// <div class="content_card">
+//     <img src="http://lorempixel.com/420/250/" />
+//     <div class="card_wrap">
+//         <h2><a>I'm an awesome title that runs up to 3 lines before...</a></h2>
+//         <div class="meta">
+//             <a><i class="fa fa-play"></i>Program</a>
+//             <a>Family Life</a>
+//         </div>
+//         <p>Vivamus hvvendrerit tellus eget nisl varius fermentu. Donccons equat, mi quis grav ida tincidunt, massa ligula vivamus hvvendrerit tellus eget nisl varius Vivamus hvvendrerit tellus eget nisl varius fermentu  ferm entu...</p>
+//         <a class="tag">Lifestyle</a>
+//     </div>
+// </div>
+// <div class="content_card">
+//     <img src="http://lorempixel.com/420/250/" />
+//     <div class="card_wrap">
+//         <h2><a>I'm an awesome title that runs up to 3 lines before...</a></h2>
+//         <div class="meta">
+//             <a><i class="fa fa-play"></i>Program</a>
+//             <a>Family Life</a>
+//         </div>
+//         <p>Vivamus hvvendrerit tellus eget nisl varius fermentu. Donccons equat, mi quis grav ida tincidunt, massa ligula vivamus hvvendrerit tellus eget nisl varius Vivamus hvvendrerit tellus eget nisl varius fermentu  ferm entu...</p>
+//         <a class="tag">Lifestyle</a>
+//     </div>
+// </div>
+// <div class="content_card">
+//     <img src="http://lorempixel.com/420/250/" />
+//     <div class="card_wrap">
+//         <h2><a>I'm an awesome title that runs up to 3 lines before...</a></h2>
+//         <div class="meta">
+//             <a><i class="fa fa-play"></i>Program</a>
+//             <a>Family Life</a>
+//         </div>
+//         <p>Vivamus hvvendrerit tellus eget nisl varius fermentu. Donccons equat, mi quis grav ida tincidunt, massa ligula vivamus hvvendrerit tellus eget nisl varius Vivamus hvvendrerit tellus eget nisl varius fermentu  ferm entu...</p>
+//         <a class="tag">Lifestyle</a>
+//     </div>
+// </div>
 // </div>
 //
 // Styleguide 22.4
@@ -342,7 +378,7 @@ $card_background: $white;
 	margin-bottom: 1.75rem;
 	@extend .four_col;
 
-    &:nth-child(3n + 3) {
+    &:nth-of-type(3n + 3) {
     	margin-right: 0;
     }
 
@@ -350,11 +386,11 @@ $card_background: $white;
     	width: 49%;
 	    margin-right: 2%;
 	    float: left;
-	    &:nth-child(2n + 2) {
-	    	margin-right: 0;
-	    }
-	    &:nth-child(3n + 3) {
+	    &:nth-of-type(3n + 3) {
 	    	margin-right: 2%;
+	    }
+	    &:nth-of-type(2n + 2) {
+	    	margin-right: 0;
 	    }
     }
 
