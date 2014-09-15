@@ -65,7 +65,6 @@ input[type="submit"] {
 //
 // :hover - darkens the border color
 // :focus - changes shadow/border to teal
-// .error - changes border to red
 //
 //  Styleguide 8.2
 
@@ -76,7 +75,6 @@ input[type="submit"] {
 //
 // :hover - darkens the border color
 // :focus - changes shadow/border to teal
-// .interacted:invalid - changes border to red added via js listner on blur
 //
 // Styleguide 8.3
 
@@ -516,14 +514,14 @@ input {
 	}
 }
 
-//html5 validation + angular styles
-input:focus:required:invalid {
-	background: url("/images/error_state.png") $white no-repeat 8px center;
-	border-color: $light_red;
-	color: $light_red;
-	box-shadow: $form-box-shadow;
-	padding-left: rem(25);
-}
+// //html5 validation + angular styles
+// input:focus:required:invalid {
+// 	background: url("/images/error_state.png") $white no-repeat 8px center;
+// 	border-color: $light_red;
+// 	color: $light_red;
+// 	box-shadow: $form-box-shadow;
+// 	padding-left: rem(25);
+// }
 
 /*
 new form validation styles applied via angular directive (creation currently in progress)
