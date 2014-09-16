@@ -54,6 +54,17 @@ img.circled {
 		height: rem(90);
 	}
 
+	// img.circled.xlarge
+	//
+	// Markup:
+	// <img class="circled xlarge" src="http://lorempixel.com/100/100/nature/" />
+	//
+	// Styleguide 21.5
+	&.xlarge {
+		width: rem(110);
+		height: rem(110);
+	}
+
 	// img.circled.bordered
 	//
 	// The bordered class can be applied to any size
@@ -61,7 +72,7 @@ img.circled {
 	// Markup:
 	// <img class="circled bordered" src="http://lorempixel.com/100/100/nature/" />
 	//
-	// Styleguide 21.5
+	// Styleguide 21.6
 	&.bordered {
 		border: 3px solid $green;
 	}
@@ -79,7 +90,7 @@ img.circled {
 // </div>
 // <img class="circled medium" src="http://lorempixel.com/100/100/nature/" />
 //
-// Styleguide 21.6
+// Styleguide 21.7
 
 .notification {
 	border-radius: 4px;
@@ -135,7 +146,7 @@ img.circled {
 //     </figcaption>
 // </figure>
 //
-// Styleguide 21.6
+// Styleguide 21.8
 
 .avatar {
 	padding-left: rem(50);
