@@ -82,6 +82,14 @@
 // These basic classes set up widths. They do not trigger any styles on mobile and are thus defaulting to full width. Tablet converts to an 8 col grid and desktop converts to 12 col, as set up in _grid. Extend these whenever possible to keep markup clean: .one_col - .twelve_col
 //
 // Styleguide 7.6
+.half_col {
+	@include media($medium) {
+		@include span-columns(0.33);
+	}
+	@include media($large) {
+		@include span-columns(.5);
+	}
+}
 .one_col {
 	@include media($medium) {
 		@include span-columns(0.66);
