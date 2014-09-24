@@ -1,5 +1,4 @@
-// $card_shadow: 0 1px 1px rgba(0,0,0,.32);
-$card_radius: 9px;
+$card_radius: 6px;
 $card_background: $white;
 
 // %flip_card_back & %flip_card_front
@@ -249,6 +248,7 @@ $card_background: $white;
 
     .front, .back {
     	overflow: hidden;
+    	@extend %well_white_no_padding;
     }
 
     .front {

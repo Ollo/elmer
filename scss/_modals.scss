@@ -89,13 +89,6 @@
 // small modal for confirm dialog etc
 .modal-small {
     @extend .modal;
-   // z-index: 1060!important;
-
-    // When fading in the modal, animate it to slide down
-    &.fade .modal-dialog {
-        @include transform(translateY(-500px));
-        @include transition(all 0.5s ease-in-out);
-    }
     
     &.in .modal-dialog {
         @include transform(translateY(0));
@@ -103,6 +96,9 @@
 
     .modal-dialog {
         margin: 2rem 2rem 0;
+        padding-bottom: rem(100);
+        @include transform(translateY(-100%));
+        @include transition(all 0.6s linear);
     }
 
     .modal-content {
@@ -209,14 +205,9 @@
 // full size modal for larger content needs
 .modal-large {
     @extend .modal;
-    background: $white;
 
-    // When fading in the modal, animate it to slide down
-    &.fade .modal-dialog {
-        @include transform(translateY(-25%));
-        @include transition(0.5s ease-in-out);
-    }
     &.in .modal-dialog {
+        background: $white;
         @include transform(translateY(0));
     }
 
@@ -224,6 +215,9 @@
         width: 100%;
         margin: 0;
         height: 100%;
+        border-bottom: 1px solid $light_gray;
+        @include transform(translateY(-100%));
+        @include transition(all .65s linear);
 
         .modal-content {
             border-radius: 0;
@@ -242,12 +236,14 @@
                 }
 
                 .modal-close {
-                    font-size: rem(40);
+                    margin-top: 1rem;
+                    font-size: rem(30);
                     color: $white;
                     float: right;
 
 
                     @include media($medium) {
+                        font-size: rem(40);
                         margin-top: 1.5rem;
                     }
                 }
