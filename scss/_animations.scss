@@ -215,21 +215,40 @@
   }
 }
 
-// pulse
-//
-// A quick pulse of an object, use as seen below:
-// @include animation-name(pulse);
-// @include animation-duration(.5s);
-// @include animation-timing-function(ease-in-out);
-// @include animation-iteration-count(1);
-//
-// Styleguide 9.4
+@include keyframes(spaceInDown) {
+  0% {
+    opacity: 0;
+    @include transform-origin(50% 100%);
+    @include transform(scale(.2) translate(0%, 200%));
+  }
+  100% {
+    opacity: 1;
+    @include transform-origin(50% 100%);
+    @include transform(scale(1) translate(0%, 0%));
+  }
+}
+
+@include keyframes(spaceInLeft) {
+  0% {
+    opacity: 0;
+    @include transform-origin(0% 50%);
+    @include transform(scale(.2) translate(-200%, 0%));
+  }
+  100% {
+    opacity: 1;
+    @include transform-origin(0% 50%);
+    @include transform(scale(1) translate(0%, 0%));
+  }
+}
 
 @include keyframes(pulse) {
-  0%, 100% {
-    @include transform(scale3d(1,1,1));
+  0% {
+    @include transform(scale(0));
   }
-  50% {
-    @include transform(scale3d(1.25,1.25,1.25));
+  25%, 75% {
+    @include transform(scale(1.1));
+  }
+  50%, 100% {
+    @include transform(scale(1));
   }
 }
