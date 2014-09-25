@@ -1,0 +1,132 @@
+.slider {
+
+    .slide {
+        width: 100%;
+
+        img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        figcaption {
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            background: rgba($black, 0.6);
+            color: $white;
+            -webkit-font-smoothing: antialiased;
+            padding: 1rem;
+            font-size: 1.8rem;
+        }
+    }
+
+    .slider_controls {
+        @extend %clearfix;
+        text-align: center;
+        margin: .5rem 0;
+
+        li {
+            display: inline;
+
+            a {
+                display: inline-block;
+                color: $light_gray;
+            }
+        }
+    }
+
+    @include media($small) {
+        figcaption {
+            padding: 1.5rem;
+        }
+    }
+
+}
+
+.featured_content_slider {
+    @extend .slider;
+    
+    h2 {
+        margin: 0;
+        color: $white;
+    }
+    
+    .meta {
+        float: left;
+        img {
+            max-width: rem(30);
+            float: left;
+            border-radius: 100%;
+            margin: 0 1rem 0 0;
+        }
+        p {
+            margin: .25rem 0 0;
+            float: left;
+        }
+    }
+
+    figcaption {
+        border-radius: 0 0 9px 9px;
+    }
+
+    .primary {
+        float: right;
+    }
+    
+    .sentinal {
+        visibility: hidden;
+        display: block;
+    }
+    
+    .slide {
+        border-radius: 9px;
+        overflow: hidden;
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        @include transition(opacity .1s linear);
+
+        &.active {
+            opacity: 1;
+            figcaption {
+                @include animation-name(spaceInDown);
+                @include animation-duration(0.5s);
+                @include animation-timing-function(ease-in-out);
+                @include animation-fill-mode(both);
+                @include animation-delay(.5s);
+                @include backface-visibility(hidden);
+            }
+            .meta {
+                @include animation-name(spaceInLeft);
+                @include animation-duration(1s);
+                @include animation-timing-function(ease-in-out);
+                @include animation-fill-mode(both);
+                @include animation-delay(1s);
+                @include backface-visibility(hidden);
+            }
+            .primary {
+                @include animation-name(pulse);
+                @include animation-duration(.5s);
+                @include animation-timing-function(ease-in-out);
+                @include animation-fill-mode(both);
+                @include animation-delay(2s);
+                @include backface-visibility(hidden);
+            }
+        }
+    }
+
+    @include media($mobileOnly) {
+        h2 {
+            margin-bottom: .25rem;
+            font-size: rem(16);
+        }
+        .meta, .primary {
+            font-size: rem(14);
+        }
+    }
+
+}
