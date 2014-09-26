@@ -1,3 +1,15 @@
+@include keyframes(onePulse) {
+  0% {
+    @include transform(scale(1));
+  }
+  50% {
+    @include transform(scale(1.1));
+  }
+  100% {
+    @include transform(scale(1));
+  }
+}
+
 
 @include keyframes(flipYnofade) {
   from {
@@ -237,6 +249,19 @@
   100% {
     opacity: 1;
     @include transform-origin(0% 50%);
+    @include transform(scale(1) translate(0%, 0%));
+  }
+}
+
+@include keyframes(spaceInRight) {
+  0% {
+    opacity: 0;
+    @include transform-origin(100% 50%);
+    @include transform(scale(.2) translate(200%, 0%));
+  }
+  100% {
+    opacity: 1;
+    @include transform-origin(100% 50%);
     @include transform(scale(1) translate(0%, 0%));
   }
 }
