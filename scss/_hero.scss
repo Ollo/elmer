@@ -61,3 +61,79 @@
         margin-bottom: 3rem;
     }
 }
+
+// replace duplicated styles in .content_preview_hero
+%white_text_hero {
+    img {
+        display: block;
+        width: 100%;
+    }
+
+    h1 {
+        margin: 0 0 1rem;
+        @include animation-name(spaceInLeft);
+        @include animation-duration(.5s);
+        @include animation-timing-function(ease-in-out);
+        @include animation-fill-mode(both);
+        @include animation-delay(1s);
+        @include backface-visibility(hidden);
+    }
+
+    p {
+        &:nth-of-type(even), &:nth-of-type(odd) {
+            @include animation-duration(.5s);
+            @include animation-timing-function(ease-in-out);
+            @include animation-fill-mode(both);
+            @include backface-visibility(hidden);
+        }
+        // third
+        &:nth-of-type(even) {
+            @include animation-name(spaceInRight);
+            @include animation-delay(1.25s);
+        }
+        // second
+        &:nth-of-type(odd) {
+            @include animation-name(spaceInLeft);
+            @include animation-delay(1.15s);
+        }
+    }
+
+    // fourth
+    .btn_group {
+        @include animation-name(spaceInLeft);
+        @include animation-duration(.5s);
+        @include animation-timing-function(ease-in-out);
+        @include animation-fill-mode(both);
+        @include backface-visibility(hidden);
+        @include animation-delay(1.35s);
+    }
+
+    @include media($medium) {
+        color: $white;
+        text-shadow: 0 0 rem(30) $black;
+        h1 {
+            color: $white;
+        }
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 1;
+            background: rgba($black, .4);
+        }
+        .meta {
+            background: transparent;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            padding: 1rem;
+            z-index: 2;
+        }
+    }
+}
