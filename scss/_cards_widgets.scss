@@ -407,12 +407,17 @@ $card_background: $white;
 		margin-bottom: rem(15);
 	}
 
-	.tag {
-		margin: 0 .5rem .75rem;
+	.primary {
+		display: block;
+		text-align: center;
+		padding: .25rem;
+		margin: 1rem 0 0;
+		text-transform: capitalize;
 	}
 
 	.meta {
 		margin-bottom: rem(15);
+		text-transform: capitalize;
 
 		a {
 			border-right: 1px solid $teal;
@@ -426,13 +431,27 @@ $card_background: $white;
 			}
 		}
 
+		.primary {
+			display: block;
+		}
+
 	}
 
-	.primary {
-		display: inline-block;
-		text-align: center;
-		padding: .5rem .25rem;
-		width: 100%;
-	}
+	// FOR NOW content cards have a set height, we will remove this once the deckgrid is implemented
+	// this decision per Justin & Leora
+    // min-height: 52rem;
+    p {
+    	height: 12rem;
+    	overflow: hidden;
+    }
+    h2 {
+    	height: 6.75rem;
+    	overflow: hidden;
+    }
+    @include media($medium) {
+    	p {
+    		height: 9rem;
+    	}
+    }
 
 }
