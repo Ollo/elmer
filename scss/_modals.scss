@@ -218,6 +218,7 @@
         border-bottom: 1px solid $light_gray;
         @include transform(translateY(-100%));
         @include transition(all .65s linear);
+        overflow-y: scroll;
 
         .modal-content {
             border-radius: 0;
