@@ -1,292 +1,457 @@
-// .modal-small
-//
-// For use with smaller dialogs like confirming a delete action
-//
-// Markup:
-//<div class="modal-small">
-// <div class='modal-content'>
-//   <div class='modal-header'>
-//     Modal Header...
-//   </div>
-//   <div class='modal-body'>
-//     Modal body content
-//   </div>
-//   <div class='modal-footer'>
-//     <button class='button button-primary'>Cancel</button>
-//     <button class='button button-secondary'>Ok</button>
-//  </div>
-// </div>
-//</div>
-//
-// Styleguide 17.1
+$card_radius: 6px;
+$card_background: $white;
 
+// %flip_card_back & %flip_card_front
 //
-// Modals
-// --------------------------------------------------
+// These two placeholders should be used for styling a card that has flipping functionality. Use cases are, so far, in the dashboard widget & member card as shown in following examples. It can and should be further extended for any other card styles that have flipping functionality.
+//
+// Styleguide 22.1
 
-// .modal-open      - body class thats added to kill scroll
-// .modal           - base class to be extended for specific implementations
-// .modal-dialog    - positioning shell for the actual modal
-// .modal-content   - actual modal w/ bg and corners and shit
+%flip_card {
+    background: $card_background;
+    height: 100%;
+    width: 100%;
+    @include sans_light;
 
-.modal {
-    display: none;
-    overflow: auto;
-    overflow-y: scroll;
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 30;
-    -webkit-overflow-scrolling: touch;
-    outline: 0; // removes focus ring on chrome for windows
-
-    .modal-content {
+    h3 {
+        font-size: rem(14);
+        margin: 0 0 rem(20);
         position: relative;
-        background: $white;
-        outline: none;
     }
 
-    @include media($small) {
-        .modal-footer {
-            .button_wrap {
-                float: right;
+}
+
+%flip_card_back {
+    @extend %flip_card;
+    display: none;
+
+    h3 {
+        background: lighten($light_gray, 17%);
+        color: $black;
+        padding: rem(15) rem(60) rem(15) rem(20);
+
+        > i {
+            margin-right: rem(3);
+        }
+
+        a {
+            @extend %muted_text;
+            border-left: 2px solid $white;
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 100%;
+            padding: rem(13) rem(15) 0;
+            cursor: pointer;
+            i {
+                font-size: rem(20);
             }
+        }
+    }
+
+    .inner {
+        padding: 0 1rem 2rem;
+    }
+
+    .actions {
+        position: absolute;
+        bottom: .75rem;
+        margin: 0 1rem;
+        left: 0;
+        right: 0;
+        .delete {
+            top: .5rem;
+        }
+        .primary, input[type="submit"] {
+            float: right;
         }
     }
 }
 
-.modal-open { // body class to control scroll
+// .dash_widget
+//
+// Dash widget basic markup
+//
+// Markup:
+//<div class="wrapper">
+// <div class="dash_widget">
+//     <div class="front">
+//         <h4>Spaces<a class="flipIt" href="#"><i class="fa fa-cog"></i></a></h4>
+//     </div>
+//     <div class="back">
+//         <h3><i class="fa fa-cog"></i>Spaces<a href="#" class="close flipIt"><i class="fa fa-times"></i></a></h3>
+//         <form>
+//             <div class="inner">
+//                 <p>How would you like to sort your spaces?</p>
+//                 <div class="ui_select_arrow">
+//                     <select>
+//                         <option>Most Recent</option>
+//                     </select>
+//                     <i class="fa fa-angle-down select_indicator"></i>
+//                 </div>
+//             </div>
+//             <div class="actions">
+//                 <a href="#" class="delete"><i class="fa fa-trash-o"></i> Remove Tile</a>
+//                 <input type="submit" value="Save" />
+//             </div>
+//         </form>
+//     </div>
+// </div>
+// </div>
+//
+// Styleguide 22.2
+
+.dash_widget {
+    height: rem(290);
+    font-size: rem(13);
+    margin: 0 0 2rem;
+    cursor: move;
+
+    &.double_tall {
+        height: rem(605);
+    }
+
+    @include media($small) {
+        float: left;
+        margin-bottom: 9%;
+
+        // component does not currently allow for column spanning of widgets, revisit again
+        &.double_wide {
+            width: 100%;
+        }
+    }
+
+    h4 {
+        padding: 1rem 2.5rem 1rem 1rem;
+        margin: 0;
+        background: lighten($light_gray, 15%);
+        color: $charcoal;
+    }
+
+    .flipIt {
+        color: $gray;
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+    }
+
+    .front, .back {
+        border: 1px solid lighten($light_gray, 10%);
+        float: left;
+    }
+
+    .front {
+        @extend %flip_card; 
+    }
+
+    .back {
+        @extend %flip_card_back;
+        padding-bottom: rem(45);
+
+        form {
+            position: static;
+        }
+
+        p {
+            text-align:center;
+        }
+
+        .inner {
+            padding-top: 1rem;
+        }
+
+    }
+
+    //mobile only block styles
+    @include media($medium) {
+
+        h4 {
+            padding: 2rem 3.5rem 2rem 2rem;
+        }
+
+        .flipIt {
+            right: 1.75rem;
+            top: 1.75rem;
+        }
+
+    }
+
+}
+
+// .member_card
+//
+// Member card for org managmeent.
+//
+// Markup:
+// <div class="wrapper">
+// <div class="member_card">
+//  <div class="front">
+//      <a href="" class="flipIt"><i class="fa fa-gear"></i></a>
+//      <img src="http://lorempixel.com/100/100/nature/" ng-click="onClickMember($index)"/>
+//      <h5><a >Sally Sassafrass</a></h5>
+//      <p>Admin, Publisher</p>
+//      <div class="user_interactions">
+//          <a><i class="fa fa-users"></i>View Activity</a>
+//          <a href=""><i class="fa fa-comments"></i>Send Message</a>
+//      </div>
+//  </div>
+//  <div class="back">
+//      <h3>
+//          <i class="fa fa-cog"></i>Member Settings
+//          <a href="#" class="close flipIt"><i class="fa fa-times"></i></a>
+//      </h3>
+//      <div class="inner">
+//          <h5>Sally Sassafrass</h5>
+//          <p>Admin, Publisher</p>
+//          <a>Change Roles</a>
+//      </div>
+//      <div class="actions">
+//          <a class="delete"><i class="fa fa-trash-o"></i> Remove</a>
+//          <input type="submit" value="Save" class="primary" />
+//      </div>
+//  </div>
+// </div>
+// </div>
+//
+// Styleguide 22.3
+
+.member_card {
+    display: inline-block;
+    height: rem(255);
+    margin-bottom: rem(35);
+    @extend .small_text;
+    @extend .three_col;
+
+    &:nth-child(4n + 4) {
+        margin-right: 0;
+    }
+
+    @include media($mobileOnly) {
+        width: 49%;
+        margin-right: 2%;
+        &:nth-child(2n + 2) {
+            margin-right: 0;
+        }
+    }
+
+    h5 {
+        margin-bottom: rem(5);
+        word-break: break-word;
+        a {
+            color: $gray;
+        }
+    }
+
+    p {
+        @extend .muted_text;
+    }
+
+    .front, .back {
+        overflow: hidden;
+        @extend %well_white_no_padding;
+    }
+
+    .front {
+        @extend %flip_card;
+        @extend %well_white_no_padding;
+        padding: rem(25) rem(10) rem(20);
+        text-align: center;
+
+        > a {
+            color: $gray;
+            position: absolute;
+            right: rem(15);
+            top: rem(10);
+        }
+
+        img {
+            display: block;
+            margin: 0 auto rem(20);
+            @extend img.circled;
+            @extend img.large;
+            @extend img.bordered;
+            cursor: pointer;
+        }
+
+        &.shown {
+            @extend .flipYnofade;
+            @include transition ( all 2.0s ease-in-out );
+        }
+
+        .user_interactions {
+            margin-top: rem(20);
+
+            a {
+                display: block;
+                margin-bottom: rem(8);
+
+                i {
+                    margin-right: rem(5);
+                }
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+
+            }
+
+        }
+    }
+
+    .back {
+        @extend %flip_card_back;
+
+        p {
+            margin: 0 0 rem(20);
+        }
+
+        &.shown {
+            @extend .flipYnofade;
+            @include transition ( all 2.0s ease-in-out );
+        }
+
+    }
+
+}
+
+// .content_card
+//
+// Content card for champion profiles. As with the .member_card, adjust the layout according to specific placement when using this card.
+//
+// Markup:
+// <div class="wrapper">
+// <div class="content_card">
+//     <img src="http://lorempixel.com/420/250/" />
+//     <div class="card_wrap">
+//         <h2><a>I'm an awesome title that runs up to 3 lines before...</a></h2>
+//         <div class="meta">
+//             <a><i class="fa fa-play"></i>Program</a>
+//             <a>Family Life</a>
+//         </div>
+//         <p>Vivamus hvvendrerit tellus eget nisl varius fermentu. Donccons equat, mi quis grav ida tincidunt, massa ligula vivamus hvvendrerit tellus eget nisl varius Vivamus hvvendrerit tellus eget nisl varius fermentu  ferm entu...</p>
+//         <a class="tag">Lifestyle</a>
+//     </div>
+// </div>
+// <div class="content_card">
+//     <img src="http://lorempixel.com/420/250/" />
+//     <div class="card_wrap">
+//         <h2><a>I'm an awesome title that runs up to 3 lines before...</a></h2>
+//         <div class="meta">
+//             <a><i class="fa fa-play"></i>Program</a>
+//             <a>Family Life</a>
+//         </div>
+//         <p>Vivamus hvvendrerit tellus eget nisl varius fermentu. Donccons equat, mi quis grav ida tincidunt, massa ligula vivamus hvvendrerit tellus eget nisl varius Vivamus hvvendrerit tellus eget nisl varius fermentu  ferm entu...</p>
+//         <a class="tag">Lifestyle</a>
+//     </div>
+// </div>
+// <div class="content_card">
+//     <img src="http://lorempixel.com/420/250/" />
+//     <div class="card_wrap">
+//         <h2><a>I'm an awesome title that runs up to 3 lines before...</a></h2>
+//         <div class="meta">
+//             <a><i class="fa fa-play"></i>Program</a>
+//             <a>Family Life</a>
+//         </div>
+//         <p>Vivamus hvvendrerit tellus eget nisl varius fermentu. Donccons equat, mi quis grav ida tincidunt, massa ligula vivamus hvvendrerit tellus eget nisl varius Vivamus hvvendrerit tellus eget nisl varius fermentu  ferm entu...</p>
+//         <a class="tag">Lifestyle</a>
+//     </div>
+// </div>
+// <div class="content_card">
+//     <img src="http://lorempixel.com/420/250/" />
+//     <div class="card_wrap">
+//         <h2><a>I'm an awesome title that runs up to 3 lines before...</a></h2>
+//         <div class="meta">
+//             <a><i class="fa fa-play"></i>Program</a>
+//             <a>Family Life</a>
+//         </div>
+//         <p>Vivamus hvvendrerit tellus eget nisl varius fermentu. Donccons equat, mi quis grav ida tincidunt, massa ligula vivamus hvvendrerit tellus eget nisl varius Vivamus hvvendrerit tellus eget nisl varius fermentu  ferm entu...</p>
+//         <a class="tag">Lifestyle</a>
+//     </div>
+// </div>
+// </div>
+//
+// Styleguide 22.4
+
+.content_card {
+    @extend %well_white_no_padding;
     overflow: hidden;
-}
+    margin-bottom: 1.75rem;
+    @extend .four_col;
 
-.modal-intro {
-    padding: 2rem 0;
-}
-
-// Modal background overlay
-.modal-backdrop {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 20;
-    background-color: #333;
-
-    &.fade {
-        opacity: 0;
+    &:nth-of-type(3n + 3) {
+        margin-right: 0;
     }
 
-    &.in {
-        opacity: 0.5;
-        @include transition(0.3s ease-in-out);
-       //z-index: 1060!important;
-    }
-}
-
-// small modal for confirm dialog etc
-.modal-small {
-    @extend .modal;
-    
-    &.in .modal-dialog {
-        @include transform(translateY(0));
+    @include media($mobileOnly) {
+        width: 49%;
+        margin-right: 2%;
+        float: left;
+        &:nth-of-type(3n + 3) {
+            margin-right: 2%;
+        }
+        &:nth-of-type(2n + 2) {
+            margin-right: 0;
+        }
     }
 
-    .modal-dialog {
-        margin: 2rem 2rem 0;
-        padding-bottom: rem(100);
-        @include transform(translateY(-100%));
-        @include transition(all 0.6s linear);
+    img {
+        width: 100%;
     }
 
-    .modal-content {
-        background-color: $white;
-        border-radius: 6px;
-        padding: 2.5rem 0 0;
+    .card_wrap {
+        padding: 1.5rem;
+    }
+
+    h2 {
+        font-size: rem(18);
+        margin-bottom: rem(15);
+    }
+
+    .primary {
+        display: block;
+        text-align: center;
+        padding: .25rem;
+        margin: 1rem 0 0;
+        text-transform: capitalize;
+    }
+
+    .meta {
+        margin-bottom: rem(15);
+        text-transform: capitalize;
+
+        a {
+            border-right: 1px solid $teal;
+            padding-right: rem(5);
+            i {
+                padding-right: rem(5);
+            }
+            &:last-child {
+                border-right: 0;
+                padding-right: 0;
+            }
+        }
+
+        .primary {
+            display: block;
+        }
+
+    }
+
+    // FOR NOW content cards have a set height, we will remove this once the deckgrid is implemented
+    // this decision per Justin & Leora
+    // min-height: 52rem;
+    p {
+        height: 12rem;
         overflow: hidden;
     }
-
-    .modal-header {
-        @extend %clearfix;
-        border-bottom: 1px solid $light_gray;
-        padding: 0 0 1rem;
-        margin: 0 2.5rem 0;
-
-        h2 {
-            @include sans_bold;
-            float: left;
-            color: $teal;
-            margin: 0;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        .modal-close {
-            float: right;
-            @extend %muted_text;
-            font-size: rem(20);
-        }
+    h2 {
+        height: 6.75rem;
+        overflow: hidden;
     }
-
-    .modal-body {
-        color: $gray;
-        padding: rem(25) 2.5rem rem(50);
-        @include sans_med;
-
-        strong {
-            color: $black;
-        }
-    }
-
-    .modal-footer {
-        padding: rem(25);
-        background: $sand;
-        @extend %clearfix;
-        button, .btn {
-            width: 47%;
-            margin-right: 2%;
-            padding-left: 0;
-            padding-right: 0;
-        }
-    }
-
-    @include media($small) {
-        .modal-footer {
-            button, .btn {
-                margin-right: 1.5rem;
-                width: auto;
-                padding: $standard-btn-pad;
-            }
-        }
-    }
-
     @include media($medium) {
-        .modal-dialog {
-            @include span-columns(6);
-            margin: 0 auto!important;
-            float: none;
-        }
-        &.in .modal-dialog {
-            @include transform(translateY(100px));
-        }
-    }
-    
-    @include media($large) {
-        .modal-dialog {
-            @include span-columns(5);
-            float: none;
-        }
-    }
-}
-
-// .modal-large
-//
-// For use in more complex authoring situations ( editing a question for QOTD)
-//
-// Markup:
-//<div class="modal-large">
-// <div class='modal-content'>
-//   <div class='modal-header'>
-//     Modal Header...
-//   </div>
-//   <div class='modal-body'>
-//     Modal body content
-//   </div>
-//   <div class='modal-footer'>
-//     <button class='button button-primary'>Cancel</button>
-//     <button class='button button-secondary'>Ok</button>
-//  </div>
-// </div>
-//</div>
-//
-// Styleguide 17.2
-
-// full size modal for larger content needs
-.modal-large {
-    @extend .modal;
-
-    &.in .modal-dialog {
-        background: $white;
-        @include transform(translateY(0));
-    }
-
-    .modal-dialog {
-        width: 100%;
-        margin: 0;
-        border-bottom: 1px solid $light_gray;
-        @include transform(translateY(-100%));
-        @include transition(all .65s linear);
-
-        .modal-content {
-            border-radius: 0;
-            padding: 0 0 3rem;
-            @include clearfix;
-
-            .modal-header {
-                @extend %clearfix;
-                background: $slate_blue;
-                color: $white;
-                padding: 3rem rem(20) 2rem;
-
-                h1 {
-                    color: $white;
-                    float: left;
-                }
-
-                .modal-close {
-                    margin-top: 1rem;
-                    font-size: rem(30);
-                    color: $white;
-                    float: right;
-
-
-                    @include media($medium) {
-                        font-size: rem(40);
-                        margin-top: 1.5rem;
-                    }
-                }
-            }
-            .modal-body {
-                max-width: 95%;
-                border: 1px solid $light_gray;
-                margin: 2rem auto 0;
-                padding: 0;
-                @extend %clearfix;
-                @include media($medium) {
-                    margin: 5rem auto 0;
-                }
-                 @include media($xlarge) {
-                    @include outer-container;
-                 }
-            }
-            .modal-wrap {
-                //for use in large modals. It should wrap everything inside .modal-body except the .modal-footer
-                //8% translates to roughly 90px on desktop, and scales accordingly
-                padding: rem(20) 8%;
-                @include media($medium) {
-                    padding: rem(40) 8%;
-                }
-            }
-            .modal-footer {
-                @include span-columns(12);
-                background: $sand;
-                padding: 2rem;
-
-                // Properly space out buttons
-                button {
-                    margin-left: rem(20);
-                }
-                @include media($medium) {
-                    padding: 4.3rem 10rem;
-                }
-            }
+        p {
+            height: 9rem;
         }
     }
 
-    @include media($medium) {
-        .icon_header {
-            margin-bottom: rem(30);
-        }
-    }
 }
