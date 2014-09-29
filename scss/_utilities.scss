@@ -37,14 +37,14 @@
 
 .bounce_loader {
 	height: rem(60);
-	width: rem(70);
+	width: rem(90);
 	margin: auto;
 	@include transition(all .3s ease-in-out);
 
 	> div {
 		height: 100%;
 		width: rem(7);
-		margin: 0 rem(3) 0 0;
+		margin: 0 rem(1);
 		background-color: rgba($gloo_gray, .4);
 		display: inline-block;
 		@include animation-name(stretchDelay);
