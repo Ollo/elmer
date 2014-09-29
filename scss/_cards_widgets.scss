@@ -407,6 +407,10 @@ $card_background: $white;
 		margin-bottom: rem(15);
 	}
 
+	.tag {
+		margin: 0 .5rem .75rem;
+	}
+
 	.meta {
 		margin-bottom: rem(15);
 
@@ -422,10 +426,13 @@ $card_background: $white;
 			}
 		}
 
-		.primary {
-			display: block;
-		}
+	}
 
+	.primary {
+		display: inline-block;
+		text-align: center;
+		padding: .5rem .25rem;
+		width: 100%;
 	}
 
 }
