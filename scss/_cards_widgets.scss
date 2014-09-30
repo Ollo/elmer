@@ -377,6 +377,12 @@ $card_background: $white;
 	overflow: hidden;
 	margin-bottom: 1.75rem;
 	@extend .four_col;
+	font-size: 1.2rem;
+	line-height: 2rem;
+
+	a {
+		font-weight: 500;
+	}
 
     &:nth-of-type(3n + 3) {
     	margin-right: 0;
@@ -399,11 +405,11 @@ $card_background: $white;
     }
 
     .card_wrap {
-    	padding: 1.5rem;
+    	padding: .5rem;
     }
 
 	h2 {
-		font-size: rem(18);
+		font-size: rem(15);
 		margin-bottom: rem(15);
 	}
 
@@ -449,6 +455,15 @@ $card_background: $white;
     	overflow: hidden;
     }
     @include media($medium) {
+    	font-size: $base_font_size;
+    	line-height: $base_line_height;
+    	font-weight: 300;
+    	h2 {
+    		font-size: rem(18);
+    	}
+    	.card_wrap {
+    		padding: 1.5rem;
+    	}
     	p {
     		height: 9rem;
     	}
