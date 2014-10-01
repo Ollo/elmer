@@ -585,6 +585,10 @@ input {
 		color: lighten($gloo_gray, 25%);
 	}
 
+	@include media($medium) {
+		max-width: rem(240);
+	}
+
 }
 
 // .ui_inverse
