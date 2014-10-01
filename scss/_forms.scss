@@ -2,7 +2,7 @@ $form-border-color: $light_gray;
 $form-border-color-hover: darken($light_gray, 10);
 $form-border-color-focus: $teal;
 $form-box-shadow: inset 0 1px 3px hsla(0, 0%, 0%, 0.06);
-$form-box-shadow-focus: $form-box-shadow, 0 0 5px rgba(darken($form-border-color-focus, 5), 0.7);
+$form-box-shadow-focus: $form-box-shadow, 0 0 2px rgba(darken($form-border-color-focus, 5), 0.7);
 
 // label
 //
@@ -417,14 +417,13 @@ input {
 .ui_radio {
 	@extend %clearfix;
 	margin-bottom: rem(20);
-	height: rem(36);
 	background: #fff;
 
 	.btn_radio {
 	    cursor: pointer;
 	    float: left;
 	    width: 50% !important;
-	    padding: $standard-btn-pad;
+	    padding: .25rem 2rem;
 	    text-align: center;
 	    margin-bottom: 0;
 	    color: $teal;
@@ -450,7 +449,8 @@ input {
 	}
 
 	input[type="radio"]:checked + .btn_radio {
-		@extend .primary;
+		background-color: $teal;
+		color: $white;
 	}
 
 	//focus styles
@@ -520,25 +520,6 @@ input {
 		font-style: italic;
 	}
 }
-
-// //html5 validation + angular styles
-// input:focus:required:invalid {
-// 	background: url("/images/error_state.png") $white no-repeat 8px center;
-// 	border-color: $light_red;
-// 	color: $light_red;
-// 	box-shadow: $form-box-shadow;
-// 	padding-left: rem(25);
-// }
-
-/*
-new form validation styles applied via angular directive (creation currently in progress)
-input.has_visited:required:invalid {
-	background: url("../images/ui/error_state.png") $white no-repeat 8px center;
-	border-color: $light_red;
-	color: $light_red;
-	box-shadow: $form-box-shadow;
-	padding-left: rem(25);
-}*/
 
 %single_line_form {
 	input[type=search], input[type=text] {

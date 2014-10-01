@@ -266,6 +266,22 @@
   }
 }
 
+@include keyframes(vanishIn) {
+  0% {
+    opacity: 0;
+    @include transform-origin(50% 50%);
+    @include transform(scale(2));
+    @include filter(blur(90px));
+  }
+
+  100% {
+    opacity: 1;
+    @include transform-origin(50% 50%);
+    @include transform(scale(1));
+    @include filter(blur(0));
+  }
+}
+
 @include keyframes(pulse) {
   0% {
     @include transform(scale(0));
