@@ -67,31 +67,38 @@
     }
 
     figcaption {
-        border-radius: 0 0 9px 9px;
+        position: relative;
     }
 
     .primary {
-        float: right;
+        @extend %btn_full_mobile;
+        margin: 1rem auto 0;
+        display: inline-block;
+        text-align: center;
     }
     
     .sentinal {
-        visibility: hidden;
-        display: block;
+        display: none;
     }
     
     .slide {
         border-radius: 9px;
-        overflow: hidden;
         opacity: 0;
-        position: absolute;
         top: 0;
         right: 0;
         bottom: 0;
         left: 0;
-        @include transition(opacity .1s linear);
+        display: none;
+        @include transition(opacity .2s linear);
+
+        figcaption {
+            position: relative;
+            @include clearfix;
+        }
 
         &.active {
             opacity: 1;
+            display: block;
             figcaption {
                 @include animation-name(spaceInDown);
                 @include animation-duration(0.5s);
@@ -126,6 +133,27 @@
         }
         .meta, .primary {
             font-size: rem(14);
+        }
+    }
+
+    @include media($small) {
+        .primary {
+            float: right;
+        }
+    }
+
+    @include media($medium) {
+        .sentinal {
+            visibility: hidden;
+            display: block;
+        }
+        .slide {
+            position: absolute;
+            display: block;
+            figcaption {
+                border-radius: 0 0 9px 9px;
+                position: absolute;
+            }
         }
     }
 
