@@ -2,14 +2,16 @@
 	@include sans_light;
 	text-shadow: none;
 	-webkit-font-smoothing: antialiased;
+	box-shadow: 0 .1rem .1rem rgba(0,0,0,0) inset;
+	@include transition (background .2s ease-in-out, box-shadow .2s ease-in-out);
+	text-align: center; 
+	display: inline-block;
 
-	&:focus {
+	&:focus, &:hover {
 		outline: none;
+		box-shadow: 0 .1rem .1rem rgba(0,0,0,.25) inset;
 	}
 
-	&:hover, &:focus {
-		@include transition (all .2s ease-in-out);
-	}
 }
 
 %btn_full_mobile {
@@ -49,16 +51,13 @@ input[type="submit"] {
 	padding: $standard-btn-pad;
 	border-radius: $button-radius;
 	background: $teal;
-	box-shadow: inset 0 0 0 rgba(0,0,0,0);
 	color: $white;
 
 	&:hover, &:focus {
-		box-shadow: inset 0 .25rem 1rem rgba(0,0,0,.2);
 		color: $white;
+		background: darken($teal, 10%);
 	}
-	&:focus {
-		box-shadow: inset 0 .25rem .3rem rgba(0,0,0,.4);
-	}
+	
 }
 
 // .secondary
@@ -81,7 +80,7 @@ input[type="submit"] {
 	color: $white;
 
 	&:hover, &:focus {
-		background: darken($light_green, 14%);
+		background: darken($light_green, 10%);
 	}
 
 }
@@ -302,6 +301,8 @@ input[type="submit"] {
  		@extend .fa;
  		@extend .fa-plus;
  		float: left;
+ 		padding-top: .25rem;
+ 		padding-left: .2rem;
  	}
 
  	// by default the following a will center next to the button

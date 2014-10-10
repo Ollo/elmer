@@ -151,6 +151,8 @@ img.circled {
 .avatar {
 	padding-left: rem(50);
 	@extend %clearfix;
+		// border radius webkit bug fix
+	-webkit-transform-style: preserve-3d;
 
 	img {
 		@extend .circled;
@@ -160,8 +162,6 @@ img.circled {
 		top: 0;
 		bottom: 0;
 		margin: auto;
-		// I believe all avatar images should link somewhere eventually, but if not we will need to remove this and put it in the more element layout files
-		cursor: pointer;
 	}
 
 	figcaption {

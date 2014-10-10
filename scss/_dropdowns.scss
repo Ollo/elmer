@@ -1,22 +1,17 @@
 %button_dropdown {
-	margin-bottom: rem(10);
+	margin-bottom: 1rem;
+	@extend %well_white_no_padding;
 	display: inline-block;
-
-	a {
-		cursor: pointer;
-	}
+	margin-bottom: 0;
+	text-transform: uppercase;
+	color: $gray;
+	cursor: pointer;
+	z-index: 3;
+	font-weight: 500;
 
 	> span {
-		@extend %well_white_no_padding;
-		padding: rem(8) rem(50) rem(6) rem(10);
-		display: inline-block;
-		margin-bottom: 0;
-		width: 100%;
-		font-weight: 300;
-		font-size: rem(14);
-		text-transform: uppercase;
-		color: $gray;
-		cursor: pointer;
+		padding: .75rem rem(50) .75rem 1rem;
+		display: block;
 	}
 
 	> i {
@@ -28,48 +23,50 @@
 	}
 
 	.drop_menu {
-		width: 90%;
-		margin: 0 auto;
-		background: $sand;
-		border: 1px solid $light_gray;
-		border-top-color: rgba($light_gray, .75);
-		position: absolute;
-		left: 0;
-		right: 0;
-		z-index: 2;
-		box-shadow: 0 0 5px rgba(0,0,0,.1), inset 0 0 5px rgba(255,255,255, 1 );
+	    position: absolute;
+	    left: 0;
+	    right: 0;
+	    top: 3.45rem;
+	    @include well(0 0 rem(6) rem(6), false, false, false, $white, true);
 
 		a {
 			display: block;
-			padding: rem(8);
+			padding: rem(5) 1rem;
 			color: $gray;
-			font-size: rem(13);
-			font-weight: 500;
-			text-transform: uppercase;
-			text-decoration: none;
-			@include transition(background 0.25s ease-in);
+			@include transition(background .2s ease-in-out);
 
 			&:hover {
-				background: $pale_blue;
-				color: $white;
+				background: $sand;
 			}
 
 			i {
 				margin-right: rem(5);
 			}
 		}
+
+		&.active, &.open {
+			padding: 0 0 .25rem;
+		}
+	}
+
+	&.active {
+		z-index: 4;
 	}
 
 }
 
+// Not all drop menu's are used inside a .dropdown
 .drop_menu {
 	opacity: 0;
 	max-height: 0;
-    overflow: hidden;
-    @include transition(all .2s ease-in-out);
+	overflow-x: hidden;
+    overflow-y: scroll;
+	@include transform(translateZ(0));
+	@include backface-visibility(hidden);
+	@include transition(opacity .1s ease-in-out, max-height .3s ease-in-out);
 
 	&.active, &.open {
-		max-height: 500rem;
+		max-height: 50rem;
 		opacity: 1;
 	}
 
@@ -93,10 +90,6 @@
 	// </div>
 	//
 	// Styleguide 20.2
-
-	.selected_option {
-		color: $gloo_gray;
-	}
 
 	&.sorting {
 		min-width: rem(180);
@@ -131,7 +124,7 @@
 		min-width: rem(145);
 
 		> span {
-			background: $sand;
+			background: $white;
 		}
 	}
 
@@ -145,4 +138,11 @@
 			display: none!important;
 		}
 	}
+}
+
+
+// panels are used in large white dropdown menus
+.panel {
+	@include backface-visibility(hidden);
+	@include transform(translateZ(0));
 }
