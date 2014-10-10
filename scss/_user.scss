@@ -86,37 +86,45 @@ img.circled {
 // Markup:
 // <div class="notification">
 //     <a id="notificationCount" href="#">3</a>
-//     <i class="triangle"></i>
 // </div>
 // <img class="circled medium" src="http://lorempixel.com/100/100/nature/" />
 //
 // Styleguide 21.7
 
 .notification {
-	border-radius: 4px;
+	border-radius: .5rem;
 	background: $red;
 	display: block;
 	position: absolute;
-	left: -1.75rem;
-	top: 1.2rem;
+	padding: .1rem .1rem .1rem .2rem;
+	left: -3.7rem;
+	top: .3rem;
 	z-index: 20;
-
-
-	a {
-		font-size: 0.8rem;
-		font-weight: bold;
-		color: $white;
-		padding: 0 0.7rem;
-		margin: 0 0.05rem;
-		float: left;
-		line-height: 2;
+	min-width: 2.7rem;
+	min-height: 2.6rem;
+	text-align: center;
+	border: .2rem solid $white;
+	&:before {
+		content: '';
+		position: absolute;
+		border-top: .4rem solid transparent;
+		border-bottom: .4rem solid transparent;
+		border-left: .4rem solid $red;
+		right: -0.4rem;
+		top: .7rem;
 	}
 
-	.triangle {
-		position: absolute;
-		right: -0.6rem;
-		top: 0.6rem;
-		@include triangle(0.7rem, $red, right);
+	a {
+		display: block;
+		font-size: 1rem;
+		font-weight: 700;
+		padding: .1rem;
+		color: $white;
+		line-height: 1.8;
+	}
+
+	@include media($medium) {
+		top: .75rem;
 	}
 
 }
@@ -137,7 +145,6 @@ img.circled {
 //     <div class="wrap">
 //         <div class="notification">
 //             <a>3</a>
-//             <i class="triangle"></i>
 //         </div>
 //         <img src="http://lorempixel.com/100/100/nature/" />
 //     </div>
@@ -202,7 +209,7 @@ img.circled {
 	}
 
 	&.alerts {
-		padding-left: rem(65);
+		padding-left: rem(75);
 		img {
 			position: relative;
 			left: auto;
@@ -221,7 +228,7 @@ img.circled {
 			bottom: 0;
 			top: 0;
 			margin: auto;
-			height: rem(36);
+			height: rem(32);
 		}
 
 	}
