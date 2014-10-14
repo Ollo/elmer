@@ -234,10 +234,55 @@
           
             
              <section class="kss-depth-2">
-              <h2 class="kss-title"><span class="kss-ref">8.6</span> - .ui_select</h2>
+              <h2 class="kss-title"><span class="kss-ref">8.6</span> - select</h2>
             
               
-                  <div class="kss-box"><p>Default select box for standard forms</p>
+                  <div class="kss-box"><p>common generic select element</p>
+</div>
+                  <div class="kss-mod-list">
+                    <div class="kss-mod-desc-group">
+                      <!-- <div class="kss-mod-desc"><p>Default styling</p></div>
+                      <div class="kss-mod-name"></div> -->
+                    </div>
+                    <div class="kss-mod-example">
+                      <div><select>
+    <option>option 1</option>
+    <option>option 2</option>
+</select></div>
+                    </div>
+                  
+                  </div>
+                  <div class="kss-markup">
+                    <pre class="prettyprint lang-html">&lt;select&gt;
+    &lt;option&gt;option 1&lt;/option&gt;
+    &lt;option&gt;option 2&lt;/option&gt;
+&lt;/select&gt;</pre>
+                  </div>
+              
+            
+              </section>
+            
+          
+            
+             <section class="kss-depth-2">
+              <h2 class="kss-title"><span class="kss-ref">8.7</span> - %ui_select_arrow</h2>
+            
+              
+                  
+                    <p>These are the styles for the common ui_select. Keeping this abstracted out of the ui_select class is important in case of a site-wide style change. We need to be able to change the style here ie, adding new selects etc, without having to change the class name or markup.</p>
+
+                  
+              
+            
+              </section>
+            
+          
+            
+             <section class="kss-depth-2">
+              <h2 class="kss-title"><span class="kss-ref">8.8</span> - .ui_select</h2>
+            
+              
+                  <div class="kss-box"><p>A fancy select with font awesome arrow, extends %ui_select_arrow</p>
 </div>
                   <div class="kss-mod-list">
                     <div class="kss-mod-desc-group">
@@ -250,10 +295,6 @@
         <option>option 1</option>
         <option>option 2</option>
     </select>
-    <div>
-        <i class="fa fa-caret-up"></i>
-        <i class="fa fa-caret-down"></i>
-    </div>
 </div></div>
                     </div>
                   
@@ -264,51 +305,6 @@
         &lt;option&gt;option 1&lt;/option&gt;
         &lt;option&gt;option 2&lt;/option&gt;
     &lt;/select&gt;
-    &lt;div&gt;
-        &lt;i class=&quot;fa fa-caret-up&quot;&gt;&lt;/i&gt;
-        &lt;i class=&quot;fa fa-caret-down&quot;&gt;&lt;/i&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</pre>
-                  </div>
-              
-            
-              </section>
-            
-          
-            
-             <section class="kss-depth-2">
-              <h2 class="kss-title"><span class="kss-ref">8.7</span> - .ui_select_arrow</h2>
-            
-              
-                  <div class="kss-box"><p>Select box with right arrow example seen in widget settings</p>
-</div>
-                  <div class="kss-mod-list">
-                    <div class="kss-mod-desc-group">
-                      <!-- <div class="kss-mod-desc"><p>Default styling</p></div>
-                      <div class="kss-mod-name"></div> -->
-                    </div>
-                    <div class="kss-mod-example">
-                      <div><div class="ui_select_arrow {$modifiers}">
-    <select>
-        <option>option 1</option>
-        <option>option 2</option>
-    </select>
-    <div>
-        <i class="fa fa-angle-down"></i>
-    </div>
-</div></div>
-                    </div>
-                  
-                  </div>
-                  <div class="kss-markup">
-                    <pre class="prettyprint lang-html">&lt;div class=&quot;ui_select_arrow {$modifiers}&quot;&gt;
-    &lt;select&gt;
-        &lt;option&gt;option 1&lt;/option&gt;
-        &lt;option&gt;option 2&lt;/option&gt;
-    &lt;/select&gt;
-    &lt;div&gt;
-        &lt;i class=&quot;fa fa-angle-down&quot;&gt;&lt;/i&gt;
-    &lt;/div&gt;
 &lt;/div&gt;</pre>
                   </div>
               
