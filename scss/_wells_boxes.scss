@@ -39,12 +39,12 @@ $well_border_radius: rem(6);
 }
 
 %well_margin {
-	margin: 0 0 1rem;
+	margin-bottom: 1.5rem;
 }
 
 %well_padding {
 	padding: rem(15);
-	margin: 0 0 1rem;
+	margin-bottom: 1.5rem;
 
 	@include media($medium) {
 		padding: rem(25);
@@ -98,7 +98,6 @@ $well_border_radius: rem(6);
 // Styleguide 12.4
 .box {
 	border: rem(1) solid $light_gray;
-	font-size: rem(14);
 
 	.row {
 		padding: rem(20) 0;
@@ -116,7 +115,7 @@ $well_border_radius: rem(6);
 		}
 	}
 
-	.ui_checkbox_green + label {
+	.ui_checkbox_secondary + label {
 		padding-bottom: 0;
 		i {
 			top: rem(2);

@@ -46,10 +46,24 @@ input[type="checkbox"], input[type="radio"] {
 
 select {
 	width: auto;
+	background-color: $white;
+	cursor: pointer;
+
+	&:focus {
+		outline: none;
+		border: 1px solid $teal;
+		box-shadow: $form-box-shadow-focus;
+	}
+
+	// removes firefox dotted line
+	&:-moz-focusring {
+		color: transparent;
+		text-shadow: 0 0 0 $black;
+	}
+
 }
 
-button,
-input[type="submit"] {
+button, input[type="submit"] {
 	@extend %button;
 	@include appearance(none);
 	cursor: pointer;
@@ -98,7 +112,6 @@ textarea, #{$all-text-inputs}, select {
 	color: darken($light_gray, 25);
 	font-weight: 300;
 	@include sans_light;
-	text-transform: capitalize;
 
 	&:hover {
 		border-color: $form-border-color-hover;
@@ -113,6 +126,7 @@ textarea, #{$all-text-inputs}, select {
 }
 
 // class is added via a js listner on the input fields
+// is this still needed? 
 input {
 	.interacted {
 
@@ -126,169 +140,8 @@ input {
 	}
 }
 
-//checkbox styles
 
-%ui_checkbox_generic {
-	position: absolute; left: -999em;
-
-	+ label {
-		@include user-select(none);
-		cursor: pointer;
-		span {
-			display: block;
-			text-indent: 0;
-			@extend %muted_text;
-			font-weight: normal;
-		}
-	}
-}
-
-// .ui_checkbox
-//
-// Generic teal checkbox
-//
-// Markup: <input type="checkbox" id="sampleCheckbox" class="ui_checkbox"/>
-// <label for="sampleCheckbox">Label Here</label>
-//
-// Styleguide 8.4
-
-.ui_checkbox {
-	@extend %ui_checkbox_generic;
-
-	+ label {
-		color: $teal;
-		font-size: 1.2rem;
-		font-weight: 500;
-		left: rem(2);
-
-		&:before {
-			position: relative;
-			left: rem(-2);
-			margin-right: 0.5em;
-			padding: .08rem .56rem;
-			background-color: $white;
-			border: 1px solid $teal;
-			border-radius: $form-border-radius;
-			color: transparent;
-			@extend .fa;
-			@extend .fa-check;
-		}
-	}
-
-	&:checked {
-		+ label {
-			&:before {
-				color: $teal;
-			}
-		}
-	}
-
-	&:focus {
-		+ label {
-			&:before {
-				box-shadow: $form-box-shadow-focus;
-			}
-		}
-	}
-
-}
-
-// .ui_checkbox_green
-//
-// Green checkbox
-//
-// Markup: <input type="checkbox" id="sampleCheckboxGreen" class="ui_checkbox_green"/>
-// <label for="sampleCheckboxGreen"><i class="fa fa-circle-o"></i>Label Here</label>
-//
-// Styleguide 8.5
-
-.ui_checkbox_green {
-	@extend %ui_checkbox_generic;
-
-	+ label {
-		//@include sans_med;
-		color: darken($gloo_gray, 10);
-		font-weight: 500;
-		// indent for vertically stacked radios so text wraps properly
-		margin-left:1.58em;
-		text-indent: -0.9em;
-		padding-bottom: rem(15);
-
-		i {
-			color: lighten($light_gray, 10%);
-			margin-right: rem(5);
-			font-size: rem(18);
-		}
-	}
-
-	&:focus {
-		+ label {
-			i {
-				border-radius: 10px;
-				//box shadow hack
-				&:before {
-					display: block;
-					margin-top:-1px;
-					margin-bottom: -3px;
-				}
-			}
-		}
-	}
-
-	&:checked {
-		+ label {
-			i {
-				box-shadow: none;
-				@extend .fa;
-				@extend .fa-check-circle;
-				color: $light_green;
-			}
-		}
-	}
-}
-
-// select
-//
-// common generic select element
-//
-// Markup:
-// <select>
-//     <option>option 1</option>
-//     <option>option 2</option>
-// </select>
-//
-// Styleguide 8.6
-
-select {
-	// @extend %muted_text;
-	// border-radius: $form-border-radius;
-	// box-shadow: $form-box-shadow;
-	background-color: $white;
-	// border: 1px solid $form-border-color;
-	// background-image: none;
-	cursor: pointer;
-	// padding: .5rem 1rem;
-	// font-weight: 100;
-
-	&:focus {
-		outline: none;
-		border: 1px solid $teal;
-		box-shadow: $form-box-shadow-focus;
-	}
-
-	// removes firefox dotted line
-	&:-moz-focusring {
-		color: transparent;
-		text-shadow: 0 0 0 $black;
-	}
-}
-
-// %ui_select_arrow
-//
-// These are the styles for the common ui_select. Keeping this abstracted out of the ui_select class is important in case of a site-wide style change. We need to be able to change the style here ie, adding new selects etc, without having to change the class name or markup.
-//
-// Styleguide 8.7
-
+// These are the styles for the common class, ui_select. Keep this abstracted out of the ui_select class in case of a site-wide style change. 
 %ui_select_arrow {
 	padding: 0;
 	margin: 0;
@@ -298,7 +151,7 @@ select {
 	position: relative;
 	background-color: $white;
 
-	// white background + border are needed to hide firefox arrow :(
+	// white background & border are needed to hide firefox arrow
 	&:before {
 		@extend .fa;
 		@extend .fa-angle-down;
@@ -335,10 +188,128 @@ select {
 //     </select>
 // </div>
 //
-// Styleguide 8.8
+// Styleguide 8.4
 
 .ui_select {
 	@extend %ui_select_arrow;
+}
+
+//checkbox styles
+%ui_checkbox_generic {
+	position: absolute; left: -999em;
+
+	+ label {
+		@include user-select(none);
+		cursor: pointer;
+		span {
+			display: block;
+			text-indent: 0;
+			@extend %muted_text;
+			font-weight: normal;
+		}
+	}
+}
+
+// .ui_checkbox_primary
+//
+// Generic teal checkbox
+//
+// Markup: <input type="checkbox" id="sampleCheckbox" class="ui_checkbox_primary"/>
+// <label for="sampleCheckbox">Label Here
+//      <span>this is a test to see what happens when the checkbox wraps to two lines and has a lovely span inside of it. this is a test to see what happens when the checkbox wraps to two lines and has a lovely span inside of it. </span>
+// </label>
+//
+// Styleguide 8.5
+
+.ui_checkbox_primary {
+	@extend %ui_checkbox_generic;
+
+	+ label {
+		color: $teal;
+		font-size: 1.2rem;
+		font-weight: 500;
+
+		&:before {
+			position: relative;
+			margin-right: 0.5em;
+			padding: .08rem .56rem;
+			background-color: $white;
+			border: 1px solid $teal;
+			border-radius: $form-border-radius;
+			color: transparent;
+			@extend .fa;
+			@extend .fa-check;
+		}
+
+		span {
+			margin-left: 3.1rem;
+		}
+	}
+
+	&:checked {
+		+ label {
+			&:before {
+				color: $teal;
+			}
+		}
+	}
+
+	&:focus {
+		+ label {
+			&:before {
+				box-shadow: $form-box-shadow-focus;
+			}
+		}
+	}
+
+}
+
+// .ui_checkbox_secondary
+//
+// Green checkbox
+//
+// Markup: 
+// <input type="checkbox" id="uiCheckboxSecondary" class="ui_checkbox_secondary"/>
+// <label for="uiCheckboxSecondary"><i class="fa fa-circle-o"></i>Label Here</label>
+//
+// Styleguide 8.6
+
+.ui_checkbox_secondary {
+	@extend %ui_checkbox_generic;
+
+	+ label {
+		color: darken($gloo_gray, 10);
+		font-weight: 500;
+		margin-left:1.58em;
+		text-indent: -0.9em;
+		padding-bottom: rem(15);
+		display: block;
+
+		i {
+			color: lighten($light_gray, 10%);
+			margin-right: rem(5);
+			font-size: rem(18);
+			top: .1rem;
+		}
+	}
+
+	&:focus {
+		+ label {
+			i {
+				color: $light_green;
+			}
+		}
+	}
+
+	&:checked {
+		+ label {
+			i {
+				box-shadow: none;
+				@extend .fa-check-circle;
+				color: $light_green;
+			}
+		}
+	}
 }
 
 //radio styles
@@ -355,25 +326,25 @@ select {
 	}
 }
 
-// .ui_radio
+// .ui_radio_group
 //
 // Rectangular radio button
 //
-// Markup: <div class="ui_radio">
+// Markup: <div class="ui_radio_group">
 //    <input type="radio" name="gender" id="male" value="male">
 //    <label class="btn_radio" for="male">Male</label>
 //    <input type="radio" id="female" name="gender" value="female">
 //    <label class="btn_radio" for="female">Female</label>
 //</div>
 //
-// Styleguide 8.8
+// Styleguide 8.7
 
-.ui_radio {
+.ui_radio_group {
 	@extend %clearfix;
 	margin-bottom: rem(20);
 	background: #fff;
 
-	.btn_radio {
+	.btn_radio, label {
 	    cursor: pointer;
 	    float: left;
 	    width: 50% !important;
@@ -398,70 +369,83 @@ select {
 	}
 
 	input[type="radio"] {
-	    position: absolute;
+		position: absolute;
 	    left: -1000000px;
-	}
+		
+		&:checked {
+			+ .btn_radio, + label {
+				background-color: $teal;
+				color: $white;
+			}
+		}
 
-	input[type="radio"]:checked + .btn_radio {
-		background-color: $teal;
-		color: $white;
-	}
+		&:focus, &:hover {
+			+ .btn_radio, + label {
+				border-color: $form-border-color-focus;
+				box-shadow: $form-box-shadow-focus;
+			}
+		}
 
-	//focus styles
-	input[type="radio"]:focus + .btn_radio {
-		border-color: $form-border-color-focus;
-		box-shadow: $form-box-shadow-focus;
-	}
-
-	input[type="radio"]:hover + .btn_radio {
-		border-color: $form-border-color-focus;
-		box-shadow: $form-box-shadow-focus;
 	}
 }
 
-// .ui_radio_green
+// .ui_radio
 //
-// Multiple green radio buttons.
+// Standard radio buttons
 //
 // Markup:
-// <input type="radio" name="radio" id="sampleRadio1" class="ui_radio_green"/>
-// <label for="sampleRadio1"><i class="fa fa-circle-o"></i>Label Here</label>
-// <input type="radio" name="radio" id="sampleRadio2" class="ui_radio_green"/>
-// <label for="sampleRadio2"><i class="fa fa-circle-o"></i>Really Super Crazy Long Label Here</label>
-// <input type="radio" name="radio" id="sampleRadio3" class="ui_radio_green"/>
-// <label for="sampleRadio3"><i class="fa fa-circle-o"></i>Super Crazy Long Label Here</label>
+// <input type="radio" name="radio" id="standardRadio1" class="ui_radio"/>
+// <label for="standardRadio1"><i></i>Label Here</label>
+// <input type="radio" name="radio" id="standardRadio2" class="ui_radio"/>
+// <label for="standardRadio2"><i></i>Really Super Crazy Long Label Here</label>
+// <input type="radio" name="radio" id="standardRadio3" class="ui_radio"/>
+// <label for="standardRadio3"><i></i>Super Crazy Long Label Here</label>
 //
-// Styleguide 8.9
+// Styleguide 8.8
 
-.ui_radio_green {
+.ui_radio {
 	@extend %ui_radio_generic;
 
 	+ label {
-		@include sans_med;
-		font-weight: normal;
-		color: $gray;
-		font-size: rem(16);
 		display: block;
-		// indent for vertically stacked radios so text wraps properly
-		margin-left:1.58em;
-		text-indent: -0.9em;
-		padding-bottom: rem(15);
-
 		i {
-			@extend %muted_text;
-			margin-right: rem(10);
-			font-size: rem(19);
-			left: .5rem;
+			box-shadow: $form-box-shadow;
+			border: 1px solid $form-border-color;
+			background-color: $white;
+			margin-right: 2rem; 
+			border-radius: 100%;
+			padding: .4rem .3rem .25rem .3rem;
+			line-height: .75;
+			float: left;
+			@extend .fa;
+			@extend .fa-circle;
+			color: transparent;
+			font-size: 1.1rem;
+			margin-top: .3rem;
 		}
-
 	}
 
 	&:checked {
 		+ label {
 			i {
-				color: $light_green;
-				@extend .fa;
-				@extend .fa-check-circle;
+				color: $teal;
+			}
+		}
+	}
+
+	&:hover {
+		+ label {
+			i {
+				border-color: $form-border-color-hover;
+			}
+		}
+	}
+
+	&:focus {
+		+ label {
+			i {
+				border-color: $form-border-color-focus;
+				box-shadow: $form-box-shadow-focus;
 			}
 		}
 	}
@@ -475,37 +459,6 @@ select {
 	}
 }
 
-%single_line_form {
-	input[type=search], input[type=text] {
-		border-radius: rem(25);
-		background: transparent;
-		letter-spacing: rem(0.18);
-		margin: 0;
-		padding: rem(8) rem(30) rem(8) rem(15);
-
-		@include placeholder {
-		    padding-left: 0.45em;
-		    letter-spacing: rem(0.18);
-		}
-
-	}
-
-	button, input[type="submit"] {
-		position: absolute;
-		right: rem(10);
-		top: rem(3);
-		padding: rem(5);
-		border: 0;
-		display: inline-block;
-		background: none;
-	}
-
-	@include media($small) {
-		display: inline-block;
-	}
-
-}
-
 // .ui_search
 //
 // Common searchfield
@@ -516,7 +469,7 @@ select {
 //     <button><i class="fa fa-search"></i></button>
 // </div>
 //
-// Styleguide 8.10
+// Styleguide 8.9
 
 .ui_search {
 	@extend %single_line_form;
@@ -592,7 +545,7 @@ select {
 // <a class="primary">Choose File(s)</a>
 // </div>
 //
-// Styleguide 8.10
+// Styleguide 8.11
 
 .ui_file_upload {
 	margin: rem(30) 0 rem(50);
@@ -615,5 +568,65 @@ select {
 		&:focus {
 			outline: none;
 		}
+	}
+}
+
+%single_line_form {
+	input[type=search], input[type=text] {
+		border-radius: rem(25);
+		background: transparent;
+		letter-spacing: rem(0.18);
+		margin: 0;
+		padding: rem(8) rem(30) rem(8) rem(15);
+
+		@include placeholder {
+		    padding-left: 0.45em;
+		    letter-spacing: rem(0.18);
+		}
+
+	}
+
+	button, input[type="submit"] {
+		position: absolute;
+		right: rem(10);
+		top: rem(3);
+		padding: rem(5);
+		border: 0;
+		display: inline-block;
+		background: none;
+	}
+
+	@include media($small) {
+		display: inline-block;
+	}
+
+}
+
+.required {
+	border: 1px solid $teal!important;
+}
+
+// used on lines in forms that have 2 inputs on one line
+.half_width {
+	width: 48.5%!important;
+	margin-right: 3%;
+	float: left;
+	&:nth-of-type(2n) {
+		margin-right: 0;
+	}
+}
+
+.legend {
+	@extend %small_text;
+	@extend %muted_text;
+	font-style: italic;
+	i {
+		margin-right: .2rem;
+		display: inline-block;
+	}
+	.square {
+		width: .8rem;
+		height: .8rem;
+		border: 1px solid $teal;
 	}
 }

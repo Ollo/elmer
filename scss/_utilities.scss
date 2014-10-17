@@ -70,3 +70,15 @@
 
 	}
 }
+
+// .clear_left
+//
+// Markup:
+// <div class="clear_left"></div>
+//
+// Styleguide 24.4
+
+.clear_left {
+	@include clearfix;
+	clear: left;
+}

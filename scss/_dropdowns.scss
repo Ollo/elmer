@@ -122,10 +122,17 @@
 	// Styleguide 20.3
 	&.action {
 		min-width: rem(145);
+		background: $sand;
 
-		> span {
-			background: $white;
+		.drop_menu {
+			background: $sand;
+			a {
+				&:hover {
+					background: $white;
+				}
+			}
 		}
+
 	}
 
 }
