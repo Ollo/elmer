@@ -297,14 +297,14 @@
 @include keyframes(fadeUpIn) {
   0% {
     opacity: 0;
-    @include transform-origin(0% 50%);
+    @include transform(translateY(3rem));
   }
   50%, {
     opacity: .5;
-    @include transform-origin(0% 25%);
+    @include transform(translateY(1.5rem));
   }
   100% {
     opacity: 1;
-    @include transform-origin(0% 0%);
+    @include transform(translateY(0rem));
   }
 }
