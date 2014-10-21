@@ -87,7 +87,7 @@ h4 {
 	font-weight: 500;
 	font-size: rem(14);
 	text-transform: uppercase;
-	@extend %muted_text;
+	color: lighten($gray, 3%);
 	margin: 1rem 0 0.5rem;
 }
 
