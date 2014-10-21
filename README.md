@@ -48,9 +48,6 @@ Elmer is a living framework that is still in active development if you would lik
 
 [@hrallo](mailto:hrallo@tangogroup.com)
 
-[@rsuh](mailto:rsuh@tangogroup.com)
-
 [@jray](mailto:jray@tangogroup.com)
 
-[@cashworth](mailto:cashworth@tangogroup.com)
 
