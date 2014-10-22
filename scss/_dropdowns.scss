@@ -153,3 +153,108 @@
 	@include backface-visibility(hidden);
 	@include transform(translateZ(0));
 }
+
+.panel_trigger.btn_action {
+	background: $white;
+	color: $teal;
+
+	&.squared {
+		transition: none!important;
+	}
+
+	&.active {
+
+		&.arrow {
+			&:before {
+				content: '';
+				position: absolute;
+				bottom: -1.5rem;
+				left: .75rem;
+				border-left: 1rem solid transparent;
+				border-right: 1rem solid transparent;
+				border-bottom: 1rem solid $white;
+			}
+		}
+
+		&.squared {
+			border-radius: 6px 6px 0 0;
+			padding-bottom: rem(17);
+			margin-bottom: rem(-12);
+		}
+
+	}
+
+}
+
+// .dropdown_navigation
+//
+// Standard large white dropdown. Use this class or @extend %dropdown_navigation. Addition of the class 'arrow' to both menu and button will allow for an arrow to show when the menu is open. Addition of the class 'squared' will allow for the menu to open attached to the button.
+// All dropdown_navigations need the class 'panel' and the button needs 'panel_trigger' to activation angularjs components of 'clickClosed' and 'togglePanel'. See examples below for other requirements.
+//
+//
+// Markup:
+// <div style="background: gray; padding: 1rem 1rem 10rem;">
+//   <button eg-click-closed eg-panel-toggle panel="arrowMenu" class="btn_action panel_trigger arrow active"><i class="fa fa-cog"></i></button>
+//   <div id="arrowMenu" class="dropdown_navigation panel arrow active">
+//      Dropdown navigation <strong>with an arrow</strong>, often used in various settings menus.
+//   </div>
+// </div>
+// <div style="background: gray; padding: 1rem 1rem 10rem;">
+//   <button eg-click-closed eg-panel-toggle panel="squareMenu" class="btn_action panel_trigger squared active"><i class="fa fa-cog"></i></button>
+//   <div id="squareMenu" class="dropdown_navigation panel squared active">
+//      Dropdown navigation <strong>with a square</strong>, often used in various settings menus.
+//   </div>
+// </div>
+//
+// Styleguide 20.3
+%dropdown_navigation {
+	position: absolute;
+	width: 100%;
+	text-align: left;
+	max-height: 0;
+	overflow: hidden;
+	left: 0;
+	right: 0;
+	z-index: 1;
+	border-radius: 6px;
+	padding: rem(15);
+	opacity: 0;
+	@extend %well_white_no_padding;
+	@include transition(all .2s ease-in-out);
+
+	a {
+		display: inline-block;
+	}
+
+	&.active, &:focus {
+		outline: none;
+		opacity: 1;
+		max-height: 1000rem;
+		z-index: 2;
+	}
+
+	.primary {
+		margin: 1em auto;
+		display: block;
+	}
+
+	li.bordered {
+		margin-bottom: 2rem;
+		.ui_checkbox_secondary {
+			+ label {
+				padding-bottom: 0;
+			}
+		}
+	}
+
+	&.arrow {
+		margin-top: 1.4rem;
+		&.active, &.focus {
+
+		}
+	}
+}
+
+.dropdown_navigation {
+	@extend %dropdown_navigation;
+}
