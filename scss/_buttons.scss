@@ -373,9 +373,9 @@ input[type="submit"] {
 %btn_action {
 	@extend %button;
     @include border-clear;
-    @extend %well_white_no_padding;
     padding: 0.5rem 1rem;
     margin-right: 1rem;
+    color: $teal;
     &:last-child {
         margin-right: 0;
     }
@@ -388,7 +388,7 @@ input[type="submit"] {
 // Styleguide 6.11
 .btn_action {
 	@extend %btn_action;
-	color: $teal;
+	@extend %well_white_no_padding;
 
 	&.disabled {
 		color: $light_gray;
@@ -403,4 +403,18 @@ input[type="submit"] {
         background: $teal;
         color: $white;
     }
+}
+
+// .btn_action_gray
+//
+// Used when the action button is placed on a white background
+//
+// Markup: <button class="btn_action_gray {$modifiers}"><i class="fa fa-camera"></i></button>
+//
+// Styleguide 6.13
+
+.btn_action_gray {
+	@extend %btn_action;
+	border-radius: rem(6);
+	background: lighten($light_gray, 20%);
 }
