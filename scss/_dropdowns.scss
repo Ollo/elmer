@@ -36,7 +36,8 @@
 			@include transition(background .2s ease-in-out);
 
 			&:hover {
-				background: $sand;
+				// background: $sand;
+				background-color: lighten($light_gray, 20%);
 			}
 
 			i {
@@ -122,10 +123,10 @@
 	// Styleguide 20.3
 	&.action {
 		min-width: rem(145);
-		background: $sand;
+		background-color: lighten($light_gray, 20%);
 
 		.drop_menu {
-			background: $sand;
+			background-color: lighten($light_gray, 20%);
 			a {
 				&:hover {
 					background: $white;
@@ -215,7 +216,7 @@
 	overflow: hidden;
 	left: 0;
 	right: 0;
-	z-index: 1;
+	z-index: 10;
 	border-radius: 6px;
 	padding: rem(15);
 	opacity: 0;
@@ -230,7 +231,7 @@
 		outline: none;
 		opacity: 1;
 		max-height: 1000rem;
-		z-index: 2;
+		// z-index: 2;
 	}
 
 	.primary {
