@@ -82,3 +82,30 @@
 	@include clearfix;
 	clear: left;
 }
+
+// %icon_space, .icon_space
+//
+// This is the common amount of spacing for icons with text next to them.
+//
+// Markup:
+// <p><i class="fa fa-check-circle icon_space"></i>All reviews will be submitted with your username.</p>
+//
+// Styleguide 24.5
+
+%icon_space, .icon_space {
+	margin-right: .5rem;
+}
+
+// %color_green
+//
+// Use this for things with color:green 
+//
+// Markup:
+// <p><i class="fa fa-check-circle icon_space color_green"></i>All reviews will be submitted with your username.</p>
+//
+// Styleguide 24.6
+
+
+%color_green, .color_green {
+	color: $green;
+}

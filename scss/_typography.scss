@@ -125,11 +125,16 @@ h6 {
 	h4 {
 		float: left;
 		margin-top: 0;
+		i {
+			color: $teal;
+			@extend %icon_space;
+		}
 	}
 
-	i {
-		color: $teal;
-		margin-right: 0.5rem;
+	.btn_action {
+		float: right;
+		padding: .2rem .5rem;
+		margin-top: -.5rem;
 	}
 
 }
