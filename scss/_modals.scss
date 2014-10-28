@@ -112,7 +112,7 @@
         @extend %clearfix;
         border-bottom: 1px solid $light_gray;
         padding: 0 0 1rem;
-        margin: 0 2.5rem 0;
+        margin: 0 1.5rem 0;
 
         h2 {
             @include sans_bold;
@@ -131,7 +131,7 @@
 
     .modal-body {
         color: $gray;
-        padding: rem(25) 2.5rem rem(50);
+        padding: 1.5rem 1.5rem 1.5rem;
         @include sans_med;
 
         strong {
@@ -152,6 +152,15 @@
     }
 
     @include media($small) {
+
+        .modal-body {
+            padding: rem(25) 2.5rem rem(50);
+        }
+
+        .modal-header {
+            margin: 0 2.5rem 0;
+        }
+
         .modal-footer {
             button, .btn {
                 margin-right: 1.5rem;
