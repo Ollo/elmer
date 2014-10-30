@@ -16,7 +16,7 @@
 
 .star_group {
 	@extend %clearfix;
-	float: left;
+	@extend %float_left;
 	.star {
 		+ label {
 			cursor: default
@@ -29,7 +29,7 @@
 	top: -9999px;
 
 	+ label {
-		float: right;
+		@extend %float_right;
 		display: block;
 		font-size: rem(30);
 		color: lighten($light_gray, 10%);

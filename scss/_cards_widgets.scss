@@ -63,7 +63,7 @@ $card_background: $white;
 			top: .5rem;
 		}
 		.primary, input[type="submit"] {
-			float: right;
+			@extend %float_right;
 		}
 	}
 }

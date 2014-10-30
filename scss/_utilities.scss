@@ -1,28 +1,48 @@
+// .float_left
+//
+// Float an element left
+//
+// Styleguide 24.1
+
+%float_left {
+	float: left;
+}
+
+// .align_right
+//
+// Float an element right
+//
+// Styleguide 24.2
+
+%float_right {
+	float: right;
+}
+
 // .align_left
 //
-// Float an element left, everywhere but portrai mobile
+// Float an element left, everywhere but portrait mobile. Adds slight margin for images
 //
 // Markup:
 // <div class="wrapper"><div class="align_left"><img src="http://lorempixel.com/100/100/nature/" /></div></div>
 //
-// Styleguide 24.1
+// Styleguide 24.3
 
 .align_left {
-	float: left;
+	@extend %float_left;
 	margin: 0 1rem .5rem 0;
 }
 
 // .align_right
 //
-// Float an element right, everywhere but portrait mobile
+// Float an element right, everywhere but portrait mobile. Adds slight margin for images
 //
 // Markup:
 // <div class="wrapper"><div class="align_right"><img src="http://lorempixel.com/100/100/nature/" /></div></div>
 //
-// Styleguide 24.2
+// Styleguide 24.4
 
 .align_right {
-	float: right;
+	@extend %float_right;
 	margin: 0 0 .5rem 1rem;
 }
 
@@ -33,7 +53,7 @@
 // Markup:
 // <div class="bounce_loader"><div class="rect1"></div><div class="rect2"></div><div class="rect3"></div><div class="rect4"></div><div class="rect5"></div></div>
 //
-// Styleguide 24.3
+// Styleguide 24.5
 
 .bounce_loader {
 	height: rem(60);
@@ -76,7 +96,7 @@
 // Markup:
 // <div class="clear_left"></div>
 //
-// Styleguide 24.4
+// Styleguide 24.6
 
 .clear_left {
 	@include clearfix;
@@ -90,7 +110,7 @@
 // Markup:
 // <p><i class="fa fa-check-circle icon_space"></i>All reviews will be submitted with your username.</p>
 //
-// Styleguide 24.5
+// Styleguide 24.7
 
 %icon_space, .icon_space {
 	margin-right: .5rem;
@@ -103,7 +123,7 @@
 // Markup:
 // <p><i class="fa fa-check-circle icon_space color_green"></i>All reviews will be submitted with your username.</p>
 //
-// Styleguide 24.6
+// Styleguide 24.8
 
 
 %color_green, .color_green {

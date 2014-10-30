@@ -118,10 +118,10 @@
     }
 
     .prev {
-        float: left;
+        @extend %float_left;
     }
     .next {
-        float: right;
+        @extend %float_right;
     }
 }
 

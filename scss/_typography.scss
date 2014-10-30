@@ -136,7 +136,7 @@ h6 {
 	margin-bottom: 2rem;
 
 	h4 {
-		float: left;
+		@extend %float_left;
 		margin-top: 0;
 		i {
 			color: $teal;
@@ -145,7 +145,7 @@ h6 {
 	}
 
 	.btn_action {
-		float: right;
+		@extend %float_right;
 		padding: .2rem .5rem;
 		margin-top: -.5rem;
 	}

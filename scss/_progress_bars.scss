@@ -118,10 +118,10 @@
 	@include clearfix;
 		
 	.progress_bar {
-		float: left;
+		@extend %float_left;
 
 		+ span {
-			float: left;
+			@extend %float_left;
 			color: $gloo_gray;
 			margin-bottom: 1rem;
 		}

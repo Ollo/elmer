@@ -158,7 +158,7 @@ $well_border_radius: rem(6);
 		background: lighten($light_gray, 25%);
 
 		button {
-			float: right;
+			@extend %float_right;
 			background: $light_gray;
 
 			&:hover {

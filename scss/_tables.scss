@@ -173,7 +173,7 @@ td {
 
 	input {
 		margin: 0;
-		float: left;
+		@extend %float_left;
 		width: 80%;
 	}
 

@@ -37,7 +37,7 @@
         padding: 1.2rem 2.5rem;
 
         button {
-            float: right;
+            @extend %float_right;
         }
 
         .avatar {
