@@ -10,31 +10,31 @@ $sans-serif: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", He
 
 @mixin slab_light {
 	@include museo-slab;
-	font-weight: 100;
+	@extend %font_weight_100;
 }
 @mixin slab_med {
 	@include museo-slab;
-	font-weight: 300;
+	@extend %font_weight_300;
 }
 @mixin slab_bold {
 	@include museo-slab;
-	font-weight: 500;
+	@extend %font_weight_500;
 }
 @mixin sans_light {
 	@include museo-sans;
-	font-weight: 100;
+	@extend %font_weight_100;
 }
 @mixin sans_med {
 	@include museo-sans;
-	font-weight: 300;
+	@extend %font_weight_300;
 }
 @mixin sans_bold {
 	@include museo-sans;
-	font-weight: 500;
+	@extend %font_weight_500;
 }
 @mixin sans_boldest {
 	@include museo-sans;
-	font-weight: 700;
+	@extend %font_weight_700;
 }
 
 %font_weight_100 {
