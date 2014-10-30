@@ -31,7 +31,7 @@
 
 		a {
 			@extend %muted_text;
-			font-weight: 300;
+			@extend %font_weight_300;
 			display: block;
 		}
 
@@ -39,7 +39,7 @@
 
 			a {
 				color: $charcoal;
-				font-weight: 500;
+				@extend %font_weight_500;
 			}
 		}
 

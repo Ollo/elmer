@@ -51,7 +51,7 @@ dl {
   margin-bottom: $base_line_height / 2;
 
   dt {
-    font-weight: bold;
+    @extend %font_weight_500;
     margin-top: $base_line_height / 2;
   }
 

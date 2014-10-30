@@ -114,7 +114,7 @@ textarea, #{$all-text-inputs}, select {
 	border-radius: $form-border-radius;
 	margin-bottom: rem(20);
 	color: darken($light_gray, 25);
-	font-weight: 300;
+	@extend %font_weight_300;
 	@include sans_light;
 
 	&:hover {
@@ -232,7 +232,7 @@ input {
 	+ label {
 		color: $teal;
 		font-size: 1.2rem;
-		font-weight: 500;
+		@extend %font_weight_500;
 
 		&:before {
 			position: relative;
@@ -284,7 +284,7 @@ input {
 
 	+ label {
 		color: darken($gloo_gray, 10);
-		font-weight: 500;
+		@extend %font_weight_500;
 		margin-left:1.58em;
 		text-indent: -0.9em;
 		padding-bottom: rem(15);
@@ -357,7 +357,7 @@ input {
 	    text-align: center;
 	    margin-bottom: 0;
 	    color: $teal;
-	    font-weight: 300;
+	    @extend %font_weight_300;
 	    font-size: 1.5rem;
 	    outline: none;
 	    border: 1px solid $teal;

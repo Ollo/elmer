@@ -8,7 +8,6 @@ $sans-serif: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", He
 	font-family: "museo-sans" sans-serif;
 }
 
-
 @mixin slab_light {
 	@include museo-slab;
 	font-weight: 100;
@@ -38,6 +37,20 @@ $sans-serif: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", He
 	font-weight: 700;
 }
 
+%font_weight_100 {
+	font-weight: 100;
+}
+%font_weight_300 {
+	font-weight: 300;
+}
+%font_weight_500 {
+	font-weight: 500;
+}
+%font_weight_700 {
+	font-weight: 700;
+}
+
+
 body {
 	// Body font is now museo-sans, which means at some point we will need to go back in and cleanup museo-sans overrides that are no longer needed.
 	@include sans_med;
@@ -63,7 +76,7 @@ h1, h2, h3, h4 {
 }
 
 h1 {
-	font-weight: 100;
+	@extend %font_weight_100;
 	font-size: rem(22);
 	color: $charcoal;
 	@include media($medium) {
@@ -72,19 +85,19 @@ h1 {
 }
 
 h2 {
-	font-weight: 500;
+	@extend %font_weight_500;
 	font-size: rem(22);
 	color: $charcoal;
 }
 
 h3 {
-	font-weight: 300;
+	@extend %font_weight_300;
 	font-size: rem(18);
 	color: $charcoal;
 }
 
 h4 {
-	font-weight: 500;
+	@extend %font_weight_500;
 	font-size: rem(14);
 	text-transform: uppercase;
 	color: lighten($gray, 3%);
@@ -92,7 +105,7 @@ h4 {
 }
 
 h5 {
-	font-weight: 500;
+	@extend %font_weight_500;
 	font-size: rem(15);
 	color: $charcoal;
 	margin: 0 0 1rem;

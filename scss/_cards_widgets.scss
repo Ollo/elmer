@@ -380,7 +380,7 @@ $card_background: $white;
 	line-height: 2rem;
 
 	a {
-		font-weight: 500;
+		@extend %font_weight_500;
 	}
 
     &:nth-of-type(3n + 3) {

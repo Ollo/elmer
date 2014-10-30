@@ -117,7 +117,7 @@ img.circled {
 	a {
 		display: block;
 		font-size: 1rem;
-		font-weight: 700;
+		@extend %font_weight_700;
 		padding: .1rem;
 		color: $white;
 		line-height: 1.8;

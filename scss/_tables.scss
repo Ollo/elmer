@@ -48,7 +48,7 @@ th, td {
 th {
   color: $white;
   @extend %small_text;
-  font-weight: 500;
+  @extend %font_weight_500;
   text-align: left;
   background: tint($pale_blue, 40%);
 }
@@ -157,7 +157,7 @@ td {
 	.mobile_label {
 		color: $charcoal;
 		padding-right: rem(5);
-		font-weight: bold;
+		@extend %font_weight_500;
 	}
 
 	.fa-trash-o {

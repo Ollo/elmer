@@ -330,7 +330,7 @@ input[type="submit"] {
 .tag {
 	background: $sand;
 	padding: .75rem;
-	font-weight: 900;
+	@extend %font_weight_700;
 	color: $gloo_gray;
 	border-radius: 9px;
 	display: inline-block;
@@ -362,7 +362,7 @@ input[type="submit"] {
 	margin-bottom: 1rem;
 	@include transition(all .2s ease-in-out);
 	@extend %small_text;
-	font-weight: 500;
+	@extend %font_weight_500;
 	&:hover {
 		background: darken($sand, 10%);
 		color: darken($gray, 10%);

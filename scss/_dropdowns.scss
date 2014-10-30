@@ -7,7 +7,7 @@
 	color: $gray;
 	cursor: pointer;
 	z-index: 3;
-	font-weight: 500;
+	@extend %font_weight_500;
 
 	> span {
 		padding: .75rem rem(50) .75rem 1rem;
