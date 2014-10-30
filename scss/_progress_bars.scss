@@ -115,7 +115,7 @@
 // Styleguide 13.4
 
 .progress_bar_container {
-	@include clearfix;
+	@extend %clearfix;
 		
 	.progress_bar {
 		@extend %float_left;

@@ -231,7 +231,7 @@
         .modal-content {
             border-radius: 0;
             padding: 0 0 3rem;
-            @include clearfix;
+            @extend %clearfix;
 
             .modal-header {
                 @extend %clearfix;

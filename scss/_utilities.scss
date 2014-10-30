@@ -99,7 +99,7 @@
 // Styleguide 24.6
 
 .clear_left {
-	@include clearfix;
+	@extend %clearfix;
 	clear: left;
 }
 
@@ -148,4 +148,14 @@
 
 %rounded_corners_large {
 	border-radius: $border_radius_large;
+}
+
+// %clearfix
+//
+// Use this instead of @include clearfix; so it only get compiled once
+//
+// Styleguide 25
+
+%clearfix {
+	@include clearfix;
 }
