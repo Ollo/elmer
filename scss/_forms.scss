@@ -3,7 +3,7 @@ $form-border-color-hover: darken($light_gray, 10);
 $form-border-color-focus: $teal;
 $form-box-shadow: inset 0 1px 3px hsla(0, 0%, 0%, 0.06);
 $form-box-shadow-focus: $form-box-shadow, 0 0 2px rgba(darken($form-border-color-focus, 5), 0.7);
-$form-border-radius: 5px;
+$form-border-radius: $border_radius;
 
 // label
 //
@@ -111,7 +111,7 @@ textarea, #{$all-text-inputs}, select {
 	box-shadow: $form-box-shadow;
 	width: 100%;
 	padding: 0.5em 1em;
-	border-radius: $form-border-radius;
+	@extend %rounded_corners;
 	margin-bottom: rem(20);
 	color: darken($light_gray, 25);
 	@extend %font_weight_300;
@@ -149,7 +149,7 @@ input {
 %ui_select_arrow {
 	padding: 0;
 	margin: 0 0 2rem;
-	border-radius: $form-border-radius;
+	@extend %rounded_corners;
 	@extend %muted_text;
 	cursor: pointer;
 	position: relative;
@@ -240,7 +240,7 @@ input {
 			padding: .08rem .56rem;
 			background-color: $white;
 			border: 1px solid $teal;
-			border-radius: $form-border-radius;
+			@extend %rounded_corners;
 			color: transparent;
 			@extend .fa;
 			@extend .fa-check;

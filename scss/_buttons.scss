@@ -26,7 +26,7 @@
 	border: 1px solid transparent;
 }
 
-$button-radius: 6px;
+$button-radius: $border_radius_large;
 $standard-btn-pad: 0.5em 2em;
 
 input[type="submit"] {
@@ -49,7 +49,7 @@ input[type="submit"] {
 	@extend %button;
 	@include border-clear;
 	padding: $standard-btn-pad;
-	border-radius: $button-radius;
+	@extend %rounded_corners_large;
 	background: $teal;
 	color: $white;
 
@@ -75,7 +75,7 @@ input[type="submit"] {
 	@extend %button;
 	@include border-clear;
 	padding: $standard-btn-pad;
-	border-radius: $button-radius;
+	@extend %rounded_corners_large;
 	background: $light_green;
 	color: $white;
 
@@ -100,7 +100,7 @@ input[type="submit"] {
 	@extend %button;
 	@include border-clear;
 	padding: $standard-btn-pad;
-	border-radius: $button-radius;
+	@extend %rounded_corners_large;
 	background: $navy;
 	color: $white;
 
@@ -124,7 +124,7 @@ input[type="submit"] {
 	@extend %button;
 	@include border-clear;
 	padding: $standard-btn-pad;
-	border-radius: $button-radius;
+	@extend %rounded_corners_large;
 	background: $sand;
 	box-shadow: 0 1px 1px rgba(0,0,0,.2);
 	text-transform: uppercase;
@@ -151,7 +151,7 @@ input[type="submit"] {
 .inverse {
 	@extend %button;
 	padding: $standard-btn-pad;
-	border-radius: $button-radius;
+	@extend %rounded_corners_large;
 	color: $teal;
 	background: $white;
 	border: 1px solid $teal;
@@ -174,7 +174,7 @@ input[type="submit"] {
 	@extend %button;
 	@include border-clear;
 	@include sans_light;
-	border-radius: $button-radius;
+	@extend %rounded_corners_large;
 	font-size: 1.4rem;
 	@include pad(0.6em 2em 0.6em rem(58));
 	color: $white;
@@ -231,7 +231,7 @@ input[type="submit"] {
 	@extend %button;
 	@include border-clear;
 	padding: $standard-btn-pad;
-	border-radius: $button-radius;
+	@extend %rounded_corners_large;
 	background: $gloo_gray;
 	cursor: not-allowed!important;
 	color: $white;
@@ -255,7 +255,7 @@ input[type="submit"] {
 	@extend %button;
 	@include border-clear;
 	padding: $standard-btn-pad;
-	border-radius: $button-radius;
+	@extend %rounded_corners_large;
 	color: $white;
 	background: $light_gray;
 
@@ -271,7 +271,7 @@ input[type="submit"] {
  	box-shadow: -1px 1px 0 0 rgba($light_gray, 0.25);
  	background: $white;
  	font-size: 3rem;
- 	border-radius: 3rem;
+ 	border-radius: 100%;
  	line-height: 0;
 
  	&:focus {
@@ -332,7 +332,7 @@ input[type="submit"] {
 	padding: .75rem;
 	@extend %font_weight_700;
 	color: $gloo_gray;
-	border-radius: 9px;
+	@extend %rounded_corners_large;
 	display: inline-block;
 	margin-right: rem(5);
 	@include transition(all .2s ease-in-out);
@@ -357,7 +357,7 @@ input[type="submit"] {
 	padding: 0.65rem 1rem .5rem;
 	color: $gray;
 	border-bottom: 1px solid darken($sand, 12%);
-	border-radius: 9px;
+	@extend %rounded_corners_large;
 	display: block;
 	margin-bottom: 1rem;
 	@include transition(all .2s ease-in-out);
@@ -415,6 +415,6 @@ input[type="submit"] {
 
 .btn_action_gray {
 	@extend %btn_action;
-	border-radius: rem(6);
+	@extend %rounded_corners_large;
 	background: lighten($light_gray, 20%);
 }

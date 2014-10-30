@@ -103,7 +103,7 @@
 
     .modal-content {
         background-color: $white;
-        border-radius: 6px;
+        @extend %rounded_corners;
         padding: 2.5rem 0 0;
         overflow: hidden;
     }

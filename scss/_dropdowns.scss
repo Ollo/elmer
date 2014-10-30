@@ -178,7 +178,7 @@
 		}
 
 		&.squared {
-			border-radius: 6px 6px 0 0;
+			border-radius: $border_radius $border_radius 0 0;
 			padding-bottom: rem(17);
 			margin-bottom: rem(-12);
 		}
@@ -217,7 +217,7 @@
 	left: 0;
 	right: 0;
 	z-index: 10;
-	border-radius: 6px;
+	@extend %rounded_corners;
 	padding: rem(15);
 	opacity: 0;
 	@extend %well_white_no_padding;
