@@ -7,15 +7,20 @@
 //
 // Styleguide 21.1
 
-img.circled {
-	border-radius: 100%;
+img {
+
+	&.circled {
+		border-radius: 100%;
+	}
 
 	// img.circled.xsmall
 	//
+	// 30px by 30px
+	// 
 	// Markup:
 	// <img class="circled xsmall" src="http://lorempixel.com/100/100/nature/" />
 	//
-	// Styleguide 21.1
+	// Styleguide 21.2
 	&.xsmall {
 		width: rem(30);
 		height: rem(30);
@@ -23,10 +28,12 @@ img.circled {
 
 	// img.circled.small
 	//
+	// 40px by 40px
+	// 
 	// Markup:
 	// <img class="circled small" src="http://lorempixel.com/100/100/nature/" />
 	//
-	// Styleguide 21.2
+	// Styleguide 21.3
 	&.small {
 		width: rem(40);
 		height: rem(40);
@@ -34,10 +41,12 @@ img.circled {
 
 	// img.circled.medium
 	//
+	// 60px by 60px
+	// 
 	// Markup:
 	// <img class="circled medium" src="http://lorempixel.com/100/100/nature/" />
 	//
-	// Styleguide 21.3
+	// Styleguide 21.4
 	&.medium {
 		width: rem(60);
 		height: rem(60);
@@ -45,10 +54,12 @@ img.circled {
 
 	// img.circled.large
 	//
+	// 90px by 90px
+	// 
 	// Markup:
 	// <img class="circled large" src="http://lorempixel.com/100/100/nature/" />
 	//
-	// Styleguide 21.4
+	// Styleguide 21.5
 	&.large {
 		width: rem(90);
 		height: rem(90);
@@ -56,10 +67,12 @@ img.circled {
 
 	// img.circled.xlarge
 	//
+	// 110px by 110px
+	// 
 	// Markup:
 	// <img class="circled xlarge" src="http://lorempixel.com/100/100/nature/" />
 	//
-	// Styleguide 21.5
+	// Styleguide 21.6
 	&.xlarge {
 		width: rem(110);
 		height: rem(110);
@@ -72,7 +85,7 @@ img.circled {
 	// Markup:
 	// <img class="circled bordered" src="http://lorempixel.com/100/100/nature/" />
 	//
-	// Styleguide 21.6
+	// Styleguide 21.7
 	&.bordered {
 		border: 3px solid $green;
 	}
@@ -89,7 +102,7 @@ img.circled {
 // </div>
 // <img class="circled medium" src="http://lorempixel.com/100/100/nature/" />
 //
-// Styleguide 21.7
+// Styleguide 21.8
 
 .notification {
 	border-radius: .5rem;
@@ -134,36 +147,55 @@ img.circled {
 // Most common layout for basic user photo with a caption. Image @extends ".bordered" & ".circled" as styled above. Use class ".xsmall" or ".small" to pick avatar size. There is also an '.alerts' variation when a user has nofiticaion, but please be aware that the markup will change in this situation.
 //
 // Markup:
-// <figure class="avatar small">
-//     <img src="http://lorempixel.com/100/100/nature/" />
+// <figure class="avatar">
+//     <img class="circled small" src="http://lorempixel.com/100/100/nature/" />
 //     <figcaption>
 //         <h5><a>Sally Sanderson</a></h5>
 //         <p>I'm a cool user</p>
 //     </figcaption>
 // </figure>
-// <figure class="avatar small alerts">
+// <figure class="avatar alerts">
 //     <div class="wrap">
 //         <div class="notification">
 //             <a>3</a>
 //         </div>
-//         <img src="http://lorempixel.com/100/100/nature/" />
+//         <img class="small" src="http://lorempixel.com/100/100/nature/" />
 //     </div>
 //     <figcaption>
-//         <h5>Sally Sanderson</h5>
+//         <h5>Champion Name</h5>
+//     </figcaption>
+// </figure>
+// <figure class="avatar alerts">
+//     <div class="wrap">
+//         <div class="notification">
+//             <a>3</a>
+//         </div>
+//         <img class="circled small bordered" src="http://lorempixel.com/100/100/nature/" />
+//     </div>
+//     <figcaption>
+//         <h5>Champion Name</h5>
+//     </figcaption>
+// </figure>
+// <figure class="avatar alerts">
+//     <div class="wrap">
+//         <div class="notification">
+//             <a>3</a>
+//         </div>
+//         <img class="small" src="http://lorempixel.com/100/100/nature/" />
+//     </div>
+//     <figcaption>
+//         <h5>Champion Name</h5>
 //     </figcaption>
 // </figure>
 //
-// Styleguide 21.8
-
+// Styleguide 21.10
 .avatar {
 	padding-left: rem(50);
 	@extend %clearfix;
-		// border radius webkit bug fix
+	// border radius webkit bug fix
 	-webkit-transform-style: preserve-3d;
 
 	img {
-		@extend .circled;
-		@extend .bordered;
 		position: absolute;
 		left: 0;
 		top: 0;
@@ -172,6 +204,7 @@ img.circled {
 	}
 
 	figcaption {
+		
 		h5 {
 			@include sans_bold;
 			margin: 0;
@@ -179,37 +212,18 @@ img.circled {
 				color: $charcoal;
 			}
 		}
+		
 		p {
 			margin: 0;
 			@extend %small_text;
 			@extend %muted_text;
 		}
-	}
 
-	&.small {
-		img {
-			@extend .small;
-		}
-	}
-
-	&.xsmall {
-		img {
-			@extend .xsmall;
-		}
-	}
-
-	&.medium {
-		padding-left: 9rem;
-		figcaption {
-			padding: 1.5rem 0;
-		}
-		img {
-			@extend .medium;
-		}
 	}
 
 	&.alerts {
 		padding-left: rem(75);
+		
 		img {
 			position: relative;
 			left: auto;
@@ -228,7 +242,7 @@ img.circled {
 			bottom: 0;
 			top: 0;
 			margin: auto;
-			height: rem(32);
+			height: 3.2rem;
 		}
 
 	}
