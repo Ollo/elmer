@@ -6,7 +6,6 @@
 //    <span class="bar" style="width:50%"></span>
 //    <span>50% Complete</span>
 // </div>
-// <span>file_name_01.png</span>
 //
 // Styleguide 13.1
 
@@ -69,6 +68,21 @@
 
 	}
 
+	// .progress_bar.green
+	//
+	// Markup:
+	// <div class="progress_bar green">
+	//    <span class="bar" style="width:20%"></span>
+	// </div>
+	//
+	// Styleguide 13.3
+	&.green, &.complete {
+		border-color: $green;
+		.bar {
+			background: $light_green;
+		}
+	}
+
 	// .progress_bar.complete
 	//
 	// Markup:
@@ -77,13 +91,10 @@
 	//    <span>1000% Complete</span>
 	// </div>
 	//
-	// Styleguide 13.3
+	// Styleguide 13.4
 	&.complete {
 
-		border-color: $green;
-
 		.bar {
-			background: $light_green;
 			+ span {
 				display: none;
 			}
@@ -112,7 +123,7 @@
 //     <span>file_name_01.png</span>
 // </div>
 //
-// Styleguide 13.4
+// Styleguide 13.5
 
 .progress_bar_container {
 	@extend %clearfix;
