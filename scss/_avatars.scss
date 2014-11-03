@@ -165,12 +165,12 @@ img {
 //         <h5>Champion Name</h5>
 //     </figcaption>
 // </figure>
-// <figure class="avatar alerts">
+// <figure class="avatar alerts medium">
 //     <div class="wrap">
 //         <div class="notification">
 //             <a>3</a>
 //         </div>
-//         <img class="circled small bordered" src="http://lorempixel.com/100/100/nature/" />
+//         <img class="circled medium bordered" src="http://lorempixel.com/100/100/nature/" />
 //     </div>
 //     <figcaption>
 //         <h5>Champion Name</h5>
@@ -212,6 +212,14 @@ img {
 				color: $charcoal;
 			}
 		}
+
+		a.block {
+			display: block;
+		}
+
+		.primary {
+			padding: .5rem;
+		}
 		
 		p {
 			margin: 0;
@@ -219,6 +227,11 @@ img {
 			@extend %muted_text;
 		}
 
+	}
+
+	&.medium {
+		padding-left: rem(70);
+		margin: 2rem 0;
 	}
 
 	&.alerts {
