@@ -77,6 +77,12 @@
             
               <li><a href="section-24.html">24.0: Utilities</a></li>
             
+              <li><a href="section-25.html">25.0: %clearfix</a></li>
+            
+              <li><a href="section-25.html">25.0: Hero</a></li>
+            
+              <li><a href="section-26.html">26.0: Hero</a></li>
+            
           </ul>
         </nav>
       </aside>
@@ -111,14 +117,16 @@
                     </div>
                     <div class="kss-mod-example">
                       <div><div class="progress_bar">
-   <span style="width:50%"><span>
+   <span class="bar" style="width:50%"></span>
+   <span>50% Complete</span>
 </div></div>
                     </div>
                   
                   </div>
                   <div class="kss-markup">
                     <pre class="prettyprint lang-html">&lt;div class=&quot;progress_bar&quot;&gt;
-   &lt;span style=&quot;width:50%&quot;&gt;&lt;span&gt;
+   &lt;span class=&quot;bar&quot; style=&quot;width:50%&quot;&gt;&lt;/span&gt;
+   &lt;span&gt;50% Complete&lt;/span&gt;
 &lt;/div&gt;</pre>
                   </div>
               
@@ -127,8 +135,8 @@
             
           
             
-             <section class="kss-depth-3">
-              <h2 class="kss-title"><span class="kss-ref">13.1.1</span> - .progress_bar.red</h2>
+             <section class="kss-depth-2">
+              <h2 class="kss-title"><span class="kss-ref">13.2</span> - .progress_bar.error</h2>
             
               
                   <div class="kss-box"></div>
@@ -138,15 +146,17 @@
                       <div class="kss-mod-name"></div> -->
                     </div>
                     <div class="kss-mod-example">
-                      <div><div class="progress_bar red">
-   <span style="width:10%"><span>
+                      <div><div class="progress_bar error">
+   <span class="bar" style="width:10%"></span>
+   <span>10% Complete</span>
 </div></div>
                     </div>
                   
                   </div>
                   <div class="kss-markup">
-                    <pre class="prettyprint lang-html">&lt;div class=&quot;progress_bar red&quot;&gt;
-   &lt;span style=&quot;width:10%&quot;&gt;&lt;span&gt;
+                    <pre class="prettyprint lang-html">&lt;div class=&quot;progress_bar error&quot;&gt;
+   &lt;span class=&quot;bar&quot; style=&quot;width:10%&quot;&gt;&lt;/span&gt;
+   &lt;span&gt;10% Complete&lt;/span&gt;
 &lt;/div&gt;</pre>
                   </div>
               
@@ -155,8 +165,8 @@
             
           
             
-             <section class="kss-depth-3">
-              <h2 class="kss-title"><span class="kss-ref">13.1.2</span> - .progress_bar.green</h2>
+             <section class="kss-depth-2">
+              <h2 class="kss-title"><span class="kss-ref">13.3</span> - .progress_bar.green</h2>
             
               
                   <div class="kss-box"></div>
@@ -167,14 +177,81 @@
                     </div>
                     <div class="kss-mod-example">
                       <div><div class="progress_bar green">
-   <span style="width:100%"><span>
+   <span class="bar" style="width:20%"></span>
 </div></div>
                     </div>
                   
                   </div>
                   <div class="kss-markup">
                     <pre class="prettyprint lang-html">&lt;div class=&quot;progress_bar green&quot;&gt;
-   &lt;span style=&quot;width:100%&quot;&gt;&lt;span&gt;
+   &lt;span class=&quot;bar&quot; style=&quot;width:20%&quot;&gt;&lt;/span&gt;
+&lt;/div&gt;</pre>
+                  </div>
+              
+            
+              </section>
+            
+          
+            
+             <section class="kss-depth-2">
+              <h2 class="kss-title"><span class="kss-ref">13.4</span> - .progress_bar.complete</h2>
+            
+              
+                  <div class="kss-box"></div>
+                  <div class="kss-mod-list">
+                    <div class="kss-mod-desc-group">
+                      <!-- <div class="kss-mod-desc"><p>Default styling</p></div>
+                      <div class="kss-mod-name"></div> -->
+                    </div>
+                    <div class="kss-mod-example">
+                      <div><div class="progress_bar complete">
+   <span class="bar" style="width:100%"></span>
+   <span>1000% Complete</span>
+</div></div>
+                    </div>
+                  
+                  </div>
+                  <div class="kss-markup">
+                    <pre class="prettyprint lang-html">&lt;div class=&quot;progress_bar complete&quot;&gt;
+   &lt;span class=&quot;bar&quot; style=&quot;width:100%&quot;&gt;&lt;/span&gt;
+   &lt;span&gt;1000% Complete&lt;/span&gt;
+&lt;/div&gt;</pre>
+                  </div>
+              
+            
+              </section>
+            
+          
+            
+             <section class="kss-depth-2">
+              <h2 class="kss-title"><span class="kss-ref">13.5</span> - .progress_bar_container</h2>
+            
+              
+                  <div class="kss-box"><p>For use in cases when text is needed after the progress bar</p>
+</div>
+                  <div class="kss-mod-list">
+                    <div class="kss-mod-desc-group">
+                      <!-- <div class="kss-mod-desc"><p>Default styling</p></div>
+                      <div class="kss-mod-name"></div> -->
+                    </div>
+                    <div class="kss-mod-example">
+                      <div><div class="progress_bar_container">
+    <div class="progress_bar">
+       <span class="bar" style="width:50%"></span>
+       <span>50% Complete</span>
+    </div>
+    <span>file_name_01.png</span>
+</div></div>
+                    </div>
+                  
+                  </div>
+                  <div class="kss-markup">
+                    <pre class="prettyprint lang-html">&lt;div class=&quot;progress_bar_container&quot;&gt;
+    &lt;div class=&quot;progress_bar&quot;&gt;
+       &lt;span class=&quot;bar&quot; style=&quot;width:50%&quot;&gt;&lt;/span&gt;
+       &lt;span&gt;50% Complete&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;span&gt;file_name_01.png&lt;/span&gt;
 &lt;/div&gt;</pre>
                   </div>
               

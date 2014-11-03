@@ -77,6 +77,12 @@
             
               <li><a href="section-24.html">24.0: Utilities</a></li>
             
+              <li><a href="section-25.html">25.0: %clearfix</a></li>
+            
+              <li><a href="section-25.html">25.0: Hero</a></li>
+            
+              <li><a href="section-26.html">26.0: Hero</a></li>
+            
           </ul>
         </nav>
       </aside>
@@ -100,10 +106,29 @@
           
             
              <section class="kss-depth-2">
-              <h2 class="kss-title"><span class="kss-ref">12.1</span> - .well</h2>
+              <h2 class="kss-title"><span class="kss-ref">12.1</span> - @mixin well($radius, $padding, $margin, $full_border, $background);</h2>
             
               
-                  <div class="kss-box"><p>Base well class. Mix and match various well classes for desired affect.</p>
+                  
+                    <p>This mixin is used on wells as well as various other elements.
+$radius is 6px by default
+$padding uses a common well padding of 15px on mobile sizes/ 25px on medium-large sizes. Use &apos;true&apos; or &apos;false&apos; if you want this padding.
+$margin puts a simple 1rem bottom margin on the well. Use either &apos;true&apos; or &apos;false&apos; if you want this spacing.
+$full_border adds a 1px solid $light_gray border. Use true if you want this border, if false an opaque bottom border is added.
+$background is $white by default</p>
+
+                  
+              
+            
+              </section>
+            
+          
+            
+             <section class="kss-depth-2">
+              <h2 class="kss-title"><span class="kss-ref">12.2</span> - %well_white, %well_white_no_padding</h2>
+            
+              
+                  <div class="kss-box"><p>Extend these wells as needed, as seen below.</p>
 </div>
                   <div class="kss-mod-list">
                     <div class="kss-mod-desc-group">
@@ -111,12 +136,12 @@
                       <div class="kss-mod-name"></div> -->
                     </div>
                     <div class="kss-mod-example">
-                      <div><div class="well" style="border: 1px dashed red;">This is a well. (Red border is for display only and not to be used)</div></div>
+                      <div><div class="well_white">Common well with a white background. This class can be used in the html</div></div>
                     </div>
                   
                   </div>
                   <div class="kss-markup">
-                    <pre class="prettyprint lang-html">&lt;div class=&quot;well&quot; style=&quot;border: 1px dashed red;&quot;&gt;This is a well. (Red border is for display only and not to be used)&lt;/div&gt;</pre>
+                    <pre class="prettyprint lang-html">&lt;div class=&quot;well_white&quot;&gt;Common well with a white background. This class can be used in the html&lt;/div&gt;</pre>
                   </div>
               
             
@@ -125,7 +150,7 @@
           
             
              <section class="kss-depth-2">
-              <h2 class="kss-title"><span class="kss-ref">12.2</span> - .well.shadow</h2>
+              <h2 class="kss-title"><span class="kss-ref">12.3</span> - .well_blue</h2>
             
               
                   <div class="kss-box"></div>
@@ -135,12 +160,12 @@
                       <div class="kss-mod-name"></div> -->
                     </div>
                     <div class="kss-mod-example">
-                      <div><div class="well shadow">White background with a shadow.</div></div>
+                      <div><div class="well_blue">Blue background</div></div>
                     </div>
                   
                   </div>
                   <div class="kss-markup">
-                    <pre class="prettyprint lang-html">&lt;div class=&quot;well shadow&quot;&gt;White background with a shadow.&lt;/div&gt;</pre>
+                    <pre class="prettyprint lang-html">&lt;div class=&quot;well_blue&quot;&gt;Blue background&lt;/div&gt;</pre>
                   </div>
               
             
@@ -149,151 +174,7 @@
           
             
              <section class="kss-depth-2">
-              <h2 class="kss-title"><span class="kss-ref">12.3</span> - .well.bottom_border</h2>
-            
-              
-                  <div class="kss-box"></div>
-                  <div class="kss-mod-list">
-                    <div class="kss-mod-desc-group">
-                      <!-- <div class="kss-mod-desc"><p>Default styling</p></div>
-                      <div class="kss-mod-name"></div> -->
-                    </div>
-                    <div class="kss-mod-example">
-                      <div><div class="well bottom_border">White background with a bottom border (opacity .2). Border doesn't show here but works propelry on the site.</div></div>
-                    </div>
-                  
-                  </div>
-                  <div class="kss-markup">
-                    <pre class="prettyprint lang-html">&lt;div class=&quot;well bottom_border&quot;&gt;White background with a bottom border (opacity .2). Border doesn&#x27;t show here but works propelry on the site.&lt;/div&gt;</pre>
-                  </div>
-              
-            
-              </section>
-            
-          
-            
-             <section class="kss-depth-2">
-              <h2 class="kss-title"><span class="kss-ref">12.4</span> - .well.gray_outline</h2>
-            
-              
-                  <div class="kss-box"></div>
-                  <div class="kss-mod-list">
-                    <div class="kss-mod-desc-group">
-                      <!-- <div class="kss-mod-desc"><p>Default styling</p></div>
-                      <div class="kss-mod-name"></div> -->
-                    </div>
-                    <div class="kss-mod-example">
-                      <div><div class="well gray_outline">White background with full border and no internal padding, used to outline QOTD tables.</div></div>
-                    </div>
-                  
-                  </div>
-                  <div class="kss-markup">
-                    <pre class="prettyprint lang-html">&lt;div class=&quot;well gray_outline&quot;&gt;White background with full border and no internal padding, used to outline QOTD tables.&lt;/div&gt;</pre>
-                  </div>
-              
-            
-              </section>
-            
-          
-            
-             <section class="kss-depth-2">
-              <h2 class="kss-title"><span class="kss-ref">12.5</span> - .well.inset (not in use)</h2>
-            
-              
-                  <div class="kss-box"></div>
-                  <div class="kss-mod-list">
-                    <div class="kss-mod-desc-group">
-                      <!-- <div class="kss-mod-desc"><p>Default styling</p></div>
-                      <div class="kss-mod-name"></div> -->
-                    </div>
-                    <div class="kss-mod-example">
-                      <div><div class="well inset">White background with an inset shadow.</div></div>
-                    </div>
-                  
-                  </div>
-                  <div class="kss-markup">
-                    <pre class="prettyprint lang-html">&lt;div class=&quot;well inset&quot;&gt;White background with an inset shadow.&lt;/div&gt;</pre>
-                  </div>
-              
-            
-              </section>
-            
-          
-            
-             <section class="kss-depth-2">
-              <h2 class="kss-title"><span class="kss-ref">12.6</span> - .well.green</h2>
-            
-              
-                  <div class="kss-box"></div>
-                  <div class="kss-mod-list">
-                    <div class="kss-mod-desc-group">
-                      <!-- <div class="kss-mod-desc"><p>Default styling</p></div>
-                      <div class="kss-mod-name"></div> -->
-                    </div>
-                    <div class="kss-mod-example">
-                      <div><div class="well green">White background with a green border.</div></div>
-                    </div>
-                  
-                  </div>
-                  <div class="kss-markup">
-                    <pre class="prettyprint lang-html">&lt;div class=&quot;well green&quot;&gt;White background with a green border.&lt;/div&gt;</pre>
-                  </div>
-              
-            
-              </section>
-            
-          
-            
-             <section class="kss-depth-2">
-              <h2 class="kss-title"><span class="kss-ref">12.7</span> - .well.blue</h2>
-            
-              
-                  <div class="kss-box"></div>
-                  <div class="kss-mod-list">
-                    <div class="kss-mod-desc-group">
-                      <!-- <div class="kss-mod-desc"><p>Default styling</p></div>
-                      <div class="kss-mod-name"></div> -->
-                    </div>
-                    <div class="kss-mod-example">
-                      <div><div class="well blue">Blue background with a gray border.</div></div>
-                    </div>
-                  
-                  </div>
-                  <div class="kss-markup">
-                    <pre class="prettyprint lang-html">&lt;div class=&quot;well blue&quot;&gt;Blue background with a gray border.&lt;/div&gt;</pre>
-                  </div>
-              
-            
-              </section>
-            
-          
-            
-             <section class="kss-depth-2">
-              <h2 class="kss-title"><span class="kss-ref">12.8</span> - .well.white</h2>
-            
-              
-                  <div class="kss-box"></div>
-                  <div class="kss-mod-list">
-                    <div class="kss-mod-desc-group">
-                      <!-- <div class="kss-mod-desc"><p>Default styling</p></div>
-                      <div class="kss-mod-name"></div> -->
-                    </div>
-                    <div class="kss-mod-example">
-                      <div><div class="well blue">Blue background with a gray border.</div></div>
-                    </div>
-                  
-                  </div>
-                  <div class="kss-markup">
-                    <pre class="prettyprint lang-html">&lt;div class=&quot;well blue&quot;&gt;Blue background with a gray border.&lt;/div&gt;</pre>
-                  </div>
-              
-            
-              </section>
-            
-          
-            
-             <section class="kss-depth-2">
-              <h2 class="kss-title"><span class="kss-ref">12.8</span> - .box</h2>
+              <h2 class="kss-title"><span class="kss-ref">12.4</span> - .box</h2>
             
               
                   <div class="kss-box"><p>A more complex well style that holds rows but does not span the entire width. Header variations available as seen in _typography.scss.</p>
@@ -305,28 +186,65 @@
                     </div>
                     <div class="kss-mod-example">
                       <div><div class="box">
-	    <div class="muted_header primary_variation">I am a blue header</div>
-     <div class="muted_header secondary_variation"><input type="text" placeholder="Search..."/></div>
-     <div class="row">
-         I am a row
-     </div>
-     <div class="row">
-         I am also a row
-     </div>
+	<div class="muted_header primary_variation">I am a blue header</div>
+	<div class="muted_header secondary_variation"><input type="text" placeholder="Search..."/></div>
+	<div class="row">I am a row</div>
+	<div class="row">I am also a row</div>
 </div></div>
                     </div>
                   
                   </div>
                   <div class="kss-markup">
                     <pre class="prettyprint lang-html">&lt;div class=&quot;box&quot;&gt;
-	    &lt;div class=&quot;muted_header primary_variation&quot;&gt;I am a blue header&lt;/div&gt;
-     &lt;div class=&quot;muted_header secondary_variation&quot;&gt;&lt;input type=&quot;text&quot; placeholder=&quot;Search...&quot;/&gt;&lt;/div&gt;
-     &lt;div class=&quot;row&quot;&gt;
-         I am a row
-     &lt;/div&gt;
-     &lt;div class=&quot;row&quot;&gt;
-         I am also a row
-     &lt;/div&gt;
+	&lt;div class=&quot;muted_header primary_variation&quot;&gt;I am a blue header&lt;/div&gt;
+	&lt;div class=&quot;muted_header secondary_variation&quot;&gt;&lt;input type=&quot;text&quot; placeholder=&quot;Search...&quot;/&gt;&lt;/div&gt;
+	&lt;div class=&quot;row&quot;&gt;I am a row&lt;/div&gt;
+	&lt;div class=&quot;row&quot;&gt;I am also a row&lt;/div&gt;
+&lt;/div&gt;</pre>
+                  </div>
+              
+            
+              </section>
+            
+          
+            
+             <section class="kss-depth-2">
+              <h2 class="kss-title"><span class="kss-ref">12.5</span> - .box_table</h2>
+            
+              
+                  <div class="kss-box"><p>a variant of the .box component with options for a header and footer</p>
+</div>
+                  <div class="kss-mod-list">
+                    <div class="kss-mod-desc-group">
+                      <!-- <div class="kss-mod-desc"><p>Default styling</p></div>
+                      <div class="kss-mod-name"></div> -->
+                    </div>
+                    <div class="kss-mod-example">
+                      <div><div class="box_table">
+	<header class="row">
+		<h2>Title</h2>
+	</header>
+	<div class="row">
+		<span>Champion Name</span>
+	</div>
+	<footer class="row">
+		<button class="primary">Cancel</button>
+	</footer>
+</div></div>
+                    </div>
+                  
+                  </div>
+                  <div class="kss-markup">
+                    <pre class="prettyprint lang-html">&lt;div class=&quot;box_table&quot;&gt;
+	&lt;header class=&quot;row&quot;&gt;
+		&lt;h2&gt;Title&lt;/h2&gt;
+	&lt;/header&gt;
+	&lt;div class=&quot;row&quot;&gt;
+		&lt;span&gt;Champion Name&lt;/span&gt;
+	&lt;/div&gt;
+	&lt;footer class=&quot;row&quot;&gt;
+		&lt;button class=&quot;primary&quot;&gt;Cancel&lt;/button&gt;
+	&lt;/footer&gt;
 &lt;/div&gt;</pre>
                   </div>
               

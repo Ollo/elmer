@@ -77,6 +77,12 @@
             
               <li><a href="section-24.html">24.0: Utilities</a></li>
             
+              <li><a href="section-25.html">25.0: %clearfix</a></li>
+            
+              <li><a href="section-25.html">25.0: Hero</a></li>
+            
+              <li><a href="section-26.html">26.0: Hero</a></li>
+            
           </ul>
         </nav>
       </aside>
@@ -165,15 +171,6 @@
                       <div><textarea class="pseudo-class-focus">Sample text area</textarea></div>
                     </div>
                   
-                    <div class="kss-mod-desc-group">
-                      <div class="kss-mod-desc"><p>changes border to red added via js listner on blur</p>
-</div>
-                      <div class="kss-mod-name"><p>.interacted:invalid</p></div>
-                    </div>
-                    <div class="kss-mod-example">
-                      <div><textarea class="interacted pseudo-class-invalid">Sample text area</textarea></div>
-                    </div>
-                  
                   </div>
                   <div class="kss-markup">
                     <pre class="prettyprint lang-html">&lt;textarea class=&quot;{$modifiers}&quot;&gt;Sample text area&lt;/textarea&gt;</pre>
@@ -185,64 +182,10 @@
           
             
              <section class="kss-depth-2">
-              <h2 class="kss-title"><span class="kss-ref">8.4</span> - .ui_checkbox</h2>
+              <h2 class="kss-title"><span class="kss-ref">8.4</span> - .ui_select</h2>
             
               
-                  <div class="kss-box"><p>Generic teal checkbox</p>
-</div>
-                  <div class="kss-mod-list">
-                    <div class="kss-mod-desc-group">
-                      <!-- <div class="kss-mod-desc"><p>Default styling</p></div>
-                      <div class="kss-mod-name"></div> -->
-                    </div>
-                    <div class="kss-mod-example">
-                      <div><input type="checkbox" id="sampleCheckbox" class="ui_checkbox"/>
-<label for="sampleCheckbox">Label Here</label></div>
-                    </div>
-                  
-                  </div>
-                  <div class="kss-markup">
-                    <pre class="prettyprint lang-html">&lt;input type=&quot;checkbox&quot; id=&quot;sampleCheckbox&quot; class=&quot;ui_checkbox&quot;/&gt;
-&lt;label for=&quot;sampleCheckbox&quot;&gt;Label Here&lt;/label&gt;</pre>
-                  </div>
-              
-            
-              </section>
-            
-          
-            
-             <section class="kss-depth-2">
-              <h2 class="kss-title"><span class="kss-ref">8.5</span> - .ui_checkbox_green</h2>
-            
-              
-                  <div class="kss-box"><p>Green checkbox</p>
-</div>
-                  <div class="kss-mod-list">
-                    <div class="kss-mod-desc-group">
-                      <!-- <div class="kss-mod-desc"><p>Default styling</p></div>
-                      <div class="kss-mod-name"></div> -->
-                    </div>
-                    <div class="kss-mod-example">
-                      <div><input type="checkbox" id="sampleCheckboxGreen" class="ui_checkbox_green"/>
-<label for="sampleCheckboxGreen"><i class="fa fa-circle-o"></i>Label Here</label></div>
-                    </div>
-                  
-                  </div>
-                  <div class="kss-markup">
-                    <pre class="prettyprint lang-html">&lt;input type=&quot;checkbox&quot; id=&quot;sampleCheckboxGreen&quot; class=&quot;ui_checkbox_green&quot;/&gt;
-&lt;label for=&quot;sampleCheckboxGreen&quot;&gt;&lt;i class=&quot;fa fa-circle-o&quot;&gt;&lt;/i&gt;Label Here&lt;/label&gt;</pre>
-                  </div>
-              
-            
-              </section>
-            
-          
-            
-             <section class="kss-depth-2">
-              <h2 class="kss-title"><span class="kss-ref">8.6</span> - .ui_select</h2>
-            
-              
-                  <div class="kss-box"><p>Default select box for standard forms</p>
+                  <div class="kss-box"><p>A fancy select with font awesome arrow, extends %ui_select_arrow</p>
 </div>
                   <div class="kss-mod-list">
                     <div class="kss-mod-desc-group">
@@ -251,20 +194,6 @@
                     </div>
                     <div class="kss-mod-example">
                       <div><div class="ui_select {$modifiers}">
-    <select>
-        <option>option 1</option>
-        <option>option 2</option>
-    </select>
-</div></div>
-                    </div>
-                  
-                    <div class="kss-mod-desc-group">
-                      <div class="kss-mod-desc"><p>changes border to red</p>
-</div>
-                      <div class="kss-mod-name"><p> .error</p></div>
-                    </div>
-                    <div class="kss-mod-example">
-                      <div><div class="ui_select ">
     <select>
         <option>option 1</option>
         <option>option 2</option>
@@ -288,10 +217,10 @@
           
             
              <section class="kss-depth-2">
-              <h2 class="kss-title"><span class="kss-ref">8.7</span> - .ui_select_arrow</h2>
+              <h2 class="kss-title"><span class="kss-ref">8.5</span> - .ui_checkbox_primary</h2>
             
               
-                  <div class="kss-box"><p>Select box with right arrow example seen in widget settings</p>
+                  <div class="kss-box"><p>Generic teal checkbox</p>
 </div>
                   <div class="kss-mod-list">
                     <div class="kss-mod-desc-group">
@@ -299,39 +228,18 @@
                       <div class="kss-mod-name"></div> -->
                     </div>
                     <div class="kss-mod-example">
-                      <div><div class="ui_select_arrow {$modifiers}">
-    <select>
-        <option>option 1</option>
-        <option>option 2</option>
-    </select>
-    <i class="fa fa-angle-down select_indicator"></i>
-</div></div>
-                    </div>
-                  
-                    <div class="kss-mod-desc-group">
-                      <div class="kss-mod-desc"><p>changes border to red</p>
-</div>
-                      <div class="kss-mod-name"><p>.error</p></div>
-                    </div>
-                    <div class="kss-mod-example">
-                      <div><div class="ui_select_arrow error">
-    <select>
-        <option>option 1</option>
-        <option>option 2</option>
-    </select>
-    <i class="fa fa-angle-down select_indicator"></i>
-</div></div>
+                      <div><input type="checkbox" id="sampleCheckbox" class="ui_checkbox_primary"/>
+<label for="sampleCheckbox">Label Here
+     <span>this is a test to see what happens when the checkbox wraps to two lines and has a lovely span inside of it. this is a test to see what happens when the checkbox wraps to two lines and has a lovely span inside of it. </span>
+</label></div>
                     </div>
                   
                   </div>
                   <div class="kss-markup">
-                    <pre class="prettyprint lang-html">&lt;div class=&quot;ui_select_arrow {$modifiers}&quot;&gt;
-    &lt;select&gt;
-        &lt;option&gt;option 1&lt;/option&gt;
-        &lt;option&gt;option 2&lt;/option&gt;
-    &lt;/select&gt;
-    &lt;i class=&quot;fa fa-angle-down select_indicator&quot;&gt;&lt;/i&gt;
-&lt;/div&gt;</pre>
+                    <pre class="prettyprint lang-html">&lt;input type=&quot;checkbox&quot; id=&quot;sampleCheckbox&quot; class=&quot;ui_checkbox_primary&quot;/&gt;
+&lt;label for=&quot;sampleCheckbox&quot;&gt;Label Here
+     &lt;span&gt;this is a test to see what happens when the checkbox wraps to two lines and has a lovely span inside of it. this is a test to see what happens when the checkbox wraps to two lines and has a lovely span inside of it. &lt;/span&gt;
+&lt;/label&gt;</pre>
                   </div>
               
             
@@ -340,7 +248,36 @@
           
             
              <section class="kss-depth-2">
-              <h2 class="kss-title"><span class="kss-ref">8.8</span> - .ui_radio</h2>
+              <h2 class="kss-title"><span class="kss-ref">8.6</span> - .ui_checkbox_secondary</h2>
+            
+              
+                  <div class="kss-box"><p>Green checkbox</p>
+</div>
+                  <div class="kss-mod-list">
+                    <div class="kss-mod-desc-group">
+                      <!-- <div class="kss-mod-desc"><p>Default styling</p></div>
+                      <div class="kss-mod-name"></div> -->
+                    </div>
+                    <div class="kss-mod-example">
+                      <div>
+<input type="checkbox" id="uiCheckboxSecondary" class="ui_checkbox_secondary"/>
+<label for="uiCheckboxSecondary"><i class="fa fa-circle-o"></i>Label Here</label></div>
+                    </div>
+                  
+                  </div>
+                  <div class="kss-markup">
+                    <pre class="prettyprint lang-html">
+&lt;input type=&quot;checkbox&quot; id=&quot;uiCheckboxSecondary&quot; class=&quot;ui_checkbox_secondary&quot;/&gt;
+&lt;label for=&quot;uiCheckboxSecondary&quot;&gt;&lt;i class=&quot;fa fa-circle-o&quot;&gt;&lt;/i&gt;Label Here&lt;/label&gt;</pre>
+                  </div>
+              
+            
+              </section>
+            
+          
+            
+             <section class="kss-depth-2">
+              <h2 class="kss-title"><span class="kss-ref">8.7</span> - .ui_radio_group</h2>
             
               
                   <div class="kss-box"><p>Rectangular radio button</p>
@@ -351,7 +288,7 @@
                       <div class="kss-mod-name"></div> -->
                     </div>
                     <div class="kss-mod-example">
-                      <div><div class="ui_radio">
+                      <div><div class="ui_radio_group">
    <input type="radio" name="gender" id="male" value="male">
    <label class="btn_radio" for="male">Male</label>
    <input type="radio" id="female" name="gender" value="female">
@@ -361,7 +298,7 @@
                   
                   </div>
                   <div class="kss-markup">
-                    <pre class="prettyprint lang-html">&lt;div class=&quot;ui_radio&quot;&gt;
+                    <pre class="prettyprint lang-html">&lt;div class=&quot;ui_radio_group&quot;&gt;
    &lt;input type=&quot;radio&quot; name=&quot;gender&quot; id=&quot;male&quot; value=&quot;male&quot;&gt;
    &lt;label class=&quot;btn_radio&quot; for=&quot;male&quot;&gt;Male&lt;/label&gt;
    &lt;input type=&quot;radio&quot; id=&quot;female&quot; name=&quot;gender&quot; value=&quot;female&quot;&gt;
@@ -375,10 +312,10 @@
           
             
              <section class="kss-depth-2">
-              <h2 class="kss-title"><span class="kss-ref">8.9</span> - .ui_radio_green</h2>
+              <h2 class="kss-title"><span class="kss-ref">8.8</span> - .ui_radio</h2>
             
               
-                  <div class="kss-box"><p>Multiple green radio buttons.</p>
+                  <div class="kss-box"><p>Standard radio buttons</p>
 </div>
                   <div class="kss-mod-list">
                     <div class="kss-mod-desc-group">
@@ -386,22 +323,22 @@
                       <div class="kss-mod-name"></div> -->
                     </div>
                     <div class="kss-mod-example">
-                      <div><input type="radio" name="radio" id="sampleRadio1" class="ui_radio_green"/>
-<label for="sampleRadio1"><i class="fa fa-circle-o"></i>Label Here</label>
-<input type="radio" name="radio" id="sampleRadio2" class="ui_radio_green"/>
-<label for="sampleRadio2"><i class="fa fa-circle-o"></i>Really Super Crazy Long Label Here</label>
-<input type="radio" name="radio" id="sampleRadio3" class="ui_radio_green"/>
-<label for="sampleRadio3"><i class="fa fa-circle-o"></i>Super Crazy Long Label Here</label></div>
+                      <div><input type="radio" name="radio" id="standardRadio1" class="ui_radio"/>
+<label for="standardRadio1"><i></i>Label Here</label>
+<input type="radio" name="radio" id="standardRadio2" class="ui_radio"/>
+<label for="standardRadio2"><i></i>Really Super Crazy Long Label Here</label>
+<input type="radio" name="radio" id="standardRadio3" class="ui_radio"/>
+<label for="standardRadio3"><i></i>Super Crazy Long Label Here</label></div>
                     </div>
                   
                   </div>
                   <div class="kss-markup">
-                    <pre class="prettyprint lang-html">&lt;input type=&quot;radio&quot; name=&quot;radio&quot; id=&quot;sampleRadio1&quot; class=&quot;ui_radio_green&quot;/&gt;
-&lt;label for=&quot;sampleRadio1&quot;&gt;&lt;i class=&quot;fa fa-circle-o&quot;&gt;&lt;/i&gt;Label Here&lt;/label&gt;
-&lt;input type=&quot;radio&quot; name=&quot;radio&quot; id=&quot;sampleRadio2&quot; class=&quot;ui_radio_green&quot;/&gt;
-&lt;label for=&quot;sampleRadio2&quot;&gt;&lt;i class=&quot;fa fa-circle-o&quot;&gt;&lt;/i&gt;Really Super Crazy Long Label Here&lt;/label&gt;
-&lt;input type=&quot;radio&quot; name=&quot;radio&quot; id=&quot;sampleRadio3&quot; class=&quot;ui_radio_green&quot;/&gt;
-&lt;label for=&quot;sampleRadio3&quot;&gt;&lt;i class=&quot;fa fa-circle-o&quot;&gt;&lt;/i&gt;Super Crazy Long Label Here&lt;/label&gt;</pre>
+                    <pre class="prettyprint lang-html">&lt;input type=&quot;radio&quot; name=&quot;radio&quot; id=&quot;standardRadio1&quot; class=&quot;ui_radio&quot;/&gt;
+&lt;label for=&quot;standardRadio1&quot;&gt;&lt;i&gt;&lt;/i&gt;Label Here&lt;/label&gt;
+&lt;input type=&quot;radio&quot; name=&quot;radio&quot; id=&quot;standardRadio2&quot; class=&quot;ui_radio&quot;/&gt;
+&lt;label for=&quot;standardRadio2&quot;&gt;&lt;i&gt;&lt;/i&gt;Really Super Crazy Long Label Here&lt;/label&gt;
+&lt;input type=&quot;radio&quot; name=&quot;radio&quot; id=&quot;standardRadio3&quot; class=&quot;ui_radio&quot;/&gt;
+&lt;label for=&quot;standardRadio3&quot;&gt;&lt;i&gt;&lt;/i&gt;Super Crazy Long Label Here&lt;/label&gt;</pre>
                   </div>
               
             
@@ -410,7 +347,7 @@
           
             
              <section class="kss-depth-2">
-              <h2 class="kss-title"><span class="kss-ref">8.10</span> - .ui_search</h2>
+              <h2 class="kss-title"><span class="kss-ref">8.9</span> - .ui_search</h2>
             
               
                   <div class="kss-box"><p>Common searchfield</p>
@@ -422,7 +359,7 @@
                     </div>
                     <div class="kss-mod-example">
                       <div><div class="ui_search">
-    <input type="search"/>
+    <input type="search" placeholder="Enter text..."/>
     <button><i class="fa fa-search"></i></button>
 </div></div>
                     </div>
@@ -430,8 +367,74 @@
                   </div>
                   <div class="kss-markup">
                     <pre class="prettyprint lang-html">&lt;div class=&quot;ui_search&quot;&gt;
-    &lt;input type=&quot;search&quot;/&gt;
+    &lt;input type=&quot;search&quot; placeholder=&quot;Enter text...&quot;/&gt;
     &lt;button&gt;&lt;i class=&quot;fa fa-search&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+&lt;/div&gt;</pre>
+                  </div>
+              
+            
+              </section>
+            
+          
+            
+             <section class="kss-depth-2">
+              <h2 class="kss-title"><span class="kss-ref">8.10</span> - .ui_inverse</h2>
+            
+              
+                  <div class="kss-box"><p>Transparent and rounded style for inputs on backgrounds</p>
+</div>
+                  <div class="kss-mod-list">
+                    <div class="kss-mod-desc-group">
+                      <!-- <div class="kss-mod-desc"><p>Default styling</p></div>
+                      <div class="kss-mod-name"></div> -->
+                    </div>
+                    <div class="kss-mod-example">
+                      <div><div style="padding: 1rem; background-color: #40b2cd;f">
+	<div class="ui_inverse">
+		<input type="text" placeholder="Enter code..." />
+		<button><i class="fa fa-plus-circle"></i></button>
+	</div>
+</div></div>
+                    </div>
+                  
+                  </div>
+                  <div class="kss-markup">
+                    <pre class="prettyprint lang-html">&lt;div style=&quot;padding: 1rem; background-color: #40b2cd;f&quot;&gt;
+	&lt;div class=&quot;ui_inverse&quot;&gt;
+		&lt;input type=&quot;text&quot; placeholder=&quot;Enter code...&quot; /&gt;
+		&lt;button&gt;&lt;i class=&quot;fa fa-plus-circle&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</pre>
+                  </div>
+              
+            
+              </section>
+            
+          
+            
+             <section class="kss-depth-2">
+              <h2 class="kss-title"><span class="kss-ref">8.11</span> - .ui_file_upload</h2>
+            
+              
+                  <div class="kss-box"><p>File Input</p>
+</div>
+                  <div class="kss-mod-list">
+                    <div class="kss-mod-desc-group">
+                      <!-- <div class="kss-mod-desc"><p>Default styling</p></div>
+                      <div class="kss-mod-name"></div> -->
+                    </div>
+                    <div class="kss-mod-example">
+                      <div><div class="ui_file_upload">
+<input type="file" />
+<a class="primary">Choose File(s)</a>
+</div></div>
+                    </div>
+                  
+                  </div>
+                  <div class="kss-markup">
+                    <pre class="prettyprint lang-html">&lt;div class=&quot;ui_file_upload&quot;&gt;
+&lt;input type=&quot;file&quot; /&gt;
+&lt;a class=&quot;primary&quot;&gt;Choose File(s)&lt;/a&gt;
 &lt;/div&gt;</pre>
                   </div>
               

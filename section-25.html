@@ -94,11 +94,22 @@
           
           
             
-              <h1 class="kss-title"><span class="kss-ref">3.0</span> - Base</h1>
+              <h1 class="kss-title"><span class="kss-ref">25.0</span> - %clearfix</h1>
             
               
                   
-                    <p>sets up some sensible baselines</p>
+                    <p>Use this instead of @include clearfix; so it only get compiled once</p>
+
+                  
+              
+             
+          
+            
+              <h1 class="kss-title"><span class="kss-ref">25.0</span> - Hero</h1>
+            
+              
+                  
+                    <p>Hero Images</p>
 
                   
               
@@ -106,10 +117,10 @@
           
             
              <section class="kss-depth-2">
-              <h2 class="kss-title"><span class="kss-ref">3.1</span> - Rems</h2>
+              <h2 class="kss-title"><span class="kss-ref">25.1</span> - .hero</h2>
             
               
-                  <div class="kss-box"><p>this configures the baselines for our rem calculations</p>
+                  <div class="kss-box"><p>Large banner style image</p>
 </div>
                   <div class="kss-mod-list">
                     <div class="kss-mod-desc-group">
@@ -117,75 +128,38 @@
                       <div class="kss-mod-name"></div> -->
                     </div>
                     <div class="kss-mod-example">
-                      <div>$fontbase: 1.0rem; // 10px
-$base_font_size : 1.4rem; // 14px
-$base_line_height: 2.3rem; // 23px</div>
+                      <div><figure class="hero">
+    <img src="http://lorempixel.com/910/227/abstract">
+    <figcaption>
+        <img class="avatar circled bordered" src="http://lorempixel.com/100/100/nature/" />
+        <button class="btn_action"><i class="fa fa-cog"></i></button>
+    </figcaption>
+</figure>
+<figure class="hero">
+    <img src="http://lorempixel.com/910/227/abstract">
+    <figcaption>
+        <button class="primary" ng-click="connectToChampion()" ng-show="!connectedChampion">Connect</button>
+        <button class="inverse" ng-click="connectToChampion()" ng-show="connectedChampion">Connected</button>
+    </figcaption>
+</figure></div>
                     </div>
                   
                   </div>
                   <div class="kss-markup">
-                    <pre class="prettyprint lang-html">$fontbase: 1.0rem; // 10px
-$base_font_size : 1.4rem; // 14px
-$base_line_height: 2.3rem; // 23px</pre>
-                  </div>
-              
-            
-              </section>
-            
-          
-            
-             <section class="kss-depth-2">
-              <h2 class="kss-title"><span class="kss-ref">3.2</span> - Default Anchor Tag</h2>
-            
-              
-                  <div class="kss-box"><p>Standard link colors with states</p>
-</div>
-                  <div class="kss-mod-list">
-                    <div class="kss-mod-desc-group">
-                      <!-- <div class="kss-mod-desc"><p>Default styling</p></div>
-                      <div class="kss-mod-name"></div> -->
-                    </div>
-                    <div class="kss-mod-example">
-                      <div><a class="{$modifiers}">Default Link</a></div>
-                    </div>
-                  
-                    <div class="kss-mod-desc-group">
-                      <div class="kss-mod-desc"><p>eases color darker by 5%</p>
-</div>
-                      <div class="kss-mod-name"><p>:hover</p></div>
-                    </div>
-                    <div class="kss-mod-example">
-                      <div><a class="pseudo-class-hover">Default Link</a></div>
-                    </div>
-                  
-                  </div>
-                  <div class="kss-markup">
-                    <pre class="prettyprint lang-html">&lt;a class=&quot;{$modifiers}&quot;&gt;Default Link&lt;/a&gt;</pre>
-                  </div>
-              
-            
-              </section>
-            
-          
-            
-             <section class="kss-depth-2">
-              <h2 class="kss-title"><span class="kss-ref">3.3</span> - HR</h2>
-            
-              
-                  <div class="kss-box"><p>Stying for HR tags</p>
-</div>
-                  <div class="kss-mod-list">
-                    <div class="kss-mod-desc-group">
-                      <!-- <div class="kss-mod-desc"><p>Default styling</p></div>
-                      <div class="kss-mod-name"></div> -->
-                    </div>
-                    <div class="kss-mod-example">
-                      <div><hr></div>
-                    </div>
-                  
-                  </div>
-                  <div class="kss-markup">
-                    <pre class="prettyprint lang-html">&lt;hr&gt;</pre>
+                    <pre class="prettyprint lang-html">&lt;figure class=&quot;hero&quot;&gt;
+    &lt;img src=&quot;http://lorempixel.com/910/227/abstract&quot;&gt;
+    &lt;figcaption&gt;
+        &lt;img class=&quot;avatar circled bordered&quot; src=&quot;http://lorempixel.com/100/100/nature/&quot; /&gt;
+        &lt;button class=&quot;btn_action&quot;&gt;&lt;i class=&quot;fa fa-cog&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+    &lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;figure class=&quot;hero&quot;&gt;
+    &lt;img src=&quot;http://lorempixel.com/910/227/abstract&quot;&gt;
+    &lt;figcaption&gt;
+        &lt;button class=&quot;primary&quot; ng-click=&quot;connectToChampion()&quot; ng-show=&quot;!connectedChampion&quot;&gt;Connect&lt;/button&gt;
+        &lt;button class=&quot;inverse&quot; ng-click=&quot;connectToChampion()&quot; ng-show=&quot;connectedChampion&quot;&gt;Connected&lt;/button&gt;
+    &lt;/figcaption&gt;
+&lt;/figure&gt;</pre>
                   </div>
               
             
