@@ -26,7 +26,7 @@
 	border: 1px solid transparent;
 }
 
-$button-radius: $border_radius_large;
+$button-radius: $border_radius;
 $standard-btn-pad: 0.5em 2em;
 
 input[type="submit"] {
@@ -49,7 +49,7 @@ input[type="submit"] {
 	@extend %button;
 	@include border-clear;
 	padding: $standard-btn-pad;
-	@extend %rounded_corners_large;
+	@extend %rounded_corners;
 	background: $teal;
 	color: $white;
 
@@ -75,7 +75,7 @@ input[type="submit"] {
 	@extend %button;
 	@include border-clear;
 	padding: $standard-btn-pad;
-	@extend %rounded_corners_large;
+	@extend %rounded_corners;
 	background: $light_green;
 	color: $white;
 
@@ -100,7 +100,7 @@ input[type="submit"] {
 	@extend %button;
 	@include border-clear;
 	padding: $standard-btn-pad;
-	@extend %rounded_corners_large;
+	@extend %rounded_corners;
 	background: $navy;
 	color: $white;
 
@@ -124,7 +124,7 @@ input[type="submit"] {
 	@extend %button;
 	@include border-clear;
 	padding: $standard-btn-pad;
-	@extend %rounded_corners_large;
+	@extend %rounded_corners;
 	background: $sand;
 	box-shadow: 0 1px 1px rgba(0,0,0,.2);
 	text-transform: uppercase;
@@ -200,7 +200,7 @@ input[type="submit"] {
 		&:before {
 			@extend .fa;
 			@extend .fa-google-plus;
-			line-height: 2!important;
+			line-height: 2.75!important;
 		}
 
 	}
@@ -332,7 +332,7 @@ input[type="submit"] {
 	padding: .75rem;
 	@extend %font_weight_700;
 	color: $gloo_gray;
-	@extend %rounded_corners_large;
+	@extend %rounded_corners;
 	display: inline-block;
 	margin-right: rem(5);
 	@include transition(all .2s ease-in-out);
@@ -415,6 +415,6 @@ input[type="submit"] {
 
 .btn_action_gray {
 	@extend %btn_action;
-	@extend %rounded_corners_large;
+	@extend %rounded_corners;
 	background: lighten($light_gray, 20%);
 }

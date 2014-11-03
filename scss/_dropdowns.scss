@@ -1,59 +1,108 @@
-%button_dropdown {
+%basic_dropdown {
 	margin-bottom: 1rem;
-	@extend %well_white_no_padding;
+	@include well($well_border_radius, false, false, false, $white, false);
 	display: inline-block;
 	margin-bottom: 0;
-	text-transform: uppercase;
-	color: $gray;
 	cursor: pointer;
-	z-index: 3;
 	@extend %font_weight_500;
 
-	> span {
-		padding: .75rem rem(50) .75rem 1rem;
-		display: block;
+	a {
+		i {
+            @extend %float_right;
+            margin-top: .45rem;
+        }
 	}
 
-	> i {
+	span, a {
+		padding: .5rem .75rem;
+		display: block;
+		span {
+			padding: 0;
+			display: inline;
+		}
+	}
+
+	.drop_icon, > .fa-sort-desc, > .fa-angle-down {
 		position: absolute;
-		font-size: rem(20);
-		top: rem(5);
-		color: $light_green;
-		right: rem(15);
+		right: .75rem;
+	}
+
+	.selected_option {
+		padding-right: 1.5rem;
+		overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
 	}
 
 	.drop_menu {
 	    position: absolute;
-	    left: 0;
-	    right: 0;
-	    top: 3.45rem;
-	    @include well(0 0 rem(6) rem(6), false, false, false, $white, true);
-
-		a {
-			display: block;
-			padding: rem(5) 1rem;
-			color: $gray;
-			@include transition(background .2s ease-in-out);
-
-			&:hover {
-				// background: $sand;
-				background-color: lighten($light_gray, 20%);
-			}
-
-			i {
-				margin-right: rem(5);
-			}
-		}
-
-		&.active, &.open {
-			padding: 0 0 .25rem;
-		}
+	    width: 100%;
+	    @include well(0 0 $border_radius $border_radius, false, false, false, $white, true);
+	    span {
+	    	@extend %muted_text;
+	    }
+	    a {
+	    	@include transition(background .2s ease-in-out);
+	    }
 	}
 
 	&.active {
 		z-index: 4;
+		border-radius: $border_radius $border_radius 0 0;
+		.drop_menu {
+			box-shadow: 0 5px 10px rgba($light_gray, .4);
+		}
 	}
 
+}
+
+%button_dropdown {
+	@extend %basic_dropdown;
+	text-transform: uppercase;
+	color: $gray;
+
+	.drop_icon, > .fa-sort-desc, > .fa-angle-down {
+		@extend %color_green;
+		top: .6rem;
+	}
+
+	a {
+		color: $gray;
+	}
+
+}
+
+%drop_menu_skin {
+
+	a {
+		color: $charcoal;
+		@extend %font_weight_700;
+	}
+
+	.drop_menu {
+		min-width: rem(140);
+		a {
+            &:hover, {
+                background: lighten($light_gray, 23%);
+            }
+            &.selected {
+                background: lighten($light_gray, 20%);
+                i {
+                    @extend .fa;
+                    @extend .fa-check;
+                    @extend %small_text;
+                }
+            }
+        }
+	}
+
+	&.active {
+        .drop_menu {
+        	left: 0;
+        	right: 0;
+        	border: 1px solid $light_gray;
+        }
+	}
 }
 
 // Not all drop menu's are used inside a .dropdown
@@ -73,71 +122,184 @@
 
 }
 
-.dropdown {
+// .dropdown_primary
+//
+// Primary style dropdown for filtering and sorting. @extends %button_dropdown
+//
+// Markup:
+// <div class="dropdown_primary">
+//     <a class="selected_option">Really long option here</a>
+//     <i class="fa fa-sort-desc drop_icon"></i>
+//     <div class="drop_menu">
+//         <a>Role</a>
+//         <a>Date Added</a>
+//     </div>
+// </div>
+// <div class="dropdown_primary active">
+//     <a class="selected_option">Really long option here</a>
+//     <i class="fa fa-sort-desc drop_icon"></i>
+//     <div class="drop_menu active">
+//         <a>Role</a>
+//         <a>Date Added</a>
+//     </div>
+// </div>
+//
+// Styleguide 20.1
+.dropdown_primary {
 	@extend %button_dropdown;
+	width: rem(180);
 
-	// .dropdown.sorting
-	//
-	// Standard button style dropdown for filtering and sorting. @extends %button_dropdown
-	//
-	// Markup:
-	// <div class="dropdown sorting">
-	//     <span class="selected_option">Sort & Filter</span>
-	//     <i class="fa fa-sort-desc"></i>
-	//     <div class="drop_menu active">
-	//         <a href="" class="option">Role</a>
-	//         <a href="" class="option">Date Added</a>
-	//     </div>
-	// </div>
-	//
-	// Styleguide 20.2
-
-	&.sorting {
-		min-width: rem(180);
-	}
-
-	// .dropdown.action
-	//
-	// Standard button style dropdown for table actions. @extends %button_dropdown
-	//
-	// Markup:
-	// <div class="dropdown action">
-	// 	<span class="selected_option">Action</span>
-	// 	<i class="fa fa-sort-desc"></i>
-	// 	<div class="drop_menu">
-	// 		<a href="" class="option">Change Role</a>
-	// 		<a href="" class="option">View Activity</a>
-	// 		<a href="" class="option">Send Message</a>
-	//	</div>
-	// </div>
-	// <div class="dropdown action">
-	// 	<span class="selected_option">Action</span>
-	// 	<i class="fa fa-sort-desc"></i>
-	// 	<div class="drop_menu active">
-	// 		<a href="" class="option">Change Role</a>
-	// 		<a href="" class="option">View Activity</a>
-	// 		<a href="" class="option">Send Message</a>
-	// 	</div>
-	// </div>
-	//
-	// Styleguide 20.3
-	&.action {
-		min-width: rem(145);
-		background-color: lighten($light_gray, 20%);
-
-		.drop_menu {
-			background-color: lighten($light_gray, 20%);
-			a {
-				&:hover {
-					background: $white;
-				}
+	.drop_menu {
+		a {
+			&:hover {
+				background-color: lighten($light_gray, 20%);
 			}
 		}
-
 	}
-
 }
 
+
+// .dropdown_secondary
+//
+// Secondary style dropdown white backgrounds. @extends %button_dropdown
+//
+// Markup:
+// <div class="dropdown_secondary">
+//     <a class="selected_option">Really long option here</a>
+//     <i class="fa fa-sort-desc drop_icon"></i>
+//     <div class="drop_menu">
+//         <a>Role</a>
+//         <a>Date Added</a>
+//     </div>
+// </div>
+// <div class="dropdown_secondary active">
+//     <a class="selected_option">Really long option here</a>
+//     <i class="fa fa-sort-desc drop_icon"></i>
+//     <div class="drop_menu active">
+//         <a>Role</a>
+//         <a>Date Added</a>
+//     </div>
+// </div>
+//
+// Styleguide 20.2
+.dropdown_secondary {
+	@extend %button_dropdown;
+	width: rem(145);
+	background-color: lighten($light_gray, 20%);
+
+	.drop_menu {
+		background-color: lighten($light_gray, 20%);
+		a {
+			&:hover {
+				background: $white;
+			}
+		}
+	}
+}
+
+// .dropdown_tertiary
+//
+// Tertiary style dropdown
+//
+// Markup:
+// <div class="dropdown_tertiary active">
+//     <a class="selected_option">Really long option here</a>
+//     <i class="fa fa-angle-down drop_icon"></i>
+//     <div class="drop_menu active">
+//         <span>Who can see this?</span>
+//         <a class="selected">Role<i></i></a>
+//         <a>Date Added<i></i></a>
+//     </div>
+// </div>
+// <div class="dropdown_tertiary">
+//     <a class="selected_option">Really long option here</a>
+//     <i class="fa fa-angle-down drop_icon"></i>
+//     <div class="drop_menu">
+//         <span>Who can see this?</span>
+//         <a class="selected">Role<i></i></a>
+//         <a>Date Added<i></i></a>
+//     </div>
+// </div>
+//
+// Styleguide 20.3
+.dropdown_tertiary {
+	@extend %basic_dropdown;
+	@extend %drop_menu_skin;
+	border: 1px solid $light_gray;
+	width: rem(140);
+
+	.drop_icon, .fa-angle-down  {
+		top: .8rem;
+	}
+
+	&.active {
+		.drop_menu {
+			border-radius: 0 0 $border_radius $border_radius;
+			left: -.1rem;
+			right: -.1rem;
+		}
+	}
+	
+}
+
+// .dropdown_quaternary
+//
+// quaternary style dropdown
+// 
+// <div class="dropdown_quaternary active">
+//     <button class="trigger_panel">
+//        <i class="fa fa-users"></i>
+//        <i class="fa fa-sort-desc"></i>
+//    </button>
+//     <i class="fa fa-angle-down drop_icon"></i>
+//     <div class="drop_menu active">
+//         <span>Who can see this?</span>
+//         <a class="selected">Role<i></i></a>
+//         <a>Date Added<i></i></a>
+//     </div>
+// </div>
+// 
+// Styleguide 20.4
+.dropdown_quaternary {
+
+	button {
+	    background: $white;
+	    outline: none;
+	    border: 1px solid transparent;
+	    margin-bottom: -.1rem;
+	    z-index: 11;
+	    font-size: rem(10);
+	    padding: .5rem;
+
+	    i {
+	        &:first-of-type {
+	            color: $light_gray;
+	        }
+	        &.fa-sort-desc {
+	            color: $teal;
+	        }
+	    }
+
+	    &:focus, &:hover {
+	        outline: none;
+	        box-shadow: none;
+	    }
+	}
+
+	&.active {
+        button {
+            border-color: $light_gray;
+            border-bottom-color: $white;
+            border-radius: $border_radius $border_radius 0 0;
+        }
+        .drop_menu {
+        	border-radius: 0 $border_radius $border_radius $border_radius;
+        }
+    }
+
+	@extend %basic_dropdown;
+	@extend %drop_menu_skin;
+}
 
 //force menu to hide on desktop
 .dropdown_menu {
@@ -194,12 +356,14 @@
 //
 //
 // Markup:
+// <!-- arrow dropdown -->
 // <div style="background: gray; padding: 1rem 1rem 10rem;">
 //   <button eg-click-closed eg-panel-toggle panel="arrowMenu" class="btn_action panel_trigger arrow active"><i class="fa fa-cog"></i></button>
 //   <div id="arrowMenu" class="dropdown_navigation panel arrow active">
 //      Dropdown navigation <strong>with an arrow</strong>, often used in various settings menus.
 //   </div>
 // </div>
+// <!-- squared dropdown -->
 // <div style="background: gray; padding: 1rem 1rem 10rem;">
 //   <button eg-click-closed eg-panel-toggle panel="squareMenu" class="btn_action panel_trigger squared active"><i class="fa fa-cog"></i></button>
 //   <div id="squareMenu" class="dropdown_navigation panel squared active">
@@ -207,7 +371,7 @@
 //   </div>
 // </div>
 //
-// Styleguide 20.3
+// Styleguide 20.5
 %dropdown_navigation {
 	position: absolute;
 	width: 100%;
@@ -231,7 +395,6 @@
 		outline: none;
 		opacity: 1;
 		max-height: 1000rem;
-		// z-index: 2;
 	}
 
 	.primary {

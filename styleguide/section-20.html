@@ -106,10 +106,10 @@
           
             
              <section class="kss-depth-2">
-              <h2 class="kss-title"><span class="kss-ref">20.2</span> - .dropdown.sorting</h2>
+              <h2 class="kss-title"><span class="kss-ref">20.1</span> - .dropdown_primary</h2>
             
               
-                  <div class="kss-box"><p>Standard button style dropdown for filtering and sorting. @extends %button_dropdown</p>
+                  <div class="kss-box"><p>Primary style dropdown for filtering and sorting. @extends %button_dropdown</p>
 </div>
                   <div class="kss-mod-list">
                     <div class="kss-mod-desc-group">
@@ -117,24 +117,40 @@
                       <div class="kss-mod-name"></div> -->
                     </div>
                     <div class="kss-mod-example">
-                      <div><div class="dropdown sorting">
-    <span class="selected_option">Sort & Filter</span>
-    <i class="fa fa-sort-desc"></i>
+                      <div><div class="dropdown_primary">
+    <a class="selected_option">Really long option here</a>
+    <i class="fa fa-sort-desc drop_icon"></i>
+    <div class="drop_menu">
+        <a>Role</a>
+        <a>Date Added</a>
+    </div>
+</div>
+<div class="dropdown_primary active">
+    <a class="selected_option">Really long option here</a>
+    <i class="fa fa-sort-desc drop_icon"></i>
     <div class="drop_menu active">
-        <a href="" class="option">Role</a>
-        <a href="" class="option">Date Added</a>
+        <a>Role</a>
+        <a>Date Added</a>
     </div>
 </div></div>
                     </div>
                   
                   </div>
                   <div class="kss-markup">
-                    <pre class="prettyprint lang-html">&lt;div class=&quot;dropdown sorting&quot;&gt;
-    &lt;span class=&quot;selected_option&quot;&gt;Sort &amp; Filter&lt;/span&gt;
-    &lt;i class=&quot;fa fa-sort-desc&quot;&gt;&lt;/i&gt;
+                    <pre class="prettyprint lang-html">&lt;div class=&quot;dropdown_primary&quot;&gt;
+    &lt;a class=&quot;selected_option&quot;&gt;Really long option here&lt;/a&gt;
+    &lt;i class=&quot;fa fa-sort-desc drop_icon&quot;&gt;&lt;/i&gt;
+    &lt;div class=&quot;drop_menu&quot;&gt;
+        &lt;a&gt;Role&lt;/a&gt;
+        &lt;a&gt;Date Added&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;dropdown_primary active&quot;&gt;
+    &lt;a class=&quot;selected_option&quot;&gt;Really long option here&lt;/a&gt;
+    &lt;i class=&quot;fa fa-sort-desc drop_icon&quot;&gt;&lt;/i&gt;
     &lt;div class=&quot;drop_menu active&quot;&gt;
-        &lt;a href=&quot;&quot; class=&quot;option&quot;&gt;Role&lt;/a&gt;
-        &lt;a href=&quot;&quot; class=&quot;option&quot;&gt;Date Added&lt;/a&gt;
+        &lt;a&gt;Role&lt;/a&gt;
+        &lt;a&gt;Date Added&lt;/a&gt;
     &lt;/div&gt;
 &lt;/div&gt;</pre>
                   </div>
@@ -145,10 +161,10 @@
           
             
              <section class="kss-depth-2">
-              <h2 class="kss-title"><span class="kss-ref">20.3</span> - .dropdown.action</h2>
+              <h2 class="kss-title"><span class="kss-ref">20.2</span> - .dropdown_secondary</h2>
             
               
-                  <div class="kss-box"><p>Standard button style dropdown for table actions. @extends %button_dropdown</p>
+                  <div class="kss-box"><p>Secondary style dropdown white backgrounds. @extends %button_dropdown</p>
 </div>
                   <div class="kss-mod-list">
                     <div class="kss-mod-desc-group">
@@ -156,45 +172,41 @@
                       <div class="kss-mod-name"></div> -->
                     </div>
                     <div class="kss-mod-example">
-                      <div><div class="dropdown action">
-	<span class="selected_option">Action</span>
-	<i class="fa fa-sort-desc"></i>
-	<div class="drop_menu">
-		<a href="" class="option">Change Role</a>
-		<a href="" class="option">View Activity</a>
-		<a href="" class="option">Send Message</a>
-	</div>
+                      <div><div class="dropdown_secondary">
+    <a class="selected_option">Really long option here</a>
+    <i class="fa fa-sort-desc drop_icon"></i>
+    <div class="drop_menu">
+        <a>Role</a>
+        <a>Date Added</a>
+    </div>
 </div>
-<div class="dropdown action">
-	<span class="selected_option">Action</span>
-	<i class="fa fa-sort-desc"></i>
-	<div class="drop_menu active">
-		<a href="" class="option">Change Role</a>
-		<a href="" class="option">View Activity</a>
-		<a href="" class="option">Send Message</a>
-	</div>
+<div class="dropdown_secondary active">
+    <a class="selected_option">Really long option here</a>
+    <i class="fa fa-sort-desc drop_icon"></i>
+    <div class="drop_menu active">
+        <a>Role</a>
+        <a>Date Added</a>
+    </div>
 </div></div>
                     </div>
                   
                   </div>
                   <div class="kss-markup">
-                    <pre class="prettyprint lang-html">&lt;div class=&quot;dropdown action&quot;&gt;
-	&lt;span class=&quot;selected_option&quot;&gt;Action&lt;/span&gt;
-	&lt;i class=&quot;fa fa-sort-desc&quot;&gt;&lt;/i&gt;
-	&lt;div class=&quot;drop_menu&quot;&gt;
-		&lt;a href=&quot;&quot; class=&quot;option&quot;&gt;Change Role&lt;/a&gt;
-		&lt;a href=&quot;&quot; class=&quot;option&quot;&gt;View Activity&lt;/a&gt;
-		&lt;a href=&quot;&quot; class=&quot;option&quot;&gt;Send Message&lt;/a&gt;
-	&lt;/div&gt;
+                    <pre class="prettyprint lang-html">&lt;div class=&quot;dropdown_secondary&quot;&gt;
+    &lt;a class=&quot;selected_option&quot;&gt;Really long option here&lt;/a&gt;
+    &lt;i class=&quot;fa fa-sort-desc drop_icon&quot;&gt;&lt;/i&gt;
+    &lt;div class=&quot;drop_menu&quot;&gt;
+        &lt;a&gt;Role&lt;/a&gt;
+        &lt;a&gt;Date Added&lt;/a&gt;
+    &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&quot;dropdown action&quot;&gt;
-	&lt;span class=&quot;selected_option&quot;&gt;Action&lt;/span&gt;
-	&lt;i class=&quot;fa fa-sort-desc&quot;&gt;&lt;/i&gt;
-	&lt;div class=&quot;drop_menu active&quot;&gt;
-		&lt;a href=&quot;&quot; class=&quot;option&quot;&gt;Change Role&lt;/a&gt;
-		&lt;a href=&quot;&quot; class=&quot;option&quot;&gt;View Activity&lt;/a&gt;
-		&lt;a href=&quot;&quot; class=&quot;option&quot;&gt;Send Message&lt;/a&gt;
-	&lt;/div&gt;
+&lt;div class=&quot;dropdown_secondary active&quot;&gt;
+    &lt;a class=&quot;selected_option&quot;&gt;Really long option here&lt;/a&gt;
+    &lt;i class=&quot;fa fa-sort-desc drop_icon&quot;&gt;&lt;/i&gt;
+    &lt;div class=&quot;drop_menu active&quot;&gt;
+        &lt;a&gt;Role&lt;/a&gt;
+        &lt;a&gt;Date Added&lt;/a&gt;
+    &lt;/div&gt;
 &lt;/div&gt;</pre>
                   </div>
               
@@ -204,7 +216,93 @@
           
             
              <section class="kss-depth-2">
-              <h2 class="kss-title"><span class="kss-ref">20.3</span> - .dropdown_navigation</h2>
+              <h2 class="kss-title"><span class="kss-ref">20.3</span> - .dropdown_tertiary</h2>
+            
+              
+                  <div class="kss-box"><p>Tertiary style dropdown</p>
+</div>
+                  <div class="kss-mod-list">
+                    <div class="kss-mod-desc-group">
+                      <!-- <div class="kss-mod-desc"><p>Default styling</p></div>
+                      <div class="kss-mod-name"></div> -->
+                    </div>
+                    <div class="kss-mod-example">
+                      <div><div class="dropdown_tertiary active">
+    <a class="selected_option">Really long option here</a>
+    <i class="fa fa-angle-down drop_icon"></i>
+    <div class="drop_menu active">
+        <span>Who can see this?</span>
+        <a class="selected">Role<i></i></a>
+        <a>Date Added<i></i></a>
+    </div>
+</div>
+<div class="dropdown_tertiary">
+    <a class="selected_option">Really long option here</a>
+    <i class="fa fa-angle-down drop_icon"></i>
+    <div class="drop_menu">
+        <span>Who can see this?</span>
+        <a class="selected">Role<i></i></a>
+        <a>Date Added<i></i></a>
+    </div>
+</div></div>
+                    </div>
+                  
+                  </div>
+                  <div class="kss-markup">
+                    <pre class="prettyprint lang-html">&lt;div class=&quot;dropdown_tertiary active&quot;&gt;
+    &lt;a class=&quot;selected_option&quot;&gt;Really long option here&lt;/a&gt;
+    &lt;i class=&quot;fa fa-angle-down drop_icon&quot;&gt;&lt;/i&gt;
+    &lt;div class=&quot;drop_menu active&quot;&gt;
+        &lt;span&gt;Who can see this?&lt;/span&gt;
+        &lt;a class=&quot;selected&quot;&gt;Role&lt;i&gt;&lt;/i&gt;&lt;/a&gt;
+        &lt;a&gt;Date Added&lt;i&gt;&lt;/i&gt;&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;dropdown_tertiary&quot;&gt;
+    &lt;a class=&quot;selected_option&quot;&gt;Really long option here&lt;/a&gt;
+    &lt;i class=&quot;fa fa-angle-down drop_icon&quot;&gt;&lt;/i&gt;
+    &lt;div class=&quot;drop_menu&quot;&gt;
+        &lt;span&gt;Who can see this?&lt;/span&gt;
+        &lt;a class=&quot;selected&quot;&gt;Role&lt;i&gt;&lt;/i&gt;&lt;/a&gt;
+        &lt;a&gt;Date Added&lt;i&gt;&lt;/i&gt;&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
+                  </div>
+              
+            
+              </section>
+            
+          
+            
+             <section class="kss-depth-2">
+              <h2 class="kss-title"><span class="kss-ref">20.4</span> - .dropdown_quaternary</h2>
+            
+              
+                  
+                    <p>quaternary style dropdown
+
+</p>
+<div class="dropdown_quaternary active">
+    <button class="trigger_panel">
+       <i class="fa fa-users"></i>
+       <i class="fa fa-sort-desc"></i>
+   </button>
+    <i class="fa fa-angle-down drop_icon"></i>
+    <div class="drop_menu active">
+        <span>Who can see this?</span>
+        <a class="selected">Role<i></i></a>
+        <a>Date Added<i></i></a>
+    </div>
+</div>
+                  
+              
+            
+              </section>
+            
+          
+            
+             <section class="kss-depth-2">
+              <h2 class="kss-title"><span class="kss-ref">20.5</span> - .dropdown_navigation</h2>
             
               
                   <div class="kss-box"><p>Standard large white dropdown. Use this class or @extend %dropdown_navigation. Addition of the class &apos;arrow&apos; to both menu and button will allow for an arrow to show when the menu is open. Addition of the class &apos;squared&apos; will allow for the menu to open attached to the button.
@@ -216,12 +314,14 @@ All dropdown_navigations need the class &apos;panel&apos; and the button needs &
                       <div class="kss-mod-name"></div> -->
                     </div>
                     <div class="kss-mod-example">
-                      <div><div style="background: gray; padding: 1rem 1rem 10rem;">
+                      <div><!-- arrow dropdown -->
+<div style="background: gray; padding: 1rem 1rem 10rem;">
   <button eg-click-closed eg-panel-toggle panel="arrowMenu" class="btn_action panel_trigger arrow active"><i class="fa fa-cog"></i></button>
   <div id="arrowMenu" class="dropdown_navigation panel arrow active">
      Dropdown navigation <strong>with an arrow</strong>, often used in various settings menus.
   </div>
 </div>
+<!-- squared dropdown -->
 <div style="background: gray; padding: 1rem 1rem 10rem;">
   <button eg-click-closed eg-panel-toggle panel="squareMenu" class="btn_action panel_trigger squared active"><i class="fa fa-cog"></i></button>
   <div id="squareMenu" class="dropdown_navigation panel squared active">
@@ -232,12 +332,14 @@ All dropdown_navigations need the class &apos;panel&apos; and the button needs &
                   
                   </div>
                   <div class="kss-markup">
-                    <pre class="prettyprint lang-html">&lt;div style=&quot;background: gray; padding: 1rem 1rem 10rem;&quot;&gt;
+                    <pre class="prettyprint lang-html">&lt;!-- arrow dropdown --&gt;
+&lt;div style=&quot;background: gray; padding: 1rem 1rem 10rem;&quot;&gt;
   &lt;button eg-click-closed eg-panel-toggle panel=&quot;arrowMenu&quot; class=&quot;btn_action panel_trigger arrow active&quot;&gt;&lt;i class=&quot;fa fa-cog&quot;&gt;&lt;/i&gt;&lt;/button&gt;
   &lt;div id=&quot;arrowMenu&quot; class=&quot;dropdown_navigation panel arrow active&quot;&gt;
      Dropdown navigation &lt;strong&gt;with an arrow&lt;/strong&gt;, often used in various settings menus.
   &lt;/div&gt;
 &lt;/div&gt;
+&lt;!-- squared dropdown --&gt;
 &lt;div style=&quot;background: gray; padding: 1rem 1rem 10rem;&quot;&gt;
   &lt;button eg-click-closed eg-panel-toggle panel=&quot;squareMenu&quot; class=&quot;btn_action panel_trigger squared active&quot;&gt;&lt;i class=&quot;fa fa-cog&quot;&gt;&lt;/i&gt;&lt;/button&gt;
   &lt;div id=&quot;squareMenu&quot; class=&quot;dropdown_navigation panel squared active&quot;&gt;

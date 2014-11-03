@@ -127,6 +127,9 @@ textarea, #{$all-text-inputs}, select {
 		outline: none;
 	}
 
+	&.required {
+		border: 1px solid $teal!important;
+	}
 }
 
 // class is added via a js listner on the input fields
@@ -181,6 +184,25 @@ input {
 
 }
 
+// .ui_textarea_invisible
+// 
+// Invisible textarea for posts
+//
+// Markup: 
+// <textarea class="ui_textarea_invisible" placeholder="You can't see me!"></textarea>
+// 
+// Styleguide 8.4
+
+.ui_textarea_invisible, {
+    border: none;
+    box-shadow: none;
+    resize: none;
+    height: 10rem;
+    &:focus {
+        box-shadow: none;
+    }
+}
+
 // .ui_select
 //
 // A fancy select with font awesome arrow, extends %ui_select_arrow
@@ -193,7 +215,7 @@ input {
 //     </select>
 // </div>
 //
-// Styleguide 8.4
+// Styleguide 8.5
 
 .ui_select {
 	@extend %ui_select_arrow;
@@ -228,7 +250,7 @@ input {
 //      <span>this is a test to see what happens when the checkbox wraps to two lines and has a lovely span inside of it. this is a test to see what happens when the checkbox wraps to two lines and has a lovely span inside of it. </span>
 // </label>
 //
-// Styleguide 8.5
+// Styleguide 8.6
 
 .ui_checkbox_primary {
 	@extend %ui_checkbox_generic;
@@ -293,7 +315,7 @@ input {
 // <input type="checkbox" id="uiCheckboxSecondary" class="ui_checkbox_secondary"/>
 // <label for="uiCheckboxSecondary"><i class="fa fa-circle-o"></i>Label Here</label>
 //
-// Styleguide 8.6
+// Styleguide 8.7
 
 .ui_checkbox_secondary {
 	@extend %ui_checkbox_generic;
@@ -358,7 +380,7 @@ input {
 //    <label class="btn_radio" for="female">Female</label>
 //</div>
 //
-// Styleguide 8.7
+// Styleguide 8.8
 
 .ui_radio_group {
 	@extend %clearfix;
@@ -422,7 +444,7 @@ input {
 // <input type="radio" name="radio" id="standardRadio3" class="ui_radio"/>
 // <label for="standardRadio3"><i></i>Super Crazy Long Label Here</label>
 //
-// Styleguide 8.8
+// Styleguide 8.9
 
 .ui_radio {
 	@extend %ui_radio_generic;
@@ -490,7 +512,7 @@ input {
 //     <button><i class="fa fa-search"></i></button>
 // </div>
 //
-// Styleguide 8.9
+// Styleguide 8.10
 
 .ui_search {
 	@extend %single_line_form;
@@ -524,14 +546,14 @@ input {
 // Transparent and rounded style for inputs on backgrounds
 //
 // Markup:
-// <div style="padding: 1rem; background-color: #40b2cd;f">
+// <div style="padding: 1rem; background-color: #40b2cd;">
 // 	<div class="ui_inverse">
 // 		<input type="text" placeholder="Enter code..." />
 // 		<button><i class="fa fa-plus-circle"></i></button>
 // 	</div>
 // </div>
 //
-// Styleguide 8.10
+// Styleguide 8.11
 
 .ui_inverse {
 	@extend %single_line_form;
@@ -558,7 +580,7 @@ input {
 
 // .ui_file_upload
 //
-// File Input
+// File Input with a primary button
 //
 // Markup:
 // <div class="ui_file_upload">
@@ -566,7 +588,7 @@ input {
 // <a class="primary">Choose File(s)</a>
 // </div>
 //
-// Styleguide 8.11
+// Styleguide 8.12
 
 .ui_file_upload {
 	margin: rem(30) 0 rem(50);
@@ -592,6 +614,37 @@ input {
 	}
 }
 
+// .ui_upload_icon
+//
+// File Input with an icon
+//
+// Markup:
+// <input type="file" class="ui_upload_icon" />
+// <button class="btn_action_gray"><i class="fa fa-camera"></i></button>
+//
+// Styleguide 8.13
+
+.ui_upload_icon {
+    opacity: 0;
+    z-index: 1;
+    height: 3rem;
+    width: 3rem;
+
+    &:hover, + button:hover {
+        cursor: pointer;
+    }
+    
+    &:focus {
+        outline: none;
+    } 
+
+    + button {
+        left: -3rem;
+        margin-right: -2.5rem;
+    }
+}
+
+// common single line form, used in .ui_search & .ui_inverse
 %single_line_form {
 	input[type=search], input[type=text] {
 		border-radius: rem(25);
@@ -623,10 +676,6 @@ input {
 
 }
 
-.required {
-	border: 1px solid $teal!important;
-}
-
 // used on lines in forms that have 2 inputs on one line
 .half_width_form_element {
 	width: 48.5%!important;
@@ -636,6 +685,15 @@ input {
 		margin-right: 0;
 	}
 }
+
+// .legend
+// 
+// Markup: 
+// <div class="legend">
+// 	<p><i class="square"></i>= Required Fields</p>
+// </div>
+// 
+// Styleguide 8.14
 
 .legend {
 	@extend %small_text;
