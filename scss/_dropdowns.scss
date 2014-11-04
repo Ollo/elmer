@@ -202,23 +202,25 @@
 // Tertiary style dropdown
 //
 // Markup:
-// <div class="dropdown_tertiary active">
-//     <a class="selected_option">Really long option here</a>
-//     <i class="fa fa-angle-down drop_icon"></i>
-//     <div class="drop_menu active">
-//         <span>Who can see this?</span>
-//         <a class="selected">Role<i></i></a>
-//         <a>Date Added<i></i></a>
-//     </div>
-// </div>
-// <div class="dropdown_tertiary">
-//     <a class="selected_option">Really long option here</a>
-//     <i class="fa fa-angle-down drop_icon"></i>
-//     <div class="drop_menu">
-//         <span>Who can see this?</span>
-//         <a class="selected">Role<i></i></a>
-//         <a>Date Added<i></i></a>
-//     </div>
+// <div style="margin: 5rem 0;">
+//   <div class="dropdown_tertiary active">
+//       <a class="selected_option">Really long option here</a>
+//       <i class="fa fa-angle-down drop_icon"></i>
+//       <div class="drop_menu active">
+//           <span>Who can see this?</span>
+//           <a class="selected">Role<i></i></a>
+//           <a>Date Added<i></i></a>
+//       </div>
+//   </div>
+//   <div class="dropdown_tertiary">
+//       <a class="selected_option">Really long option here</a>
+//       <i class="fa fa-angle-down drop_icon"></i>
+//       <div class="drop_menu">
+//           <span>Who can see this?</span>
+//           <a class="selected">Role<i></i></a>
+//           <a>Date Added<i></i></a>
+//       </div>
+//   </div>
 // </div>
 //
 // Styleguide 20.3
@@ -246,17 +248,29 @@
 //
 // quaternary style dropdown
 // 
-// <div class="dropdown_quaternary active">
-//     <button class="trigger_panel">
-//        <i class="fa fa-users"></i>
-//        <i class="fa fa-sort-desc"></i>
-//    </button>
-//     <i class="fa fa-angle-down drop_icon"></i>
-//     <div class="drop_menu active">
-//         <span>Who can see this?</span>
-//         <a class="selected">Role<i></i></a>
-//         <a>Date Added<i></i></a>
-//     </div>
+// <div style="margin: 0 0 12rem;">
+//   <div class="dropdown_quaternary">
+//       <button class="trigger_panel">
+//          <i class="fa fa-users"></i>
+//          <i class="fa fa-sort-desc"></i>
+//      </button>
+//       <div class="drop_menu">
+//           <span>Who can see this?</span>
+//           <a class="selected">Role<i></i></a>
+//           <a>Date Added<i></i></a>
+//       </div>
+//   </div>
+//   <div class="dropdown_quaternary active">
+//       <button class="trigger_panel">
+//          <i class="fa fa-users"></i>
+//          <i class="fa fa-sort-desc"></i>
+//      </button>
+//       <div class="drop_menu active">
+//           <span>Who can see this?</span>
+//           <a class="selected">Role<i></i></a>
+//           <a>Date Added<i></i></a>
+//       </div>
+//   </div>
 // </div>
 // 
 // Styleguide 20.4
@@ -299,6 +313,55 @@
 
 	@extend %basic_dropdown;
 	@extend %drop_menu_skin;
+}
+
+// .dropdown_quinary
+//
+// dropdown that opens up instead of down, used in modal footers
+// 
+// <div style="margin: 12rem 0 0;">
+//   <div class="dropdown_quinary">
+//       <a class="selected_option">Really long option here</a>
+//       <i class="fa fa-angle-down drop_icon"></i>
+//       <div class="drop_menu">
+//           <span>Who can see this?</span>
+//           <a class="selected">Role<i></i></a>
+//           <a>Date Added<i></i></a>
+//       </div>
+//   </div>
+//   <div class="dropdown_quinary active">
+//       <a class="selected_option">Really long option here</a>
+//       <i class="fa fa-angle-down drop_icon"></i>
+//       <div class="drop_menu active">
+//           <span>Who can see this?</span>
+//           <a class="selected">Role<i></i></a>
+//           <a>Date Added<i></i></a>
+//       </div>
+//   </div>
+// </div>
+// 
+// Styleguide 20.5
+.dropdown_quinary {
+	@extend %basic_dropdown;
+	@extend %drop_menu_skin;
+
+	border: 1px solid $light_gray;
+	width: rem(140);
+
+	.drop_icon, .fa-angle-down  {
+		top: .8rem;
+	}
+
+	&.active {
+		border-radius: 0 0 $border_radius $border_radius;
+		.drop_menu {
+			border-radius: $border_radius $border_radius 0 0;
+			left: -.1rem;
+			right: -.1rem;
+			bottom: 3.3rem;
+		}
+	}
+
 }
 
 //force menu to hide on desktop
