@@ -152,6 +152,14 @@ h6 {
 
 }
 
+// inconsistent markup around .icon_header, needs to be revisted and globalized.
+h4.icon_header {
+	i {
+		color: $teal;
+		@extend %icon_space;
+	}
+}
+
 // p.small
 //
 // Basic style for a text footnote or text with an asterisk.

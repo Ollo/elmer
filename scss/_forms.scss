@@ -223,6 +223,10 @@ input {
 // <label for="sampleCheckbox">Label Here
 //      <span>this is a test to see what happens when the checkbox wraps to two lines and has a lovely span inside of it. this is a test to see what happens when the checkbox wraps to two lines and has a lovely span inside of it. </span>
 // </label>
+// <input type="checkbox" id="sampleCheckbox2" class="ui_checkbox_primary" disabled/>
+// <label for="sampleCheckbox2">Label Here
+//      <span>this is a test to see what happens when the checkbox wraps to two lines and has a lovely span inside of it. this is a test to see what happens when the checkbox wraps to two lines and has a lovely span inside of it. </span>
+// </label>
 //
 // Styleguide 8.5
 
@@ -248,6 +252,18 @@ input {
 
 		span {
 			margin-left: 3.1rem;
+		}
+	}
+
+	&:disabled {
+		+ label {
+			cursor: not-allowed;
+			color: $light_gray;
+			&:before {
+				color: lighten($gray, 40%);
+				border-color: $light_gray;
+				background: lighten($gray, 40%);
+			}
 		}
 	}
 
