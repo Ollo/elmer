@@ -108,6 +108,7 @@
     .modal-dialog {
         margin: 2rem 2rem 0;
         padding-bottom: rem(100);
+        background: $white;
     }
 
     .modal-content {
@@ -443,6 +444,7 @@
         padding: 6rem;
     }
     @include media($medium) {
+        box-shadow: -.1rem 0 1rem rgba($charcoal, .1);
         padding: 2.5rem;
         position: absolute;
         right: 0;

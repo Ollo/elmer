@@ -227,6 +227,17 @@ td {
 			float: left;
 			width: 100%;
 			padding: 0 0 rem(5);
+			margin: 0 0 rem(5);
+		}
+
+		.table_details {
+			div {
+				margin: 0 0 1rem;
+			}
+		}
+
+		.dropdown_tertiary {
+			padding-bottom: 0;
 		}
 
 		.hidden_mobile {
@@ -321,6 +332,9 @@ td {
 
 .table_details {
 	display: none;
+	&.open {
+		display: block;
+	}
 	@include media($medium) {
 		display: block!important;
 	}

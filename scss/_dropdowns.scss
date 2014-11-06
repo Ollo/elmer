@@ -83,9 +83,10 @@
 
 %drop_menu_skin {
 
+	@extend %font_weight_700;
+	
 	a {
 		color: $charcoal;
-		@extend %font_weight_700;
 	}
 
 	.drop_menu {

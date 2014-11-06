@@ -204,6 +204,119 @@
               </section>
             
           
+            
+             <section class="kss-depth-2">
+              <h2 class="kss-title"><span class="kss-ref">17.3</span> - .post-image-modal</h2>
+            
+              
+                  <div class="kss-box"><p>For use in posts with an attached image</p>
+</div>
+                  <div class="kss-mod-list">
+                    <div class="kss-mod-desc-group">
+                      <!-- <div class="kss-mod-desc"><p>Default styling</p></div>
+                      <div class="kss-mod-name"></div> -->
+                    </div>
+                    <div class="kss-mod-example">
+                      <div><div class="image_container">
+    <img class="post_attached_image" src="//placeimg.com/1000/1000/any" />
+</div>
+<aside class="post_modal_meta">
+    <a class="close_image_modal" ng-click="cancel()"><i class="fa fa-times-circle"></i></a>
+    <header class="post_header">
+        <figure class="avatar">
+            <img class="circled small" src="/assets/images/user-avatar.svg" />
+            <figcaption>
+                <h5><a>Kimmy Doe</a> added a <a>photo</a></h5>
+                <p>Sept 23, 2014</p>
+            </figcaption>
+        </figure>
+    </header>
+    <div class="post_body">
+        <p>Etiam lacinia, arcu nec venenatis placerat, lacus tellus luctus orci, in viverra mi dolor a odio. Phasellus ut viverra odio.</p>
+        <a class="post_share_button" ng-click="shareLink($index)"><i class="fa fa-share-square-o"></i>Share</a>
+    </div>
+    <div class="more_comments_link">
+        <a><i class="fa fa-comment"></i>See all 20 comments</a>
+    </div>
+    <div class="comment">
+        <img class="circled xsmall comment_avatar" src="/assets/images/user-avatar.svg"/>
+        <div class="comment_body">
+            <h5><a>Leora Weiner</a></h5>
+            <p>Vivamus tempus odio sollicitudin ex accumsan, fermentum pellentesque quam suscipit.</p>
+            <div class="meta">Sept 23, 2014 &#149; <a>Delete</a></div>
+        </div>
+    </div>
+    <div class="comment">
+        <img class="circled xsmall comment_avatar" src="/assets/images/user-avatar.svg"/>
+        <div class="comment_body">
+            <h5><a>Tom Smith</a></h5>
+            <p>Vivamus tempus odio sollicitudin ex accumsan, fermentum pellentesque quam suscipit.</p>
+            <div class="meta">Sept 23, 2014 &#149; <a>Delete</a></div>
+        </div>
+    </div>
+    <footer class="comment_footer">
+        <img class="circled xsmall comment_avatar" src="/assets/images/user-avatar.svg"/>
+        <div class="comment_body">
+            <input type="text" placeholder="Leave a comment..."/>
+            <a>Post</a>
+        </div>
+    </footer>
+</aside></div>
+                    </div>
+                  
+                  </div>
+                  <div class="kss-markup">
+                    <pre class="prettyprint lang-html">&lt;div class=&quot;image_container&quot;&gt;
+    &lt;img class=&quot;post_attached_image&quot; src=&quot;//placeimg.com/1000/1000/any&quot; /&gt;
+&lt;/div&gt;
+&lt;aside class=&quot;post_modal_meta&quot;&gt;
+    &lt;a class=&quot;close_image_modal&quot; ng-click=&quot;cancel()&quot;&gt;&lt;i class=&quot;fa fa-times-circle&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+    &lt;header class=&quot;post_header&quot;&gt;
+        &lt;figure class=&quot;avatar&quot;&gt;
+            &lt;img class=&quot;circled small&quot; src=&quot;/assets/images/user-avatar.svg&quot; /&gt;
+            &lt;figcaption&gt;
+                &lt;h5&gt;&lt;a&gt;Kimmy Doe&lt;/a&gt; added a &lt;a&gt;photo&lt;/a&gt;&lt;/h5&gt;
+                &lt;p&gt;Sept 23, 2014&lt;/p&gt;
+            &lt;/figcaption&gt;
+        &lt;/figure&gt;
+    &lt;/header&gt;
+    &lt;div class=&quot;post_body&quot;&gt;
+        &lt;p&gt;Etiam lacinia, arcu nec venenatis placerat, lacus tellus luctus orci, in viverra mi dolor a odio. Phasellus ut viverra odio.&lt;/p&gt;
+        &lt;a class=&quot;post_share_button&quot; ng-click=&quot;shareLink($index)&quot;&gt;&lt;i class=&quot;fa fa-share-square-o&quot;&gt;&lt;/i&gt;Share&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;more_comments_link&quot;&gt;
+        &lt;a&gt;&lt;i class=&quot;fa fa-comment&quot;&gt;&lt;/i&gt;See all 20 comments&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;comment&quot;&gt;
+        &lt;img class=&quot;circled xsmall comment_avatar&quot; src=&quot;/assets/images/user-avatar.svg&quot;/&gt;
+        &lt;div class=&quot;comment_body&quot;&gt;
+            &lt;h5&gt;&lt;a&gt;Leora Weiner&lt;/a&gt;&lt;/h5&gt;
+            &lt;p&gt;Vivamus tempus odio sollicitudin ex accumsan, fermentum pellentesque quam suscipit.&lt;/p&gt;
+            &lt;div class=&quot;meta&quot;&gt;Sept 23, 2014 &amp;#149; &lt;a&gt;Delete&lt;/a&gt;&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;comment&quot;&gt;
+        &lt;img class=&quot;circled xsmall comment_avatar&quot; src=&quot;/assets/images/user-avatar.svg&quot;/&gt;
+        &lt;div class=&quot;comment_body&quot;&gt;
+            &lt;h5&gt;&lt;a&gt;Tom Smith&lt;/a&gt;&lt;/h5&gt;
+            &lt;p&gt;Vivamus tempus odio sollicitudin ex accumsan, fermentum pellentesque quam suscipit.&lt;/p&gt;
+            &lt;div class=&quot;meta&quot;&gt;Sept 23, 2014 &amp;#149; &lt;a&gt;Delete&lt;/a&gt;&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;footer class=&quot;comment_footer&quot;&gt;
+        &lt;img class=&quot;circled xsmall comment_avatar&quot; src=&quot;/assets/images/user-avatar.svg&quot;/&gt;
+        &lt;div class=&quot;comment_body&quot;&gt;
+            &lt;input type=&quot;text&quot; placeholder=&quot;Leave a comment...&quot;/&gt;
+            &lt;a&gt;Post&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/aside&gt;</pre>
+                  </div>
+              
+            
+              </section>
+            
+          
         
       </article>
     </div>
