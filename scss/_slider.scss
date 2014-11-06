@@ -46,12 +46,17 @@
 
 .featured_content_slider {
     @extend .slider;
-    
+
+    .slider_viewport {
+        min-height: 27.5rem;
+        overflow: hidden;
+    }
+
     h2 {
         margin: 0;
         color: $white;
     }
-    
+
     .meta {
         @extend %float_left;
         img {
@@ -76,11 +81,11 @@
         display: inline-block;
         text-align: center;
     }
-    
+
     .sentinal {
         display: none;
     }
-    
+
     .slide {
         @extend %rounded_corners_large;
         opacity: 0;
