@@ -42,10 +42,10 @@
     -webkit-overflow-scrolling: touch;
     outline: 0; // removes focus ring on chrome for windows
 
-    .modal-content {
-        position: relative;
-        background: $white;
-        outline: none;
+    &.in {
+        .modal-dialog {
+            @include transform(translateY(0));
+        }
     }
 
     @include media($small) {
@@ -55,6 +55,22 @@
             }
         }
     }
+}
+
+.modal-dialog {
+    @include transform(translateY(-100%));
+    @include transition(all 0.6s linear);
+}
+
+.modal-content {
+    @extend %clearfix;
+    position: relative;
+    background: $white;
+    outline: none;
+}
+
+.modal-header {
+    @extend %clearfix;
 }
 
 .modal-open { // body class to control scroll
@@ -82,7 +98,6 @@
     &.in {
         opacity: 0.5;
         @include transition(0.3s ease-in-out);
-       //z-index: 1060!important;
     }
 }
 
@@ -90,32 +105,24 @@
 .modal-small {
     @extend .modal;
     
-    &.in .modal-dialog {
-        @include transform(translateY(0));
-    }
-
     .modal-dialog {
         margin: 2rem 2rem 0;
         padding-bottom: rem(100);
-        @include transform(translateY(-100%));
-        @include transition(all 0.6s linear);
     }
 
     .modal-content {
-        background-color: $white;
         @extend %rounded_corners;
         padding: 2.5rem 0 0;
         overflow: hidden;
     }
 
     .modal-header {
-        @extend %clearfix;
         border-bottom: 1px solid $light_gray;
         padding: 0 0 1rem;
         margin: 0 1.5rem 0;
 
         h2 {
-            @include sans_bold;
+            @extend %font_weight_700;
             @extend %float_left;
             color: $teal;
             margin: 0;
@@ -143,6 +150,7 @@
         padding: rem(25);
         background: $sand;
         @extend %clearfix;
+
         button, .btn {
             width: 47%;
             margin-right: 2%;
@@ -217,7 +225,6 @@
 
     &.in .modal-dialog {
         background: $white;
-        @include transform(translateY(0));
     }
 
     .modal-dialog {
@@ -225,16 +232,12 @@
         margin: 0;
         height: 100%;
         border-bottom: 1px solid $light_gray;
-        @include transform(translateY(-100%));
-        @include transition(transform .65s linear);
 
         .modal-content {
             border-radius: 0;
             padding: 0 0 3rem;
-            @extend %clearfix;
 
             .modal-header {
-                @extend %clearfix;
                 background: $slate_blue;
                 color: $white;
                 padding: 3rem rem(20) 2rem;
@@ -298,5 +301,157 @@
         .icon_header {
             margin-bottom: rem(30);
         }
+    }
+}
+
+
+// .post-image-modal
+//
+// For use in posts with an attached image
+//
+// Markup:
+// <div class="image_container">
+//     <img class="post_attached_image" src="//placeimg.com/1000/1000/any" />
+// </div>
+// <aside class="post_modal_meta">
+//     <a class="close_image_modal" ng-click="cancel()"><i class="fa fa-times-circle"></i></a>
+//     <header class="post_header">
+//         <figure class="avatar">
+//             <img class="circled small" src="/assets/images/user-avatar.svg" />
+//             <figcaption>
+//                 <h5><a>Kimmy Doe</a> added a <a>photo</a></h5>
+//                 <p>Sept 23, 2014</p>
+//             </figcaption>
+//         </figure>
+//     </header>
+//     <div class="post_body">
+//         <p>Etiam lacinia, arcu nec venenatis placerat, lacus tellus luctus orci, in viverra mi dolor a odio. Phasellus ut viverra odio.</p>
+//         <a class="post_share_button" ng-click="shareLink($index)"><i class="fa fa-share-square-o"></i>Share</a>
+//     </div>
+//     <div class="more_comments_link">
+//         <a><i class="fa fa-comment"></i>See all 20 comments</a>
+//     </div>
+//     <div class="comment">
+//         <img class="circled xsmall comment_avatar" src="/assets/images/user-avatar.svg"/>
+//         <div class="comment_body">
+//             <h5><a>Leora Weiner</a></h5>
+//             <p>Vivamus tempus odio sollicitudin ex accumsan, fermentum pellentesque quam suscipit.</p>
+//             <div class="meta">Sept 23, 2014 &#149; <a>Delete</a></div>
+//         </div>
+//     </div>
+//     <div class="comment">
+//         <img class="circled xsmall comment_avatar" src="/assets/images/user-avatar.svg"/>
+//         <div class="comment_body">
+//             <h5><a>Tom Smith</a></h5>
+//             <p>Vivamus tempus odio sollicitudin ex accumsan, fermentum pellentesque quam suscipit.</p>
+//             <div class="meta">Sept 23, 2014 &#149; <a>Delete</a></div>
+//         </div>
+//     </div>
+//     <footer class="comment_footer">
+//         <img class="circled xsmall comment_avatar" src="/assets/images/user-avatar.svg"/>
+//         <div class="comment_body">
+//             <input type="text" placeholder="Leave a comment..."/>
+//             <a>Post</a>
+//         </div>
+//     </footer>
+// </aside>
+//
+// Styleguide 17.3
+
+// full size modal for larger content needs
+.post-image-modal {
+    .image_container {
+        text-align: center;
+        background-color: rgba($light_gray, .1);
+    }
+    .post_attached_image {
+        margin: auto;
+    }
+    .modal-dialog {
+        width: 95%;
+        margin: 2% 2.5% 0;
+        background-color: $white;
+        @extend %rounded_corners;
+    }
+    .modal-content {
+        background-color: transparent;
+    }
+    .image_container {
+        background-color: rgba($light_gray, .1);
+        overflow: hidden;
+    }
+    .comment_footer {
+        input {
+            max-width: 75%;
+        }
+    }
+    @include media($medium) {
+        .modal-dialog {
+            height: 94%;
+        }
+        .modal-content {
+            height: 100%;
+        }
+        .image_container {
+            position: absolute;
+            left: 0;
+            right: 25rem;
+            bottom: 0;
+            top: 0;
+            img {
+                max-height: 100%;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                margin: auto;
+            }
+        }
+    }
+    @include media($large) {
+        .image_container {
+            right: 35rem;
+        }
+
+    }
+}
+
+.close_image_modal {
+    position: fixed;
+    top: 1rem;
+    right: 1.25rem;
+    display: block;
+    color: $white;
+    font-size: rem(18);
+    padding: 1rem;
+    @include media($medium) {
+        position: static;
+        right: auto;
+        left: auto;
+        color: $teal;
+        padding: 0 .5rem 1rem 1rem;
+        margin-bottom: 2rem;
+        text-align: right;
+    }
+}
+
+.post_modal_meta {
+    padding: 1.2rem;
+    max-width: 50rem;
+    @include media($small) {
+        padding: 6rem;
+    }
+    @include media($medium) {
+        padding: 2.5rem;
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 25rem;
+        overflow: scroll;
+    }
+    @include media($large) {
+        width: 35rem;
     }
 }

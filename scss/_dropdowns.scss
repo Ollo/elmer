@@ -4,7 +4,16 @@
 	display: inline-block;
 	margin-bottom: 0;
 	cursor: pointer;
+	vertical-align: bottom;
 	@extend %font_weight_500;
+
+	img {
+		display: inline-block;
+		width: 2.25rem;
+		height: 2.25rem;
+		margin-right: .25rem;
+		vertical-align: bottom;
+	}
 
 	a {
 		i {
