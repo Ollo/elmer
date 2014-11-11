@@ -159,3 +159,15 @@
 %clearfix {
 	@include clearfix;
 }
+
+// %truncate
+//
+// css truncate
+//
+// Styleguide 24.11
+
+%truncate {
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}

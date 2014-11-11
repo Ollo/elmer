@@ -177,6 +177,40 @@ $card_background: $white;
 
 }
 
+%card_common {
+	margin-bottom: 2rem;
+
+	@include media($mobileOnly) {
+		@include span-columns(2);
+		@include omega(2n);
+	}
+
+    @include media($tabletOnly) {
+    	@include span-columns(2);
+    	@include omega(4n);
+    }
+
+    @include media($large) {
+    	@include span-columns(3);
+    	@include omega(4n);
+    }
+
+    h5 {
+    	@extend %truncate;
+        margin-bottom: rem(5);
+        word-break: break-word;
+        a {
+            color: $gray;
+        }
+    }
+
+    p {
+    	@extend %truncate;
+        @extend .muted_text;
+    }
+
+}
+
 // .member_card
 //
 // Member card for org managmeent.
@@ -215,35 +249,9 @@ $card_background: $white;
 // Styleguide 22.3
 
 .member_card {
-    display: inline-block;
     height: rem(255);
-    margin-bottom: rem(35);
     @extend .small_text;
-    @extend .three_col;
-
-    &:nth-child(4n + 4) {
-    	margin-right: 0;
-    }
-
-    @include media($mobileOnly) {
-    	width: 49%;
-	    margin-right: 2%;
-	    &:nth-child(2n + 2) {
-	    	margin-right: 0;
-	    }
-    }
-
-    h5 {
-        margin-bottom: rem(5);
-        word-break: break-word;
-        a {
-            color: $gray;
-        }
-    }
-
-    p {
-        @extend .muted_text;
-    }
+    @extend %card_common;
 
     .front, .back {
     	overflow: hidden;
@@ -312,6 +320,28 @@ $card_background: $white;
     }
 
 }
+
+.space_card {
+	@extend %card_common;
+	@extend %flip_card;
+    @extend %well_white_no_padding;
+    text-align: center;
+    padding-top: 2rem;
+    overflow: hidden;
+
+    .space_members {
+		background-color: lighten($light_gray, 20%);
+		padding: 1rem;
+		margin-top: 2rem;
+		@extend %truncate;
+	}
+
+	.avatar_container {
+		margin: 0 auto 1rem;
+	}
+
+}
+
 
 // .content_card
 //
