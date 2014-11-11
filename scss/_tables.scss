@@ -33,7 +33,7 @@ table {
 	@include museo-sans;
 	margin: ($base_line_height / 2) 0;
 	width: 100%;
-	border: 1px solid #c6c6cb;
+	border: $common_gray_border;
 	vertical-align: middle;
 }
 
@@ -54,7 +54,7 @@ th {
 }
 
 td {
-  border-bottom: 1px solid $light_gray;
+  border-bottom: $common_gray_border;
    @include media($small) {
    		height: rem(100);
   }
@@ -100,7 +100,7 @@ td {
 .table {
 	@extend %clearfix;
 	@include museo-sans;
-	border: 1px solid #c6c6cb;
+	border: $common_gray_border;
 	background: $white;
 	font-size: rem(14);
 	margin-bottom: rem(20);
@@ -122,7 +122,7 @@ td {
 
 	.row {
 		padding: rem(15) rem(15) 0;
-		border-bottom: 1px solid #c6c6cb;
+		border-bottom: $common_gray_border;
 		min-height: 5rem;
 
 		&.active {
@@ -248,7 +248,7 @@ td {
 
 		.row {
 			padding: rem(30) rem(35);
-			border-bottom: 1px solid #c6c6cb;
+			border-bottom: $common_gray_border;
 		}
 
 		// used to be <label>, but we need to move to a class for better specification

@@ -132,7 +132,7 @@ h6 {
 .icon_header {
 	@extend %clearfix;
 	clear: both;
-	border-bottom: 1px solid $light_gray;
+	border-bottom: $common_gray_border;
 	margin-bottom: 2rem;
 
 	h4 {

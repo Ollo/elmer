@@ -110,7 +110,7 @@
 
     .modal-header {
         @extend %clearfix;
-        border-bottom: 1px solid $light_gray;
+        border-bottom: $common_gray_border;
         padding: 0 0 1rem;
         margin: 0 1.5rem 0;
 
@@ -224,7 +224,7 @@
         width: 100%;
         margin: 0;
         height: 100%;
-        border-bottom: 1px solid $light_gray;
+        border-bottom: $common_gray_border;
         @include transform(translateY(-100%));
         @include transition(transform .65s linear);
 
@@ -259,7 +259,7 @@
             }
             .modal-body {
                 max-width: 95%;
-                border: 1px solid $light_gray;
+                border: $common_gray_border;
                 margin: 2rem auto 0;
                 padding: 0;
                 @extend %clearfix;

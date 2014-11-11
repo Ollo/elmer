@@ -496,7 +496,7 @@ input {
 	@extend %single_line_form;
 
 	input[type="search"], input[type="text"] {
-		border: 0.12rem solid rgba($gloo_gray, 0.4);
+		border: $common_gray_border;
 		color: $gloo_gray;
 
 		@include placeholder {

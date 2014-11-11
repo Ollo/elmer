@@ -10,12 +10,12 @@
 // Styleguide 18.1
 
 .bordered {
-    border-bottom: 1px solid lighten($light_gray, 10%);
+    border-bottom: $common_gray_border;
     margin-bottom: rem(40);
     @extend %clearfix;
 }
 
-//@extend this on any headers that have a tab nav for proper layout
+// @extend this on any headers that have a tab nav for proper layout
 %header_tabs {
 
     nav {
@@ -58,19 +58,25 @@
 
 .page_header {
     @extend %clearfix;
-    border-bottom: 1px solid lighten($light_gray, 10%);
+    border-bottom: $common_gray_border;
     margin-top: 1rem;
     margin-bottom: rem(20);
 
-    h2 {
-        @include sans_light;
+    h1, h2 {
         margin-top: 0;
+        @extend %font_weight_100;
+        span {
+            display: block;
+            font-size: rem(14);
+            color: $gray;
+        }
+    }
+
+    h2 {
         margin-bottom: 1rem;
     }
 
     h1 {
-        @include sans_light;
-        margin-top: 0;
         margin-bottom: 0.5rem;
     }
 

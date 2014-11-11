@@ -24,7 +24,7 @@
 
 .accordion {
   margin-bottom: rem(10);
-  border-bottom: 1px solid rgba($gloo_gray, .3);
+  border-bottom: $common_gray_border;
 
   > h5 {
     color: $teal;
