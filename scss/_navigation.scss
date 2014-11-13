@@ -100,6 +100,22 @@
 
     &.tabbed {
         @extend %header_tabs;
+        nav {
+            display: none;
+        }
+    }
+
+    &.btn_nav {
+        h2 {
+            @extend %float_left;
+        }
+        nav {
+            margin: 1rem 0 0 1rem;
+            @extend %float_right;
+            .view_switch_btn {
+                float: none;
+            }
+        }
     }
 
 }
