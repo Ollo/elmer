@@ -1,5 +1,5 @@
 $well_border_light: 1px solid rgba(0, 0, 0, .2);
-$well_border_dark: 1px solid $light_gray;
+$well_border_dark: $common_gray_border;
 $well_shadow: 1px 1px 0 0 rgba($gloo_gray, 0.3);
 $well_border_radius: rem(6);
 
@@ -97,12 +97,12 @@ $well_border_radius: rem(6);
 //
 // Styleguide 12.4
 .box {
-	border: rem(1) solid $light_gray;
+	border: $common_gray_border;
 
 	.row {
 		padding: rem(20) 0;
 		margin: 0 rem(20);
-		border-bottom: rem(1) solid $light_gray;
+		border-bottom: $common_gray_border;
 		&:last-child {
 			border: none;
 		}

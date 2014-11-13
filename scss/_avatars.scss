@@ -7,7 +7,8 @@
 //
 // Styleguide 21.1
 
-img {
+img.circled {
+	border-radius: 100%;
 
 	&.circled {
 		border-radius: 100%;
@@ -259,6 +260,78 @@ img {
 			height: 3.2rem;
 		}
 
+	}
+
+}
+
+// .avatar_container
+//
+// For use with multi image avatars
+//
+// Markup:
+// <a class="avatar_container">
+// 	<div class="left_half_image">
+// 		<img src="//placeimg.com/150/150/any"/>
+// 	</div>
+// 	<div class="right_top_image"> 
+// 		<img src="//placeimg.com/150/150/any"/>
+// 	</div>
+// 	<div class="right_bottom_image">
+// 		<img src="//placeimg.com/150/150/any"/>
+// 	</div>
+// </a>
+// <a class="avatar_container" ui-sref="spacesState.space">
+// 	<div class="left_half_image">
+// 		<img src="//placeimg.com/100/100/any"/>
+// 	</div>
+// 	<div class="right_half_image">
+// 		<img src="//placeimg.com/100/100/any"/>
+// 	</div>
+// </a>
+//
+// Styleguide 21.9
+.avatar_container {
+	width: 10rem;
+	height: 10rem;
+	border: 2px solid $light_green;
+	display: block;
+	border-radius: 100%;
+	overflow: hidden;
+	
+	.left_half_image, .right_half_image, .right_top_image, .right_bottom_image {
+		position: absolute;
+		overflow: hidden;
+		img {
+			max-width: 101%;
+			width: 101%;
+			height: 101%;
+		}
+	}
+
+	.left_half_image {
+		top: 0;
+		left: -50%;
+		width: 100%;
+		border-right: .1rem solid $white;
+	}
+
+	.right_half_image {
+		top: 0;
+		right: -50%;
+		width: 100%;
+	}
+
+	.right_top_image {
+		top: 0;
+		height: 50%;
+		left: 50%;
+		border-bottom: .1rem solid $white;
+	}
+
+	.right_bottom_image {
+		bottom: 0;
+		height: 50%;
+		left: 50%;
 	}
 
 }

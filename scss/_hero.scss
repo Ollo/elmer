@@ -22,7 +22,7 @@
 
 .hero {
     @extend %clearfix;
-    border: 1px solid rgba($gloo_gray, 0.5);
+    border: $common_gray_border;
     margin-bottom: 1.5rem;
 
     img {
