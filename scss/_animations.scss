@@ -183,3 +183,21 @@
     @include transform(translateY(0rem));
   }
 }
+
+
+@include keyframes(opacityPulse) {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: .3;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+// @-webkit-keyframes opacity-pulse {
+//   0%   { opacity: 1; }
+//   50%  { opacity: 0.3; }
+//   100% { opacity: 1; }
+// }
