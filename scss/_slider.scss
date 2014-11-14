@@ -58,16 +58,16 @@
     }
 
     .meta {
-        @extend %float_left;
+        float: left;
         img {
             max-width: rem(30);
-            @extend %float_left;
+            float: left;
             border-radius: 100%;
             margin: 0 1rem 0 0;
         }
         p {
             margin: .25rem 0 0;
-            @extend %float_left;
+            float: left;
         }
     }
 

@@ -107,11 +107,11 @@
 
     &.btn_nav {
         h2 {
-            @extend %float_left;
+            float: left;
         }
         nav {
             margin: 1rem 0 0 1rem;
-            @extend %float_right;
+            float: right;
             .view_switch_btn {
                 float: none;
             }
@@ -140,10 +140,10 @@
     }
 
     .prev {
-        @extend %float_left;
+        float: left;
     }
     .next {
-        @extend %float_right;
+        float: right;
     }
 }
 

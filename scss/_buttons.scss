@@ -295,12 +295,12 @@ input[type="submit"] {
 .btn_add {
  	@extend %circle_btn;
  	color: $green;
- 	@extend %float_left;
+ 	float: left;
 
  	i {
  		@extend .fa;
  		@extend .fa-plus;
- 		@extend %float_left;
+ 		float: left;
  		padding-top: .25rem;
  		padding-left: .2rem;
  	}

@@ -28,7 +28,7 @@
 // Styleguide 24.3
 
 .align_left {
-	@extend %float_left;
+	float: left;
 	margin: 0 1rem .5rem 0;
 }
 
@@ -42,7 +42,7 @@
 // Styleguide 24.4
 
 .align_right {
-	@extend %float_right;
+	float: right;
 	margin: 0 0 .5rem 1rem;
 }
 

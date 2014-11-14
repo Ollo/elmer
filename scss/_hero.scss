@@ -21,45 +21,45 @@
 // Styleguide 25.1
 
 .hero {
-    @extend %clearfix;
-    border: $common_gray_border;
-    margin-bottom: 1.5rem;
+  @extend %clearfix;
+  border: $common_gray_border;
+  margin-bottom: 1.5rem;
 
-    img {
-        display: block;
+  img {
+    display: block;
+  }
+
+  figcaption {
+    @extend %clearfix;
+    bottom: 0;
+    width: 100%;
+    background: rgba($white, 0.7);
+    padding: 1.2rem 2.5rem;
+
+    button {
+        float: right;
     }
 
-    figcaption {
-        @extend %clearfix;
-        bottom: 0;
-        width: 100%;
-        background: rgba($white, 0.7);
-        padding: 1.2rem 2.5rem;
-
-        button {
-            @extend %float_right;
-        }
-
-        .avatar {
-            border: 2px solid $white;
-            position: absolute;
-            top: -80%;
-            padding: 0;
-        }
-        
-        .btn_action {
-            float: none;
-            margin-left: rem(110);
-        }
-
-        @include media($medium) {
-            position: absolute;
-        }
+    .avatar {
+        border: 2px solid $white;
+        position: absolute;
+        top: -80%;
+        padding: 0;
+    }
+    
+    .btn_action {
+        float: none;
+        margin-left: rem(110);
     }
 
     @include media($medium) {
-        margin-bottom: 3rem;
+        position: absolute;
     }
+  }
+
+  @include media($medium) {
+      margin-bottom: 3rem;
+  }
 }
 
 // replace duplicated styles in .content_preview_hero
@@ -70,70 +70,70 @@
     }
 
     h1 {
-        margin: 0 0 1rem;
-        @include animation-name(spaceInLeft);
-        @include animation-duration(.5s);
-        @include animation-timing-function(ease-in-out);
-        @include animation-fill-mode(both);
-        @include animation-delay(1s);
-        @include backface-visibility(hidden);
+      margin: 0 0 1rem;
+      @include animation-name(spaceInLeft);
+      @include animation-duration(.5s);
+      @include animation-timing-function(ease-in-out);
+      @include animation-fill-mode(both);
+      @include animation-delay(1s);
+      @include backface-visibility(hidden);
     }
 
     p {
         &:nth-of-type(even), &:nth-of-type(odd) {
-            @include animation-duration(.5s);
-            @include animation-timing-function(ease-in-out);
-            @include animation-fill-mode(both);
-            @include backface-visibility(hidden);
+          @include animation-duration(.5s);
+          @include animation-timing-function(ease-in-out);
+          @include animation-fill-mode(both);
+          @include backface-visibility(hidden);
         }
         // third
         &:nth-of-type(even) {
-            @include animation-name(spaceInRight);
-            @include animation-delay(1.25s);
+          @include animation-name(spaceInRight);
+          @include animation-delay(1.25s);
         }
         // second
         &:nth-of-type(odd) {
-            @include animation-name(spaceInLeft);
-            @include animation-delay(1.15s);
+          @include animation-name(spaceInLeft);
+          @include animation-delay(1.15s);
         }
     }
 
     // fourth
     .btn_group {
-        @include animation-name(spaceInLeft);
-        @include animation-duration(.5s);
-        @include animation-timing-function(ease-in-out);
-        @include animation-fill-mode(both);
-        @include backface-visibility(hidden);
-        @include animation-delay(1.35s);
+      @include animation-name(spaceInLeft);
+      @include animation-duration(.5s);
+      @include animation-timing-function(ease-in-out);
+      @include animation-fill-mode(both);
+      @include backface-visibility(hidden);
+      @include animation-delay(1.35s);
     }
 
     @include media($medium) {
         color: $white;
         text-shadow: 0 0 rem(30) $black;
         h1 {
-            color: $white;
+          color: $white;
         }
         &:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            z-index: 1;
-            background: rgba($black, .4);
+          content: '';
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          z-index: 1;
+          background: rgba($black, .4);
         }
         .meta {
-            background: transparent;
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            margin: auto;
-            padding: 1rem;
-            z-index: 2;
+          background: transparent;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          margin: auto;
+          padding: 1rem;
+          z-index: 2;
         }
     }
 }

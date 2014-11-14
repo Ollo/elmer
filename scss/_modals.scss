@@ -124,14 +124,14 @@
 
         h2 {
             @extend %font_weight_700;
-            @extend %float_left;
+            float: left;
             color: $teal;
             margin: 0;
             -webkit-font-smoothing: antialiased;
         }
 
         .modal-close {
-            @extend %float_right;
+            float: right;
             @extend %muted_text;
             font-size: rem(20);
         }
@@ -246,14 +246,14 @@
 
                 h1 {
                     color: $white;
-                    @extend %float_left;
+                    float: left;
                 }
 
                 .modal-close {
                     margin-top: 1rem;
                     font-size: rem(30);
                     color: $white;
-                    @extend %float_right;
+                    float: right;
 
 
                     @include media($medium) {

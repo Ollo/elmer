@@ -131,10 +131,10 @@
 	@extend %clearfix;
 		
 	.progress_bar {
-		@extend %float_left;
+		float: left;
 
 		+ span {
-			@extend %float_left;
+			float: left;
 			color: $gloo_gray;
 			margin-bottom: 1rem;
 		}
