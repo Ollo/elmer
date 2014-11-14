@@ -108,6 +108,7 @@
     .modal-dialog {
         margin: 2rem 2rem 0;
         background: $white;
+        @extend %rounded_corners;
     }
 
     .modal-content {
