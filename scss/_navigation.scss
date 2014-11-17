@@ -74,6 +74,11 @@
 
     h2 {
         margin-bottom: 1rem;
+        span {
+            display: block;
+            @extend %muted_text;
+            font-size: rem(14);
+        }
     }
 
     h1 {
@@ -112,9 +117,6 @@
         nav {
             margin: 1rem 0 0 1rem;
             float: right;
-            .view_switch_btn {
-                float: none;
-            }
         }
     }
 
