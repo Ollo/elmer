@@ -455,7 +455,6 @@
 	right: 0;
 	z-index: 10;
 	@extend %rounded_corners;
-	padding: rem(15);
 	opacity: 0;
 	@extend %well_white_no_padding;
 	@include transition(all .2s ease-in-out);
@@ -465,6 +464,7 @@
 	}
 
 	&.active, &:focus {
+		padding: rem(15);
 		outline: none;
 		opacity: 1;
 		max-height: 1000rem;

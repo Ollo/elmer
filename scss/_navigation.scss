@@ -32,6 +32,7 @@
         nav {
             @include span-columns(7);
             @include omega;
+            display: block;
             text-align: right;
             padding-bottom: 0.5rem;
             padding-top: 0.5rem;
@@ -105,18 +106,20 @@
 
     &.tabbed {
         @extend %header_tabs;
-        nav {
-            display: none;
-        }
     }
 
     &.btn_nav {
         h2 {
-            float: left;
+            padding-right: 4.25rem;
         }
         nav {
             margin: 1rem 0 0 1rem;
-            float: right;
+            position: absolute;
+            width: 100%;
+            bottom: 1rem;
+            .btn_action {
+                float: right;
+            }
         }
     }
 
