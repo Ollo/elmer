@@ -8,64 +8,64 @@ $card_background: $white;
 // Styleguide 22.1
 
 %flip_card {
-    background: $card_background;
-    height: 100%;
-	width: 100%;
-    @include sans_light;
+  background: $card_background;
+  height: 100%;
+  width: 100%;
+  @include sans_light;
 
-    h3 {
-		font-size: rem(14);
-		margin: 0 0 rem(20);
-		position: relative;
-	}
+  h3 {
+    font-size: rem(14);
+    margin: 0 0 rem(20);
+    position: relative;
+  }
 
 }
 
 %flip_card_back {
-	@extend %flip_card;
-	display: none;
+  @extend %flip_card;
+  display: none;
 
-	h3 {
-		background: lighten($light_gray, 17%);
-		color: $black;
-		padding: rem(15) rem(60) rem(15) rem(20);
+  h3 {
+    background: lighten($light_gray, 17%);
+    color: $black;
+    padding: rem(15) rem(60) rem(15) rem(20);
 
-		> i {
-			margin-right: rem(3);
-		}
+    > i {
+      margin-right: rem(3);
+    }
 
-		a {
-			@extend %muted_text;
-			border-left: 2px solid $white;
-			position: absolute;
-			right: 0;
-			top: 0;
-			height: 100%;
-			padding: rem(13) rem(15) 0;
-			cursor: pointer;
-			i {
-				font-size: rem(20);
-			}
-		}
-	}
+    a {
+      @extend %muted_text;
+      border-left: 2px solid $white;
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 100%;
+      padding: rem(13) rem(15) 0;
+      cursor: pointer;
+      i {
+        font-size: rem(20);
+      }
+    }
+  }
 
-	.inner {
-    	padding: 0 1rem 2rem;
-	}
+  .inner {
+    padding: 0 1rem 2rem;
+  }
 
-	.actions {
-		position: absolute;
-		bottom: .75rem;
-		margin: 0 1rem;
-		left: 0;
-		right: 0;
-		.delete {
-			top: .5rem;
-		}
-		.primary, input[type="submit"] {
-			float: right;
-		}
-	}
+  .actions {
+    position: absolute;
+    bottom: .75rem;
+    margin: 0 1rem;
+    left: 0;
+    right: 0;
+    .delete {
+      top: .5rem;
+    }
+    .primary, input[type="submit"] {
+      float: right;
+    }
+  }
 }
 
 // .dash_widget
@@ -101,113 +101,113 @@ $card_background: $white;
 // Styleguide 22.2
 
 .dash_widget {
-	height: rem(290);
-	font-size: rem(13);
-	margin: 0 0 2rem;
-	cursor: move;
+  height: rem(290);
+  font-size: rem(13);
+  margin: 0 0 2rem;
+  cursor: move;
 
-    &.double_tall {
-    	height: rem(605);
+  &.double_tall {
+    height: rem(605);
+  }
+
+  @include media($small) {
+    float: left;
+    margin-bottom: 9%;
+
+    // component does not currently allow for column spanning of widgets, revisit again
+    &.double_wide {
+      width: 100%;
+    }
+  }
+
+  h4 {
+    padding: 1rem 2.5rem 1rem 1rem;
+    margin: 0;
+    background: lighten($light_gray, 15%);
+    color: $charcoal;
+  }
+
+  .flipIt {
+    color: $gray;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+  }
+
+  .front, .back {
+    border: $common_gray_border;
+    float: left;
+  }
+
+  .front {
+    @extend %flip_card; 
+  }
+
+  .back {
+    @extend %flip_card_back;
+    padding-bottom: rem(45);
+
+    form {
+      position: static;
     }
 
-    @include media($small) {
-		float: left;
-		margin-bottom: 9%;
-
-		// component does not currently allow for column spanning of widgets, revisit again
-		&.double_wide {
-	    	width: 100%;
-	    }
+    p {
+      text-align:center;
     }
+
+    .inner {
+      padding-top: 1rem;
+    }
+
+  }
+
+  //mobile only block styles
+  @include media($medium) {
 
     h4 {
-		padding: 1rem 2.5rem 1rem 1rem;
-		margin: 0;
-		background: lighten($light_gray, 15%);
-		color: $charcoal;
-	}
+      padding: 2rem 3.5rem 2rem 2rem;
+    }
 
-	.flipIt {
-		color: $gray;
-		position: absolute;
-		right: 1rem;
-		top: 1rem;
-	}
+    .flipIt {
+      right: 1.75rem;
+      top: 1.75rem;
+    }
 
-	.front, .back {
-		border: $common_gray_border;
-		float: left;
-	}
-
-	.front {
-		@extend %flip_card;	
-	}
-
-	.back {
-		@extend %flip_card_back;
-		padding-bottom: rem(45);
-
-		form {
-			position: static;
-		}
-
-	    p {
-	    	text-align:center;
-	    }
-
-	    .inner {
-	    	padding-top: 1rem;
-	    }
-
-	}
-
-	//mobile only block styles
-	@include media($medium) {
-
-		h4 {
-			padding: 2rem 3.5rem 2rem 2rem;
-		}
-
-		.flipIt {
-			right: 1.75rem;
-			top: 1.75rem;
-		}
-
-	}
+  }
 
 }
 
 %card_common {
-	margin-bottom: 2rem;
+  margin-bottom: 2rem;
 
-	@include media($mobileOnly) {
-		@include span-columns(2);
-		@include omega(2n);
-	}
+  @include media($mobileOnly) {
+    @include span-columns(2);
+    @include omega(2n);
+  }
 
-    @include media($tabletOnly) {
-    	@include span-columns(2);
-    	@include omega(4n);
+  @include media($tabletOnly) {
+    @include span-columns(2);
+    @include omega(4n);
+  }
+
+  @include media($large) {
+    @include span-columns(3);
+    @include omega(4n);
+  }
+
+  h5 {
+    @extend %truncate;
+    margin-bottom: rem(5);
+    word-break: break-word;
+    a {
+      color: $gray;
     }
+  }
 
-    @include media($large) {
-    	@include span-columns(3);
-    	@include omega(4n);
-    }
-
-    h5 {
-    	@extend %truncate;
-        margin-bottom: rem(5);
-        word-break: break-word;
-        a {
-            color: $gray;
-        }
-    }
-
-    p {
-    	@extend %truncate;
-        @extend .muted_text;
-    }
+  p {
+    @extend %truncate;
+    @extend .muted_text;
+  }
 
 }
 
@@ -218,127 +218,127 @@ $card_background: $white;
 // Markup:
 // <div class="wrapper">
 // <div class="member_card">
-// 	<div class="front">
-// 		<a href="" class="flipIt"><i class="fa fa-gear"></i></a>
-// 		<img src="http://lorempixel.com/100/100/nature/" ng-click="onClickMember($index)"/>
-// 		<h5><a >Sally Sassafrass</a></h5>
-// 		<p>Admin, Publisher</p>
-// 		<div class="user_interactions">
-// 			<a><i class="fa fa-users"></i>View Activity</a>
-// 			<a href=""><i class="fa fa-comments"></i>Send Message</a>
-// 		</div>
-// 	</div>
-// 	<div class="back">
-// 		<h3>
-// 			<i class="fa fa-cog"></i>Member Settings
-// 			<a href="#" class="close flipIt"><i class="fa fa-times"></i></a>
-// 		</h3>
-// 		<div class="inner">
-// 			<h5>Sally Sassafrass</h5>
-// 			<p>Admin, Publisher</p>
-// 			<a>Change Roles</a>
-// 		</div>
-// 		<div class="actions">
-// 			<a class="delete"><i class="fa fa-trash-o"></i> Remove</a>
-// 			<input type="submit" value="Save" class="primary" />
-// 		</div>
-// 	</div>
+//  <div class="front">
+//    <a href="" class="flipIt"><i class="fa fa-gear"></i></a>
+//    <img src="http://lorempixel.com/100/100/nature/" ng-click="onClickMember($index)"/>
+//    <h5><a >Sally Sassafrass</a></h5>
+//    <p>Admin, Publisher</p>
+//    <div class="user_interactions">
+//      <a><i class="fa fa-users"></i>View Activity</a>
+//      <a href=""><i class="fa fa-comments"></i>Send Message</a>
+//    </div>
+//  </div>
+//  <div class="back">
+//    <h3>
+//      <i class="fa fa-cog"></i>Member Settings
+//      <a href="#" class="close flipIt"><i class="fa fa-times"></i></a>
+//    </h3>
+//    <div class="inner">
+//      <h5>Sally Sassafrass</h5>
+//      <p>Admin, Publisher</p>
+//      <a>Change Roles</a>
+//    </div>
+//    <div class="actions">
+//      <a class="delete"><i class="fa fa-trash-o"></i> Remove</a>
+//      <input type="submit" value="Save" class="primary" />
+//    </div>
+//  </div>
 // </div>
 // </div>
 //
 // Styleguide 22.3
 
 .member_card {
-    height: rem(255);
-    @extend .small_text;
-    @extend %card_common;
+  height: rem(255);
+  @extend .small_text;
+  @extend %card_common;
 
-    .front, .back {
-    	overflow: hidden;
-    	@extend %well_white_no_padding;
+  .front, .back {
+    overflow: hidden;
+    @extend %well_white_no_padding;
+  }
+
+  .front {
+    @extend %flip_card;
+    @extend %well_white_no_padding;
+    padding: rem(25) rem(10) rem(20);
+    text-align: center;
+
+    > a {
+      color: $gray;
+      position: absolute;
+      right: rem(15);
+      top: rem(10);
     }
 
-    .front {
-        @extend %flip_card;
-        @extend %well_white_no_padding;
-        padding: rem(25) rem(10) rem(20);
-        text-align: center;
-
-        > a {
-            color: $gray;
-            position: absolute;
-            right: rem(15);
-            top: rem(10);
-        }
-
-        img {
-            display: block;
-            margin: 0 auto rem(20);
-            @extend img.circled;
-            @extend img.large;
-            @extend img.bordered;
-            cursor: pointer;
-        }
-
-        &.shown {
-            @extend .flipYnofade;
-            @include transition ( all 2.0s ease-in-out );
-        }
-
-        .user_interactions {
-            margin-top: rem(20);
-
-            a {
-                display: block;
-                margin-bottom: rem(8);
-
-                i {
-                    margin-right: rem(5);
-                }
-
-                &:last-child {
-                    margin-bottom: 0;
-                }
-
-            }
-
-        }
+    img {
+      display: block;
+      margin: 0 auto rem(20);
+      @extend img.circled;
+      @extend img.large;
+      @extend img.bordered;
+      cursor: pointer;
     }
 
-    .back {
-        @extend %flip_card_back;
+    &.shown {
+      @extend .flipYnofade;
+      @include transition ( all 2.0s ease-in-out );
+    }
 
-        p {
-            margin: 0 0 rem(20);
+    .user_interactions {
+      margin-top: rem(20);
+
+      a {
+        display: block;
+        margin-bottom: rem(8);
+
+        i {
+          margin-right: rem(5);
         }
 
-        &.shown {
-            @extend .flipYnofade;
-            @include transition ( all 2.0s ease-in-out );
+        &:last-child {
+          margin-bottom: 0;
         }
+
+      }
 
     }
+  }
+
+  .back {
+    @extend %flip_card_back;
+
+    p {
+      margin: 0 0 rem(20);
+    }
+
+    &.shown {
+      @extend .flipYnofade;
+      @include transition ( all 2.0s ease-in-out );
+    }
+
+  }
 
 }
 
 .space_card {
-	@extend %card_common;
-	@extend %flip_card;
-    @extend %well_white_no_padding;
-    text-align: center;
-    padding-top: 2rem;
-    overflow: hidden;
+  @extend %card_common;
+  @extend %flip_card;
+  @extend %well_white_no_padding;
+  text-align: center;
+  padding-top: 2rem;
+  overflow: hidden;
 
-    .space_members {
-		background-color: lighten($light_gray, 20%);
-		padding: 1rem;
-		margin-top: 2rem;
-		@extend %truncate;
-	}
+  .space_members {
+    background-color: lighten($light_gray, 20%);
+    padding: 1rem;
+    margin-top: 2rem;
+    @extend %truncate;
+  }
 
-	.avatar_container {
-		margin: 0 auto 1rem;
-	}
+  .avatar_container {
+    margin: 0 auto 1rem;
+  }
 
 }
 
@@ -402,104 +402,173 @@ $card_background: $white;
 // Styleguide 22.4
 
 .content_card {
-	@extend %well_white_no_padding;
-	overflow: hidden;
-	margin-bottom: 1.75rem;
-	@extend .four_col;
-	font-size: 1.2rem;
-	line-height: 2rem;
+  @extend %well_white_no_padding;
+  overflow: hidden;
+  margin-bottom: 1.75rem;
+  @extend .four_col;
+  font-size: 1.2rem;
+  line-height: 2rem;
 
-	a {
-		@extend %font_weight_500;
-	}
+  a {
+    @extend %font_weight_500;
+  }
 
+  &:nth-of-type(3n + 3) {
+    margin-right: 0;
+  }
+
+  @include media($mobileOnly) {
+    width: 49%;
+    margin-right: 2%;
+    float: left;
     &:nth-of-type(3n + 3) {
-    	margin-right: 0;
+      margin-right: 2%;
+    }
+    &:nth-of-type(2n + 2) {
+      margin-right: 0;
+    }
+  }
+
+  img {
+    width: 100%;
+  }
+
+  .card_wrap {
+    padding: .5rem;
+  }
+
+  h2 {
+    font-size: rem(15);
+    margin-bottom: rem(15);
+  }
+
+  .primary {
+    display: block;
+    text-align: center;
+    padding: .25rem;
+    margin: 1rem 0 0;
+    text-transform: capitalize;
+  }
+
+  .meta {
+    margin-bottom: rem(15);
+    text-transform: capitalize;
+
+    a {
+      border-right: 1px solid $teal;
+      padding-right: rem(5);
+      i {
+        padding-right: rem(5);
+      }
+      &:last-child {
+        border-right: 0;
+        padding-right: 0;
+      }
     }
 
-    @include media($mobileOnly) {
-    	width: 49%;
-	    margin-right: 2%;
-	    float: left;
-	    &:nth-of-type(3n + 3) {
-	    	margin-right: 2%;
-	    }
-	    &:nth-of-type(2n + 2) {
-	    	margin-right: 0;
-	    }
+    .primary {
+      display: block;
     }
 
-    img {
-    	width: 100%;
-    }
+  }
 
-    .card_wrap {
-    	padding: .5rem;
-    }
-
-	h2 {
-		font-size: rem(15);
-		margin-bottom: rem(15);
-	}
-
-	.primary {
-		display: block;
-		text-align: center;
-		padding: .25rem;
-		margin: 1rem 0 0;
-		text-transform: capitalize;
-	}
-
-	.meta {
-		margin-bottom: rem(15);
-		text-transform: capitalize;
-
-		a {
-			border-right: 1px solid $teal;
-			padding-right: rem(5);
-			i {
-				padding-right: rem(5);
-			}
-			&:last-child {
-				border-right: 0;
-				padding-right: 0;
-			}
-		}
-
-		.primary {
-			display: block;
-		}
-
-	}
-
-	// FOR NOW content cards have a set height, we will remove this once the deckgrid is implemented
-	// this decision per Justin & Leora
+  // FOR NOW content cards have a set height, we will remove this once the deckgrid is implemented
+  // this decision per Justin & Leora
     // min-height: 52rem;
     p {
-    	height: 12rem;
-    	overflow: hidden;
+      height: 12rem;
+      overflow: hidden;
     }
     h2 {
-    	height: 6.75rem;
-    	overflow: hidden;
+      height: 6.75rem;
+      overflow: hidden;
     }
     .meta {
-    	height: 5rem;
-    	overflow: hidden;
+      height: 5rem;
+      overflow: hidden;
     }
     @include media($medium) {
-    	font-size: $base_font_size;
-    	line-height: $base_line_height;
-    	font-weight: 300;
-    	h2 {
-    		font-size: rem(18);
-    	}
-    	.card_wrap {
-    		padding: 1.5rem;
-    	}
-    	p {
-    		height: 9rem;
-    	}
+      font-size: $base_font_size;
+      line-height: $base_line_height;
+      font-weight: 300;
+      h2 {
+        font-size: rem(18);
+      }
+      .card_wrap {
+        padding: 1.5rem;
+      }
+      p {
+        height: 9rem;
+      }
     }
 
+  }
+
+
+// .library_card
+//
+// Library card
+//
+// Markup:
+// <div class="library_card">
+//   <img src="//placeimg.com/300/300/any"/>
+//   <div class="meta">
+//     <h3><a>10 Things to Ask Your Wife Every Year</a></h3>
+//     <p><a><i class="fa fa-align-left"></i> | FamilyLife</a></p>
+//   </div>
+//   <button class="btn_action_gray"><i class="fa fa-heart"></i></button>
+//   <div class="progress_bar">
+//     <span class="bar" style="width: 85%"></span>
+//   </div>
+// </div>
+// 
+// Styleguide 22.5
+
+.library_card {
+  @extend %well_white_padding;
+  .progress_bar {
+    clear: both;
+    width: 100%;
+    margin: 0;
+  }
+  h3 {
+    margin-bottom: 1rem;
+  }
+  img {
+    display: block;
+    margin-bottom: 2rem;
+    width: 100%;
+  }
+  button {
+    margin: 0 0 1rem;
+  }
+  @include media($small) {
+    .meta, img {
+      float: left;
+    }
+    .meta {
+      max-width: 60%;
+    }
+    img {
+      margin: 0 1rem 1rem 0;
+      width: rem(100);
+    }
+    button {
+      position: absolute;
+      right: 1.5rem;
+      top: 1.5rem;
+    }
+  }
+ @include media($medium) {
+    .meta {
+      max-width: 75%;
+    }
+    img {
+      margin: 0 2rem 2rem 0;
+    }
+    button {
+      top: 2.5rem;
+      right: 2.5rem;
+    }
+ }
 }
