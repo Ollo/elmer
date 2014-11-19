@@ -442,6 +442,9 @@
 .post_modal_meta {
     padding: 1.2rem;
     max-width: 50rem;
+    .post_editor {
+        margin-top: 3.5rem;
+    }
     @include media($small) {
         padding: 6rem;
     }
