@@ -87,7 +87,7 @@
     }
 
     .slide {
-        @extend %rounded_corners_large;
+        @extend %rounded_corners;
         opacity: 0;
         top: 0;
         right: 0;
@@ -156,7 +156,7 @@
             position: absolute;
             display: block;
             figcaption {
-                border-radius: 0 0 $border_radius_large $border_radius_large;
+                border-radius: 0 0 $border_radius $border_radius;
                 position: absolute;
             }
         }

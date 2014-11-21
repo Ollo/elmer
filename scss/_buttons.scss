@@ -7,7 +7,7 @@
 	text-align: center; 
 	display: inline-block;
 	@extend %font_weight_700;
-	
+
 	&:focus, &:hover {
 		outline: none;
 		box-shadow: 0 .1rem .1rem rgba(0,0,0,.25) inset;
@@ -152,7 +152,7 @@ input[type="submit"] {
 .inverse {
 	@extend %button;
 	padding: $standard-btn-pad;
-	@extend %rounded_corners_large;
+	@extend %rounded_corners;
 	color: $teal;
 	background: $white;
 	border: 1px solid $teal;
@@ -175,7 +175,7 @@ input[type="submit"] {
 	@extend %button;
 	@include border-clear;
 	@include sans_light;
-	@extend %rounded_corners_large;
+	@extend %rounded_corners;
 	font-size: 1.4rem;
 	@include pad(0.6em 2em 0.6em rem(58));
 	color: $white;
@@ -232,7 +232,7 @@ input[type="submit"] {
 	@extend %button;
 	@include border-clear;
 	padding: $standard-btn-pad;
-	@extend %rounded_corners_large;
+	@extend %rounded_corners;
 	background: $gloo_gray;
 	cursor: not-allowed!important;
 	color: $white;
@@ -256,7 +256,7 @@ input[type="submit"] {
 	@extend %button;
 	@include border-clear;
 	padding: $standard-btn-pad;
-	@extend %rounded_corners_large;
+	@extend %rounded_corners;
 	color: $white;
 	background: $light_gray;
 
@@ -358,7 +358,7 @@ input[type="submit"] {
 	padding: 0.65rem 1rem .5rem;
 	color: $gray;
 	border-bottom: 1px solid darken($sand, 12%);
-	@extend %rounded_corners_large;
+	@extend %rounded_corners;
 	display: block;
 	margin-bottom: 1rem;
 	@include transition(all .2s ease-in-out);

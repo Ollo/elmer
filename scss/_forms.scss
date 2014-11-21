@@ -648,7 +648,7 @@ input {
 // common single line form, used in .ui_search & .ui_inverse
 %single_line_form {
 	input[type=search], input[type=text] {
-		border-radius: rem(25);
+		@extend %rounded_corners;
 		background: transparent;
 		letter-spacing: rem(0.18);
 		margin: 0;

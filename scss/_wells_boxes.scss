@@ -1,7 +1,7 @@
 $well_border_light: 1px solid rgba(0, 0, 0, .2);
 $well_border_dark: $common_gray_border;
 $well_shadow: 1px 1px 0 0 rgba($gloo_gray, 0.3);
-$well_border_radius: rem(6);
+$well_border_radius: $border_radius;
 
 // @mixin well($radius, $padding, $margin, $full_border, $background);
 //

@@ -140,16 +140,6 @@
 	border-radius: $border_radius;
 }
 
-// %rounded_corners_large
-//
-// Use this for elements with a slighty larger border-radius: 9px ( $border_radius_large)
-//
-// Styleguide 24.9
-
-%rounded_corners_large {
-	border-radius: $border_radius_large;
-}
-
 // %clearfix
 //
 // Use this instead of @include clearfix; so it only get compiled once
