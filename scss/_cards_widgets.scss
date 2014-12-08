@@ -21,12 +21,13 @@ $card_background: $white;
 
 }
 
+// per design team, cards are getting revamped to not have a flip, eliminate this css when ready
 %flip_card_back {
   @extend %flip_card;
   display: none;
 
   h3 {
-    background: lighten($light_gray, 17%);
+    background: $gray_lightest;
     color: $black;
     padding: rem(15) rem(60) rem(15) rem(20);
 
@@ -123,12 +124,12 @@ $card_background: $white;
   h4 {
     padding: 1rem 2.5rem 1rem 1rem;
     margin: 0;
-    background: lighten($light_gray, 15%);
-    color: $charcoal;
+    background: $gray_lightest;
+    color: $gray_dark;
   }
 
   .flipIt {
-    color: $gray;
+    color: $gray_medium;
     position: absolute;
     right: 1rem;
     top: 1rem;
@@ -200,7 +201,7 @@ $card_background: $white;
     margin-bottom: rem(5);
     word-break: break-word;
     a {
-      color: $gray;
+      color: $gray_medium;
     }
   }
 
@@ -265,7 +266,7 @@ $card_background: $white;
     text-align: center;
 
     > a {
-      color: $gray;
+      color: $gray_medium;
       position: absolute;
       right: rem(15);
       top: rem(10);
@@ -330,7 +331,7 @@ $card_background: $white;
   overflow: hidden;
 
   .space_members {
-    background-color: lighten($light_gray, 20%);
+    background-color: $gray_lightest;
     padding: 1rem;
     margin-top: 2rem;
     @extend %truncate;

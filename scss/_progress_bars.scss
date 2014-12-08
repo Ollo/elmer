@@ -2,20 +2,23 @@
 // .progress_bar
 //
 // Markup:
-// <div class="progress_bar">
-//    <span class="bar" style="width:50%"></span>
-//    <span>50% Complete</span>
-// </div>
+// <div style="padding: 2rem; background-color: #f2f2f2;">
+//   <div class="progress_bar">
+//      <span class="bar" style="width:50%"></span>
+//      <span>50% Complete</span>
+//   </div>
+// <div>
 //
 // Styleguide 13.1
 
 .progress_bar {
 	height: 1rem;
 	background: $white;
-	border: 1px solid $teal;
+	border: 2px solid $white;
 	width: rem(120);
 	display: inline-block;
 	margin: 1rem 3rem 2rem 0;
+	box-shadow: $common_drop_shadow;
 
 	.bar {
 		display: block;
@@ -28,7 +31,7 @@
 			top: .5rem;
 			left: 0;
 			width: 100%;
-			color: $gloo_gray;
+			color: $gray_medium;
 			font-size: rem(8);
 		}
 	}
@@ -50,8 +53,6 @@
 	//
 	// Styleguide 13.2
 	&.error {
-
-		border-color: $red;
 
 		.bar {
 			background: $red;
@@ -79,9 +80,8 @@
 	//
 	// Styleguide 13.3
 	&.green, &.complete {
-		border-color: $green;
 		.bar {
-			background: $light_green;
+			background: $green;
 		}
 	}
 
@@ -135,7 +135,7 @@
 
 		+ span {
 			float: left;
-			color: $gloo_gray;
+			color: $gray_medium;
 			margin-bottom: 1rem;
 		}
 

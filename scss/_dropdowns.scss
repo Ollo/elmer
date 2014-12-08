@@ -34,13 +34,14 @@
 	.drop_icon, > .fa-sort-desc, > .fa-angle-down {
 		position: absolute;
 		right: .75rem;
+		color: $teal;
+		font-size: 1rem;
 	}
 
 	.selected_option {
-		padding-right: 1.5rem;
-		overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
+		padding-right: 2.5rem;
+		@extend %truncate;
+		color: $gray_dark;
 	}
 
 	.drop_menu {
@@ -59,7 +60,7 @@
 		z-index: 4;
 		border-radius: $border_radius $border_radius 0 0;
 		.drop_menu {
-			box-shadow: 0 5px 10px rgba($light_gray, .4);
+			box-shadow: 0 .5rem .6rem rgba(0,0,0, .15);
 		}
 	}
 
@@ -68,7 +69,7 @@
 %button_dropdown {
 	@extend %basic_dropdown;
 	text-transform: uppercase;
-	color: $gray;
+	color: $gray_medium;
 
 	.drop_icon, > .fa-sort-desc, > .fa-angle-down {
 		@extend %color_green;
@@ -76,7 +77,7 @@
 	}
 
 	a {
-		color: $gray;
+		color: $gray_medium;
 	}
 
 }
@@ -86,17 +87,18 @@
 	@extend %font_weight_700;
 	
 	a {
-		color: $charcoal;
+		color: $gray_medium;
 	}
 
 	.drop_menu {
 		min-width: rem(140);
 		a {
             &:hover, {
-                background: lighten($light_gray, 23%);
+                background: rgba($gray_lightest, .5);
             }
             &.selected {
-                background: lighten($light_gray, 20%);
+                background: $gray_lightest;
+                color: $gray_dark;
                 i {
                     @extend .fa;
                     @extend .fa-check;
@@ -110,7 +112,7 @@
         .drop_menu {
         	left: 0;
         	right: 0;
-        	border: 1px solid $light_gray;
+        	border: $common_gray_border;
         }
 	}
 }
@@ -162,7 +164,7 @@
 	.drop_menu {
 		a {
 			&:hover {
-				background-color: lighten($light_gray, 20%);
+				background-color: $gray_lightest;
 			}
 		}
 	}
@@ -195,10 +197,10 @@
 .dropdown_secondary {
 	@extend %button_dropdown;
 	width: rem(145);
-	background-color: lighten($light_gray, 20%);
+	background-color: $gray_lightest;
 
 	.drop_menu {
-		background-color: lighten($light_gray, 20%);
+		background-color: $gray_lightest;
 		a {
 			&:hover {
 				background: $white;
@@ -215,7 +217,7 @@
 // <div style="margin: 5rem 0;">
 //   <div class="dropdown_tertiary active">
 //       <a class="selected_option">Really long option here</a>
-//       <i class="fa fa-angle-down drop_icon"></i>
+//       <i class="fa fa-chevron-down drop_icon"></i>
 //       <div class="drop_menu active">
 //           <span>Who can see this?</span>
 //           <a class="selected">Role<i></i></a>
@@ -224,7 +226,7 @@
 //   </div>
 //   <div class="dropdown_tertiary">
 //       <a class="selected_option">Really long option here</a>
-//       <i class="fa fa-angle-down drop_icon"></i>
+//       <i class="fa fa-chevron-down drop_icon"></i>
 //       <div class="drop_menu">
 //           <span>Who can see this?</span>
 //           <a class="selected">Role<i></i></a>
@@ -237,11 +239,11 @@
 .dropdown_tertiary {
 	@extend %basic_dropdown;
 	@extend %drop_menu_skin;
-	border: 1px solid $light_gray;
+	border: $common_gray_border;
 	width: rem(140);
 
 	.drop_icon, .fa-angle-down  {
-		top: .8rem;
+		top: 1.2rem;
 	}
 
 	&.active {
@@ -262,7 +264,7 @@
 //   <div class="dropdown_quaternary">
 //       <button class="trigger_panel">
 //          <i class="fa fa-users"></i>
-//          <i class="fa fa-sort-desc"></i>
+//          <i class="fa fa-chevron-down"></i>
 //      </button>
 //       <div class="drop_menu">
 //           <span>Who can see this?</span>
@@ -273,7 +275,7 @@
 //   <div class="dropdown_quaternary active">
 //       <button class="trigger_panel">
 //          <i class="fa fa-users"></i>
-//          <i class="fa fa-sort-desc"></i>
+//          <i class="fa fa-chevron-down"></i>
 //      </button>
 //       <div class="drop_menu active">
 //           <span>Who can see this?</span>
@@ -297,10 +299,12 @@
 
 	    i {
 	        &:first-of-type {
-	            color: $light_gray;
+	            color: $gray_light;
 	        }
-	        &.fa-sort-desc {
+	        &.fa-chevron-down {
 	            color: $teal;
+	            font-size: rem(8);
+	            top: -.1rem;
 	        }
 	    }
 
@@ -312,7 +316,7 @@
 
 	&.active {
         button {
-            border-color: $light_gray;
+            border-color: $gray_light;
             border-bottom-color: $white;
             border-radius: $border_radius $border_radius 0 0;
         }
@@ -332,7 +336,7 @@
 // <div style="margin: 12rem 0 0;">
 //   <div class="dropdown_quinary">
 //       <a class="selected_option">Really long option here</a>
-//       <i class="fa fa-angle-down drop_icon"></i>
+//       <i class="fa fa-chevron-down drop_icon"></i>
 //       <div class="drop_menu">
 //           <span>Who can see this?</span>
 //           <a class="selected">Role<i></i></a>
@@ -355,7 +359,7 @@
 	@extend %basic_dropdown;
 	@extend %drop_menu_skin;
 
-	border: 1px solid $light_gray;
+	border: $common_gray_border;
 	width: rem(140);
 
 	.drop_icon, .fa-angle-down  {

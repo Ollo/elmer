@@ -65,7 +65,7 @@
 		height: 100%;
 		width: rem(7);
 		margin: 0 rem(1);
-		background-color: rgba($gloo_gray, .4);
+		background-color: $gray_light;
 		display: inline-block;
 		@include animation-name(stretchDelay);
 		@include animation-duration(1.5s);

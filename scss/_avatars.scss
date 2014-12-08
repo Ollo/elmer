@@ -209,7 +209,7 @@ img {
 			@include sans_bold;
 			margin: 0;
 			a {
-				color: $charcoal;
+				color: $gray_dark;
 			}
 		}
 
@@ -292,7 +292,7 @@ img {
 .avatar_container {
 	width: 10rem;
 	height: 10rem;
-	border: 2px solid $light_green;
+	border: 2px solid $green;
 	display: block;
 	border-radius: 100%;
 	overflow: hidden;
