@@ -73,12 +73,12 @@ h1, h2, h3, h4 {
    @include museo-sans;
    text-rendering: optimizeLegibility; // Fix the character spacing for headings
    line-height: 1.25em;
+   color: $gray_dark;
 }
 
 h1 {
 	@extend %font_weight_100;
 	font-size: rem(22);
-	color: $charcoal;
 	@include media($medium) {
 		font-size: rem(32);
 	}
@@ -87,34 +87,31 @@ h1 {
 h2 {
 	@extend %font_weight_500;
 	font-size: rem(22);
-	color: $charcoal;
 }
 
 h3 {
 	@extend %font_weight_300;
 	font-size: rem(18);
-	color: $charcoal;
 }
 
 h4 {
 	@extend %font_weight_500;
 	font-size: rem(14);
 	text-transform: uppercase;
-	color: lighten($gray, 3%);
 	margin: 1rem 0 0.5rem;
 }
 
 h5 {
 	@extend %font_weight_500;
 	font-size: rem(15);
-	color: $charcoal;
+	color: $gray_dark;
 	margin: 0 0 1rem;
 }
 
 h6 {
 	@include sans_med;
 	font-size: rem(14);
-	color: $charcoal;
+	color: $gray_dark;
 	margin: 0;
 }
 
@@ -180,7 +177,7 @@ h4.icon_header {
 
 // %muted_text
 //
-// Basic placeholder that makes the color $light_gray. Class '.muted_text' @extends this placeholder. Use as @extend when possible to keep markup clean.
+// Basic placeholder that makes the color $gray_light. Class '.muted_text' @extends this placeholder. Use as @extend when possible to keep markup clean.
 //
 // Markup:
 // <p class="muted_text">Here is some muted text.</p>
@@ -188,7 +185,7 @@ h4.icon_header {
 // Styleguide 5.4
 
 %muted_text {
-	color: $light_gray;
+	color: $gray_light;
 }
 
 .muted_text {

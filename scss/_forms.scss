@@ -1,6 +1,6 @@
-$form-border-color: $light_gray;
-$form-border-color-hover: darken($light_gray, 10);
-$form-border-color-focus: $teal;
+$form-border-color: $gray_light;
+$form-border-color-hover: $gray_light;
+$form-border-color-focus: $gray_medium;
 $form-box-shadow: inset 0 1px 3px hsla(0, 0%, 0%, 0.06);
 $form-box-shadow-focus: $form-box-shadow, 0 0 2px rgba(darken($form-border-color-focus, 5), 0.7);
 $form-border-radius: $border_radius;
@@ -52,7 +52,7 @@ select {
 	&:focus {
 		outline: none;
 		border: 1px solid $teal;
-		box-shadow: $form-box-shadow-focus;
+		// box-shadow: $form-box-shadow-focus;
 	}
 
 	// removes firefox dotted line
@@ -113,7 +113,7 @@ textarea, #{$all-text-inputs}, select {
 	padding: 0.5em 1em;
 	@extend %rounded_corners;
 	margin-bottom: rem(20);
-	color: darken($light_gray, 25);
+	color: darken($gray_light, 25);
 	@extend %font_weight_300;
 	@include sans_light;
 
@@ -123,7 +123,7 @@ textarea, #{$all-text-inputs}, select {
 
 	&:focus {
 		border-color: $form-border-color-focus;
-		box-shadow: $form-box-shadow-focus;
+		// box-shadow: $form-box-shadow-focus;
 		outline: none;
 	}
 
@@ -138,8 +138,8 @@ input {
 	.interacted {
 
 		&:invalid {
-			border-color: $light_red;
-			color: $light_red;
+			border-color: $red;
+			color: $red;
 			box-shadow: $form-box-shadow;
 			@extend .fa;
 			@extend .fa-times;
@@ -281,11 +281,14 @@ input {
 	&:disabled {
 		+ label {
 			cursor: not-allowed;
-			color: $light_gray;
+			color: $gray_light;
 			&:before {
-				color: lighten($gray, 40%);
-				border-color: $light_gray;
-				background: lighten($gray, 40%);
+				color: $gray_light;
+				border-color: $gray_light;
+				background: $gray_lightest;
+			}
+			span {
+				color: $gray_light;
 			}
 		}
 	}
@@ -322,7 +325,7 @@ input {
 	@extend %ui_checkbox_generic;
 
 	+ label {
-		color: darken($gloo_gray, 10);
+		color: $gray_medium;
 		@extend %font_weight_500;
 		margin-left:1.58em;
 		text-indent: -0.9em;
@@ -330,7 +333,7 @@ input {
 		display: block;
 
 		i {
-			color: lighten($light_gray, 10%);
+			color: $gray_medium;
 			margin-right: rem(5);
 			font-size: rem(18);
 			top: .1rem;
@@ -340,7 +343,7 @@ input {
 	&:focus {
 		+ label {
 			i {
-				color: $light_green;
+				color: $green;
 			}
 		}
 	}
@@ -350,7 +353,7 @@ input {
 			i {
 				box-shadow: none;
 				@extend .fa-check-circle;
-				color: $light_green;
+				color: $green;
 			}
 		}
 	}
@@ -498,7 +501,7 @@ input {
 //muted input
 .muted {
 	@include input-placeholder {
-		color: lighten($light_gray, 10%)!important;
+		color: $gray_lightest;
 		font-style: italic;
 	}
 }
@@ -520,10 +523,10 @@ input {
 
 	input[type="search"], input[type="text"] {
 		border: $common_gray_border;
-		color: $gloo_gray;
+		color: $gray_medium;
 
 		@include placeholder {
-		    color: rgba($gloo_gray, 0.5);
+		    color: $gray_light;
 		}
 
 		&:focus {
@@ -533,7 +536,7 @@ input {
 	}
 
 	button, input[type=submit] {
-		color: lighten($gloo_gray, 25%);
+		color: $gray_medium;
 	}
 
 	@include media($medium) {
@@ -754,7 +757,7 @@ input {
 	}
 	td {
 		&:hover {
-			background-color: rgba($light_gray, .2);
+			background-color: $gray_lightest;
 		}
 	}
 }

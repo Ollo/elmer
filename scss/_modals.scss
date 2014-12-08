@@ -139,7 +139,6 @@
     }
 
     .modal-body {
-        color: $gray;
         padding: 1.5rem 1.5rem 1.5rem;
         @include sans_med;
 
@@ -365,7 +364,8 @@
 .post-image-modal {
     .image_container {
         text-align: center;
-        background-color: rgba($light_gray, .1);
+        overflow: hidden;
+        background-color: $gray_lightest;
     }
     .post_attached_image {
         margin: auto;
@@ -378,10 +378,6 @@
     }
     .modal-content {
         background-color: transparent;
-    }
-    .image_container {
-        background-color: rgba($light_gray, .1);
-        overflow: hidden;
     }
     .comment_footer {
         input {
@@ -449,7 +445,7 @@
         padding: 6rem;
     }
     @include media($medium) {
-        box-shadow: -.1rem 0 1rem rgba($charcoal, .1);
+        box-shadow: -.1rem 0 1rem $gray_lightest;
         padding: 2.5rem;
         position: absolute;
         right: 0;

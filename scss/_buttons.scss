@@ -1,16 +1,18 @@
 %button {
-	@include sans_light;
 	text-shadow: none;
 	-webkit-font-smoothing: antialiased;
-	box-shadow: 0 .1rem .1rem rgba(0,0,0,0) inset;
+	box-shadow: 0 1px 0 0 rgba(0,0,0, 0);
 	@include transition (background .2s ease-in-out, box-shadow .2s ease-in-out);
 	text-align: center; 
 	display: inline-block;
 	@extend %font_weight_700;
 
-	&:focus, &:hover {
+	&:focus {
 		outline: none;
-		box-shadow: 0 .1rem .1rem rgba(0,0,0,.25) inset;
+	}
+
+	&:hover {
+		box-shadow: $common_drop_shadow;
 	}
 
 }
@@ -41,8 +43,8 @@ input[type="submit"] {
 // Markup:
 // <button class="primary {$modifiers}">I'm the Primary</button>
 //
-// :hover - darkens the background color
-// :focus - darkens the background color
+// :hover - hover lightens the background color
+// :focus - focus darkens the background color
 //
 // Styleguide 6.1
 
@@ -54,9 +56,13 @@ input[type="submit"] {
 	background: $teal;
 	color: $white;
 
-	&:hover, &:focus {
+	&:hover {
 		color: $white;
-		background: darken($teal, 10%);
+		background: lighten(saturate($teal, 23.25%), 5.75%);
+	}
+
+	&:focus {
+		background: darken($teal, 6.75%);
 	}
 	
 }
@@ -77,36 +83,11 @@ input[type="submit"] {
 	@include border-clear;
 	padding: $standard-btn-pad;
 	@extend %rounded_corners;
-	background: $light_green;
+	background: $green;
 	color: $white;
 
 	&:hover, &:focus {
-		background: darken($light_green, 10%);
-	}
-
-}
-
-// .tertiary
-//
-// The tertiary button style for the site
-//
-// Markup:
-// <button class="tertiary {$modifiers}">I'm the Tertiary</button>
-//
-// :hover - lightens the background color
-//
-// Styleguide 6.3
-
-.tertiary {
-	@extend %button;
-	@include border-clear;
-	padding: $standard-btn-pad;
-	@extend %rounded_corners;
-	background: $navy;
-	color: $white;
-
-	&:hover, &:focus {
-		background: tint($navy, 15%);
+		background: darken($green, 10%);
 	}
 
 }
@@ -130,11 +111,11 @@ input[type="submit"] {
 	box-shadow: 0 1px 1px rgba(0,0,0,.2);
 	text-transform: uppercase;
 	@include sans_light;
-	color: $gloo_gray;
+	color: $gray_medium;
 
 	&:hover, &:focus {
 		background: darken($sand, 5%);
-		color: $gray;
+		color: $gray_medium;
 	}
 
 }
@@ -192,7 +173,7 @@ input[type="submit"] {
 	}
 
 	&:focus {
-		box-shadow: 1px 1px 5px $light_gray;
+		box-shadow: $common_drop_shadow;
 	}
 
 	//add icon variations here
@@ -233,12 +214,12 @@ input[type="submit"] {
 	@include border-clear;
 	padding: $standard-btn-pad;
 	@extend %rounded_corners;
-	background: $gloo_gray;
+	background: $gray_medium;
 	cursor: not-allowed!important;
 	color: $white;
 
 	&:hover, &:focus {
-		background: $gloo_gray;
+		background: $gray_medium;
 	}
  }
 
@@ -258,25 +239,34 @@ input[type="submit"] {
 	padding: $standard-btn-pad;
 	@extend %rounded_corners;
 	color: $white;
-	background: $light_gray;
+	background: $gray_light;
 
 	&:hover, &:focus {
-		background: darken($light_gray, 10%);
+		background: lighten($gray_light, 10%);
 	}
  }
 
  %circle_btn {
- 	@extend %button;
- 	@include border-clear;
- 	@include pad(1rem 1.5rem);
- 	box-shadow: -1px 1px 0 0 rgba($light_gray, 0.25);
- 	background: $white;
- 	font-size: 3rem;
+ 	@include transition(all .2s ease-in-out);
+ 	border: 2px solid $white;
+ 	@include pad(1.75rem 2rem);
+ 	box-shadow: $common_drop_shadow;
+ 	background: $teal;
+ 	font-size: rem(18);
  	border-radius: 100%;
  	line-height: 0;
+ 	color: $white;
+
+ 	&:hover {
+ 		background-color: $white;
+ 		color: $teal;
+ 		border-color: $teal;
+ 	}
 
  	&:focus {
-		box-shadow: -1px 0 3px $light_gray;
+		background: darken($teal, 6.75%);
+		color: $white;
+		border-color: $white;
 	}
 
 	&.tan {
@@ -289,13 +279,12 @@ input[type="submit"] {
 //
 // A special plus button
 //
-// Markup: <div class="wrapper"><button class="btn_add"><i class="fa fa-plus"></i></button></div>
+// Markup: <div style="background-color: #f9f9f9; padding: 2rem;" class="wrapper"><button class="btn_add"><i class="fa fa-plus"></i></button></div>
 //
 // Styleguide 6.9
 
 .btn_add {
  	@extend %circle_btn;
- 	color: $green;
  	float: left;
 
  	i {
@@ -332,14 +321,14 @@ input[type="submit"] {
 	background: $sand;
 	padding: .75rem;
 	@extend %font_weight_700;
-	color: $gloo_gray;
+	color: $gray_medium;
 	@extend %rounded_corners;
 	display: inline-block;
 	margin-right: rem(5);
 	@include transition(all .2s ease-in-out);
 	&:hover {
 		background: darken($sand, 10%);
-		color: darken($gloo_gray, 10%);
+		color: $gray_dark;
 	}
 }
 
@@ -356,7 +345,7 @@ input[type="submit"] {
 .tag_secondary {
 	background: $sand;
 	padding: 0.65rem 1rem .5rem;
-	color: $gray;
+	color: $gray_medium;
 	border-bottom: 1px solid darken($sand, 12%);
 	@extend %rounded_corners;
 	display: block;
@@ -366,25 +355,39 @@ input[type="submit"] {
 	@extend %font_weight_500;
 	&:hover {
 		background: darken($sand, 10%);
-		color: darken($gray, 10%);
+		color: $gray_dark;
 		border-bottom: 1px solid darken($sand, 30%);
 	}
 }
 
 %btn_action {
-	@extend %button;
     @include border-clear;
-    padding: 0.5rem 1rem;
+    box-shadow: $common_drop_shadow;
+    padding: .5rem .6rem;
     margin-right: 1rem;
     color: $teal;
+    @extend %small_text;
+    i {
+    	width: rem(13);
+    	height: rem(13);
+    }
     &:last-child {
         margin-right: 0;
+    }
+    &:hover {
+        background: $teal;
+        color: $white;
     }
 }
 
 // .btn_action
 //
-// Markup: <button class="btn_action {$modifiers}"><i class="fa fa-sign-out"></i></button>
+// Markup: 
+// <div style="background-color: #f7f5f2; padding: 2rem;">
+//   <button class="btn_action {$modifiers}"><i class="fa fa-comment"></i></button>
+//   <button class="btn_action {$modifiers}"><i class="fa fa-share"></i></button>
+//   <button class="btn_action {$modifiers}"><i class="fa fa-star"></i></button>
+// </div>
 //
 // Styleguide 6.11
 .btn_action {
@@ -392,18 +395,13 @@ input[type="submit"] {
 	@extend %well_white_no_padding;
 
 	&.disabled {
-		color: $light_gray;
+		color: $gray_light;
 		cursor: not-allowed;
 		&:hover, &:focus {
 			background: $white;
-			color: $light_gray;
+			color: $gray_light;
 		}
 	}
-
-    &:hover {
-        background: $teal;
-        color: $white;
-    }
 }
 
 // .btn_action_gray
@@ -417,5 +415,5 @@ input[type="submit"] {
 .btn_action_gray {
 	@extend %btn_action;
 	@extend %rounded_corners;
-	background: lighten($light_gray, 20%);
+	background: $gray_lightest;
 }

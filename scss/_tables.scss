@@ -104,7 +104,7 @@ td {
 	background: $white;
 	font-size: rem(14);
 	margin-bottom: rem(20);
-	color: $gray;
+	color: $gray_medium;
 	word-break: break-word;
 	clear: both;
 
@@ -155,13 +155,13 @@ td {
 	}
 
 	.mobile_label {
-		color: $charcoal;
+		color: $gray_dark;
 		padding-right: rem(5);
 		@extend %font_weight_500;
 	}
 
 	.fa-trash-o {
-		color: $gray;
+		color: $gray_medium;
 		cursor: pointer;
 		padding: .6rem;
 	}
@@ -179,7 +179,7 @@ td {
 	}
 
 	select {
-		color: $gray;
+		color: $gray_medium;
 	}
 
 	.primary, .disabled, .secondary {
@@ -315,7 +315,7 @@ td {
 		.handle {
 			display: inline-block;
 			padding-right: rem(40);
-			color: $gray;
+			color: $gray_medium;
 		}
 
 		.ui_select {

@@ -32,7 +32,7 @@
 		float: right;
 		display: block;
 		font-size: rem(30);
-		color: lighten($light_gray, 10%);
+		color: $gray_light;
 		@extend .fa;
 		@extend .fa-star-o;
 		margin-right: 1rem;
@@ -110,7 +110,7 @@
 			+ label:hover ~ label,
 			~ label:hover,
 			~ label:hover ~ label {
-				color: lighten($light_gray, 10%);
+				color: $gray_light;
 				text-shadow: none;
 				transform: none;
 				i {

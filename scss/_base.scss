@@ -29,7 +29,7 @@ html {
 body {
 	font-size: $base_font_size;
 	line-height: $base_line_height;
-	color: $charcoal;
+	color: $gray_medium;
 }
 
 img {
@@ -85,7 +85,7 @@ p {
 
 hr {
 	width: 65%;
-	background-color: lighten($light_gray, 10%);
+	background-color: $gray_lightest;
 	height: 0.1rem;
 	border: 0px;
 	display: block;
@@ -113,4 +113,11 @@ hr {
 
 // common variables
 
-$common_gray_border: .1rem solid rgba($light_gray, .4);
+// drop shadows
+$drop_shadow_color: rgba($black, .15);
+$common_drop_shadow: 0 1px 0 0 $drop_shadow_color;
+
+// borders
+// via melanie, we need a common border for the sand background and a common border for the white background. Revisit this eventually
+$common_gray_border: .1rem solid $gray_light;
+$common_gray_border_light: .1rem solid rgba($gray_light, .4);
