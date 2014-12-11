@@ -30,172 +30,172 @@
 // .modal-content   - actual modal w/ bg and corners and shit
 
 .modal {
-    display: none;
-    overflow: auto;
-    overflow-y: scroll;
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 30;
-    -webkit-overflow-scrolling: touch;
+  display: none;
+  overflow: auto;
+  overflow-y: scroll;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 30;
+  -webkit-overflow-scrolling: touch;
     outline: 0; // removes focus ring on chrome for windows
 
     &.in {
-        .modal-dialog {
-            @include transform(translateY(0));
-        }
+      .modal-dialog {
+        @include transform(translateY(0));
+      }
     }
 
     @include media($small) {
-        .modal-footer {
-            .button_wrap {
-                float: right;
-            }
+      .modal-footer {
+        .button_wrap {
+          float: right;
         }
+      }
     }
-}
+  }
 
-.modal-dialog {
+  .modal-dialog {
     @include transform(translateY(-100%));
     @include transition(all 0.6s linear);
-}
+  }
 
-.modal-content {
+  .modal-content {
     @extend %clearfix;
     position: relative;
     background: $white;
     outline: none;
-}
+  }
 
-.modal-header {
+  .modal-header {
     @extend %clearfix;
-}
+  }
 
 .modal-open { // body class to control scroll
-    overflow: hidden;
+  overflow: hidden;
 }
 
 .modal-intro {
-    padding: 2rem 0;
+  padding: 2rem 0;
 }
 
 // Modal background overlay
 .modal-backdrop {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 20;
-    background-color: #333;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 20;
+  background-color: #333;
 
-    &.fade {
-        opacity: 0;
-    }
+  &.fade {
+    opacity: 0;
+  }
 
-    &.in {
-        opacity: 0.5;
-        @include transition(0.3s ease-in-out);
-    }
+  &.in {
+    opacity: 0.5;
+    @include transition(0.3s ease-in-out);
+  }
 }
 
 // small modal for confirm dialog etc
 .modal-small {
-    @extend .modal;
-    
-    .modal-dialog {
-        margin: 2rem 2rem 0;
-        background: $white;
-        @extend %rounded_corners;
+  @extend .modal;
+  
+  .modal-dialog {
+    margin: 2rem 2rem 0;
+    background: $white;
+    @extend %rounded_corners;
+  }
+
+  .modal-content {
+    @extend %rounded_corners;
+    padding: 2.5rem 0 0;
+    overflow: hidden;
+  }
+
+  .modal-header {
+    @extend %clearfix;
+    border-bottom: $common_gray_border;
+    padding: 0 0 1rem;
+    margin: 0 1.5rem 0;
+
+    h2 {
+      @extend %font_weight_700;
+      float: left;
+      color: $teal;
+      margin: 0;
+      -webkit-font-smoothing: antialiased;
     }
 
-    .modal-content {
-        @extend %rounded_corners;
-        padding: 2.5rem 0 0;
-        overflow: hidden;
+    .modal-close {
+      float: right;
+      @extend %muted_text;
+      font-size: rem(20);
+    }
+  }
+
+  .modal-body {
+    padding: 1.5rem 1.5rem 1.5rem;
+    @include sans_med;
+
+    strong {
+      color: $black;
+    }
+  }
+
+  .modal-footer {
+    padding: rem(25);
+    background: $sand;
+    @extend %clearfix;
+
+    button, .btn {
+      width: 47%;
+      margin-right: 2%;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  @include media($small) {
+
+    .modal-body {
+      padding: rem(25) 2.5rem rem(50);
     }
 
     .modal-header {
-        @extend %clearfix;
-        border-bottom: $common_gray_border;
-        padding: 0 0 1rem;
-        margin: 0 1.5rem 0;
-
-        h2 {
-            @extend %font_weight_700;
-            float: left;
-            color: $teal;
-            margin: 0;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        .modal-close {
-            float: right;
-            @extend %muted_text;
-            font-size: rem(20);
-        }
-    }
-
-    .modal-body {
-        padding: 1.5rem 1.5rem 1.5rem;
-        @include sans_med;
-
-        strong {
-            color: $black;
-        }
+      margin: 0 2.5rem 0;
     }
 
     .modal-footer {
-        padding: rem(25);
-        background: $sand;
-        @extend %clearfix;
-
-        button, .btn {
-            width: 47%;
-            margin-right: 2%;
-            padding-left: 0;
-            padding-right: 0;
-        }
+      button, .btn {
+        margin-right: 1.5rem;
+        width: auto;
+        padding: $standard-btn-pad;
+      }
     }
+  }
 
-    @include media($small) {
-
-        .modal-body {
-            padding: rem(25) 2.5rem rem(50);
-        }
-
-        .modal-header {
-            margin: 0 2.5rem 0;
-        }
-
-        .modal-footer {
-            button, .btn {
-                margin-right: 1.5rem;
-                width: auto;
-                padding: $standard-btn-pad;
-            }
-        }
+  @include media($medium) {
+    .modal-dialog {
+      @include span-columns(6);
+      margin: 0 auto!important;
+      float: none;
     }
-
-    @include media($medium) {
-        .modal-dialog {
-            @include span-columns(6);
-            margin: 0 auto!important;
-            float: none;
-        }
-        &.in .modal-dialog {
-            @include transform(translateY(100px));
-        }
+    &.in .modal-dialog {
+      @include transform(translateY(100px));
     }
-    
-    @include media($large) {
-        .modal-dialog {
-            @include span-columns(5);
-            float: none;
-        }
+  }
+  
+  @include media($large) {
+    .modal-dialog {
+      @include span-columns(5);
+      float: none;
     }
+  }
 }
 
 // .modal-large
@@ -222,89 +222,89 @@
 
 // full size modal for larger content needs
 .modal-large {
-    @extend .modal;
+  @extend .modal;
 
-    &.in .modal-dialog {
-        background: $white;
-    }
+  &.in .modal-dialog {
+    background: $white;
+  }
 
-    .modal-dialog {
-        width: 100%;
-        margin: 0;
-        height: 100%;
-        border-bottom: $common_gray_border;
+  .modal-dialog {
+    width: 100%;
+    margin: 0;
+    height: 100%;
+    border-bottom: $common_gray_border;
 
-        .modal-content {
-            border-radius: 0;
-			@extend %clearfix;
+    .modal-content {
+      border-radius: 0;
+      @extend %clearfix;
 
-            .modal-header {
-                @extend %clearfix;
-                background: $slate_blue;
-                color: $white;
-                padding: 3rem rem(20) 2rem;
+      .modal-header {
+        @extend %clearfix;
+        background: $slate_blue;
+        color: $white;
+        padding: 3rem rem(20) 2rem;
 
-                h1 {
-                    color: $white;
-                    float: left;
-                }
+        h1 {
+          color: $white;
+          float: left;
+        }
 
-                .modal-close {
-                    margin-top: 1rem;
-                    font-size: rem(30);
-                    color: $white;
-                    float: right;
+        .modal-close {
+          margin-top: 1rem;
+          font-size: rem(30);
+          color: $white;
+          float: right;
 
 
-                    @include media($medium) {
-                        font-size: rem(40);
-                        margin-top: 1.5rem;
-                    }
-                }
-            }
-            .modal-body {
-                max-width: 95%;
-                border: $common_gray_border;
-                margin: 2rem auto 0;
-                padding: 0;
-                @extend %clearfix;
-                @include media($medium) {
-                    margin: 5rem auto 0;
-                }
-                 @include media($xlarge) {
-                    @include outer-container;
-                 }
-            }
-            .modal-wrap {
+          @include media($medium) {
+            font-size: rem(40);
+            margin-top: 1.5rem;
+          }
+        }
+      }
+      .modal-body {
+        max-width: 95%;
+        border: $common_gray_border;
+        margin: 2rem auto 0;
+        padding: 0;
+        @extend %clearfix;
+        @include media($medium) {
+          margin: 5rem auto 0;
+        }
+        @include media($xlarge) {
+          @include outer-container;
+        }
+      }
+      .modal-wrap {
                 //for use in large modals. It should wrap everything inside .modal-body except the .modal-footer
                 //8% translates to roughly 90px on desktop, and scales accordingly
                 padding: rem(20) 8%;
                 @include media($medium) {
-                    padding: rem(40) 8%;
+                  padding: rem(40) 8%;
                 }
-            }
-            .modal-footer {
+              }
+              .modal-footer {
                 @include span-columns(12);
                 background: $sand;
                 padding: 2rem;
 
                 // Properly space out buttons
                 button {
-                    margin-left: rem(20);
+                  margin-left: rem(20);
                 }
                 @include media($medium) {
-                    padding: 4.3rem 10rem;
+                  padding: 4.3rem 10rem;
                 }
+              }
             }
-        }
-    }
+          }
 
-    @include media($medium) {
-        .icon_header {
-            margin-bottom: rem(30);
+          @include media($medium) {
+            .icon_header {
+              margin-bottom: rem(30);
+            }
+          }
         }
-    }
-}
 
 
 // .post-image-modal
@@ -362,99 +362,99 @@
 
 // full size modal for larger content needs
 .post-image-modal {
-    .image_container {
-        text-align: center;
-        overflow: hidden;
-        background-color: $gray_lightest;
+  .image_container {
+    text-align: center;
+    overflow: hidden;
+    background-color: $gray_lightest;
+  }
+  .post_attached_image {
+    margin: auto;
+  }
+  .modal-dialog {
+    width: 95%;
+    margin: 2% 2.5% 0;
+    background-color: $white;
+    @extend %rounded_corners;
+  }
+  .modal-content {
+    background-color: transparent;
+  }
+  .comment_footer {
+    input {
+      max-width: 75%;
     }
-    .post_attached_image {
-        margin: auto;
-    }
+  }
+  @include media($medium) {
     .modal-dialog {
-        width: 95%;
-        margin: 2% 2.5% 0;
-        background-color: $white;
-        @extend %rounded_corners;
+      height: 94%;
     }
     .modal-content {
-        background-color: transparent;
+      height: 100%;
     }
-    .comment_footer {
-        input {
-            max-width: 75%;
-        }
+    .image_container {
+      position: absolute;
+      left: 0;
+      right: 25rem;
+      bottom: 0;
+      top: 0;
+      img {
+        max-height: 100%;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+      }
     }
-    @include media($medium) {
-        .modal-dialog {
-            height: 94%;
-        }
-        .modal-content {
-            height: 100%;
-        }
-        .image_container {
-            position: absolute;
-            left: 0;
-            right: 25rem;
-            bottom: 0;
-            top: 0;
-            img {
-                max-height: 100%;
-                position: absolute;
-                top: 0;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                margin: auto;
-            }
-        }
+  }
+  @include media($large) {
+    .image_container {
+      right: 35rem;
     }
-    @include media($large) {
-        .image_container {
-            right: 35rem;
-        }
 
-    }
+  }
 }
 
 .close_image_modal {
-    position: fixed;
-    top: 1rem;
-    right: 1.25rem;
-    display: block;
-    color: $white;
-    font-size: rem(18);
-    padding: 1rem;
-    @include media($medium) {
-        position: static;
-        right: auto;
-        left: auto;
-        color: $teal;
-        padding: 0 .5rem 1rem 1rem;
-        margin-bottom: 2rem;
-        text-align: right;
-    }
+  position: fixed;
+  top: 1rem;
+  right: 1.25rem;
+  display: block;
+  color: $white;
+  font-size: rem(18);
+  padding: 1rem;
+  @include media($medium) {
+    position: static;
+    right: auto;
+    left: auto;
+    color: $teal;
+    padding: 0 .5rem 1rem 1rem;
+    margin-bottom: 2rem;
+    text-align: right;
+  }
 }
 
 .post_modal_meta {
-    padding: 1.2rem;
-    max-width: 50rem;
-    .post_editor {
-        margin-top: 3.5rem;
-    }
-    @include media($small) {
-        padding: 6rem;
-    }
-    @include media($medium) {
-        box-shadow: -.1rem 0 1rem $gray_lightest;
-        padding: 2.5rem;
-        position: absolute;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        width: 25rem;
-        overflow: scroll;
-    }
-    @include media($large) {
-        width: 35rem;
-    }
+  padding: 1.2rem;
+  max-width: 50rem;
+  .post_editor {
+    margin-top: 3.5rem;
+  }
+  @include media($small) {
+    padding: 6rem;
+  }
+  @include media($medium) {
+    box-shadow: -.1rem 0 1rem $gray_lightest;
+    padding: 2.5rem;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 25rem;
+    overflow: scroll;
+  }
+  @include media($large) {
+    width: 35rem;
+  }
 }

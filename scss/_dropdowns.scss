@@ -18,51 +18,51 @@
 	a {
 		i {
 			float: right;
-            margin-top: .45rem;
-        }
-	}
+      margin-top: .45rem;
+    }
+  }
 
-	span, a {
-		padding: .5rem .75rem;
-		display: block;
-		span {
-			padding: 0;
-			display: inline;
-		}
-	}
+  span, a {
+    padding: .5rem .75rem;
+    display: block;
+    span {
+     padding: 0;
+     display: inline;
+   }
+ }
 
-	.drop_icon, > .fa-sort-desc, > .fa-angle-down {
-		position: absolute;
-		right: .75rem;
-		color: $teal;
-		font-size: 1rem;
-	}
+ .drop_icon, > .fa-sort-desc, > .fa-angle-down {
+  position: absolute;
+  right: .75rem;
+  color: $teal;
+  font-size: 1rem;
+}
 
-	.selected_option {
-		padding-right: 2.5rem;
-		@extend %truncate;
-		color: $gray_dark;
-	}
+.selected_option {
+  padding-right: 2.5rem;
+  @extend %truncate;
+  color: $gray_dark;
+}
 
-	.drop_menu {
-	    position: absolute;
-	    width: 100%;
-	    @include well(0 0 $border_radius $border_radius, false, false, false, $white, true);
-	    span {
-	    	@extend %muted_text;
-	    }
-	    a {
-	    	@include transition(background .2s ease-in-out);
-	    }
-	}
+.drop_menu {
+ position: absolute;
+ width: 100%;
+ @include well(0 0 $border_radius $border_radius, false, false, false, $white, true);
+ span {
+  @extend %muted_text;
+}
+a {
+  @include transition(background .2s ease-in-out);
+}
+}
 
-	&.active {
-		z-index: 4;
-		border-radius: $border_radius $border_radius 0 0;
-		.drop_menu {
-			box-shadow: 0 .5rem .6rem rgba(0,0,0, .15);
-		}
-	}
+&.active {
+  z-index: 4;
+  border-radius: $border_radius $border_radius 0 0;
+  .drop_menu {
+   box-shadow: 0 .5rem .6rem rgba(0,0,0, .15);
+ }
+}
 
 }
 
@@ -93,28 +93,28 @@
 	.drop_menu {
 		min-width: rem(140);
 		a {
-            &:hover, {
-                background: rgba($gray_lightest, .5);
-            }
-            &.selected {
-                background: $gray_lightest;
-                color: $gray_dark;
-                i {
-                    @extend .fa;
-                    @extend .fa-check;
-                    @extend %small_text;
-                }
-            }
+      &:hover, {
+        background: rgba($gray_lightest, .5);
+      }
+      &.selected {
+        background: $gray_lightest;
+        color: $gray_dark;
+        i {
+          @extend .fa;
+          @extend .fa-check;
+          @extend %small_text;
         }
-	}
+      }
+    }
+  }
 
-	&.active {
-        .drop_menu {
-        	left: 0;
-        	right: 0;
-        	border: $common_gray_border;
-        }
-	}
+  &.active {
+    .drop_menu {
+     left: 0;
+     right: 0;
+     border: $common_gray_border;
+   }
+ }
 }
 
 // Not all drop menu's are used inside a .dropdown
@@ -122,15 +122,15 @@
 	opacity: 0;
 	max-height: 0;
 	overflow-x: hidden;
-    overflow-y: scroll;
-	@include transform(translateZ(0));
-	@include backface-visibility(hidden);
-	@include transition(opacity .1s ease-in-out, max-height .3s ease-in-out);
+  overflow-y: scroll;
+  @include transform(translateZ(0));
+  @include backface-visibility(hidden);
+  @include transition(opacity .1s ease-in-out, max-height .3s ease-in-out);
 
-	&.active, &.open {
-		max-height: 50rem;
-		opacity: 1;
-	}
+  &.active, &.open {
+    max-height: 50rem;
+    opacity: 1;
+  }
 
 }
 
@@ -289,44 +289,44 @@
 .dropdown_quaternary {
 
 	button {
-	    background: $white;
-	    outline: none;
-	    border: 1px solid transparent;
-	    margin-bottom: -.1rem;
-	    z-index: 11;
-	    font-size: rem(10);
-	    padding: .5rem;
+   background: $white;
+   outline: none;
+   border: 1px solid transparent;
+   margin-bottom: -.1rem;
+   z-index: 11;
+   font-size: rem(10);
+   padding: .5rem;
 
-	    i {
-	        &:first-of-type {
-	            color: $gray_light;
-	        }
-	        &.fa-chevron-down {
-	            color: $teal;
-	            font-size: rem(8);
-	            top: -.1rem;
-	        }
-	    }
+   i {
+     &:first-of-type {
+       color: $gray_light;
+     }
+     &.fa-chevron-down {
+       color: $teal;
+       font-size: rem(8);
+       top: -.1rem;
+     }
+   }
 
-	    &:focus, &:hover {
-	        outline: none;
-	        box-shadow: none;
-	    }
-	}
+   &:focus, &:hover {
+     outline: none;
+     box-shadow: none;
+   }
+ }
 
-	&.active {
-        button {
-            border-color: $gray_light;
-            border-bottom-color: $white;
-            border-radius: $border_radius $border_radius 0 0;
-        }
-        .drop_menu {
-        	border-radius: 0 $border_radius $border_radius $border_radius;
-        }
-    }
+ &.active {
+  button {
+    border-color: $gray_light;
+    border-bottom-color: $white;
+    border-radius: $border_radius $border_radius 0 0;
+  }
+  .drop_menu {
+   border-radius: 0 $border_radius $border_radius $border_radius;
+ }
+}
 
-	@extend %basic_dropdown;
-	@extend %drop_menu_skin;
+@extend %basic_dropdown;
+@extend %drop_menu_skin;
 }
 
 // .dropdown_quinary

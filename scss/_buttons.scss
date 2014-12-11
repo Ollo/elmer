@@ -209,7 +209,7 @@ input[type="submit"] {
 //
 // Styleguide 6.7
 
- .disabled, input[type="submit"]:disabled {
+.disabled, input[type="submit"]:disabled {
 	@extend %button;
 	@include border-clear;
 	padding: $standard-btn-pad;
@@ -221,7 +221,7 @@ input[type="submit"] {
 	&:hover, &:focus {
 		background: $gray_medium;
 	}
- }
+}
 
 // .btn.muted
 //
@@ -233,7 +233,7 @@ input[type="submit"] {
 //
 // Styleguide 6.8
 
- .muted {
+.muted {
 	@extend %button;
 	@include border-clear;
 	padding: $standard-btn-pad;
@@ -244,36 +244,36 @@ input[type="submit"] {
 	&:hover, &:focus {
 		background: lighten($gray_light, 10%);
 	}
+}
+
+%circle_btn {
+  @include transition(all .2s ease-in-out);
+  border: 2px solid $white;
+  @include pad(1.75rem 2rem);
+  box-shadow: $common_drop_shadow;
+  background: $teal;
+  font-size: rem(18);
+  border-radius: 100%;
+  line-height: 0;
+  color: $white;
+
+  &:hover {
+   background-color: $white;
+   color: $teal;
+   border-color: $teal;
  }
 
- %circle_btn {
- 	@include transition(all .2s ease-in-out);
- 	border: 2px solid $white;
- 	@include pad(1.75rem 2rem);
- 	box-shadow: $common_drop_shadow;
- 	background: $teal;
- 	font-size: rem(18);
- 	border-radius: 100%;
- 	line-height: 0;
- 	color: $white;
+ &:focus {
+  background: darken($teal, 6.75%);
+  color: $white;
+  border-color: $white;
+}
 
- 	&:hover {
- 		background-color: $white;
- 		color: $teal;
- 		border-color: $teal;
- 	}
+&.tan {
+  background: $sand;
+}
 
- 	&:focus {
-		background: darken($teal, 6.75%);
-		color: $white;
-		border-color: $white;
-	}
-
-	&.tan {
-		background: $sand;
-	}
-
- }
+}
 
 // .btn_add
 //
@@ -284,27 +284,27 @@ input[type="submit"] {
 // Styleguide 6.9
 
 .btn_add {
- 	@extend %circle_btn;
- 	float: left;
+  @extend %circle_btn;
+  float: left;
 
- 	i {
- 		@extend .fa;
- 		@extend .fa-plus;
- 		float: left;
- 		padding-top: .25rem;
- 		padding-left: .2rem;
- 	}
+  i {
+   @extend .fa;
+   @extend .fa-plus;
+   float: left;
+   padding-top: .25rem;
+   padding-left: .2rem;
+ }
 
  	// by default the following a will center next to the button
  	+ a {
-		margin-left: rem(15);
-		display: inline-block;
-		padding-top: 1rem;
-		span {
-			@extend %muted_text;
-	        display: block;
-		}
-	}
+    margin-left: rem(15);
+    display: inline-block;
+    padding-top: 1rem;
+    span {
+     @extend %muted_text;
+     display: block;
+   }
+ }
 }
 
 // .tag
@@ -361,23 +361,23 @@ input[type="submit"] {
 }
 
 %btn_action {
-    @include border-clear;
-    box-shadow: $common_drop_shadow;
-    padding: .5rem .6rem;
-    margin-right: 1rem;
-    color: $teal;
-    @extend %small_text;
-    i {
-    	width: rem(13);
-    	height: rem(13);
-    }
-    &:last-child {
-        margin-right: 0;
-    }
-    &:hover {
-        background: $teal;
-        color: $white;
-    }
+  @include border-clear;
+  box-shadow: $common_drop_shadow;
+  padding: .5rem .6rem;
+  margin-right: 1rem;
+  color: $teal;
+  @extend %small_text;
+  i {
+   width: rem(13);
+   height: rem(13);
+ }
+ &:last-child {
+  margin-right: 0;
+}
+&:hover {
+  background: $teal;
+  color: $white;
+}
 }
 
 // .btn_action

@@ -1,32 +1,32 @@
 
 svg {
-    font-size: 1.3rem;
+  font-size: 1.3rem;
 }
 
 g {
-    .bar {
-        fill: $red;
-    }
+  .bar {
+    fill: $red;
+  }
 
-    .barValue {
-        font-size: 1.7rem;
-    }
+  .barValue {
+    font-size: 1.7rem;
+  }
 
 }
 
 .axis {
-    path,
-    line {
-        fill: none;
-        stroke: #000;
-        shape-rendering: crispEdges;
-    }
+  path,
+  line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+  }
 }
 
 .tick {
-    display: none;
+  display: none;
 
-    @include media(480px) {
-        display: block;
-    }
+  @include media(480px) {
+    display: block;
+  }
 }

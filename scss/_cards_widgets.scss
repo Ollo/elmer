@@ -560,7 +560,7 @@ $card_background: $white;
       top: 1.5rem;
     }
   }
- @include media($medium) {
+  @include media($medium) {
     .meta {
       max-width: 75%;
     }
@@ -571,5 +571,5 @@ $card_background: $white;
       top: 2.5rem;
       right: 2.5rem;
     }
- }
+  }
 }

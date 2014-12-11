@@ -1,165 +1,165 @@
 .slider {
 
-    .slide {
-        width: 100%;
+  .slide {
+    width: 100%;
 
-        img {
-            display: block;
-            width: 100%;
-            height: auto;
-        }
-
-        figcaption {
-            width: 100%;
-            position: absolute;
-            bottom: 0;
-            background: rgba($black, 0.6);
-            color: $white;
-            -webkit-font-smoothing: antialiased;
-            padding: 1rem;
-            font-size: 1.8rem;
-        }
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
     }
 
-    .slider_controls {
-        @extend %clearfix;
-        text-align: center;
-        margin: .5rem 0;
-
-        li {
-            display: inline;
-
-            a {
-                display: inline-block;
-                color: $gray_light;
-            }
-        }
+    figcaption {
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      background: rgba($black, 0.6);
+      color: $white;
+      -webkit-font-smoothing: antialiased;
+      padding: 1rem;
+      font-size: 1.8rem;
     }
+  }
 
-    @include media($small) {
-        figcaption {
-            padding: 1.5rem;
-        }
+  .slider_controls {
+    @extend %clearfix;
+    text-align: center;
+    margin: .5rem 0;
+
+    li {
+      display: inline;
+
+      a {
+        display: inline-block;
+        color: $gray_light;
+      }
     }
+  }
+
+  @include media($small) {
+    figcaption {
+      padding: 1.5rem;
+    }
+  }
 
 }
 
 .featured_content_slider {
-    @extend .slider;
+  @extend .slider;
 
-    .slider_viewport {
-        min-height: 27.5rem;
-        overflow: hidden;
-    }
+  .slider_viewport {
+    min-height: 27.5rem;
+    overflow: hidden;
+  }
 
-    h2 {
-        margin: 0;
-        color: $white;
-    }
+  h2 {
+    margin: 0;
+    color: $white;
+  }
 
-    .meta {
-        float: left;
-        img {
-            max-width: rem(30);
-            float: left;
-            border-radius: 100%;
-            margin: 0 1rem 0 0;
-        }
-        p {
-            margin: .25rem 0 0;
-            float: left;
-        }
+  .meta {
+    float: left;
+    img {
+      max-width: rem(30);
+      float: left;
+      border-radius: 100%;
+      margin: 0 1rem 0 0;
     }
+    p {
+      margin: .25rem 0 0;
+      float: left;
+    }
+  }
+
+  figcaption {
+    position: relative;
+  }
+
+  .primary {
+    @extend %btn_full_mobile;
+    margin: 1rem auto 0;
+    display: inline-block;
+    text-align: center;
+  }
+
+  .sentinal {
+    display: none;
+  }
+
+  .slide {
+    @extend %rounded_corners;
+    opacity: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: none;
+    @include transition(opacity .2s linear);
 
     figcaption {
-        position: relative;
+      position: relative;
+      @extend %clearfix;
     }
 
+    &.active {
+      opacity: 1;
+      display: block;
+      figcaption {
+        @include animation-name(spaceInDown);
+        @include animation-duration(0.5s);
+        @include animation-timing-function(ease-in-out);
+        @include animation-fill-mode(both);
+        @include animation-delay(.5s);
+        @include backface-visibility(hidden);
+      }
+      .meta {
+        @include animation-name(spaceInLeft);
+        @include animation-duration(1s);
+        @include animation-timing-function(ease-in-out);
+        @include animation-fill-mode(both);
+        @include animation-delay(1s);
+        @include backface-visibility(hidden);
+      }
+      .primary {
+        @include animation-name(pulse);
+        @include animation-duration(.5s);
+        @include animation-timing-function(ease-in-out);
+        @include animation-fill-mode(both);
+        @include animation-delay(2s);
+        @include backface-visibility(hidden);
+      }
+    }
+  }
+
+  @include media($mobileOnly) {
+    h2 {
+      margin-bottom: .25rem;
+      font-size: rem(16);
+    }
+    .meta, .primary {
+      font-size: rem(14);
+    }
+  }
+
+  @include media($small) {
     .primary {
-        @extend %btn_full_mobile;
-        margin: 1rem auto 0;
-        display: inline-block;
-        text-align: center;
+      float: right;
     }
+  }
 
+  @include media($medium) {
     .sentinal {
-        display: none;
+      visibility: hidden;
+      display: block;
     }
-
     .slide {
-        @extend %rounded_corners;
-        opacity: 0;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        display: none;
-        @include transition(opacity .2s linear);
-
-        figcaption {
-            position: relative;
-            @extend %clearfix;
-        }
-
-        &.active {
-            opacity: 1;
-            display: block;
-            figcaption {
-                @include animation-name(spaceInDown);
-                @include animation-duration(0.5s);
-                @include animation-timing-function(ease-in-out);
-                @include animation-fill-mode(both);
-                @include animation-delay(.5s);
-                @include backface-visibility(hidden);
-            }
-            .meta {
-                @include animation-name(spaceInLeft);
-                @include animation-duration(1s);
-                @include animation-timing-function(ease-in-out);
-                @include animation-fill-mode(both);
-                @include animation-delay(1s);
-                @include backface-visibility(hidden);
-            }
-            .primary {
-                @include animation-name(pulse);
-                @include animation-duration(.5s);
-                @include animation-timing-function(ease-in-out);
-                @include animation-fill-mode(both);
-                @include animation-delay(2s);
-                @include backface-visibility(hidden);
-            }
-        }
+      position: absolute;
+      display: block;
+      figcaption {
+        border-radius: 0 0 $border_radius $border_radius;
+        position: absolute;
+      }
     }
-
-    @include media($mobileOnly) {
-        h2 {
-            margin-bottom: .25rem;
-            font-size: rem(16);
-        }
-        .meta, .primary {
-            font-size: rem(14);
-        }
-    }
-
-    @include media($small) {
-        .primary {
-            float: right;
-        }
-    }
-
-    @include media($medium) {
-        .sentinal {
-            visibility: hidden;
-            display: block;
-        }
-        .slide {
-            position: absolute;
-            display: block;
-            figcaption {
-                border-radius: 0 0 $border_radius $border_radius;
-                position: absolute;
-            }
-        }
-    }
+  }
 
 }

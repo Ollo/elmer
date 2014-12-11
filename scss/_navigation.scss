@@ -10,39 +10,39 @@
 // Styleguide 18.1
 
 .bordered {
-    border-bottom: $common_gray_border;
-    margin-bottom: rem(40);
-    @extend %clearfix;
+  border-bottom: $common_gray_border;
+  margin-bottom: rem(40);
+  @extend %clearfix;
 }
 
 // @extend this on any headers that have a tab nav for proper layout
 %header_tabs {
 
+  nav {
+    display: none;
+    @extend %tabs;
+  }
+
+  @include media($large) {
+
+    h2, h1 {
+      @include span-columns(5);
+    }
+
     nav {
-        display: none;
-        @extend %tabs;
+      @include span-columns(7);
+      @include omega;
+      display: block;
+      text-align: right;
+      padding-bottom: 0.5rem;
+      padding-top: 0.5rem;
+
+      li {
+        padding: 0 0 0 2rem;
+      }
     }
 
-    @include media($large) {
-
-        h2, h1 {
-            @include span-columns(5);
-        }
-
-        nav {
-            @include span-columns(7);
-            @include omega;
-            display: block;
-            text-align: right;
-            padding-bottom: 0.5rem;
-            padding-top: 0.5rem;
-
-            li {
-                padding: 0 0 0 2rem;
-            }
-        }
-
-    }
+  }
 
 }
 
@@ -58,33 +58,33 @@
 // Styleguide 18.2
 
 .page_header {
-    @extend %clearfix;
-    border-bottom: $common_gray_border;
-    margin-top: 1rem;
-    margin-bottom: rem(20);
+  @extend %clearfix;
+  border-bottom: $common_gray_border;
+  margin-top: 1rem;
+  margin-bottom: rem(20);
 
-    h1, h2 {
-        margin-top: 0;
-        @extend %font_weight_100;
-        span {
-            display: block;
-            font-size: rem(14);
-            color: $gray_medium;
-        }
+  h1, h2 {
+    margin-top: 0;
+    @extend %font_weight_100;
+    span {
+      display: block;
+      font-size: rem(14);
+      color: $gray_medium;
     }
+  }
 
-    h2 {
-        margin-bottom: 1rem;
-        span {
-            display: block;
-            @extend %muted_text;
-            font-size: rem(14);
-        }
+  h2 {
+    margin-bottom: 1rem;
+    span {
+      display: block;
+      @extend %muted_text;
+      font-size: rem(14);
     }
+  }
 
-    h1 {
-        margin-bottom: 0.5rem;
-    }
+  h1 {
+    margin-bottom: 0.5rem;
+  }
 
     // .page_header.tabbed
     //
@@ -105,25 +105,25 @@
     // Styleguide 18.3
 
     &.tabbed {
-        @extend %header_tabs;
+      @extend %header_tabs;
     }
 
     &.btn_nav {
-        h2 {
-            padding-right: 4.25rem;
+      h2 {
+        padding-right: 4.25rem;
+      }
+      nav {
+        margin: 1rem 0 0 1rem;
+        position: absolute;
+        width: 100%;
+        bottom: 1rem;
+        .btn_action {
+          float: right;
         }
-        nav {
-            margin: 1rem 0 0 1rem;
-            position: absolute;
-            width: 100%;
-            bottom: 1rem;
-            .btn_action {
-                float: right;
-            }
-        }
+      }
     }
 
-}
+  }
 
 // %pagination
 //
@@ -138,23 +138,23 @@
 // Styleguide 18.4
 
 %pagination {
-    @include outer-container;
+  @include outer-container;
 
-    a {
-        display: inline-block;
-    }
+  a {
+    display: inline-block;
+  }
 
-    .prev {
-        float: left;
-    }
-    .next {
-        float: right;
-    }
+  .prev {
+    float: left;
+  }
+  .next {
+    float: right;
+  }
 }
 
 .pagination {
     @extend %pagination; // _extends
-}
+  }
 
 // .sub_header
 //
@@ -178,38 +178,38 @@
 // Styleguide 18.5
 
 .sub_header {
-    @extend .bordered;
-    @extend %clearfix;
-    padding-bottom: rem(20);
+  @extend .bordered;
+  @extend %clearfix;
+  padding-bottom: rem(20);
 
-    .left {
-        @extend .bordered;
-        margin-bottom: rem(20);
-        padding-bottom: rem(20);
-    }
+  .left {
+    @extend .bordered;
+    margin-bottom: rem(20);
+    padding-bottom: rem(20);
+  }
+
+  .left, .right {
+    @extend %clearfix;
+  }
+
+  @include media($medium) {
 
     .left, .right {
-        @extend %clearfix;
+      max-width: 50%;
     }
 
-    @include media($medium) {
-
-        .left, .right {
-            max-width: 50%;
-        }
-
-        .left {
-            float: left;
-            margin: 0;
-            padding: 0;
-            border: none;
-        }
-
-        .right {
-            float: right;
-        }
-
+    .left {
+      float: left;
+      margin: 0;
+      padding: 0;
+      border: none;
     }
+
+    .right {
+      float: right;
+    }
+
+  }
 
 }
 
@@ -224,6 +224,6 @@
 // Styleguide 18.6
 
 .action_header {
-    clear: left;
-    color: $gray_light;
+  clear: left;
+  color: $gray_light;
 }

@@ -16,25 +16,25 @@ $well_border_radius: $border_radius;
 
 @mixin well($radius: $well_border_radius, $padding: true, $margin: false, $border: false, $background: $white, $shadow: true) {
 
-  	@extend %clearfix;
-	border-radius: $radius;
-	background: $background;
+ @extend %clearfix;
+ border-radius: $radius;
+ background: $background;
 
-	@if $padding {
-		@extend %well_padding;
-	}
+ @if $padding {
+  @extend %well_padding;
+}
 
-	@if $margin {
-		@extend %well_margin;
-	}
+@if $margin {
+  @extend %well_margin;
+}
 
-	@if $border {
-		border: $well_border_dark;
-	}
+@if $border {
+  border: $well_border_dark;
+}
 
-	@if $shadow {
-		box-shadow: $well_shadow;
-	}
+@if $shadow {
+  box-shadow: $well_shadow;
+}
 
 }
 

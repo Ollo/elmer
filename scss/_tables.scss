@@ -39,10 +39,10 @@ table {
 
 th, td {
 	padding: 0 rem(15);
- 	height: rem(50);
- 	@include media($small) {
-		padding: 0 rem(35);
-	}
+  height: rem(50);
+  @include media($small) {
+    padding: 0 rem(35);
+  }
 }
 
 th {
@@ -55,9 +55,9 @@ th {
 
 td {
   border-bottom: $common_gray_border;
-   @include media($small) {
-   		height: rem(100);
-  }
+  @include media($small) {
+   height: rem(100);
+ }
 }
 
 // .table

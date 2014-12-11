@@ -70,18 +70,18 @@ body {
 // Styleguide 5.1
 
 h1, h2, h3, h4 {
-   @include museo-sans;
+ @include museo-sans;
    text-rendering: optimizeLegibility; // Fix the character spacing for headings
    line-height: 1.25em;
    color: $gray_dark;
-}
+ }
 
-h1 {
-	@extend %font_weight_100;
-	font-size: rem(22);
-	@include media($medium) {
-		font-size: rem(32);
-	}
+ h1 {
+   @extend %font_weight_100;
+   font-size: rem(22);
+   @include media($medium) {
+    font-size: rem(32);
+  }
 }
 
 h2 {
