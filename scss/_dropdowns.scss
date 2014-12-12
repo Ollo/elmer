@@ -1,104 +1,106 @@
 %basic_dropdown {
-	margin-bottom: 1rem;
-	@include well($well_border_radius, false, false, false, $white, false);
-	display: inline-block;
-	margin-bottom: 0;
-	cursor: pointer;
-	vertical-align: bottom;
-	@extend %font_weight_500;
+  margin-bottom: 1rem;
+  @include well($well_border_radius, false, false, false, $white, false);
+  display: inline-block;
+  margin-bottom: 0;
+  cursor: pointer;
+  vertical-align: bottom;
+  @extend %font_weight_500;
 
-	img {
-		display: inline-block;
-		width: 2.25rem;
-		height: 2.25rem;
-		margin-right: .25rem;
-		vertical-align: bottom;
-	}
+  img {
+    display: inline-block;
+    width: 2.25rem;
+    height: 2.25rem;
+    margin-right: .25rem;
+    vertical-align: bottom;
+  }
 
-	a {
-		i {
-			float: right;
+  a, li {
+    i {
+      float: right;
       margin-top: .45rem;
     }
   }
 
-  span, a {
+  span, a, li {
     padding: .5rem .75rem;
     display: block;
     span {
-     padding: 0;
-     display: inline;
-   }
- }
+      padding: 0;
+      display: inline;
+    }
+  }
 
- .drop_icon, > .fa-sort-desc, > .fa-angle-down {
-  position: absolute;
-  right: .75rem;
-  color: $teal;
-  font-size: 1rem;
-}
+  .drop_icon, > .fa-sort-desc, > .fa-angle-down {
+    position: absolute;
+    right: .75rem;
+    color: $teal;
+    font-size: 1rem;
+  }
 
-.selected_option {
-  padding-right: 2.5rem;
-  @extend %truncate;
-  color: $gray_dark;
-}
+  .selected_option {
+    padding-right: 2.5rem;
+    @extend %truncate;
+    color: $gray_dark;
+  }
 
-.drop_menu {
- position: absolute;
- width: 100%;
- @include well(0 0 $border_radius $border_radius, false, false, false, $white, true);
- span {
-  @extend %muted_text;
-}
-a {
-  @include transition(background .2s ease-in-out);
-}
-}
-
-&.active {
-  z-index: 4;
-  border-radius: $border_radius $border_radius 0 0;
   .drop_menu {
-   box-shadow: 0 .5rem .6rem rgba(0,0,0, .15);
- }
-}
+    position: absolute;
+    width: 100%;
+    @include well(0 0 $border_radius $border_radius, false, false, false, $white, true);
+    span {
+      @extend %muted_text;
+    }
+    a, li {
+      @include transition(background .2s ease-in-out);
+    }
+  }
+
+  &.active {
+    z-index: 4;
+    border-radius: $border_radius $border_radius 0 0;
+
+    .drop_menu {
+      box-shadow: 0 .5rem .6rem rgba(0,0,0, .15);
+    }
+  }
 
 }
 
 %button_dropdown {
-	@extend %basic_dropdown;
-	text-transform: uppercase;
-	color: $gray_medium;
+  @extend %basic_dropdown;
+  text-transform: uppercase;
+  color: $gray_medium;
 
-	.drop_icon, > .fa-sort-desc, > .fa-angle-down {
-		@extend %color_green;
-		top: .6rem;
-	}
+  .drop_icon, > .fa-sort-desc, > .fa-angle-down {
+    @extend %color_green;
+    top: .6rem;
+  }
 
-	a {
-		color: $gray_medium;
-	}
-
+  a {
+    color: $gray_medium;
+  }
 }
 
 %drop_menu_skin {
 
-	@extend %font_weight_700;
-	
-	a {
-		color: $gray_medium;
-	}
+  @extend %font_weight_700;
 
-	.drop_menu {
-		min-width: rem(140);
-		a {
+  a, li {
+    color: $gray_medium;
+  }
+
+  .drop_menu {
+    min-width: rem(140);
+    a, li {
       &:hover, {
         background: rgba($gray_lightest, .5);
       }
+
       &.selected {
         background: $gray_lightest;
         color: $gray_dark;
+
         i {
           @extend .fa;
           @extend .fa-check;
@@ -110,29 +112,92 @@ a {
 
   &.active {
     .drop_menu {
-     left: 0;
-     right: 0;
-     border: $common_gray_border;
-   }
- }
+      left: 0;
+      right: 0;
+      border: $common_gray_border;
+    }
+  }
 }
 
 // Not all drop menu's are used inside a .dropdown
 .drop_menu {
-	opacity: 0;
-	max-height: 0;
-	overflow-x: hidden;
+  opacity: 0;
+  max-height: 0;
+  overflow-x: hidden;
   overflow-y: scroll;
   @include transform(translateZ(0));
   @include backface-visibility(hidden);
   @include transition(opacity .1s ease-in-out, max-height .3s ease-in-out);
 
-  &.active, &.open {
+  &.active {
     max-height: 50rem;
     opacity: 1;
   }
-
 }
+
+
+// .dropdown_select
+//
+// Primary style dropdown for masking the native SELECT element. Unlike the other
+// styles in this section, this one relies on using list elements as opposed to
+// DIV and A elements. When implementing in an application, the user will need
+// to handle the logic which sets the .selected_option and opens/closes the dropdown
+// by setting .active on the parent element (which also has the .dropdown_select class).
+// @extends %basic_dropdown %drop_menu_skin
+//
+// Markup:
+// <div class="dropdown_select">
+//   <span class="selected_option">
+//     Option 1
+//     <i class="fa fa-chevron-down drop_icon"></i>
+//   </span>
+//   <ul class="drop_menu">
+//     <li>Option 1</li>
+//     <li>Option 2</li>
+//     <li>Option 3</li>
+//   </ul>
+// </div>
+// <div class="dropdown_select active">
+//   <span class="selected_option">
+//     Option 1
+//     <i class="fa fa-chevron-down drop_icon"></i>
+//   </span>
+//   <ul class="drop_menu">
+//     <li>Option 1</li>
+//     <li>Option 2</li>
+//     <li>Option 3</li>
+//   </ul>
+// </div>
+//
+// Styleguide 20.1
+.dropdown_select {
+  @extend %basic_dropdown;
+  @extend %drop_menu_skin;
+  width: 14rem;
+  border: 1px solid $gray_light;
+  text-align: left;
+
+  .selected_option {
+    padding-right: 2.5rem;
+    color: $gray_dark;
+  }
+
+  .drop_icon, .fa-angle-down  {
+    top: 1.2rem;
+  }
+
+  &.active {
+    .drop_menu {
+      max-height: 50rem;
+      opacity: 1;
+
+      border-radius: 0 0 $border_radius $border_radius;
+      left: -.1rem;
+      right: -.1rem;
+    }
+  }
+}
+
 
 // .dropdown_primary
 //
@@ -156,18 +221,18 @@ a {
 //     </div>
 // </div>
 //
-// Styleguide 20.1
+// Styleguide 20.2
 .dropdown_primary {
-	@extend %button_dropdown;
-	width: rem(180);
+  @extend %button_dropdown;
+  width: rem(180);
 
-	.drop_menu {
-		a {
-			&:hover {
-				background-color: $gray_lightest;
-			}
-		}
-	}
+  .drop_menu {
+    a {
+      &:hover {
+        background-color: $gray_lightest;
+      }
+    }
+  }
 }
 
 
@@ -193,20 +258,20 @@ a {
 //     </div>
 // </div>
 //
-// Styleguide 20.2
+// Styleguide 20.3
 .dropdown_secondary {
-	@extend %button_dropdown;
-	width: rem(145);
-	background-color: $gray_lightest;
+  @extend %button_dropdown;
+  width: rem(145);
+  background-color: $gray_lightest;
 
-	.drop_menu {
-		background-color: $gray_lightest;
-		a {
-			&:hover {
-				background: $white;
-			}
-		}
-	}
+  .drop_menu {
+    background-color: $gray_lightest;
+    a {
+      &:hover {
+        background: $white;
+      }
+    }
+  }
 }
 
 // .dropdown_tertiary
@@ -235,31 +300,31 @@ a {
 //   </div>
 // </div>
 //
-// Styleguide 20.3
+// Styleguide 20.4
 .dropdown_tertiary {
-	@extend %basic_dropdown;
-	@extend %drop_menu_skin;
-	border: $common_gray_border;
-	width: rem(140);
+  @extend %basic_dropdown;
+  @extend %drop_menu_skin;
+  border: $common_gray_border;
+  width: rem(140);
 
-	.drop_icon, .fa-angle-down  {
-		top: 1.2rem;
-	}
+  .drop_icon, .fa-angle-down  {
+    top: 1.2rem;
+  }
 
-	&.active {
-		.drop_menu {
-			border-radius: 0 0 $border_radius $border_radius;
-			left: -.1rem;
-			right: -.1rem;
-		}
-	}
-	
+  &.active {
+    .drop_menu {
+      border-radius: 0 0 $border_radius $border_radius;
+      left: -.1rem;
+      right: -.1rem;
+    }
+  }
+
 }
 
 // .dropdown_quaternary
 //
 // quaternary style dropdown
-// 
+//
 // <div style="margin: 0 0 12rem;">
 //   <div class="dropdown_quaternary">
 //       <button class="trigger_panel">
@@ -284,55 +349,55 @@ a {
 //       </div>
 //   </div>
 // </div>
-// 
-// Styleguide 20.4
+//
+// Styleguide 20.5
 .dropdown_quaternary {
 
-	button {
-   background: $white;
-   outline: none;
-   border: 1px solid transparent;
-   margin-bottom: -.1rem;
-   z-index: 11;
-   font-size: rem(10);
-   padding: .5rem;
-
-   i {
-     &:first-of-type {
-       color: $gray_light;
-     }
-     &.fa-chevron-down {
-       color: $teal;
-       font-size: rem(8);
-       top: -.1rem;
-     }
-   }
-
-   &:focus, &:hover {
-     outline: none;
-     box-shadow: none;
-   }
- }
-
- &.active {
   button {
-    border-color: $gray_light;
-    border-bottom-color: $white;
-    border-radius: $border_radius $border_radius 0 0;
-  }
-  .drop_menu {
-   border-radius: 0 $border_radius $border_radius $border_radius;
- }
-}
+      background: $white;
+      outline: none;
+      border: 1px solid transparent;
+      margin-bottom: -.1rem;
+      z-index: 11;
+      font-size: rem(10);
+      padding: .5rem;
 
-@extend %basic_dropdown;
-@extend %drop_menu_skin;
+      i {
+          &:first-of-type {
+              color: $gray_light;
+          }
+          &.fa-chevron-down {
+              color: $teal;
+              font-size: rem(8);
+              top: -.1rem;
+          }
+      }
+
+      &:focus, &:hover {
+          outline: none;
+          box-shadow: none;
+      }
+  }
+
+  &.active {
+        button {
+            border-color: $gray_light;
+            border-bottom-color: $white;
+            border-radius: $border_radius $border_radius 0 0;
+        }
+        .drop_menu {
+          border-radius: 0 $border_radius $border_radius $border_radius;
+        }
+    }
+
+  @extend %basic_dropdown;
+  @extend %drop_menu_skin;
 }
 
 // .dropdown_quinary
 //
 // dropdown that opens up instead of down, used in modal footers
-// 
+//
 // <div style="margin: 12rem 0 0;">
 //   <div class="dropdown_quinary">
 //       <a class="selected_option">Really long option here</a>
@@ -353,76 +418,76 @@ a {
 //       </div>
 //   </div>
 // </div>
-// 
-// Styleguide 20.5
+//
+// Styleguide 20.6
 .dropdown_quinary {
-	@extend %basic_dropdown;
-	@extend %drop_menu_skin;
+  @extend %basic_dropdown;
+  @extend %drop_menu_skin;
 
-	border: $common_gray_border;
-	width: rem(140);
+  border: $common_gray_border;
+  width: rem(140);
 
-	.drop_icon, .fa-angle-down  {
-		top: .8rem;
-	}
+  .drop_icon, .fa-angle-down  {
+    top: .8rem;
+  }
 
-	&.active {
-		border-radius: 0 0 $border_radius $border_radius;
-		.drop_menu {
-			border-radius: $border_radius $border_radius 0 0;
-			left: -.1rem;
-			right: -.1rem;
-			bottom: 3.3rem;
-		}
-	}
+  &.active {
+    border-radius: 0 0 $border_radius $border_radius;
+    .drop_menu {
+      border-radius: $border_radius $border_radius 0 0;
+      left: -.1rem;
+      right: -.1rem;
+      bottom: 3.3rem;
+    }
+  }
 
 }
 
 //force menu to hide on desktop
 .dropdown_menu {
-	@include media($medium) {
-		&.mobile_only {
-			display: none!important;
-		}
-	}
+  @include media($medium) {
+    &.mobile_only {
+      display: none!important;
+    }
+  }
 }
 
 
 // panels are used in large white dropdown menus
 .panel {
-	@include backface-visibility(hidden);
-	@include transform(translateZ(0));
+  @include backface-visibility(hidden);
+  @include transform(translateZ(0));
 }
 
 .panel_trigger.btn_action {
-	background: $white;
-	color: $teal;
+  background: $white;
+  color: $teal;
 
-	&.squared {
-		transition: none!important;
-	}
+  &.squared {
+    transition: none!important;
+  }
 
-	&.active {
+  &.active {
 
-		&.arrow {
-			&:before {
-				content: '';
-				position: absolute;
-				bottom: -1.5rem;
-				left: .75rem;
-				border-left: 1rem solid transparent;
-				border-right: 1rem solid transparent;
-				border-bottom: 1rem solid $white;
-			}
-		}
+    &.arrow {
+      &:before {
+        content: '';
+        position: absolute;
+        bottom: -1.5rem;
+        left: .75rem;
+        border-left: 1rem solid transparent;
+        border-right: 1rem solid transparent;
+        border-bottom: 1rem solid $white;
+      }
+    }
 
-		&.squared {
-			border-radius: $border_radius $border_radius 0 0;
-			padding-bottom: rem(17);
-			margin-bottom: rem(-12);
-		}
+    &.squared {
+      border-radius: $border_radius $border_radius 0 0;
+      padding-bottom: rem(17);
+      margin-bottom: rem(-12);
+    }
 
-	}
+  }
 
 }
 
@@ -448,54 +513,54 @@ a {
 //   </div>
 // </div>
 //
-// Styleguide 20.5
+// Styleguide 20.7
 %dropdown_navigation {
-	position: absolute;
-	width: 100%;
-	text-align: left;
-	max-height: 0;
-	overflow: hidden;
-	left: 0;
-	right: 0;
-	z-index: 10;
-	@extend %rounded_corners;
-	opacity: 0;
-	@extend %well_white_no_padding;
-	@include transition(all .2s ease-in-out);
+  position: absolute;
+  width: 100%;
+  text-align: left;
+  max-height: 0;
+  overflow: hidden;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  @extend %rounded_corners;
+  opacity: 0;
+  @extend %well_white_no_padding;
+  @include transition(all .2s ease-in-out);
 
-	a {
-		display: inline-block;
-	}
+  a {
+    display: inline-block;
+  }
 
-	&.active, &:focus {
-		padding: rem(15);
-		outline: none;
-		opacity: 1;
-		max-height: 1000rem;
-	}
+  &.active, &:focus {
+    padding: rem(15);
+    outline: none;
+    opacity: 1;
+    max-height: 1000rem;
+  }
 
-	.primary {
-		margin: 1em auto;
-		display: block;
-	}
+  .primary {
+    margin: 1em auto;
+    display: block;
+  }
 
-	li.bordered {
-		margin-bottom: 2rem;
-		.ui_checkbox_secondary {
-			+ label {
-				padding-bottom: 0;
-			}
-		}
-	}
+  li.bordered {
+    margin-bottom: 2rem;
+    .ui_checkbox_secondary {
+      + label {
+        padding-bottom: 0;
+      }
+    }
+  }
 
-	&.arrow {
-		margin-top: 1.4rem;
-		&.active, &.focus {
+  &.arrow {
+    margin-top: 1.4rem;
+    &.active, &.focus {
 
-		}
-	}
+    }
+  }
 }
 
 .dropdown_navigation {
-	@extend %dropdown_navigation;
+  @extend %dropdown_navigation;
 }
