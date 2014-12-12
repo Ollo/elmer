@@ -104,7 +104,79 @@
           
             
              <section class="kss-depth-2">
-              <h2 class="kss-title"><span class="kss-ref">20.1</span> - .dropdown_primary</h2>
+              <h2 class="kss-title"><span class="kss-ref">20.1</span> - .dropdown_select</h2>
+            
+              
+                  <div class="kss-box"><p>Primary style dropdown for masking the native SELECT element. Unlike the other
+styles in this section, this one relies on using list elements as opposed to
+DIV and A elements. When implementing in an application, the user will need
+to handle the logic which sets the .selected_option and opens/closes the dropdown
+by setting .active on the parent element (which also has the .dropdown_select class).
+@extends %basic_dropdown %drop_menu_skin</p>
+</div>
+                  <div class="kss-mod-list">
+                    <div class="kss-mod-desc-group">
+                      <!-- <div class="kss-mod-desc"><p>Default styling</p></div>
+                      <div class="kss-mod-name"></div> -->
+                    </div>
+                    <div class="kss-mod-example">
+                      <div><div class="dropdown_select">
+  <span class="selected_option">
+    Option 1
+    <i class="fa fa-chevron-down drop_icon"></i>
+  </span>
+  <ul class="drop_menu">
+    <li>Option 1</li>
+    <li>Option 2</li>
+    <li>Option 3</li>
+  </ul>
+</div>
+<div class="dropdown_select active">
+  <span class="selected_option">
+    Option 1
+    <i class="fa fa-chevron-down drop_icon"></i>
+  </span>
+  <ul class="drop_menu">
+    <li>Option 1</li>
+    <li>Option 2</li>
+    <li>Option 3</li>
+  </ul>
+</div></div>
+                    </div>
+                  
+                  </div>
+                  <div class="kss-markup">
+                    <pre class="prettyprint lang-html">&lt;div class=&quot;dropdown_select&quot;&gt;
+  &lt;span class=&quot;selected_option&quot;&gt;
+    Option 1
+    &lt;i class=&quot;fa fa-chevron-down drop_icon&quot;&gt;&lt;/i&gt;
+  &lt;/span&gt;
+  &lt;ul class=&quot;drop_menu&quot;&gt;
+    &lt;li&gt;Option 1&lt;/li&gt;
+    &lt;li&gt;Option 2&lt;/li&gt;
+    &lt;li&gt;Option 3&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;dropdown_select active&quot;&gt;
+  &lt;span class=&quot;selected_option&quot;&gt;
+    Option 1
+    &lt;i class=&quot;fa fa-chevron-down drop_icon&quot;&gt;&lt;/i&gt;
+  &lt;/span&gt;
+  &lt;ul class=&quot;drop_menu&quot;&gt;
+    &lt;li&gt;Option 1&lt;/li&gt;
+    &lt;li&gt;Option 2&lt;/li&gt;
+    &lt;li&gt;Option 3&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;</pre>
+                  </div>
+              
+            
+              </section>
+            
+          
+            
+             <section class="kss-depth-2">
+              <h2 class="kss-title"><span class="kss-ref">20.2</span> - .dropdown_primary</h2>
             
               
                   <div class="kss-box"><p>Primary style dropdown for filtering and sorting. @extends %button_dropdown</p>
@@ -159,7 +231,7 @@
           
             
              <section class="kss-depth-2">
-              <h2 class="kss-title"><span class="kss-ref">20.2</span> - .dropdown_secondary</h2>
+              <h2 class="kss-title"><span class="kss-ref">20.3</span> - .dropdown_secondary</h2>
             
               
                   <div class="kss-box"><p>Secondary style dropdown white backgrounds. @extends %button_dropdown</p>
@@ -214,7 +286,7 @@
           
             
              <section class="kss-depth-2">
-              <h2 class="kss-title"><span class="kss-ref">20.3</span> - .dropdown_tertiary</h2>
+              <h2 class="kss-title"><span class="kss-ref">20.4</span> - .dropdown_tertiary</h2>
             
               
                   <div class="kss-box"><p>Tertiary style dropdown</p>
@@ -277,7 +349,7 @@
           
             
              <section class="kss-depth-2">
-              <h2 class="kss-title"><span class="kss-ref">20.4</span> - .dropdown_quaternary</h2>
+              <h2 class="kss-title"><span class="kss-ref">20.5</span> - .dropdown_quaternary</h2>
             
               
                   
@@ -316,7 +388,7 @@
           
             
              <section class="kss-depth-2">
-              <h2 class="kss-title"><span class="kss-ref">20.5</span> - .dropdown_quinary</h2>
+              <h2 class="kss-title"><span class="kss-ref">20.6</span> - .dropdown_quinary</h2>
             
               
                   
@@ -351,7 +423,7 @@
           
             
              <section class="kss-depth-2">
-              <h2 class="kss-title"><span class="kss-ref">20.5</span> - .dropdown_navigation</h2>
+              <h2 class="kss-title"><span class="kss-ref">20.7</span> - .dropdown_navigation</h2>
             
               
                   <div class="kss-box"><p>Standard large white dropdown. Use this class or @extend %dropdown_navigation. Addition of the class &apos;arrow&apos; to both menu and button will allow for an arrow to show when the menu is open. Addition of the class &apos;squared&apos; will allow for the menu to open attached to the button.
