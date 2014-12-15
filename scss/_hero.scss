@@ -29,6 +29,10 @@
     display: block;
   }
 
+  > img {
+    width: 100%;
+  }
+
   figcaption {
     @extend %clearfix;
     bottom: 0;
