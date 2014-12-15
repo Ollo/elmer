@@ -30,15 +30,15 @@
 
 
 table {
-	@include museo-sans;
-	margin: ($base_line_height / 2) 0;
-	width: 100%;
-	border: $common_gray_border;
-	vertical-align: middle;
+  @include museo-sans;
+  margin: ($base_line_height / 2) 0;
+  width: 100%;
+  border: $common_gray_border;
+  vertical-align: middle;
 }
 
 th, td {
-	padding: 0 rem(15);
+  padding: 0 rem(15);
   height: rem(50);
   @include media($small) {
     padding: 0 rem(35);
@@ -91,251 +91,392 @@ td {
 // Styleguide 16.2
 
 %table {
-
-	.main {
-		padding: 0.75rem 0;
-	}
+  .main {
+    padding: 0.75rem 0;
+  }
 }
 
 .table {
-	@extend %clearfix;
-	@include museo-sans;
-	border: $common_gray_border;
-	background: $white;
-	font-size: rem(14);
-	margin-bottom: rem(20);
-	color: $gray_medium;
-	word-break: break-word;
-	clear: both;
+  @extend %clearfix;
+  @extend %rounded_corners;
+  margin-bottom: rem(20);
+  background: $white;
+  box-shadow: $common_drop_shadow;
+  color: $gray_medium;
+  word-break: break-word;
+  clear: both;
 
-	li {
-		list-style: none;
-	}
+  li {
+    list-style: none;
+  }
 
-	.table_header {
-		@extend %small_text;
-		@extend .muted_header;
-		@extend .muted_header.primary_variation;
-		@extend %clearfix;
+  .table_header {
+    @extend %small_text;
+    @extend .muted_header;
+    @extend .muted_header.secondary_variation;
+    @extend %font_weight_700;
+    @extend %clearfix;
+    font-size: rem(12);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background: $gray_lightest;
+    border-bottom: $common_gray_border;
+  }
 
-	}
+  .row {
+    padding: rem(15) rem(15) 0;
+    min-height: 5rem;
 
-	.row {
-		padding: rem(15) rem(15) 0;
-		border-bottom: $common_gray_border;
-		min-height: 5rem;
+    &:nth-child(2n - 1) {
+      background-color: $gray_lightest;
+    }
 
-		&.active {
-			background-color: #fafafa;
-			padding-bottom: rem(15);
-		}
+    &.active {
+      background-color: #fafafa;
+      padding-bottom: rem(15);
+    }
 
-		&:last-child {
-			border-bottom: 0;
-		}
-	}
+    &:last-child {
+      border-bottom: 0;
+    }
+  }
 
-	.expand {
-		text-decoration: none;
-		position: absolute;
-		right: rem(15);
-		cursor: pointer;
-		z-index: 10;
-	}
+  .expand {
+    text-decoration: none;
+    position: absolute;
+    right: rem(15);
+    cursor: pointer;
+    z-index: 10;
+  }
 
-	.main {
-		padding-right: rem(110);
-		padding-bottom: rem(15);
-	}
+  .main {
+    padding-right: rem(110);
+    padding-bottom: rem(15);
+  }
 
-	.range {
-		display: inline-block;
-		@extend %muted_text;
-		text-align: left;
-	}
+  .range {
+    display: inline-block;
+    @extend %muted_text;
+    text-align: left;
+  }
 
-	.mobile_label {
-		color: $gray_dark;
-		padding-right: rem(5);
-		@extend %font_weight_500;
-	}
+  .mobile_label {
+    color: $gray_dark;
+    padding-right: rem(5);
+    @extend %font_weight_500;
+  }
 
-	.fa-trash-o {
-		color: $gray_medium;
-		cursor: pointer;
-		padding: .6rem;
-	}
+  .fa-trash-o {
+    color: $gray_medium;
+    cursor: pointer;
+    padding: .6rem;
+  }
 
-	> div {
-		a {
-			text-decoration: underline;
-		}
-	}
+  > div {
+    a {
+      text-decoration: underline;
+    }
+  }
 
-	input {
-		margin: 0;
-		float: left;
-		width: 80%;
-	}
+  input {
+    margin: 0;
+    float: left;
+    width: 80%;
+  }
 
-	select {
-		color: $gray_medium;
-	}
+  select {
+    color: $gray_medium;
+  }
 
-	.primary, .disabled, .secondary {
-		text-decoration: none;
-		min-width: rem(147);
-		display: inline-block;
-		text-align: center;
+  .primary, .disabled, .secondary {
+    text-decoration: none;
+    min-width: rem(147);
+    display: inline-block;
+    text-align: center;
 
-		&:hover {
-			color: $white;
-		}
-	}
+    &:hover {
+      color: $white;
+    }
+  }
 
-	p {
-		margin: 0;
-		max-width: rem(335);
-	}
+  p {
+    margin: 0;
+    max-width: rem(335);
+  }
 
-	.handle {
-		display: none;
-	}
+  .handle {
+    display: none;
+  }
 
-	.ui_select {
-		margin-bottom: rem(9);
-	}
+  .ui_select {
+    margin-bottom: rem(9);
+  }
 
-	.dropdown {
-		margin-bottom: 0;
-	}
+  .dropdown {
+    margin-bottom: 0;
+  }
 
-	.avatar {
-		margin: rem(15) 0;
-	}
+  .avatar {
+    margin: rem(15) 0;
+  }
 
-	.pending {
-		@extend %muted_text;
-		a {
-			@extend %muted_text;
-		}
-	}
+  .pending {
+    @extend %muted_text;
+    a {
+      @extend %muted_text;
+    }
+  }
 
-	@include media($mobileOnly) {
+  @include media($mobileOnly) {
 
-		div {
-			float: left;
-			width: 100%;
-			padding: 0 0 rem(5);
-			margin: 0 0 rem(5);
-		}
+    div {
+      float: left;
+      width: 100%;
+      padding: 0 0 rem(5);
+      margin: 0 0 rem(5);
+    }
 
-		.table_details {
-			div {
-				margin: 0 0 1rem;
-			}
-		}
+    .table_details {
+      div {
+        margin: 0 0 1rem;
+      }
+    }
 
-		.dropdown_tertiary {
-			padding-bottom: 0;
-		}
+    .dropdown_tertiary {
+      padding-bottom: 0;
+    }
 
-		.hidden_mobile {
-			display: none!important;
-		}
+    .hidden_mobile {
+      display: none!important;
+    }
 
-	}
+  }
 
-	@include media($medium) {
+  @include media($medium) {
 
-		.table_header {
-			padding: rem(15) rem(35);
+    .table_header {
+      padding: rem(15) rem(35);
+      font-size: rem(14);
 
-			div:last-child {
-				text-align: right;
-			}
+      div:last-child {
+        text-align: right;
+      }
+    }
 
-		}
+    .row {
+      padding: rem(30) rem(35);
+    }
 
-		.row {
-			padding: rem(30) rem(35);
-			border-bottom: $common_gray_border;
-		}
+    // used to be <label>, but we need to move to a class for better specification
+    // tables have not yet been refactored to use this class, must do!
+    .mobile_label {
+      display: none;
+    }
 
-		// used to be <label>, but we need to move to a class for better specification
-		// tables have not yet been refactored to use this class, must do!
-		.mobile_label {
-			display: none;
-		}
+    .range {
+      .first {
+        padding-right: rem(30);
+      }
 
-		.range {
+      .second {
+        padding-left: rem(30);
+      }
+    }
 
-			.first {
-				padding-right: rem(30);
-			}
+    .expand {
+      display: none;
+    }
 
-			.second {
-				padding-left: rem(30);
-			}
-		}
+    .main {
+      border-bottom: none;
+      padding: 0;
+    }
 
-		.expand {
-			display: none;
-		}
+    .panel {
+      display: inline-block!important;
+    }
 
-		.main {
-			border-bottom: none;
-			padding: 0;
-		}
+    input[type="text"], input[type="email"] {
+      max-width: rem(340);
+    }
 
-		.panel {
-			display: inline-block!important;
-		}
+    .primary, .disabled, .secondary {
+      margin-bottom: 0;
+    }
 
-		input[type="text"], input[type="email"] {
-			max-width: rem(340);
-		}
+    .right {
+      text-align: right;
 
-		.primary, .disabled, .secondary {
-			margin-bottom: 0;
-		}
+      .half {
+        float: right;
+      }
+    }
 
-		.right {
-			text-align: right;
+    .center {
+      text-align: center;
+    }
 
-			.half {
-				float: right;
-			}
-		}
+    .handle {
+      display: inline-block;
+      padding-right: rem(40);
+      color: $gray_medium;
+    }
 
-		.center {
-			text-align: center;
-		}
+    .ui_select {
+      margin-bottom: 0;
+    }
 
-		.handle {
-			display: inline-block;
-			padding-right: rem(40);
-			color: $gray_medium;
-		}
-
-		.ui_select {
-			margin-bottom: 0;
-		}
-
-		.avatar {
-			margin: 0;
-		}
-
-
-	}
+    .avatar {
+      margin: 0;
+    }
+  }
 }
 
 .table_details {
-	display: none;
-	&.open {
-		display: block;
-	}
-	@include media($medium) {
-		display: block!important;
-	}
+  display: none;
+  &.open {
+    display: block;
+  }
+  @include media($medium) {
+    display: block!important;
+  }
+}
+
+
+// .flex_table
+//
+// Add this class to simulate a table. Use classes to determine column widths, as seen below.
+// This type of table should be used when the table's contents will include variable-height elements.
+// The flexible box model makes alignment and responsiveness very simple to achieve.
+//
+// Markup:
+// <ul class="flex_table">
+//   <li class="table_header">
+//     <div class="cols1">
+//       <span class="hidden_mobile">.cols1</span>
+//       <span class="mobile_label">Mobile Cols</span>
+//     </div>
+//     <div class="cols2 hidden_mobile">.cols2<i class="fa fa-sort-desc"></i></div>
+//     <div class="cols4 hidden_mobile">.cols4<i class="fa fa-sort-asc"></i></div>
+//     <div class="cols1 hidden_mobile">.cols1</div>
+//   </li>
+//   <li class="row">
+//     <div class="cols1"><label class="mobile_label">.cols1: </label>Really, really, super long, not short, long two line title squish me!</div>
+//     <div class="cols2"><label class="mobile_label">.cols2: </label><button class="secondary">Ima button</div>
+//     <div class="cols4">(.cols4 no mobile_label)&nbsp;<a href="">Edit</a></div>
+//     <div class="cols1"><label class="mobile_label">.cols1 (again): </label><a href=""><i class="fa fa-trash-o"></i></a></div>
+//   </li>
+//   <li class="row">
+//     <div class="cols1"><label class="mobile_label">.cols1: </label>Like my stripes?</div>
+//     <div class="cols2"><label class="mobile_label">.cols2: </label><div style="width:50px;height:50px;background:#ddd">fake img</div></div>
+//     <div class="cols4">(.cols4 no mobile_label)&nbsp;<a href="">Save Metric</a></div>
+//     <div class="cols1"><label class="mobile_label">.cols1 (again): </label><a href=""><i class="fa fa-trash-o"></i></a></div>
+//   </li>
+// </ul>
+//
+// Styleguide 16.3
+$colPadding: 0.8rem;
+
+%flex_col {
+  @include display(flex);
+  @include flex-flow(row);
+  @include align-items(center);
+  padding: $colPadding 0;
+}
+
+@mixin flex-table($cols) {
+  @include display(flex);
+  @include flex-direction(column);
+  @extend %rounded_corners;
+  background-color: $white;
+  box-shadow: $common_drop_shadow;
+
+  .table_header {
+    @include display(flex);
+    @include flex-direction(row);
+    @extend %small_text;
+    @extend .muted_header;
+    @extend .muted_header.secondary_variation;
+    @extend %font_weight_700;
+    background: $gray_lightest;
+    border-bottom: $common_gray_border;
+    color: $gray_medium;
+    font-size: rem(12);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    [class*="fa-sort"] {
+      top: -0.3rem;
+      padding: 0 0.9rem;
+    }
+    [class*="fa-sort-asc"], [class*="fa-sort-up"] {
+      top: 0.2rem;
+    }
+  }
+
+  .row {
+    @include display(flex);
+    @include flex-flow(column nowrap);
+    padding: rem(15);
+
+    &:nth-child(2n + 1) {
+      background-color: $gray_lightest;
+    }
+  }
+
+  @for $i from 1 through $cols {
+    .cols#{$i} {
+      @include flex($i);
+      @extend %flex_col;
+    }
+  }
+
+  .hidden_mobile {
+    display:none;
+  }
+
+  .mobile_label {
+    @include flex(0 0 auto);
+    @extend %font_weight_500;
+    margin-bottom: 0;
+    padding-right: rem(5);
+    color: $gray_medium;
+  }
+
+
+  @include media($medium) {
+    .table_header {
+      font-size: rem(14);
+
+      > [class*="col"] {
+        padding: 0 $colPadding;
+      }
+
+      [class*="fa-sort-asc"], [class*="fa-sort-up"] {
+        top: 0.3rem;
+      }
+    }
+
+    .row {
+      @include flex-direction(row);
+      @include align-items(center);
+
+      > [class*="col"] {
+        padding-left: $colPadding;
+        padding-right: $colPadding;
+      }
+    }
+
+    .mobile_label {
+      display: none;
+    }
+
+    .hidden_mobile {
+      display: initial;
+    }
+  }
+}
+
+.flex_table {
+  @include flex-table(12);
 }
