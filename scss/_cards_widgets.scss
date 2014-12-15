@@ -277,7 +277,6 @@ $card_background: $white;
       margin: 0 auto rem(20);
       @extend img.circled;
       @extend img.large;
-      @extend img.bordered;
       cursor: pointer;
     }
 
