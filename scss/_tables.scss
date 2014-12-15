@@ -99,14 +99,12 @@ td {
 .table {
   @extend %clearfix;
   @include museo-sans;
-  // @include well()
-  // border: 1px solid rgba(0,0,0,0);
-  // border-radius: 0.4rem;
-  // box-shadow: 0 1px 0 0 $gray_light;
-  background: $white;
-  font-size: rem(14);
   margin-bottom: rem(20);
+  background: $white;
+  border-radius: 3px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   color: $gray_medium;
+  font-size: rem(14);
   word-break: break-word;
   clear: both;
   overflow: hidden;
@@ -120,7 +118,9 @@ td {
     @extend .muted_header;
     @extend .muted_header.secondary_variation;
     @extend %clearfix;
+    font-size: 1.2rem;
     font-weight: bold;
+    letter-spacing: 1px;
     text-transform: uppercase;
     background: $gray_lightest;
     border-bottom: 1px solid lighten($gray_light, 15%);
@@ -390,8 +390,8 @@ $colPadding: 0.8rem;
 @mixin flex-table($cols) {
   @include display(flex);
   @include flex-direction(column);
-  border-radius: $well_border_radius;
-  box-shadow: 0 1px 3px $gray_light;
+  border-radius: 3px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 
   .table_header {
     @include display(flex);
@@ -399,12 +399,13 @@ $colPadding: 0.8rem;
     @extend %small_text;
     @extend .muted_header;
     @extend .muted_header.secondary_variation;
-    color: $gray_dark;
+    background: $gray_lightest;
+    border-bottom: 1px solid $gray_light;
+    color: $gray_medium;
     font-size: 1.2rem;
     font-weight: bold;
+    letter-spacing: 1px;
     text-transform: uppercase;
-    background: $gray_lightest;
-    border-bottom: 1px solid lighten($gray_light, 15%);
 
     [class*="fa-sort"] {
       padding: 0 1.3rem;
@@ -441,15 +442,14 @@ $colPadding: 0.8rem;
     @extend %font_weight_500;
     margin-bottom: 0;
     padding-right: rem(5);
-    color: $gray_dark;
+    color: $gray_medium;
   }
 
 
   @include media($medium) {
     .table_header {
       > [class*="col"] {
-        padding-left: $colPadding;
-        padding-right: $colPadding;
+        padding: 0 $colPadding;
       }
     }
 
