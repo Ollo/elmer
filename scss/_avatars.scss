@@ -11,6 +11,8 @@ img {
 
 	&.circled {
 		border-radius: 100%;
+		border: .2rem solid $white;
+		box-shadow: $common_drop_shadow;
 	}
 
 	// img.circled.xsmall
@@ -78,18 +80,6 @@ img {
 		height: rem(110);
 	}
 
-	// img.circled.bordered
-	//
-	// The bordered class can be applied to any size
-	//
-	// Markup:
-	// <img class="circled bordered" src="http://lorempixel.com/100/100/nature/" />
-	//
-	// Styleguide 21.7
-	&.bordered {
-		border: 3px solid $green;
-	}
-
 }
 
 // .notification
@@ -102,7 +92,7 @@ img {
 // </div>
 // <img class="circled medium" src="http://lorempixel.com/100/100/nature/" />
 //
-// Styleguide 21.8
+// Styleguide 21.7
 
 .notification {
 	border-radius: .5rem;
@@ -188,7 +178,7 @@ img {
 //     </figcaption>
 // </figure>
 //
-// Styleguide 21.10
+// Styleguide 21.8
 .avatar {
 	padding-left: rem(50);
 	@extend %clearfix;
