@@ -539,34 +539,44 @@ $card_background: $white;
     margin-bottom: 2rem;
     width: 100%;
   }
-  button {
+  .settings_dropdown {
+    width: rem(180);
     margin: 0 0 1rem;
+    button {
+      margin: 0 0 1rem;
+      &:hover {
+        background-color: $sand;
+        color: $teal;
+      }
+    }
+    .dropdown_navigation {
+      background-color: $sand;
+    }
   }
   @include media($small) {
     .meta, img {
       float: left;
     }
     .meta {
-      max-width: 60%;
+      max-width: 70%;
+      padding-right: 2.25rem;
     }
     img {
       margin: 0 1rem 1rem 0;
       width: rem(100);
     }
-    button {
+    .settings_dropdown {
       position: absolute;
-      right: 1.5rem;
       top: 1.5rem;
+      right: 1.5rem;
+      text-align: right;
     }
   }
   @include media($medium) {
-    .meta {
-      max-width: 75%;
-    }
     img {
       margin: 0 2rem 2rem 0;
     }
-    button {
+    .settings_dropdown {
       top: 2.5rem;
       right: 2.5rem;
     }

@@ -101,7 +101,7 @@ td {
   @extend %rounded_corners;
   margin-bottom: rem(20);
   background: $white;
-  box-shadow: $common_drop_shadow;
+  box-shadow: $shadow_depth1;
   color: $gray_medium;
   word-break: break-word;
   clear: both;
@@ -389,7 +389,7 @@ $colPadding: 0.8rem;
   @include flex-direction(column);
   @extend %rounded_corners;
   background-color: $white;
-  box-shadow: $common_drop_shadow;
+  box-shadow: $shadow_depth1;
 
   .table_header {
     @include display(flex);

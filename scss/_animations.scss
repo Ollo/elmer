@@ -3,10 +3,26 @@
     @include transform(scale(1));
   }
   50% {
-    @include transform(scale(1.1));
+    @include transform(scale(1.2));
   }
   100% {
     @include transform(scale(1));
+  }
+}
+
+.pulse_btn {
+  i {
+    @include backface-visibility(hidden);
+    @include animation-fill-mode(both);
+  }
+  &:hover {
+    i {
+      @include animation-name(onePulse);
+      @include animation-duration(.6s);
+      @include animation-timing-function(ease-in-out);
+      @include animation-delay(0);
+      @include animation-iteration-count(2);
+    }
   }
 }
 
@@ -196,8 +212,28 @@
     opacity: 1;
   }
 }
-// @-webkit-keyframes opacity-pulse {
-//   0%   { opacity: 1; }
-//   50%  { opacity: 0.3; }
-//   100% { opacity: 1; }
-// }
+
+@include keyframes(spin) {
+  0% {
+    @include transform(rotate(0deg) scale(1));
+  }
+  100% {
+    @include transform(rotate(180deg) scale(1.2));
+  }
+}
+
+.spin_btn {
+  i {
+    @include backface-visibility(hidden);
+    @include animation-fill-mode(both);
+  }
+  &:hover {
+    i {
+      @include animation-name(spin);
+      @include animation-duration(.6s);
+      @include animation-timing-function(linear);
+      @include animation-delay(0);
+      @include animation-iteration-count(1);
+    }
+  }
+}

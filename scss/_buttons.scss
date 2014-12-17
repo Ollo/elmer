@@ -1,7 +1,7 @@
 %button {
 	text-shadow: none;
 	-webkit-font-smoothing: antialiased;
-	box-shadow: 0 1px 0 0 rgba(0,0,0, 0);
+	box-shadow: 0 .1rem .3rem rgba(0,0,0,0), 0 .1rem .2rem rgba($black, 0.0);
 	@include transition (background .2s ease-in-out, box-shadow .2s ease-in-out);
 	text-align: center; 
 	display: inline-block;
@@ -12,7 +12,7 @@
 	}
 
 	&:hover {
-		box-shadow: $common_drop_shadow;
+		box-shadow: $shadow_depth1;
 	}
 
 }
@@ -173,7 +173,7 @@ input[type="submit"] {
 	}
 
 	&:focus {
-		box-shadow: $common_drop_shadow;
+		box-shadow: $shadow_depth1;
 	}
 
 	//add icon variations here
@@ -250,28 +250,20 @@ input[type="submit"] {
   @include transition(all .2s ease-in-out);
   border: 2px solid $white;
   @include pad(1.75rem 2rem);
-  box-shadow: $common_drop_shadow;
+  box-shadow: $shadow_depth1;
   background: $teal;
   font-size: rem(18);
   border-radius: 100%;
   line-height: 0;
   color: $white;
 
-  &:hover {
-   background-color: $white;
-   color: $teal;
-   border-color: $teal;
- }
+  &:hover, &:focus {
+    box-shadow: $shadow_depth2;
+  }
 
- &:focus {
-  background: darken($teal, 6.75%);
-  color: $white;
-  border-color: $white;
-}
-
-&.tan {
-  background: $sand;
-}
+  &.tan {
+    background: $sand;
+  }
 
 }
 
@@ -285,26 +277,27 @@ input[type="submit"] {
 
 .btn_add {
   @extend %circle_btn;
+  @extend .pulse_btn;
   float: left;
 
   i {
-   @extend .fa;
-   @extend .fa-plus;
-   float: left;
-   padding-top: .25rem;
-   padding-left: .2rem;
- }
+    @extend .fa;
+    @extend .fa-plus;
+    float: left;
+    padding-top: .25rem;
+    padding-left: .2rem;
+  }
 
  	// by default the following a will center next to the button
- 	+ a {
-    margin-left: rem(15);
-    display: inline-block;
-    padding-top: 1rem;
-    span {
-     @extend %muted_text;
-     display: block;
-   }
- }
+  + a {
+      margin-left: rem(15);
+      display: inline-block;
+      padding-top: 1rem;
+      span {
+        @extend %muted_text;
+        display: block;
+      }
+  }
 }
 
 // .tag
@@ -362,22 +355,22 @@ input[type="submit"] {
 
 %btn_action {
   @include border-clear;
-  box-shadow: $common_drop_shadow;
+  box-shadow: $shadow_depth1;
   padding: .5rem .6rem;
   margin-right: 1rem;
   color: $teal;
   @extend %small_text;
-  i {
-   width: rem(13);
-   height: rem(13);
+  @include transition(all .2s ease-in-out);
+  width: rem(25);
+  height: rem(25);
+  &:last-child {
+   margin-right: 0;
  }
- &:last-child {
-  margin-right: 0;
-}
-&:hover {
-  background: $teal;
-  color: $white;
-}
+ &:hover {
+   background: $teal;
+   color: $white;
+   box-shadow: $shadow_depth2;
+ }
 }
 
 // .btn_action

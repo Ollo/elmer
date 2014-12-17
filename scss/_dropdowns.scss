@@ -46,7 +46,7 @@
 
   .drop_menu {
     position: absolute;
-    width: 100%;
+    min-width: 100%;
     @include well(0 0 $border_radius $border_radius, false, false, false, $white, true);
     span {
       @extend %muted_text;
@@ -61,7 +61,7 @@
     border-radius: $border_radius $border_radius 0 0;
 
     .drop_menu {
-      box-shadow: 0 .5rem .6rem rgba(0,0,0, .15);
+      box-shadow: $shadow_depth3;
     }
   }
 
@@ -526,6 +526,7 @@
   @extend %rounded_corners;
   opacity: 0;
   @extend %well_white_no_padding;
+  box-shadow: $shadow_depth2;
   @include transition(all .2s ease-in-out);
 
   a {

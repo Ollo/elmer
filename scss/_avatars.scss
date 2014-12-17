@@ -12,7 +12,7 @@ img {
 	&.circled {
 		border-radius: 100%;
 		border: .2rem solid $white;
-		box-shadow: $common_drop_shadow;
+		box-shadow: $shadow_depth1;
 	}
 
 	// img.circled.xsmall

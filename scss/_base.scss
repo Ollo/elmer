@@ -115,7 +115,9 @@ hr {
 
 // drop shadows
 $drop_shadow_color: rgba($black, .15);
-$common_drop_shadow: 0 1px 3px $drop_shadow_color, 0 1px 2px rgba(0, 0, 0, 0.24);
+$shadow_depth1: 0 .1rem .3rem $drop_shadow_color, 0 .1rem .2rem rgba($black, 0.24);
+$shadow_depth2: 0 .3rem .5rem $drop_shadow_color, 0 .3rem .6rem rgba($black,0.23);
+$shadow_depth3: 0 .5rem 2rem $drop_shadow_color, 0 .6rem .6rem rgba($black,0.23);
 
 // borders
 // via melanie, we need a common border for the sand background and a common border for the white background. Revisit this eventually
