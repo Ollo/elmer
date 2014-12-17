@@ -69,7 +69,7 @@
             
               <li><a href="section-20.html">20.0: Dropdowns</a></li>
             
-              <li><a href="section-21.html">21.0: User</a></li>
+              <li><a href="section-21.html">21.0: Avatars</a></li>
             
               <li><a href="section-22.html">22.0: Cards / Widgets</a></li>
             
@@ -77,11 +77,9 @@
             
               <li><a href="section-24.html">24.0: Utilities</a></li>
             
-              <li><a href="section-25.html">25.0: %clearfix</a></li>
-            
               <li><a href="section-25.html">25.0: Hero</a></li>
             
-              <li><a href="section-26.html">26.0: Hero</a></li>
+              <li><a href="section-26.html">26.0: Slider</a></li>
             
           </ul>
         </nav>
@@ -121,7 +119,7 @@
                     </div>
                   
                     <div class="kss-mod-desc-group">
-                      <div class="kss-mod-desc"><p>darkens the background color</p>
+                      <div class="kss-mod-desc"><p>hover lightens the background color</p>
 </div>
                       <div class="kss-mod-name"><p>:hover</p></div>
                     </div>
@@ -130,7 +128,7 @@
                     </div>
                   
                     <div class="kss-mod-desc-group">
-                      <div class="kss-mod-desc"><p>darkens the background color</p>
+                      <div class="kss-mod-desc"><p>focus darkens the background color</p>
 </div>
                       <div class="kss-mod-name"><p>:focus</p></div>
                     </div>
@@ -175,40 +173,6 @@
                   </div>
                   <div class="kss-markup">
                     <pre class="prettyprint lang-html">&lt;button class=&quot;secondary {$modifiers}&quot;&gt;I&#x27;m the Secondary&lt;/button&gt;</pre>
-                  </div>
-              
-            
-              </section>
-            
-          
-            
-             <section class="kss-depth-2">
-              <h2 class="kss-title"><span class="kss-ref">6.3</span> - .tertiary</h2>
-            
-              
-                  <div class="kss-box"><p>The tertiary button style for the site</p>
-</div>
-                  <div class="kss-mod-list">
-                    <div class="kss-mod-desc-group">
-                      <!-- <div class="kss-mod-desc"><p>Default styling</p></div>
-                      <div class="kss-mod-name"></div> -->
-                    </div>
-                    <div class="kss-mod-example">
-                      <div><button class="tertiary {$modifiers}">I'm the Tertiary</button></div>
-                    </div>
-                  
-                    <div class="kss-mod-desc-group">
-                      <div class="kss-mod-desc"><p>lightens the background color</p>
-</div>
-                      <div class="kss-mod-name"><p>:hover</p></div>
-                    </div>
-                    <div class="kss-mod-example">
-                      <div><button class="tertiary pseudo-class-hover">I'm the Tertiary</button></div>
-                    </div>
-                  
-                  </div>
-                  <div class="kss-markup">
-                    <pre class="prettyprint lang-html">&lt;button class=&quot;tertiary {$modifiers}&quot;&gt;I&#x27;m the Tertiary&lt;/button&gt;</pre>
                   </div>
               
             
@@ -321,12 +285,12 @@
                       <div class="kss-mod-name"></div> -->
                     </div>
                     <div class="kss-mod-example">
-                      <div><div class="wrapper"><button class="btn_add"><i class="fa fa-plus"></i></button></div></div>
+                      <div><div style="background-color: #f9f9f9; padding: 2rem;" class="wrapper"><button class="btn_add"><i class="fa fa-plus"></i></button></div></div>
                     </div>
                   
                   </div>
                   <div class="kss-markup">
-                    <pre class="prettyprint lang-html">&lt;div class=&quot;wrapper&quot;&gt;&lt;button class=&quot;btn_add&quot;&gt;&lt;i class=&quot;fa fa-plus&quot;&gt;&lt;/i&gt;&lt;/button&gt;&lt;/div&gt;</pre>
+                    <pre class="prettyprint lang-html">&lt;div style=&quot;background-color: #f9f9f9; padding: 2rem;&quot; class=&quot;wrapper&quot;&gt;&lt;button class=&quot;btn_add&quot;&gt;&lt;i class=&quot;fa fa-plus&quot;&gt;&lt;/i&gt;&lt;/button&gt;&lt;/div&gt;</pre>
                   </div>
               
             
@@ -413,12 +377,22 @@
                       <div class="kss-mod-name"></div> -->
                     </div>
                     <div class="kss-mod-example">
-                      <div><button class="btn_action {$modifiers}"><i class="fa fa-sign-out"></i></button></div>
+                      <div>
+<div style="background-color: #f7f5f2; padding: 2rem;">
+  <button class="btn_action {$modifiers}"><i class="fa fa-comment"></i></button>
+  <button class="btn_action {$modifiers}"><i class="fa fa-share"></i></button>
+  <button class="btn_action {$modifiers}"><i class="fa fa-star"></i></button>
+</div></div>
                     </div>
                   
                   </div>
                   <div class="kss-markup">
-                    <pre class="prettyprint lang-html">&lt;button class=&quot;btn_action {$modifiers}&quot;&gt;&lt;i class=&quot;fa fa-sign-out&quot;&gt;&lt;/i&gt;&lt;/button&gt;</pre>
+                    <pre class="prettyprint lang-html">
+&lt;div style=&quot;background-color: #f7f5f2; padding: 2rem;&quot;&gt;
+  &lt;button class=&quot;btn_action {$modifiers}&quot;&gt;&lt;i class=&quot;fa fa-comment&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+  &lt;button class=&quot;btn_action {$modifiers}&quot;&gt;&lt;i class=&quot;fa fa-share&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+  &lt;button class=&quot;btn_action {$modifiers}&quot;&gt;&lt;i class=&quot;fa fa-star&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+&lt;/div&gt;</pre>
                   </div>
               
             

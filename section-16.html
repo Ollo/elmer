@@ -69,7 +69,7 @@
             
               <li><a href="section-20.html">20.0: Dropdowns</a></li>
             
-              <li><a href="section-21.html">21.0: User</a></li>
+              <li><a href="section-21.html">21.0: Avatars</a></li>
             
               <li><a href="section-22.html">22.0: Cards / Widgets</a></li>
             
@@ -77,11 +77,9 @@
             
               <li><a href="section-24.html">24.0: Utilities</a></li>
             
-              <li><a href="section-25.html">25.0: %clearfix</a></li>
-            
               <li><a href="section-25.html">25.0: Hero</a></li>
             
-              <li><a href="section-26.html">26.0: Hero</a></li>
+              <li><a href="section-26.html">26.0: Slider</a></li>
             
           </ul>
         </nav>
@@ -234,6 +232,77 @@
         &lt;div class=&quot;two_col center&quot;&gt;&lt;a href=&quot;&quot;&gt;Save Metric&lt;/a&gt;&lt;/div&gt;
         &lt;div class=&quot;two_col right&quot;&gt;&lt;a href=&quot;&quot;&gt;&lt;i class=&quot;fa fa-trash-o&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/div&gt;
    &lt;/li&gt;
+&lt;/ul&gt;</pre>
+                  </div>
+              
+            
+              </section>
+            
+          
+            
+             <section class="kss-depth-2">
+              <h2 class="kss-title"><span class="kss-ref">16.3</span> - .flex_table</h2>
+            
+              
+                  <div class="kss-box"><p>Add this class to simulate a table. Use classes to determine column widths, as seen below.
+This type of table should be used when the table&apos;s contents will include variable-height elements.
+The flexible box model makes alignment and responsiveness very simple to achieve.</p>
+</div>
+                  <div class="kss-mod-list">
+                    <div class="kss-mod-desc-group">
+                      <!-- <div class="kss-mod-desc"><p>Default styling</p></div>
+                      <div class="kss-mod-name"></div> -->
+                    </div>
+                    <div class="kss-mod-example">
+                      <div><ul class="flex_table">
+  <li class="table_header">
+    <div class="cols1">
+      <span class="hidden_mobile">.cols1</span>
+      <span class="mobile_label">Mobile Cols</span>
+    </div>
+    <div class="cols2 hidden_mobile">.cols2<i class="fa fa-sort-desc"></i></div>
+    <div class="cols4 hidden_mobile">.cols4<i class="fa fa-sort-asc"></i></div>
+    <div class="cols1 hidden_mobile">.cols1</div>
+  </li>
+  <li class="row">
+    <div class="cols1"><label class="mobile_label">.cols1: </label>Really, really, super long, not short, long two line title squish me!</div>
+    <div class="cols2"><label class="mobile_label">.cols2: </label><button class="secondary">Ima button</div>
+    <div class="cols4">(.cols4 no mobile_label)&nbsp;<a href="">Edit</a></div>
+    <div class="cols1"><label class="mobile_label">.cols1 (again): </label><a href=""><i class="fa fa-trash-o"></i></a></div>
+  </li>
+  <li class="row">
+    <div class="cols1"><label class="mobile_label">.cols1: </label>Like my stripes?</div>
+    <div class="cols2"><label class="mobile_label">.cols2: </label><div style="width:50px;height:50px;background:#ddd">fake img</div></div>
+    <div class="cols4">(.cols4 no mobile_label)&nbsp;<a href="">Save Metric</a></div>
+    <div class="cols1"><label class="mobile_label">.cols1 (again): </label><a href=""><i class="fa fa-trash-o"></i></a></div>
+  </li>
+</ul></div>
+                    </div>
+                  
+                  </div>
+                  <div class="kss-markup">
+                    <pre class="prettyprint lang-html">&lt;ul class=&quot;flex_table&quot;&gt;
+  &lt;li class=&quot;table_header&quot;&gt;
+    &lt;div class=&quot;cols1&quot;&gt;
+      &lt;span class=&quot;hidden_mobile&quot;&gt;.cols1&lt;/span&gt;
+      &lt;span class=&quot;mobile_label&quot;&gt;Mobile Cols&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;cols2 hidden_mobile&quot;&gt;.cols2&lt;i class=&quot;fa fa-sort-desc&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+    &lt;div class=&quot;cols4 hidden_mobile&quot;&gt;.cols4&lt;i class=&quot;fa fa-sort-asc&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+    &lt;div class=&quot;cols1 hidden_mobile&quot;&gt;.cols1&lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;row&quot;&gt;
+    &lt;div class=&quot;cols1&quot;&gt;&lt;label class=&quot;mobile_label&quot;&gt;.cols1: &lt;/label&gt;Really, really, super long, not short, long two line title squish me!&lt;/div&gt;
+    &lt;div class=&quot;cols2&quot;&gt;&lt;label class=&quot;mobile_label&quot;&gt;.cols2: &lt;/label&gt;&lt;button class=&quot;secondary&quot;&gt;Ima button&lt;/div&gt;
+    &lt;div class=&quot;cols4&quot;&gt;(.cols4 no mobile_label)&nbsp;&lt;a href=&quot;&quot;&gt;Edit&lt;/a&gt;&lt;/div&gt;
+    &lt;div class=&quot;cols1&quot;&gt;&lt;label class=&quot;mobile_label&quot;&gt;.cols1 (again): &lt;/label&gt;&lt;a href=&quot;&quot;&gt;&lt;i class=&quot;fa fa-trash-o&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;row&quot;&gt;
+    &lt;div class=&quot;cols1&quot;&gt;&lt;label class=&quot;mobile_label&quot;&gt;.cols1: &lt;/label&gt;Like my stripes?&lt;/div&gt;
+    &lt;div class=&quot;cols2&quot;&gt;&lt;label class=&quot;mobile_label&quot;&gt;.cols2: &lt;/label&gt;&lt;div style=&quot;width:50px;height:50px;background:#ddd&quot;&gt;fake img&lt;/div&gt;&lt;/div&gt;
+    &lt;div class=&quot;cols4&quot;&gt;(.cols4 no mobile_label)&nbsp;&lt;a href=&quot;&quot;&gt;Save Metric&lt;/a&gt;&lt;/div&gt;
+    &lt;div class=&quot;cols1&quot;&gt;&lt;label class=&quot;mobile_label&quot;&gt;.cols1 (again): &lt;/label&gt;&lt;a href=&quot;&quot;&gt;&lt;i class=&quot;fa fa-trash-o&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/div&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;</pre>
                   </div>
               
