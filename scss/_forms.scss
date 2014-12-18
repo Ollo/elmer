@@ -594,9 +594,13 @@ input[type="radio"] {
   z-index: 1;
   height: 3rem;
   width: 3rem;
+  cursor: pointer;
 
-  &:hover, + button:hover {
-    cursor: pointer;
+  &:hover {
+  	+ button {
+  		box-shadow: $shadow_depth2;
+  		cursor: pointer;
+  	}
   }
   
   &:focus {
