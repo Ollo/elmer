@@ -184,6 +184,21 @@ h4.icon_header {
 	@extend %small_text;
 }
 
+// p.small
+//
+// Secondary tiny style
+//
+// Markup:
+// <p class="small_text_2">Here is some tiny text in a paragraph tag.</p>
+//
+// Styleguide 5.4
+
+%small_text_2, .small_text_2 {
+	font-size: rem(12);
+	@extend %font_weight_700;
+	@extend %muted_text;
+}
+
 // %muted_text
 //
 // Basic placeholder that makes the color $gray_light. Class '.muted_text' @extends this placeholder. Use as @extend when possible to keep markup clean.

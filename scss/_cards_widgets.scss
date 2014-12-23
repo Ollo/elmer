@@ -420,8 +420,7 @@ $card_background: $white;
 //
 // Styleguide 22.4
 
-.content_card {
-  @extend %well_white_no_padding;
+%small_card_layout {
   margin-bottom: 2rem;
 
   @include media($smallToMedium) {
@@ -438,6 +437,10 @@ $card_background: $white;
     @include span-columns(4);
     @include omega(3n);
   }
+}
+
+%banner_card {
+  @extend %well_white_no_padding;
 
   img {
     width: 100%;
@@ -450,7 +453,7 @@ $card_background: $white;
 
   h2 {
     font-size: rem(14);
-    margin-bottom: 1rem;
+    margin-bottom: 0;
     line-height: 3rem;
     @extend %font_weight_700;
     a {
@@ -458,8 +461,15 @@ $card_background: $white;
     }
   }
 
+}
+
+.content_card {
+  @extend %small_card_layout;
+  @extend %banner_card;
+
   .meta {
     @extend %small_text;
+    margin-top: 1rem;
     margin-bottom: 2rem;
     padding-bottom: 2rem;
     border-bottom: $common_gray_border_light;
@@ -512,6 +522,102 @@ $card_background: $white;
 
 }
 
+// .champion_card
+//
+// Library card
+//
+// Markup:
+// <div class="wrapper">
+//   <div class="champion_card_wrapper">
+//     <a class="champion_card">
+//       <img class="background" src="https://placeimg.com/910/337/any" />
+//       <div class="card_wrap">
+//         <img class="icon" src="https://placeimg.com/100/100/any" />
+//         <h2>Champion Name</h2>
+//         <p>Spirituality & Health</p>
+//         <footer>
+//           <i class="fa fa-user"></i>231 followers
+//         </footer>
+//       </div>
+//     </a>
+//   </div>
+//   <div class="champion_card_wrapper">
+//     <a class="champion_card">
+//       <img class="background" src="https://placeimg.com/910/337/any" />
+//       <div class="card_wrap">
+//         <img class="icon" src="https://placeimg.com/100/100/any" />
+//         <h2>Champion Name</h2>
+//         <p>Spirituality & Health</p>
+//         <footer>
+//           <i class="fa fa-user"></i>231 followers
+//         </footer>
+//       </div>
+//     </a>
+//   </div>
+//   <div class="champion_card_wrapper">
+//     <a class="champion_card">
+//       <img class="background" src="https://placeimg.com/910/337/any" />
+//       <div class="card_wrap">
+//         <img class="icon" src="https://placeimg.com/100/100/any" />
+//         <h2>Champion Name</h2>
+//         <p>Spirituality & Health</p>
+//         <footer>
+//           <i class="fa fa-user"></i>231 followers
+//         </footer>
+//       </div>
+//     </a>
+//   </div>
+// </div>
+// 
+// Styleguide 22.5
+
+.champion_card_wrapper {
+  @extend %small_card_layout;
+}
+
+.champion_card {
+  @extend %well_white_no_padding;
+  @extend %banner_card;
+  text-align: center;
+  display: block;
+  // fixes flash bug caused by slider animation
+  -webkit-transform-style: preserve-3d;
+
+  &:hover {
+    .icon {
+      @include transform(scale(1.1));
+      box-shadow: $shadow_depth3;
+    }
+  }
+
+  .icon {
+    @include transition(transform .2s ease-in-out, box-shadow .2s ease-in-out);
+    @include transform(scale(1));
+    @extend img.circled;
+    @extend img.medium;
+    display: block;
+    margin: -5.5rem auto .5rem;
+  }
+
+  p {
+    @extend %small_text_2;
+    margin: 0;
+  }
+
+  footer {
+    color: $gray_light;
+    @extend %small_text;
+    margin: 4rem 0 1rem;
+    i {
+      @extend %icon_space;
+    }
+  }
+
+  h2 {
+    @extend %truncate;
+  }
+
+}
 
 // .library_card
 //
@@ -530,7 +636,7 @@ $card_background: $white;
 //   </div>
 // </div>
 // 
-// Styleguide 22.5
+// Styleguide 22.6
 
 .library_card {
   @extend %well_white_padding;
