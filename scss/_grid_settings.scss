@@ -23,8 +23,12 @@ $small: new-breakpoint(min-width 480px 4);
 $medium: new-breakpoint(min-width 768px 8);
 $large: new-breakpoint(min-width 1025px 12);
 $xlarge: new-breakpoint(min-width 1140px 12);
+
+// These media queries encompass only specific screen sizes and are needed for limitations with neat grid, see http://www.joshfry.me/blog/2013/05/13/omega-reset-for-bourbon-neat/ for more info on the problem. 
+// We will not be using omega-reset via Ollo
 $mobileOnly: new-breakpoint(min-width 0px max-width 768px 4);
-$tabletOnly: new-breakpoint(min-width 768px max-width 1023px 8);
+$smallToMedium: new-breakpoint(min-width 480px max-width 768px 12);
+$mediumToLarge: new-breakpoint(min-width 768px max-width 1024px 12);
 
 // Sample Media Query
 //

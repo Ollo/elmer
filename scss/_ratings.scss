@@ -167,3 +167,34 @@
 		}
 	}
 }
+
+// .star_group.tiny
+//
+// Tiny stars, 11px. Reglar size stars default to 30px.
+//
+// Markup:
+// <div class="star_group tiny">
+//     <input type="radio" class="star"><label><i></i></label>
+//     <input type="radio" class="star"><label><i></i></label>
+//     <input type="radio" class="star half"><label><i></i></label>
+//     <input type="radio" class="star filled"><label><i></i></label>
+//     <input type="radio" class="star filled"><label><i></i></label>
+// </div>
+//
+// Styleguide 23.3
+
+.star_group.tiny {
+	.star {
+		+ label {
+			font-size: rem(11);
+			margin-right: .1rem;
+		}
+		&.filled, &.half {
+			+ label {
+				i {
+					color: $gray_light;
+				}
+			}
+		}
+	}
+}

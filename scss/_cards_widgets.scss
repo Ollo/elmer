@@ -186,13 +186,19 @@ $card_background: $white;
     @include omega(2n);
   }
 
-  @include media($tabletOnly) {
+  @include media($small) {
     @include span-columns(2);
-    @include omega(4n);
+    @include omega(3n);
   }
 
   @include media($large) {
-    @include span-columns(3);
+    @include span-columns(4);
+    &:nth-child(2n + 1) {
+      clear: none;
+    }
+    &:nth-child(2n) {
+      margin-right: 2.35765%;
+    }
     @include omega(4n);
   }
 
@@ -203,11 +209,6 @@ $card_background: $white;
     a {
       color: $gray_medium;
     }
-  }
-
-  p {
-    @extend %truncate;
-    @extend .muted_text;
   }
 
 }
@@ -352,49 +353,67 @@ $card_background: $white;
 // <div class="content_card">
 //     <img src="http://lorempixel.com/420/250/" />
 //     <div class="card_wrap">
-//         <h2><a>I'm an awesome title that runs up to 3 lines before...</a></h2>
+//         <h2><a>10 Questions to Ask Your Wife Every Year</a></h2>
 //         <div class="meta">
 //             <a><i class="fa fa-play"></i>Program</a>
 //             <a>Family Life</a>
 //         </div>
-//         <p>Vivamus hvvendrerit tellus eget nisl varius fermentu. Donccons equat, mi quis grav ida tincidunt, massa ligula vivamus hvvendrerit tellus eget nisl varius Vivamus hvvendrerit tellus eget nisl varius fermentu  ferm entu...</p>
-//         <a class="tag">Lifestyle</a>
+//         <p>Fun challenges to help you improve your most important relationships. Learn all the learnings today!</p>
+//         <footer>
+//           <div class="star_group tiny">
+//             <input type="radio" class="star"><label><i></i></label>
+//             <input type="radio" class="star"><label><i></i></label>
+//             <input type="radio" class="star half"><label><i></i></label>
+//             <input type="radio" class="star filled"><label><i></i></label>
+//             <input type="radio" class="star filled"><label><i></i></label>
+//           </div>
+//           <a class="favorited_count"><i class="fa fa-heart"></i>271</a>
+//           <a class="share_link"><i class="fa fa-share"></i></a>
+//         </footer>
 //     </div>
 // </div>
 // <div class="content_card">
 //     <img src="http://lorempixel.com/420/250/" />
 //     <div class="card_wrap">
-//         <h2><a>I'm an awesome title that runs up to 3 lines before...</a></h2>
+//         <h2><a>10 Questions to Ask Your Wife Every Year</a></h2>
 //         <div class="meta">
 //             <a><i class="fa fa-play"></i>Program</a>
 //             <a>Family Life</a>
 //         </div>
-//         <p>Vivamus hvvendrerit tellus eget nisl varius fermentu. Donccons equat, mi quis grav ida tincidunt, massa ligula vivamus hvvendrerit tellus eget nisl varius Vivamus hvvendrerit tellus eget nisl varius fermentu  ferm entu...</p>
-//         <a class="tag">Lifestyle</a>
+//         <p>Fun challenges to help you improve your most important relationships. Learn all the learnings today!</p>
+//         <footer>
+//           <div class="star_group tiny">
+//             <input type="radio" class="star"><label><i></i></label>
+//             <input type="radio" class="star"><label><i></i></label>
+//             <input type="radio" class="star half"><label><i></i></label>
+//             <input type="radio" class="star filled"><label><i></i></label>
+//             <input type="radio" class="star filled"><label><i></i></label>
+//           </div>
+//           <a class="favorited_count"><i class="fa fa-heart"></i>271</a>
+//           <a class="share_link"><i class="fa fa-share"></i></a>
+//         </footer>
 //     </div>
 // </div>
 // <div class="content_card">
 //     <img src="http://lorempixel.com/420/250/" />
 //     <div class="card_wrap">
-//         <h2><a>I'm an awesome title that runs up to 3 lines before...</a></h2>
+//         <h2><a>10 Questions to Ask Your Wife Every Year</a></h2>
 //         <div class="meta">
 //             <a><i class="fa fa-play"></i>Program</a>
 //             <a>Family Life</a>
 //         </div>
-//         <p>Vivamus hvvendrerit tellus eget nisl varius fermentu. Donccons equat, mi quis grav ida tincidunt, massa ligula vivamus hvvendrerit tellus eget nisl varius Vivamus hvvendrerit tellus eget nisl varius fermentu  ferm entu...</p>
-//         <a class="tag">Lifestyle</a>
-//     </div>
-// </div>
-// <div class="content_card">
-//     <img src="http://lorempixel.com/420/250/" />
-//     <div class="card_wrap">
-//         <h2><a>I'm an awesome title that runs up to 3 lines before...</a></h2>
-//         <div class="meta">
-//             <a><i class="fa fa-play"></i>Program</a>
-//             <a>Family Life</a>
-//         </div>
-//         <p>Vivamus hvvendrerit tellus eget nisl varius fermentu. Donccons equat, mi quis grav ida tincidunt, massa ligula vivamus hvvendrerit tellus eget nisl varius Vivamus hvvendrerit tellus eget nisl varius fermentu  ferm entu...</p>
-//         <a class="tag">Lifestyle</a>
+//         <p>Fun challenges to help you improve your most important relationships. Learn all the learnings today!</p>
+//         <footer>
+//           <div class="star_group tiny">
+//             <input type="radio" class="star"><label><i></i></label>
+//             <input type="radio" class="star"><label><i></i></label>
+//             <input type="radio" class="star half"><label><i></i></label>
+//             <input type="radio" class="star filled"><label><i></i></label>
+//             <input type="radio" class="star filled"><label><i></i></label>
+//           </div>
+//           <a class="favorited_count"><i class="fa fa-heart"></i>271</a>
+//           <a class="share_link"><i class="fa fa-share"></i></a>
+//         </footer>
 //     </div>
 // </div>
 // </div>
@@ -403,106 +422,95 @@ $card_background: $white;
 
 .content_card {
   @extend %well_white_no_padding;
-  overflow: hidden;
-  margin-bottom: 1.75rem;
-  @extend .four_col;
-  font-size: 1.2rem;
-  line-height: 2rem;
+  margin-bottom: 2rem;
 
-  a {
-    @extend %font_weight_500;
+  @include media($smallToMedium) {
+    @include span-columns(6);
+    @include omega(2n);
   }
 
-  &:nth-of-type(3n + 3) {
-    margin-right: 0;
+  @include media($mediumToLarge) {
+    @include span-columns(6);
+    @include omega(2n);
   }
 
-  @include media($mobileOnly) {
-    width: 49%;
-    margin-right: 2%;
-    float: left;
-    &:nth-of-type(3n + 3) {
-      margin-right: 2%;
-    }
-    &:nth-of-type(2n + 2) {
-      margin-right: 0;
-    }
+  @include media($large) {
+    @include span-columns(4);
+    @include omega(3n);
   }
 
   img {
     width: 100%;
+    border: .3rem $white solid;
   }
 
   .card_wrap {
-    padding: .5rem;
+    padding: 1.5rem 1.5rem 1rem;
   }
 
   h2 {
-    font-size: rem(15);
-    margin-bottom: rem(15);
-  }
-
-  .primary {
-    display: block;
-    text-align: center;
-    padding: .25rem;
-    margin: 1rem 0 0;
-    text-transform: capitalize;
+    font-size: rem(14);
+    margin-bottom: 1rem;
+    line-height: 3rem;
+    @extend %font_weight_700;
+    a {
+      color: $gray_medium;
+    }
   }
 
   .meta {
-    margin-bottom: rem(15);
-    text-transform: capitalize;
-
+    @extend %small_text;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: $common_gray_border_light;
+    i {
+      @extend %icon_space;
+    }
     a {
-      border-right: 1px solid $teal;
-      padding-right: rem(5);
-      i {
-        padding-right: rem(5);
-      }
-      &:last-child {
-        border-right: 0;
-        padding-right: 0;
+      @extend %muted_text;
+      &:first-child {
+        border-right: $common_gray_border;
+        @extend %icon_space;
+        padding-right: .7rem;
       }
     }
-
-    .primary {
-      display: block;
-    }
-
   }
 
-  // FOR NOW content cards have a set height, we will remove this once the deckgrid is implemented
-  // this decision per Justin & Leora
-    // min-height: 52rem;
-    p {
-      height: 12rem;
-      overflow: hidden;
-    }
-    h2 {
-      height: 6.75rem;
-      overflow: hidden;
-    }
-    .meta {
-      height: 5rem;
-      overflow: hidden;
-    }
-    @include media($medium) {
-      font-size: $base_font_size;
-      line-height: $base_line_height;
-      font-weight: 300;
-      h2 {
-        font-size: rem(18);
-      }
-      .card_wrap {
-        padding: 1.5rem;
-      }
-      p {
-        height: 9rem;
-      }
-    }
-
+  p {
+    @extend %font_weight_500;
+    margin-bottom: 0;
+    height: rem(98);
+    overflow: hidden;
   }
+
+  footer {
+    border-top: $common_gray_border_light;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    @extend %clearfix;
+  }
+
+  .favorited_count, .share_link {
+    color: $gray_light;
+    @extend %small_text;
+  }
+
+  .favorited_count {
+    i {
+      @extend %icon_space;
+    }
+  }
+
+  .star_group, .favorited_count {
+    margin-right: 2rem;
+    float: left;
+  }
+
+  .share_link {
+    float: right;
+  }
+
+}
 
 
 // .library_card

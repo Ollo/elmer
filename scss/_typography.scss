@@ -37,6 +37,10 @@ $sans-serif: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", He
 	@extend %font_weight_700;
 }
 
+%helvetica {
+	font-family: "Helvetica Neue", Helvetica, "Helvetica Neue Light", Arial, sans-serif;
+}
+
 %font_weight_100 {
 	font-weight: 100;
 }
@@ -141,6 +145,10 @@ h6 {
 		}
 	}
 
+	nav {
+		float: right;
+	}
+
 	.btn_action {
 		float: right;
 		padding: .2rem .5rem;
@@ -167,8 +175,9 @@ h4.icon_header {
 // Styleguide 5.3
 
 %small_text {
-	font-size: rem(12);
-	line-height: rem(15);
+	font-size: rem(11);
+	line-height: 1rem;
+	@extend %helvetica;
 }
 
 .small_text {
