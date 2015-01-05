@@ -454,7 +454,7 @@ $card_background: $white;
   h2 {
     font-size: rem(14);
     margin-bottom: 0;
-    line-height: 3rem;
+    line-height: 2.6rem;
     @extend %font_weight_700;
     a {
       color: $gray_medium;
@@ -473,6 +473,7 @@ $card_background: $white;
     margin-bottom: 2rem;
     padding-bottom: 2rem;
     border-bottom: $common_gray_border_light;
+    text-transform: capitalize;
     i {
       @extend %icon_space;
     }
