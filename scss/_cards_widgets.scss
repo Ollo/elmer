@@ -253,7 +253,14 @@ $card_background: $white;
 .member_card {
   height: rem(255);
   @extend .small_text;
-  @extend %card_common;
+
+  &.four_columns {
+    @extend %full_card_layout;
+  }
+
+  &.three_columns {
+    @extend %small_card_layout;
+  }
 
   .front, .back {
     overflow: hidden;
@@ -304,6 +311,7 @@ $card_background: $white;
       }
 
     }
+
   }
 
   .back {
@@ -436,6 +444,25 @@ $card_background: $white;
   @include media($large) {
     @include span-columns(4);
     @include omega(3n);
+  }
+}
+
+%full_card_layout {
+  margin-bottom: 2rem;
+
+  @include media($smallToMedium) {
+    @include span-columns(6);
+    @include omega(2n);
+  }
+
+  @include media($mediumToLarge) {
+    @include span-columns(3);
+    @include omega(4n);
+  }
+
+  @include media($large) {
+    @include span-columns(3);
+    @include omega(4n);
   }
 }
 
