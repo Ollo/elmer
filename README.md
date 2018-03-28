@@ -1,5 +1,5 @@
+# Elmer
 !['elmer'](elmer.jpg)
-#Elmer
 
 Elmer is the ui components library used to power the Epoxy project and now it is available to all of Gloo as a bower package and separate repository for collaboration and use in any web project.
 
@@ -43,11 +43,4 @@ First install bower via <http://bower.io>
 	}
 
 ---
-
-Elmer is a living framework that is still in active development if you would like to provide feedback or have specific questions please feel free to contact the web team.
-
-[@hrallo](mailto:hrallo@tangogroup.com)
-
-[@jray](mailto:jray@tangogroup.com)
-
 
